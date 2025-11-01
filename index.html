@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskHub | Free Online Tools</title>
+  <meta name="description" content="TaskHub - your hub for quick, smart, and useful online tools.">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- AdSense (add your ID later) -->
+  <!-- <script data-ad-client="ca-pub-XXXX" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+</head>
+<body>
+  <header>
+    <h1>⚙️ TaskHub</h1>
+    <p id="tagline">Fast, simple, and useful tools — all in one place.</p>
+    <div class="lang-btns">
+      <button onclick="setLang('en')">English</button>
+      <button onclick="setLang('fa')">فارسی</button>
+    </div>
+  </header>
+
+  <main id="content">
+    <!-- English section -->
+    <section id="en">
+      <div class="tool-grid">
+        <a href="tools/file-converter.html" class="tool-card">🧾 File Converter</a>
+        <a href="tools/zip-unzip.html" class="tool-card">📦 ZIP / Unzip</a>
+        <a href="tools/csv-cleaner.html" class="tool-card">📊 CSV Cleaner</a>
+        <a href="tools/password-generator.html" class="tool-card">🔐 Password Generator</a>
+        <a href="tools/url-shortener.html" class="tool-card">🌐 URL Shortener</a>
+      </div>
+    </section>
+
+    <!-- Farsi section -->
+    <section id="fa" dir="rtl" style="display:none;">
+      <div class="tool-grid">
+        <a href="tools/file-converter.html" class="tool-card">🧾 مبدل فایل</a>
+        <a href="tools/zip-unzip.html" class="tool-card">📦 فشرده‌سازی / استخراج فایل</a>
+        <a href="tools/csv-cleaner.html" class="tool-card">📊 پاکسازی فایل CSV</a>
+        <a href="tools/password-generator.html" class="tool-card">🔐 تولید رمز عبور</a>
+        <a href="tools/url-shortener.html" class="tool-card">🌐 کوتاه‌کننده لینک</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><a href="privacy.html">Privacy Policy</a>  |  © 2025 TaskHub</p>
+  </footer>
+
+  <script>
+    function setLang(lang){
+      document.getElementById('en').style.display = (lang==='en')?'block':'none';
+      document.getElementById('fa').style.display = (lang==='fa')?'block':'none';
+    }
+  </script>
+</body>
+</html>
