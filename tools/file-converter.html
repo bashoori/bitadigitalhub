@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>File Converter | TaskHub</title>
   <meta name="description" content="Convert PDF, Word, Excel, and image files instantly with TaskHub’s free online file converter.">
-  <link rel="stylesheet" href="../css/style.css">
-
-  <!-- Future AdSense placement -->
-  <!-- <script data-ad-client="ca-pub-XXXX" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
+
 <body>
-  <header>
-    <h1>🧾 File Converter</h1>
-    <p id="tagline">Convert PDF ⇄ Word / Excel / JPG / PNG / TXT formats — fast and free.</p>
-    <div class="lang-btns">
-      <button onclick="setLang('en')">English</button>
-      <button onclick="setLang('fa')">فارسی</button>
-    </div>
+  <!-- 🔝 Navigation -->
+  <header class="navbar">
+    <a href="../index.html" class="brand">⚙️ TaskHub</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="#">Contact</a>
+    </nav>
   </header>
+
+  <!-- 🧾 Tool Header -->
+  <section class="tool-header">
+    <img src="../assets/file-icon.svg" alt="File Converter Icon" class="tool-icon">
+    <div>
+      <h1>File Converter</h1>
+      <p class="subtitle">Convert PDF ⇄ Word / Excel / JPG / PNG / TXT formats — fast, secure & free.</p>
+    </div>
+  </section>
+
+  <!-- 🌐 Language Switch -->
+  <div class="lang-btns" style="text-align:center;">
+    <button onclick="setLang('en')">English</button>
+    <button onclick="setLang('fa')">فارسی</button>
+  </div>
 
   <main id="content">
     <!-- English Section -->
@@ -43,8 +57,8 @@
     <!-- Persian Section -->
     <section id="fa" dir="rtl" style="display:none;">
       <div class="tool-box">
-        <p>فایل خود را برای تبدیل انتخاب کنید:</p>
-        <input type="file">
+        <p>فایل خود را برای تغییر فرمت انتخاب کنید:</p>
+        <input type="file" />
         <select>
           <option>انتخاب فرمت</option>
           <option>PDF</option>
@@ -70,28 +84,33 @@
     </div>
   </main>
 
+  <!-- 🧾 Footer -->
   <footer>
-    <p><a href="../index.html">⬅ Back to TaskHub</a> | <a href="../privacy.html">Privacy Policy</a></p>
+    <p>© 2025 TaskHub | Built for simplicity & trust.</p>
+    <p><a href="../privacy.html">Privacy Policy</a> · <a href="#">Terms</a> · <a href="#">Contact</a></p>
   </footer>
 
+  <!-- ⚙️ Script -->
   <script>
-    function setLang(lang){
-      document.getElementById('en').style.display = (lang==='en')?'block':'none';
-      document.getElementById('fa').style.display = (lang==='fa')?'block':'none';
+    function setLang(lang) {
+      document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
+      document.getElementById('fa').style.display = (lang === 'fa') ? 'block' : 'none';
     }
 
-    document.getElementById('convertBtn').addEventListener('click', ()=>{
+    const convertBtn = document.getElementById('convertBtn');
+    const result = document.getElementById('result');
+
+    convertBtn.addEventListener('click', () => {
       const fileInput = document.getElementById('fileInput');
       const format = document.getElementById('formatSelect').value;
-      const result = document.getElementById('result');
 
-      if(!fileInput.files.length || !format){
-        result.innerHTML = "<p style='color:red'>Please select a file and format.</p>";
+      if (!fileInput.files.length || !format) {
+        result.innerHTML = "<p style='color:red'>⚠️ Please select a file and format.</p>";
         return;
       }
 
       result.innerHTML = "<p>⏳ Converting... please wait.</p>";
-      setTimeout(()=>{
+      setTimeout(() => {
         result.innerHTML = `<p>✅ File converted successfully to <b>${format.toUpperCase()}</b>! (Demo only)</p>`;
       }, 1500);
     });

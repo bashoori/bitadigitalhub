@@ -1,12 +1,13 @@
 /* -----------------------------
-   🎨 TaskHub Global Stylesheet
+   ⚙️ TaskHub - Professional CSS
+   Clean | Responsive | Trustworthy
    ----------------------------- */
 
-/* Color & Font Variables */
+/* 🎨 Color & Font Variables */
 :root {
   --primary: #0078d7;
   --primary-dark: #005fa3;
-  --background: #fafafa;
+  --background: linear-gradient(180deg, #f9f9f9 0%, #f0f2f5 100%);
   --text: #222;
   --shadow: rgba(0, 0, 0, 0.08);
   --border: #ccc;
@@ -15,7 +16,7 @@
   --font-fa: "Vazirmatn", "IRANSans", sans-serif;
 }
 
-/* Global Reset & Base */
+/* 🔄 Reset & Global */
 * {
   box-sizing: border-box;
   transition: all 0.25s ease-in-out;
@@ -34,39 +35,85 @@ body {
   to { opacity: 1; }
 }
 
-/* RTL (Persian) text support */
+/* 🇴🇷 RTL (Farsi) Text Support */
 [dir="rtl"] {
   font-family: var(--font-fa);
 }
 
-/* Header */
-header {
-  text-align: center;
-  padding: 2rem 1rem;
+/* 🔝 Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
   background: #fff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-h1 {
+.navbar .brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.navbar nav a {
+  margin-left: 1.2rem;
+  color: #444;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar nav a:hover {
+  color: var(--primary);
+}
+
+/* 🧭 Tool Header (Title + Subtitle + Icon) */
+.tool-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.tool-header .tool-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.tool-header h1 {
   margin: 0;
   font-weight: 700;
+  font-size: 1.8rem;
 }
 
+.subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin: 0.2rem 0 0;
+}
+
+/* 🌐 Language Buttons */
 .lang-btns button {
   margin: 0.5rem;
-  padding: 0.4rem 0.8rem;
+  padding: 0.5rem 1rem;
   border: 1px solid var(--border);
   border-radius: 6px;
   cursor: pointer;
-  background: #f9f9f9;
+  background: #fff;
   font-weight: 500;
 }
 
 .lang-btns button:hover {
-  background: #eee;
+  background: #f2f2f2;
 }
 
-/* Tool Grid (Homepage) */
+/* 🧰 Homepage Tool Grid */
 .tool-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -93,26 +140,7 @@ h1 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  font-size: 0.9rem;
-  color: #666;
-  background: #fff;
-  border-top: 1px solid #eee;
-}
-
-footer a {
-  color: var(--primary);
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* Tool Page Layout */
+/* ⚙️ Tool Box (Individual Tool Page) */
 .tool-box {
   max-width: 500px;
   margin: 2rem auto;
@@ -133,33 +161,33 @@ footer a:hover {
 .tool-box button {
   margin: 0.6rem;
   width: 90%;
-  padding: 0.6rem;
+  padding: 0.7rem;
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 1rem;
+  font-family: var(--font-main);
 }
 
-.tool-box input[type="file"] {
-  background: #fdfdfd;
-}
-
+/* 🖱️ Buttons */
 .tool-box button {
   background: var(--primary);
   color: #fff;
   border: none;
   cursor: pointer;
   font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .tool-box button:hover {
   background: var(--primary-dark);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
 
-button:active {
+.tool-box button:active {
   transform: scale(0.97);
 }
 
-/* AdSense Placeholder */
+/* 📣 AdSense Placeholder */
 .ad-placeholder {
   margin: 2rem auto;
   text-align: center;
@@ -167,10 +195,35 @@ button:active {
   font-size: 0.9rem;
 }
 
-/* Responsive Adjustments */
+/* 🧾 Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  background: #fff;
+  border-top: 1px solid #eee;
+}
+
+footer a {
+  color: var(--primary);
+  text-decoration: none;
+  margin: 0 0.3rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* 📱 Responsive Adjustments */
 @media (max-width: 600px) {
-  header {
-    padding: 1.5rem 1rem;
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+  .tool-header {
+    flex-direction: column;
   }
   .tool-grid {
     padding: 1rem;

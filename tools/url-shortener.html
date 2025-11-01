@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>URL Shortener & QR Generator | TaskHub</title>
+  <meta name="description" content="Shorten long links and generate QR codes instantly — free, simple, and secure.">
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+
+<body>
+  <!-- 🔝 Navigation -->
+  <header class="navbar">
+    <a href="../index.html" class="brand">⚙️ TaskHub</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- 🧱 Tool Header -->
+  <section class="tool-header">
+    <img src="../assets/link-icon.svg" alt="URL Tool Icon" class="tool-icon">
+    <div>
+      <h1>URL Shortener & QR Generator</h1>
+      <p class="subtitle">Shorten long links and create QR codes — fast, free, and secure.</p>
+    </div>
+  </section>
+
+  <!-- 🌐 Language Switch -->
+  <div class="lang-btns" style="text-align:center;">
+    <button onclick="setLang('en')">English</button>
+    <button onclick="setLang('fa')">فارسی</button>
+  </div>
+
+  <main id="content">
+    <!-- English Section -->
+    <section id="en">
+      <div class="tool-box">
+        <p>Enter your long URL:</p>
+        <input type="url" id="urlInput" placeholder="https://example.com/your-long-link">
+        <button id="shortenBtn">Shorten URL</button>
+        <div id="shortResult"></div>
+
+        <hr style="margin:2rem 0;">
+        <p>Generate a QR Code for your link:</p>
+        <button id="qrBtn">Generate QR Code</button>
+        <canvas id="qrCanvas" style="margin-top:1rem;"></canvas>
+      </div>
+    </section>
+
+    <!-- Persian Section -->
+    <section id="fa" dir="rtl" style="display:none;">
+      <div class="tool-box">
+        <p>لینک بلند خود را وارد کنید:</p>
+        <input type="url" placeholder="https://example.com/your-long-link">
+        <button>کوتاه کردن لینک</button>
+        <div>نتیجه در اینجا نمایش داده می‌شود.</div>
+
+        <hr style="margin:2rem 0;">
+        <p>تولید QR Code برای لینک:</p>
+        <button>ساخت QR Code</button>
+        <canvas style="margin-top:1rem;"></canvas>
+      </div>
+    </section>
+
+    <!-- AdSense placeholder -->
+    <div class="ad-placeholder">
+      <!-- <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-XXXX"
+          data-ad-slot="0000000000"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins> -->
+    </div>
+  </main>
+
+  <!-- 🧾 Footer -->
+  <footer>
+    <p>© 2025 TaskHub | Built for simplicity & trust.</p>
+    <p><a href="../privacy.html">Privacy Policy</a> · <a href="#">Terms</a> · <a href="#">Contact</a></p>
+  </footer>
+
+  <!-- ⚙️ Script -->
+  <script>
+    function setLang(lang) {
+      document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
+      document.getElementById('fa').style.display = (lang === 'fa') ? 'block' : 'none';
+    }
+
+    const shortenBtn = document.getElementById('shortenBtn');
+    const qrBtn = document.getElementById('qrBtn');
+    const shortResult = document.getElementById('shortResult');
+    const qrCanvas = document.getElementById('qrCanvas');
+
+    // Demo URL Shortener (mock)
+    shortenBtn.addEventListener('click', () => {
+      const urlInput = document.getElementById('urlInput').value.trim();
+      if (!urlInput) {
+        shortResult.innerHTML = "<p style='color:red'>⚠️ Please enter a valid URL.</p>";
+        return;
+      }
+
+      // Fake short link for demo (you can replace later with API)
+      const fakeShort = "https://taskhub.link/" + Math.random().toString(36).substring(7);
+      shortResult.innerHTML = `<p>✅ Short URL: <a href="${fakeShort}" target="_blank">${fakeShort}</a></p>`;
+    });
+
+    // QR Code Generator
+    qrBtn.addEventListener('click', () => {
+      const urlInput = document.getElementById('urlInput').value.trim();
+      if (!urlInput) {
+        alert("Please enter a URL to generate QR Code.");
+        return;
+      }
+      const qr = new QRious({
+        element: qrCanvas,
+        value: urlInput,
+        size: 180
+      });
+    });
+  </script>
+</body>
+</html>

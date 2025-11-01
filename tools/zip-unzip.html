@@ -4,48 +4,61 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZIP & Unzip Files | TaskHub</title>
-  <meta name="description" content="Compress and extract ZIP files directly in your browser with TaskHub — fast and secure.">
-  <link rel="stylesheet" href="../css/style.css">
+  <meta name="description" content="Compress and extract files online — simple, secure, and free. No software installation required.">
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
+
 <body>
-  <header>
-    <h1>📦 ZIP & Unzip Files</h1>
-    <p id="tagline">Compress or extract files easily — no installation required.</p>
-    <div class="lang-btns">
-      <button onclick="setLang('en')">English</button>
-      <button onclick="setLang('fa')">فارسی</button>
-    </div>
+  <!-- 🔝 Navigation -->
+  <header class="navbar">
+    <a href="../index.html" class="brand">⚙️ TaskHub</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="#">Contact</a>
+    </nav>
   </header>
+
+  <!-- 🧱 Tool Header -->
+  <section class="tool-header">
+    <img src="../assets/zip-icon.svg" alt="ZIP Tool Icon" class="tool-icon">
+    <div>
+      <h1>ZIP & Unzip Files</h1>
+      <p class="subtitle">Compress or extract files easily — fast, secure & free.</p>
+    </div>
+  </section>
+
+  <!-- 🌐 Language Switch -->
+  <div class="lang-btns" style="text-align:center;">
+    <button onclick="setLang('en')">English</button>
+    <button onclick="setLang('fa')">فارسی</button>
+  </div>
 
   <main id="content">
     <!-- English Section -->
     <section id="en">
       <div class="tool-box">
-        <p>Upload files to compress or select a ZIP file to extract:</p>
+        <p>Upload files to compress, or select a ZIP file to extract:</p>
         <input type="file" id="zipInput" multiple>
-        <div>
-          <button id="compressBtn">Compress (ZIP)</button>
-          <button id="extractBtn">Extract (Unzip)</button>
-        </div>
-        <div id="result"></div>
+        <button id="compressBtn">Compress (ZIP)</button>
+        <button id="extractBtn">Extract (Unzip)</button>
+        <div id="zipResult"></div>
       </div>
     </section>
 
     <!-- Persian Section -->
     <section id="fa" dir="rtl" style="display:none;">
       <div class="tool-box">
-        <p>فایل‌ها را برای فشرده‌سازی انتخاب کنید یا فایل ZIP را برای استخراج بارگذاری کنید:</p>
+        <p>فایل‌ها را برای فشرده‌سازی یا استخراج انتخاب کنید:</p>
         <input type="file" multiple>
-        <div>
-          <button>فشرده‌سازی (ZIP)</button>
-          <button>استخراج (Unzip)</button>
-        </div>
-        <div id="result-fa"></div>
+        <button>فشرده‌سازی (ZIP)</button>
+        <button>استخراج (Unzip)</button>
+        <div id="zipResult-fa"></div>
       </div>
     </section>
 
+    <!-- AdSense placeholder -->
     <div class="ad-placeholder">
-      <!-- AdSense placeholder -->
       <!-- <ins class="adsbygoogle"
           style="display:block"
           data-ad-client="ca-pub-XXXX"
@@ -55,38 +68,35 @@
     </div>
   </main>
 
+  <!-- 🧾 Footer -->
   <footer>
-    <p><a href="../index.html">⬅ Back to TaskHub</a> | <a href="../privacy.html">Privacy Policy</a></p>
+    <p>© 2025 TaskHub | Built for simplicity & trust.</p>
+    <p><a href="../privacy.html">Privacy Policy</a> · <a href="#">Terms</a> · <a href="#">Contact</a></p>
   </footer>
 
+  <!-- ⚙️ Script -->
   <script>
-    function setLang(lang){
-      document.getElementById('en').style.display = (lang==='en')?'block':'none';
-      document.getElementById('fa').style.display = (lang==='fa')?'block':'none';
+    function setLang(lang) {
+      document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
+      document.getElementById('fa').style.display = (lang === 'fa') ? 'block' : 'none';
     }
 
     const compressBtn = document.getElementById('compressBtn');
     const extractBtn = document.getElementById('extractBtn');
-    const result = document.getElementById('result');
+    const zipResult = document.getElementById('zipResult');
 
-    compressBtn.addEventListener('click', ()=>{
-      const input = document.getElementById('zipInput');
-      if(!input.files.length){
-        result.innerHTML = "<p style='color:red'>Please select one or more files.</p>";
-        return;
-      }
-      result.innerHTML = "<p>⏳ Compressing files...</p>";
-      setTimeout(()=>{ result.innerHTML = "<p>✅ Files compressed successfully! (Demo only)</p>"; }, 1500);
+    compressBtn.addEventListener('click', () => {
+      zipResult.innerHTML = "<p>⏳ Compressing your files...</p>";
+      setTimeout(() => {
+        zipResult.innerHTML = "<p>✅ Files compressed successfully! (Demo only)</p>";
+      }, 1500);
     });
 
-    extractBtn.addEventListener('click', ()=>{
-      const input = document.getElementById('zipInput');
-      if(!input.files.length){
-        result.innerHTML = "<p style='color:red'>Please select a ZIP file to extract.</p>";
-        return;
-      }
-      result.innerHTML = "<p>⏳ Extracting files...</p>";
-      setTimeout(()=>{ result.innerHTML = "<p>✅ Files extracted successfully! (Demo only)</p>"; }, 1500);
+    extractBtn.addEventListener('click', () => {
+      zipResult.innerHTML = "<p>⏳ Extracting files...</p>";
+      setTimeout(() => {
+        zipResult.innerHTML = "<p>✅ Files extracted successfully! (Demo only)</p>";
+      }, 1500);
     });
   </script>
 </body>

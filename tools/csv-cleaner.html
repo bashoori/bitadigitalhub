@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSV & Excel Cleaner | TaskHub</title>
+  <meta name="description" content="Clean, merge, and deduplicate CSV or Excel files instantly — simple, secure, and free.">
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+  <!-- 🔝 Navigation -->
+  <header class="navbar">
+    <a href="../index.html" class="brand">⚙️ TaskHub</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- 🧾 Tool Header -->
+  <section class="tool-header">
+    <img src="../assets/csv-icon.svg" alt="CSV Tool Icon" class="tool-icon">
+    <div>
+      <h1>CSV & Excel Cleaner</h1>
+      <p class="subtitle">Upload, merge, clean, and deduplicate your data — all in your browser.</p>
+    </div>
+  </section>
+
+  <!-- 🌐 Language Switch -->
+  <div class="lang-btns" style="text-align:center;">
+    <button onclick="setLang('en')">English</button>
+    <button onclick="setLang('fa')">فارسی</button>
+  </div>
+
+  <main id="content">
+    <!-- English Section -->
+    <section id="en">
+      <div class="tool-box">
+        <p>Upload one or more CSV/Excel files to clean or merge:</p>
+        <input type="file" id="csvInput" accept=".csv, .xls, .xlsx" multiple>
+        <button id="cleanBtn">Clean Data</button>
+        <button id="mergeBtn">Merge Files</button>
+        <div id="csvResult"></div>
+      </div>
+    </section>
+
+    <!-- Persian Section -->
+    <section id="fa" dir="rtl" style="display:none;">
+      <div class="tool-box">
+        <p>فایل‌های CSV یا Excel خود را برای پاک‌سازی یا ترکیب انتخاب کنید:</p>
+        <input type="file" accept=".csv, .xls, .xlsx" multiple>
+        <button>پاک‌سازی داده‌ها</button>
+        <button>ترکیب فایل‌ها</button>
+        <div id="csvResult-fa"></div>
+      </div>
+    </section>
+
+    <!-- AdSense placeholder -->
+    <div class="ad-placeholder">
+      <!-- <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-XXXX"
+          data-ad-slot="0000000000"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins> -->
+    </div>
+  </main>
+
+  <!-- 🧾 Footer -->
+  <footer>
+    <p>© 2025 TaskHub | Built for simplicity & trust.</p>
+    <p><a href="../privacy.html">Privacy Policy</a> · <a href="#">Terms</a> · <a href="#">Contact</a></p>
+  </footer>
+
+  <!-- ⚙️ Script -->
+  <script>
+    function setLang(lang) {
+      document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
+      document.getElementById('fa').style.display = (lang === 'fa') ? 'block' : 'none';
+    }
+
+    const cleanBtn = document.getElementById('cleanBtn');
+    const mergeBtn = document.getElementById('mergeBtn');
+    const csvResult = document.getElementById('csvResult');
+
+    cleanBtn.addEventListener('click', () => {
+      csvResult.innerHTML = "<p>🧹 Cleaning your data...</p>";
+      setTimeout(() => {
+        csvResult.innerHTML = "<p>✅ Data cleaned successfully (demo only).</p>";
+      }, 1500);
+    });
+
+    mergeBtn.addEventListener('click', () => {
+      csvResult.innerHTML = "<p>📂 Merging files...</p>";
+      setTimeout(() => {
+        csvResult.innerHTML = "<p>✅ Files merged successfully (demo only).</p>";
+      }, 1500);
+    });
+  </script>
+</body>
+</html>
+
