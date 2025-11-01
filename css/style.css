@@ -293,3 +293,107 @@ footer a:hover {
     padding: 1.5rem;
   }
 }
+/* -----------------------------
+   🧩 Subpage Styling (Tool Pages)
+   ----------------------------- */
+
+/* Header Section on Tool Pages */
+.tool-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  padding: 4rem 1rem 2rem;
+  background: linear-gradient(180deg, #f8fbff 0%, #f0f2f5 100%);
+  border-bottom: 1px solid #eaeaea;
+}
+
+.tool-header h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #111;
+  margin: 0.3rem 0;
+}
+
+.tool-header p {
+  font-size: 1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Icon in Tool Header */
+.tool-header img,
+.tool-header .tool-icon {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 0.3rem;
+}
+
+/* Main Tool Box (Form Container) */
+.tool-box {
+  max-width: 520px;
+  margin: 3rem auto;
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.tool-box input[type="file"] {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+/* Buttons */
+.tool-box button {
+  display: block;
+  width: 100%;
+  margin: 0.8rem auto;
+  padding: 0.9rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+.tool-box button:hover {
+  background: var(--primary-dark);
+  box-shadow: 0 3px 10px rgba(0, 120, 215, 0.15);
+}
+
+/* Footer (Subpages) */
+footer {
+  margin-top: 3rem;
+  border-top: 1px solid #eee;
+  background: #fff;
+  text-align: center;
+  color: #555;
+  font-size: 0.9rem;
+  padding: 2rem 1rem;
+}
+
+footer p {
+  margin: 0.3rem 0;
+}
+
+footer a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
