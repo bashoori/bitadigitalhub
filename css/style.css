@@ -1,7 +1,182 @@
-body{font-family:system-ui,sans-serif;margin:0;background:#fafafa;color:#222}
-header{text-align:center;padding:2rem 1rem;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.05)}
-.lang-btns button{margin:.5rem;padding:.4rem .8rem;border:1px solid #ccc;border-radius:6px;cursor:pointer;background:#f9f9f9}
-.tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;padding:2rem;max-width:900px;margin:auto}
-.tool-card{display:block;background:#fff;border-radius:10px;padding:1.2rem;text-align:center;text-decoration:none;color:#222;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:.2s}
-.tool-card:hover{transform:translateY(-4px);box-shadow:0 4px 12px rgba(0,0,0,.15)}
-footer{text-align:center;padding:1.5rem;font-size:.9rem;color:#666}
+/* -----------------------------
+   🎨 TaskHub Global Stylesheet
+   ----------------------------- */
+
+/* Color & Font Variables */
+:root {
+  --primary: #0078d7;
+  --primary-dark: #005fa3;
+  --background: #fafafa;
+  --text: #222;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --border: #ccc;
+  --radius: 10px;
+  --font-main: system-ui, sans-serif;
+  --font-fa: "Vazirmatn", "IRANSans", sans-serif;
+}
+
+/* Global Reset & Base */
+* {
+  box-sizing: border-box;
+  transition: all 0.25s ease-in-out;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background: var(--background);
+  color: var(--text);
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* RTL (Persian) text support */
+[dir="rtl"] {
+  font-family: var(--font-fa);
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+  margin: 0;
+  font-weight: 700;
+}
+
+.lang-btns button {
+  margin: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  background: #f9f9f9;
+  font-weight: 500;
+}
+
+.lang-btns button:hover {
+  background: #eee;
+}
+
+/* Tool Grid (Homepage) */
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.tool-card {
+  display: block;
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: 0.2s;
+}
+
+.tool-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  color: #666;
+  background: #fff;
+  border-top: 1px solid #eee;
+}
+
+footer a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Tool Page Layout */
+.tool-box {
+  max-width: 500px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.tool-box p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.tool-box input,
+.tool-box select,
+.tool-box button {
+  margin: 0.6rem;
+  width: 90%;
+  padding: 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.tool-box input[type="file"] {
+  background: #fdfdfd;
+}
+
+.tool-box button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tool-box button:hover {
+  background: var(--primary-dark);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* AdSense Placeholder */
+.ad-placeholder {
+  margin: 2rem auto;
+  text-align: center;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  header {
+    padding: 1.5rem 1rem;
+  }
+  .tool-grid {
+    padding: 1rem;
+  }
+  .tool-box {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}
