@@ -3,33 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>URL Shortener & QR Generator | TaskHub</title>
+  <title>URL Shortener & QR Generator | Bita Digital Hub</title>
   <meta name="description" content="Shorten long links and generate QR codes instantly — free, simple, and secure.">
+  <meta name="keywords" content="url shortener, qr generator, link shortener, free tools, Bita Digital Hub">
   <link rel="stylesheet" href="../css/style.css" />
-  <link rel="icon" type="image/png" href="../assets/taskhub-logo.svg" />
+  <link rel="icon" type="image/png" href="../assets/taskhub-logo.png" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
 
-  <!-- Google AdSense -->
+  <!-- 📈 Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHKWTPXDHC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YHKWTPXDHC');
+  </script>
+
+  <!-- 💰 Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
      crossorigin="anonymous"></script>
 
-     <!-- Google Analytics -->
-  <script src="/analytics.html"></script>
+  <!-- 🧭 Open Graph -->
+  <meta property="og:title" content="URL Shortener & QR Generator | Bita Digital Hub">
+  <meta property="og:description" content="Shorten long links and create QR codes — fast, free, and secure.">
+  <meta property="og:image" content="https://bitadigitalhub.com/assets/taskhub-logo.png">
+  <meta property="og:url" content="https://bitadigitalhub.com/tools/url-shortener.html">
+  <meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body>
   <!-- 🔝 Navigation -->
   <header class="navbar">
     <div class="nav-left">
-      <img src="../assets/taskhub-logo.svg" alt="TaskHub Logo" class="nav-logo" width="32" height="32" />
+      <img src="../assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="nav-logo" width="32" height="32" />
       <a href="../index.html" class="brand">TaskHub</a>
     </div>
     <nav>
       <a href="../index.html">Home</a>
-      <a href="./about.html">About </a>
+      <a href="../about.html">About</a>
       <a href="../privacy.html">Privacy</a>
-      <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a> 
-     
+      <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a>
     </nav>
   </header>
 
@@ -38,7 +51,7 @@
     <img src="../assets/link-icon.svg" alt="URL Tool Icon" class="tool-icon">
     <div>
       <h1>URL Shortener & QR Generator</h1>
-      <p class="subtitle">Shorten long links and create QR codes — fast, free, and secure.</p>
+      <p class="subtitle">Shorten long links and create QR codes — fast, secure & free.</p>
     </div>
   </section>
 
@@ -79,21 +92,28 @@
       </div>
     </section>
 
-    <!-- AdSense placeholder -->
+    <!-- 📢 AdSense Placeholder -->
     <div class="ad-placeholder">
-      <!-- <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-client="ca-pub-XXXX"
-          data-ad-slot="0000000000"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins> -->
+      <ins class="adsbygoogle"
+           style="display:block; text-align:center; margin:1.5rem auto;"
+           data-ad-client="ca-pub-3215014361489762"
+           data-ad-slot="6666666666"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
     </div>
   </main>
 
-  <!-- 🧾 Footer -->
+  <!-- 🧭 Footer -->
   <footer>
-    <p>© 2025 TaskHub | Built for simplicity & trust.</p>
-    <p><a href="../privacy.html">Privacy Policy</a> </p>
+    <p>
+      © 2025 <strong>Bita Digital Hub</strong> | Built for simplicity & trust.<br>
+      <a href="../privacy.html">Privacy Policy</a> · 
+      <a href="../about.html">About</a> · 
+      <a href="mailto:contact@bitadigitalhub.com">Contact</a>
+    </p>
   </footer>
 
   <!-- ⚙️ Script -->
@@ -101,6 +121,7 @@
     function setLang(lang) {
       document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
       document.getElementById('fa').style.display = (lang === 'fa') ? 'block' : 'none';
+      document.body.dir = (lang === 'fa') ? 'rtl' : 'ltr';
     }
 
     const shortenBtn = document.getElementById('shortenBtn');
@@ -108,7 +129,7 @@
     const shortResult = document.getElementById('shortResult');
     const qrCanvas = document.getElementById('qrCanvas');
 
-    // Demo URL Shortener (mock)
+    // Mock URL Shortener
     shortenBtn.addEventListener('click', () => {
       const urlInput = document.getElementById('urlInput').value.trim();
       if (!urlInput) {
@@ -116,8 +137,7 @@
         return;
       }
 
-      // Fake short link for demo (you can replace later with API)
-      const fakeShort = "https://taskhub.link/" + Math.random().toString(36).substring(7);
+      const fakeShort = "https://bitadigital.link/" + Math.random().toString(36).substring(7);
       shortResult.innerHTML = `<p>✅ Short URL: <a href="${fakeShort}" target="_blank">${fakeShort}</a></p>`;
     });
 
@@ -128,7 +148,7 @@
         alert("Please enter a URL to generate QR Code.");
         return;
       }
-      const qr = new QRious({
+      new QRious({
         element: qrCanvas,
         value: urlInput,
         size: 180

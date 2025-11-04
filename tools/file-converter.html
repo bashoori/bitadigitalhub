@@ -3,33 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>File Converter | TaskHub</title>
-  <meta name="description" content="Convert PDF, Word, Excel, and image files instantly with TaskHub’s free online file converter.">
+  <title>File Converter | Bita Digital Hub</title>
+  <meta name="description" content="Convert PDF, Word, Excel, and image files instantly — fast, secure, and free with Bita Digital Hub.">
+  <meta name="keywords" content="file converter, pdf to word, excel to pdf, online converter, free file tools, Bita Digital Hub">
   <link rel="stylesheet" href="../css/style.css" />
-  <link rel="icon" type="image/png" href="../assets/taskhub-logo.svg" />
+  <link rel="icon" type="image/png" href="../assets/taskhub-logo.png" />
 
-  <!-- Google AdSense -->
+  <!-- 📈 Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHKWTPXDHC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YHKWTPXDHC');
+  </script>
+
+  <!-- 💰 Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
      crossorigin="anonymous"></script>
 
-    <!-- Google Analytics -->
-  <script src="/analytics.html"></script>
-
+  <!-- 🧭 Open Graph -->
+  <meta property="og:title" content="File Converter | Bita Digital Hub">
+  <meta property="og:description" content="Convert PDF, Word, Excel, and image files online — fast, secure, and free.">
+  <meta property="og:image" content="https://bitadigitalhub.com/assets/taskhub-logo.png">
+  <meta property="og:url" content="https://bitadigitalhub.com/tools/file-converter.html">
+  <meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body>
   <!-- 🔝 Navigation -->
   <header class="navbar">
     <div class="nav-left">
-      <img src="../assets/taskhub-logo.svg" alt="TaskHub Logo" class="nav-logo" width="32" height="32" />
+      <img src="../assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="nav-logo" width="32" height="32" />
       <a href="../index.html" class="brand">TaskHub</a>
     </div>
     <nav>
       <a href="../index.html">Home</a>
-       <a href="../about.html">About</a>
+      <a href="../about.html">About</a>
       <a href="../privacy.html">Privacy</a>
-      <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a> 
-      
+      <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a>
     </nav>
   </header>
 
@@ -38,7 +50,7 @@
     <img src="../assets/file-icon.svg" alt="File Converter Icon" class="tool-icon">
     <div>
       <h1>File Converter</h1>
-      <p class="subtitle">Convert PDF ⇄ Word / Excel / JPG / PNG / TXT formats — fast, secure & free.</p>
+      <p class="subtitle">Convert PDF ⇄ Word / Excel / JPG / PNG / TXT formats — fast, secure, & free.</p>
     </div>
   </section>
 
@@ -87,25 +99,27 @@
       </div>
     </section>
 
-    <!-- AdSense placeholder -->
+    <!-- 📢 AdSense Placeholder -->
     <div class="ad-placeholder">
-      <!-- <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-client="ca-pub-XXXX"
-          data-ad-slot="0000000000"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins> -->
+      <ins class="adsbygoogle"
+           style="display:block; text-align:center; margin:1.5rem auto;"
+           data-ad-client="ca-pub-3215014361489762"
+           data-ad-slot="4444444444"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
     </div>
-
-    <!-- Include Google AdSense -->
-  <script src="/adsense.html"></script>
-
   </main>
 
-  <!-- 🧾 Footer -->
+  <!-- 🧭 Footer -->
   <footer>
-    <p>© 2025 TaskHub | Built for simplicity & trust.</p>
-    <p><a href="../privacy.html">Privacy Policy</a> · <a href="#">Terms</a></p>
+    <p>
+      © 2025 <strong>Bita Digital Hub</strong> | Built for simplicity & trust.<br>
+      <a href="../privacy.html">Privacy Policy</a> · <a href="../about.html">About</a> · 
+      <a href="mailto:contact@bitadigitalhub.com">Contact</a>
+    </p>
   </footer>
 
   <!-- ⚙️ Script -->
@@ -113,6 +127,7 @@
     function setLang(lang) {
       document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
       document.getElementById('fa').style.display = (lang === 'fa') ? 'block' : 'none';
+      document.body.dir = (lang === 'fa') ? 'rtl' : 'ltr';
     }
 
     const convertBtn = document.getElementById('convertBtn');
