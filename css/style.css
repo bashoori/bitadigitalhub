@@ -1,399 +1,65 @@
-/* -----------------------------
-   ⚙️ TaskHub - Professional CSS
-   Clean | Responsive | Trustworthy
-   ----------------------------- */
+/* ======================================
+   ✨ UPDATED TOOL CARD DESIGN (FINAL)
+   Light, Clean, and Balanced for 3-Column Grid
+   ====================================== */
 
-/* 🎨 Color & Font Variables */
-:root {
-  --primary: #0078d7;
-  --primary-dark: #005fa3;
-  --background: linear-gradient(180deg, #f9f9f9 0%, #f0f2f5 100%);
-  --text: #222;
-  --shadow: rgba(0, 0, 0, 0.08);
-  --border: #ccc;
-  --radius: 10px;
-  --font-main: system-ui, sans-serif;
-  --font-fa: "Vazirmatn", "IRANSans", sans-serif;
-}
-
-/* 🔄 Reset & Global */
-* {
-  box-sizing: border-box;
-  transition: all 0.25s ease-in-out;
-}
-
-body {
-  margin: 0;
-  font-family: var(--font-main);
-  background: var(--background);
-  color: var(--text);
-  animation: fadeIn 0.6s ease-in;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* 🇴🇷 RTL (Farsi) Text Support */
-[dir="rtl"] {
-  font-family: var(--font-fa);
-}
-
-/* 🔝 Navigation Bar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  position: sticky;
-  top: 0;
-  z-index: 999;
-}
-
-.navbar .nav-left {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.nav-logo {
-  width: 34px;
-  height: 34px;
-}
-
-.brand {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--primary);
-  text-decoration: none;
-}
-
-.navbar nav a {
-  margin-left: 1.2rem;
-  color: #444;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.navbar nav a:hover,
-.navbar nav a.active {
-  color: var(--primary);
-}
-
-/* 🌅 Hero Section */
-.hero {
-  text-align: center;
-  padding: 5rem 1rem 4rem;
-  background: linear-gradient(180deg, #f8fbff 0%, #f0f2f5 100%);
-  box-shadow: inset 0 -1px 0 #e8eaed;
-}
-
-.hero h1 {
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: #111;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  color: #444;
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0.5rem auto 1.5rem;
-  line-height: 1.6;
-}
-
-/* ✨ Typing Tagline */
-.typing-tagline {
-  font-size: 1.2rem;
-  color: var(--primary);
-  font-weight: 600;
-  min-height: 1.5em;
-  margin-bottom: 1.5rem;
-}
-
-.cursor {
-  display: inline-block;
-  width: 2px;
-  height: 1.2em;
-  background: var(--primary);
-  animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
-}
-
-/* 🌐 Language Buttons */
-.lang-btns button {
-  margin: 0.5rem;
-  padding: 0.6rem 1.2rem;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  cursor: pointer;
-  background: #fff;
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-
-.lang-btns button:hover {
-  background: #f2f2f2;
-}
-
-/* 🧰 Section Titles */
-.section-title {
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 2rem 0 1rem;
-}
-
-/* 🧩 Tool Grid */
 .tool-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem;
-  max-width: 950px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.8rem;
+  padding: 2.5rem;
+  max-width: 1100px;
   margin: auto;
 }
 
 .tool-card {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  gap: 0.6rem;
-  font-weight: 600;
-  background: #fff;
-  border-radius: 14px;
-  padding: 1.3rem 1rem;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
-  transition: all 0.25s ease;
+  background: #f3f4f6; /* light gray */
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1.8rem 1.5rem;
   text-decoration: none;
-  color: var(--text);
+  color: #1f2937; /* dark gray text */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+  height: 180px; /* consistent height for 3-card rows */
+  text-align: left;
 }
 
 .tool-card:hover {
+  background: #f9fafb;
   transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0, 120, 215, 0.15);
+  box-shadow: 0 6px 18px rgba(0, 120, 215, 0.12);
 }
 
-/* ⚙️ Tool Box (Individual Tool Page) */
-.tool-box {
-  max-width: 500px;
-  margin: 2rem auto;
-  background: #fff;
-  padding: 2rem;
-  border-radius: var(--radius);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  text-align: center;
+.tool-card strong {
+  font-size: 1.15rem;
+  color: #111827;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
 }
 
-.tool-box p {
-  margin-bottom: 1rem;
-  font-size: 1rem;
+.tool-card p {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
-.tool-box input,
-.tool-box select,
-.tool-box button {
-  margin: 0.6rem;
-  width: 90%;
-  padding: 0.7rem;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  font-size: 1rem;
-  font-family: var(--font-main);
-}
-
-/* 🖱️ Buttons */
-.tool-box button {
-  background: var(--primary);
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.tool-box button:hover {
-  background: var(--primary-dark);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-}
-
-.tool-box button:active {
-  transform: scale(0.97);
-}
-
-/* 📣 AdSense Placeholder */
-.ad-placeholder {
-  margin: 2rem auto;
-  text-align: center;
-  color: #999;
-  font-size: 0.9rem;
-}
-
-/* 🧾 Footer */
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-  color: #666;
-  background: #fff;
-  border-top: 1px solid #eee;
-}
-
-footer a {
-  color: var(--primary);
-  text-decoration: none;
-  margin: 0 0.3rem;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* 💙 Credit Badge */
-.credit {
-  position: fixed;
-  bottom: 10px;
-  left: 15px;
-  font-size: 0.8rem;
-  color: #777;
-  background: #fff;
-  padding: 6px 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  opacity: 0.8;
-}
-.credit:hover { opacity: 1; }
-
-/* 📱 Responsive Adjustments */
-@media (max-width: 600px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
+/* Responsive Adjustments */
+@media (max-width: 700px) {
+  .tool-card {
+    height: auto;
+    text-align: center;
+    padding: 1.5rem 1.2rem;
   }
-  .hero {
-    padding: 3rem 1rem;
+
+  .tool-card strong {
+    font-size: 1rem;
   }
-  .hero h1 {
-    font-size: 1.7rem;
-  }
-  .tool-grid {
-    padding: 1rem;
-  }
-  .tool-box {
-    width: 90%;
-    padding: 1.5rem;
+
+  .tool-card p {
+    font-size: 0.9rem;
   }
 }
-/* -----------------------------
-   🧩 Subpage Styling (Tool Pages)
-   ----------------------------- */
-
-/* Header Section on Tool Pages */
-.tool-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0.5rem;
-  padding: 4rem 1rem 2rem;
-  background: linear-gradient(180deg, #f8fbff 0%, #f0f2f5 100%);
-  border-bottom: 1px solid #eaeaea;
-}
-
-.tool-header h1 {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #111;
-  margin: 0.3rem 0;
-}
-
-.tool-header p {
-  font-size: 1rem;
-  color: #555;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-/* Icon in Tool Header */
-.tool-header img,
-.tool-header .tool-icon {
-  width: 42px;
-  height: 42px;
-  margin-bottom: 0.3rem;
-}
-
-/* Main Tool Box (Form Container) */
-.tool-box {
-  max-width: 520px;
-  margin: 3rem auto;
-  background: #fff;
-  padding: 2rem 2.5rem;
-  border-radius: 14px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-  text-align: center;
-}
-
-.tool-box input[type="file"] {
-  width: 100%;
-  padding: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background: #fafafa;
-}
-
-/* Buttons */
-.tool-box button {
-  display: block;
-  width: 100%;
-  margin: 0.8rem auto;
-  padding: 0.9rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  background: var(--primary);
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.25s ease-in-out;
-}
-
-.tool-box button:hover {
-  background: var(--primary-dark);
-  box-shadow: 0 3px 10px rgba(0, 120, 215, 0.15);
-}
-
-/* Footer (Subpages) */
-footer {
-  margin-top: 3rem;
-  border-top: 1px solid #eee;
-  background: #fff;
-  text-align: center;
-  color: #555;
-  font-size: 0.9rem;
-  padding: 2rem 1rem;
-}
-
-footer p {
-  margin: 0.3rem 0;
-}
-
-footer a {
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
