@@ -43,6 +43,12 @@
       <section class="tool-header">
         <h1 id="title">QR Code Generator 🔳</h1>
         <p id="desc">Generate QR codes for any text, link, or contact info instantly.</p>
+
+        <!-- 🌐 Language Toggle -->
+        <div class="lang-btns">
+          <button id="btnEnglish" class="active">English</button>
+          <button id="btnFarsi">فارسی</button>
+        </div>
       </section>
 
       <div class="tool-box">
@@ -53,7 +59,7 @@
 
         <div id="qrResult" class="output-box" style="text-align:center; display:none;">
           <canvas id="qrCanvas"></canvas>
-          <a id="downloadBtn" href="#" download="bita-qr.png">⬇️ Download QR</a>
+          <a id="downloadBtn" href="#" download="bita-qr.png" style="display:block; margin-top:1rem; color:#2563eb;">⬇️ Download QR</a>
         </div>
       </div>
 
@@ -66,12 +72,6 @@
           data-ad-format="auto"
           data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      </div>
-
-      <!-- 🌍 Language Toggle -->
-      <div class="lang-btns">
-        <button id="btnEnglish" class="active">🌐 English</button>
-        <button id="btnFarsi">🌐 فارسی</button>
       </div>
     </main>
 
@@ -131,7 +131,7 @@
         button: "Generate QR Code"
       },
       fa: {
-        title: "تولیدکننده QR 🔳",
+        title: "تولیدکننده کد QR 🔳",
         desc: "کد QR برای هر متن یا لینک را فوراً بسازید.",
         label: "متن یا لینک را وارد کنید:",
         placeholder: "https://example.com",
