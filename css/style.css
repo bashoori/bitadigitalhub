@@ -1,7 +1,7 @@
-/* ===============================
-🌐 Bita Digital Hub - Global Style
-Unified theme for all AI tools
-=============================== */
+/* =========================================================
+🌐 Bita Digital Hub - Global Unified Theme
+AdSense-ready responsive design for all tools
+========================================================= */
 
 :root {
   --primary-blue: #6366f1;
@@ -14,24 +14,51 @@ Unified theme for all AI tools
   --white: #ffffff;
 }
 
-/* ========== Base ========== */
+/* ================= Base ================= */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   color: var(--text-dark);
-  background: var(--bg-light);
+  background: linear-gradient(135deg, #f9fafb 0%, #eef2ff 100%);
+  background-attachment: fixed;
   line-height: 1.6;
 }
+
+/* ================= Layout Grid ================= */
+.page-wrapper {
+  display: grid;
+  grid-template-columns: 160px 1fr 160px;
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+  .page-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .ad-left, .ad-right {
+    display: none;
+  }
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* ========== Navbar ========== */
+/* ================= Navbar ================= */
 header.navbar {
   display: flex;
   justify-content: space-between;
@@ -42,7 +69,9 @@ header.navbar {
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
 }
+
 header .nav-left {
   display: flex;
   align-items: center;
@@ -56,7 +85,7 @@ header .brand {
 header nav a {
   margin-left: 1.2rem;
   font-weight: 500;
-  color: #374151;
+  color: var(--text-mid);
   transition: color 0.2s ease;
 }
 header nav a:hover {
@@ -67,17 +96,11 @@ header nav a.active {
   font-weight: 600;
 }
 
-/* ========== Tool Header ========== */
+/* ================= Hero / Section Headers ================= */
 .tool-header {
   text-align: center;
   margin-top: 4rem;
   margin-bottom: 2rem;
-}
-.tool-header img,
-.tool-header svg {
-  width: 56px;
-  height: 56px;
-  margin-bottom: 1rem;
 }
 .tool-header h1 {
   font-size: 1.9rem;
@@ -91,7 +114,7 @@ header nav a.active {
   margin: 0.5rem auto 1.5rem;
 }
 
-/* ========== Tool Box (Main Card) ========== */
+/* ================= Tool Box (Main Card) ================= */
 .tool-box {
   background: var(--white);
   border-radius: 14px;
@@ -100,7 +123,6 @@ header nav a.active {
   margin: 2.5rem auto;
   padding: 2rem 2.5rem;
   text-align: center;
-  position: relative;
 }
 .tool-box label {
   display: block;
@@ -109,9 +131,7 @@ header nav a.active {
   color: var(--text-dark);
   margin-top: 1rem;
 }
-.tool-box input[type="file"],
-.tool-box input[type="text"],
-.tool-box input[type="number"],
+.tool-box input,
 .tool-box select,
 .tool-box textarea {
   width: 100%;
@@ -126,7 +146,7 @@ header nav a.active {
   resize: vertical;
 }
 
-/* ========== Buttons ========== */
+/* ================= Buttons ================= */
 button,
 .tool-box button {
   border: none;
@@ -148,10 +168,10 @@ button:hover,
   box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
 }
 
-/* ========== Language Buttons ========== */
+/* ================= Language Buttons ================= */
 .lang-btns {
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 .lang-btns button {
   background: var(--white);
@@ -168,73 +188,7 @@ button:hover,
   background: #f1f5f9;
 }
 
-/* ========== Output Box ========== */
-.output-box {
-  background: var(--bg-light);
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  padding: 1rem;
-  margin-top: 1.5rem;
-  text-align: left;
-  font-size: 0.95rem;
-  white-space: pre-line;
-}
-
-/* ========== Ads ========== */
-.ad-placeholder {
-  text-align: center;
-  margin: 2rem auto;
-}
-
-/* ========== Footer ========== */
-footer {
-  background: var(--white);
-  border-top: 1px solid var(--border);
-  text-align: center;
-  color: var(--text-mid);
-  font-size: 0.9rem;
-  padding: 2rem 1rem;
-  margin-top: 3rem;
-}
-footer a {
-  color: #2563eb;
-  text-decoration: none;
-}
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* ========== Utility ========== */
-.subtitle {
-  color: var(--text-mid);
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-}
-.text-center {
-  text-align: center;
-}
-
-/* ========== Responsive ========== */
-@media (max-width: 640px) {
-  header.navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.6rem;
-  }
-  header nav a {
-    margin-left: 0.6rem;
-    font-size: 0.95rem;
-  }
-  .tool-box {
-    padding: 1.5rem;
-    margin: 1.8rem 1rem;
-  }
-  .tool-header h1 {
-    font-size: 1.6rem;
-  }
-}
-
-/* ===== TOOL GRID (Home page cards) ===== */
+/* ================= Tool Grid (Home Cards) ================= */
 .tool-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -243,10 +197,8 @@ footer a:hover {
   margin-bottom: 3rem;
   padding: 0 1rem;
 }
-
 .tool-card {
-  background: #fff;
-  border: 1px solid #e5e7eb;
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 1rem;
   padding: 1.5rem;
   text-align: left;
@@ -254,19 +206,20 @@ footer a:hover {
   transition: all 0.25s ease;
   text-decoration: none;
   color: #111827;
+  backdrop-filter: blur(6px);
 }
 .tool-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
   border-color: #cbd5e1;
 }
-.tool-title {
+.tool-card h3 {
   font-weight: 700;
   font-size: 1.1rem;
   color: #111827;
   margin-bottom: 0.5rem;
 }
-.tool-desc {
+.tool-card p {
   font-size: 0.95rem;
   color: #4b5563;
   line-height: 1.4;
@@ -279,34 +232,50 @@ footer a:hover {
   color: #111827;
 }
 
-/* ===== URL Shortener Layout Fix ===== */
-.tool-box input#urlInput {
-  display: block;
-  width: 100%;
-  max-width: 420px;
-  margin: 0 auto;
-}
-.tool-box #shortenBtn {
-  display: block;
-  width: 100%;
-  max-width: 220px;
-  margin: 1rem auto 0;
-}
-#shortResult {
-  margin-top: 1rem;
+/* ================= AdSense Zones ================= */
+.ad-left,
+.ad-right,
+.ad-mid {
+  background: rgba(241, 245, 249, 0.3);
+  border: 1px dashed #cbd5e1;
+  border-radius: 6px;
   text-align: center;
-  font-size: 0.95rem;
-  color: #111827;
-}
-#shortResult a {
-  color: var(--primary-blue);
-  text-decoration: underline;
-}
-#shortResult a:hover {
-  color: var(--primary-cyan);
+  padding: 0.5rem;
 }
 
-/* ===== Contact Section (Enhanced) ===== */
+.ad-left,
+.ad-right {
+  position: sticky;
+  top: 80px;
+  height: fit-content;
+}
+
+.ad-mid {
+  text-align: center;
+  margin: 2rem auto;
+  min-height: 100px;
+}
+
+/* Sticky bottom ad */
+.ad-sticky {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  border-top: 1px solid #e2e8f0;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  z-index: 999;
+  padding: 0.3rem 0;
+}
+@media (max-width: 768px) {
+  .ad-sticky {
+    padding: 0.1rem 0;
+  }
+}
+
+/* ================= Contact Section ================= */
 .contact-section {
   margin-top: 3.5rem;
   background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
@@ -376,4 +345,36 @@ footer a:hover {
 .contact-section button:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+}
+
+/* ================= Footer ================= */
+footer {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--text-mid);
+  font-size: 0.9rem;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 640px) {
+  header.navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+  header nav a {
+    margin-left: 0.6rem;
+    font-size: 0.95rem;
+  }
+  .tool-box {
+    padding: 1.5rem;
+    margin: 1.8rem 1rem;
+  }
+  .tool-header h1 {
+    font-size: 1.6rem;
+  }
 }
