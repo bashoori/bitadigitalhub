@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bita Digital Hub | Smart, Simple, Free Tools</title>
-  <meta name="description" content="Convert files, compress data, clean Excel sheets, generate passwords, and more — free, fast, and secure online tools." />
+  <meta name="description" content="Convert files, clean data, compress tables, and more — fast, secure, and free online tools by Bita Ashoori." />
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="icon" type="image/png" href="./assets/taskhub-logo.png" />
 </head>
@@ -38,23 +38,8 @@
   <!-- 🧰 Tool Grid -->
   <section>
     <h2 class="section-title" id="toolsTitle">Our Free Tools 🔐</h2>
-    <div class="tool-grid">
-      <div class="tool-card">
-        <h3 id="tool1Title">URL Shortener 🌐</h3>
-        <p id="tool1Desc">Create short, trackable links for your campaigns.</p>
-      </div>
-      <div class="tool-card">
-        <h3 id="tool2Title">Password Generator 🔒</h3>
-        <p id="tool2Desc">Generate strong, secure passwords instantly.</p>
-      </div>
-      <div class="tool-card">
-        <h3 id="tool3Title">AI Bio Generator ✨</h3>
-        <p id="tool3Desc">Generate professional bios for Instagram, LinkedIn, and YouTube in seconds.</p>
-      </div>
-      <div class="tool-card">
-        <h3 id="tool4Title">Social Media Audit 🧠</h3>
-        <p id="tool4Desc">Analyze engagement, caption quality, and hashtags.</p>
-      </div>
+    <div class="tool-grid" id="toolsGrid">
+      <!-- Filled dynamically by JS -->
     </div>
   </section>
 
@@ -83,14 +68,16 @@
         heroTitle: "All Your Essential Tools in One Place ⚙️",
         heroDesc: "Convert files, clean data, compress tables, and do much more — fast, secure, and free.",
         toolsTitle: "Our Free Tools 🔐",
-        tool1Title: "URL Shortener 🌐",
-        tool1Desc: "Create short, trackable links for your campaigns.",
-        tool2Title: "Password Generator 🔒",
-        tool2Desc: "Generate strong, secure passwords instantly.",
-        tool3Title: "AI Bio Generator ✨",
-        tool3Desc: "Generate professional bios for Instagram, LinkedIn, and YouTube in seconds.",
-        tool4Title: "Social Media Audit 🧠",
-        tool4Desc: "Analyze engagement, caption quality, and hashtags.",
+        tools: [
+          { title: "File Converter 📁", desc: "Convert between PDF, Word, Excel, and image formats easily." },
+          { title: "ZIP & Unzip 📦", desc: "Compress or extract files online with one click." },
+          { title: "CSV & Excel Cleaner 📊", desc: "Merge, clean, and format spreadsheet data fast." },
+          { title: "Password Generator 🔒", desc: "Generate strong, secure passwords instantly." },
+          { title: "URL Shortener 🌐", desc: "Create short, trackable links for your campaigns." },
+          { title: "QR Generator 🔗", desc: "Generate QR codes instantly for any link or text." },
+          { title: "Social Media Audit 🧠", desc: "Analyze engagement, caption quality, and hashtags." },
+          { title: "AI Bio Generator ✨", desc: "Generate professional bios for Instagram, LinkedIn, and YouTube in seconds." }
+        ],
         contactTitle: "Get in Touch 💌",
         contactDesc: "We love feedback and ideas! Send us your message below.",
         namePlaceholder: "Your Name",
@@ -102,16 +89,18 @@
         heroTitle: "🛠️ همه ابزارهای ضروری شما در یک جا",
         heroDesc: "فایل‌ها را تبدیل کنید، داده‌ها را تمیز و فشرده کنید و خیلی کارهای دیگر — فوری، امن و رایگان.",
         toolsTitle: "ابزارهای رایگان ما 🔐",
-        tool1Title: "کوتاه‌کننده لینک 🌐",
-        tool1Desc: "لینک‌های قابل ردیابی برای کمپین‌های خود ایجاد کنید.",
-        tool2Title: "تولیدکننده رمز عبور 🔒",
-        tool2Desc: "رمزهای عبور قوی و امن را فوراً بسازید.",
-        tool3Title: "تولیدکننده بیو هوش مصنوعی ✨",
-        tool3Desc: "بیوهای حرفه‌ای برای اینستاگرام، لینکدین و یوتیوب در چند ثانیه بسازید.",
-        tool4Title: "ارزیابی شبکه‌های اجتماعی 🧠",
-        tool4Desc: "درگیری، کیفیت کپشن و هشتگ‌ها را تحلیل کنید.",
+        tools: [
+          { title: "تبدیل‌گر فایل 📁", desc: "به‌راحتی بین PDF، Word، Excel و فرمت‌های تصویری تبدیل کنید." },
+          { title: "فشرده‌سازی و استخراج 📦", desc: "فایل‌ها را با یک کلیک فشرده یا از حالت فشرده خارج کنید." },
+          { title: "پاک‌کننده CSV و Excel 📊", desc: "داده‌های جدول را سریع تمیز، ادغام و قالب‌بندی کنید." },
+          { title: "تولیدکننده رمز عبور 🔒", desc: "رمزهای قوی و امن را فوراً بسازید." },
+          { title: "کوتاه‌کننده لینک 🌐", desc: "لینک‌های کوتاه و قابل‌ردیابی برای کمپین‌های خود بسازید." },
+          { title: "تولیدکننده QR 🔗", desc: "برای هر لینک یا متن، QR کد بسازید." },
+          { title: "ارزیاب شبکه‌های اجتماعی 🧠", desc: "درگیری، کیفیت کپشن و هشتگ‌ها را تحلیل کنید." },
+          { title: "تولیدکننده بیو هوش مصنوعی ✨", desc: "بیوهای حرفه‌ای برای اینستاگرام، لینکدین و یوتیوب بسازید." }
+        ],
         contactTitle: "تماس با ما 💌",
-        contactDesc: "از نظرات و ایده‌های شما استقبال می‌کنیم! پیام خود را برای ما ارسال کنید.",
+        contactDesc: "ما از نظرات و ایده‌های شما استقبال می‌کنیم! پیام خود را برای ما ارسال کنید.",
         namePlaceholder: "نام شما",
         emailPlaceholder: "ایمیل شما",
         msgPlaceholder: "پیام شما",
@@ -119,18 +108,11 @@
       }
     };
 
+    const grid = document.getElementById("toolsGrid");
     const elements = {
       heroTitle: document.getElementById("heroTitle"),
       heroDesc: document.getElementById("heroDesc"),
       toolsTitle: document.getElementById("toolsTitle"),
-      tool1Title: document.getElementById("tool1Title"),
-      tool1Desc: document.getElementById("tool1Desc"),
-      tool2Title: document.getElementById("tool2Title"),
-      tool2Desc: document.getElementById("tool2Desc"),
-      tool3Title: document.getElementById("tool3Title"),
-      tool3Desc: document.getElementById("tool3Desc"),
-      tool4Title: document.getElementById("tool4Title"),
-      tool4Desc: document.getElementById("tool4Desc"),
       contactTitle: document.getElementById("contactTitle"),
       contactDesc: document.getElementById("contactDesc"),
       name: document.getElementById("name"),
@@ -146,26 +128,28 @@
       elements.heroTitle.innerText = t.heroTitle;
       elements.heroDesc.innerText = t.heroDesc;
       elements.toolsTitle.innerText = t.toolsTitle;
-
-      elements.tool1Title.innerText = t.tool1Title;
-      elements.tool1Desc.innerText = t.tool1Desc;
-      elements.tool2Title.innerText = t.tool2Title;
-      elements.tool2Desc.innerText = t.tool2Desc;
-      elements.tool3Title.innerText = t.tool3Title;
-      elements.tool3Desc.innerText = t.tool3Desc;
-      elements.tool4Title.innerText = t.tool4Title;
-      elements.tool4Desc.innerText = t.tool4Desc;
-
       elements.contactTitle.innerText = t.contactTitle;
       elements.contactDesc.innerText = t.contactDesc;
       elements.name.placeholder = t.namePlaceholder;
       elements.email.placeholder = t.emailPlaceholder;
       elements.message.placeholder = t.msgPlaceholder;
       elements.submitBtn.innerText = t.submitBtn;
+
+      // Refresh tool cards
+      grid.innerHTML = "";
+      t.tools.forEach(tool => {
+        const card = document.createElement("div");
+        card.className = "tool-card";
+        card.innerHTML = `<h3>${tool.title}</h3><p>${tool.desc}</p>`;
+        grid.appendChild(card);
+      });
     }
 
     document.getElementById("btnEnglish").addEventListener("click", () => setLang("en"));
     document.getElementById("btnFarsi").addEventListener("click", () => setLang("fa"));
+
+    // Load English by default
+    setLang("en");
   </script>
 </body>
 </html>
