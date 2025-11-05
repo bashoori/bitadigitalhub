@@ -3,149 +3,162 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>URL Shortener & QR Generator | Bita Digital Hub</title>
-  <meta name="description" content="Shorten long links and generate QR codes instantly — free, simple, and secure.">
-  <meta name="keywords" content="url shortener, qr generator, link shortener, free tools, Bita Digital Hub">
-
+  <title>URL Shortener | Bita Digital Hub</title>
+  <meta name="description" content="Create short, shareable links instantly — smart, fast, and free online tool by Bita Digital Hub." />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="icon" type="image/png" href="../assets/taskhub-logo.png" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
 
-  <!-- 📈 Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHKWTPXDHC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-YHKWTPXDHC');
-  </script>
-
-  <!-- 💰 AdSense -->
+  <!-- 💰 Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-     crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <!-- 🔝 Navbar -->
+  <!-- 🧭 Navbar -->
   <header class="navbar">
     <div class="nav-left">
-      <img src="../assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="nav-logo" width="36" height="36" />
+      <img src="../assets/taskhub-logo.svg" alt="Logo" width="36" height="36" />
       <a href="../index.html" class="brand">Bita Digital Hub</a>
     </div>
     <nav>
-      <a href="../index.html" class="active">Home</a>
+      <a href="../index.html">Home</a>
       <a href="../about.html">About</a>
       <a href="../privacy.html">Privacy</a>
-      <a href="mailto:contact@bitadigitalhub.com">📩 contact@bitadigitalhub.com</a>
     </nav>
   </header>
 
-  <!-- 🧱 Tool Header -->
-  <section class="tool-header">
-    <img src="../assets/link-icon.svg" alt="URL Tool Icon" class="tool-icon" />
-    <h1>URL Shortener & QR Generator</h1>
-    <p>Shorten long links and create QR codes — fast, secure & free.</p>
-  </section>
+  <div class="page-wrapper">
+    <!-- 📢 Left Ad -->
+    <aside class="ad-left">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-3215014361489762"
+           data-ad-slot="1111111111"
+           data-ad-format="auto"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </aside>
 
-  <!-- 🌐 Language Switch -->
-  <div class="lang-btns">
-    <button onclick="setLang('en')">English</button>
-    <button onclick="setLang('fa')">فارسی</button>
-  </div>
+    <!-- 🧠 Main Content -->
+    <main class="container">
+      <section class="tool-header">
+        <h1 id="title">URL Shortener 🔗</h1>
+        <p id="desc">Create short, trackable links for campaigns and sharing — fast, free, and secure.</p>
 
-  <!-- 🧰 Main Tool Box -->
-  <div class="tool-box">
-    <p class="text-center" style="font-weight:600;">Enter your long URL:</p>
-    <input type="url" id="urlInput" placeholder="https://example.com/your-long-link" />
+        <!-- 🌐 Language Toggle -->
+        <div class="lang-btns">
+          <button id="btnEnglish" class="active">English</button>
+          <button id="btnFarsi">فارسی</button>
+        </div>
+      </section>
 
-    <button id="shortenBtn">Shorten URL</button>
-    <div id="shortResult" class="fade-in"></div>
+      <!-- 🧰 Tool -->
+      <div class="tool-box" style="max-width:580px;">
+        <label id="lblUrl">Enter your long URL:</label>
+        <input type="text" id="urlInput" placeholder="https://example.com/your-long-link" />
 
-    <hr style="margin:2rem 0; border:none; border-top:1px solid #e5e7eb;">
+        <button id="shortenBtn">Shorten URL</button>
 
-    <p class="text-center" style="font-weight:600;">Generate a QR Code for your link:</p>
-    <button id="qrBtn">Generate QR Code</button>
-    <canvas id="qrCanvas" style="margin-top:1rem;"></canvas>
-  </div>
+        <div id="output" class="output-box" style="display:none;">
+          <p id="resultMsg"></p>
+          <a id="shortLink" href="#" target="_blank" style="color:#2563eb;"></a>
+        </div>
+      </div>
 
-  <!-- 📢 AdSense -->
-  <div class="ad-placeholder" style="text-align:center; margin:2rem auto;">
-    <ins class="adsbygoogle"
-         style="display:block; text-align:center;"
-         data-ad-client="ca-pub-3215014361489762"
-         data-ad-slot="6666666666"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      <!-- 📢 Mid Ad -->
+      <div class="ad-mid">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-3215014361489762"
+             data-ad-slot="3333333333"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </main>
+
+    <!-- 📢 Right Ad -->
+    <aside class="ad-right">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-3215014361489762"
+           data-ad-slot="2222222222"
+           data-ad-format="auto"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </aside>
   </div>
 
   <!-- 🧭 Footer -->
   <footer>
-    <p>
-      © 2025 <strong>Bita Digital Hub</strong> | Smart, Simple, Free Tools.<br>
-      <a href="../privacy.html">Privacy Policy</a> · 
-      <a href="../about.html">About</a> · 
-      <a href="mailto:contact@bitadigitalhub.com">Contact</a>
-    </p>
+    <p>© 2025 <strong>Bita Digital Hub</strong> — Smart, Simple, Free Tools.</p>
   </footer>
+
+  <!-- 📢 Sticky Ad -->
+  <div class="ad-sticky">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-3215014361489762"
+         data-ad-slot="5555555555"
+         data-ad-format="horizontal"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
 
   <!-- ⚙️ Script -->
   <script>
+    const texts = {
+      en: {
+        title: "URL Shortener 🔗",
+        desc: "Create short, trackable links for campaigns and sharing — fast, free, and secure.",
+        label: "Enter your long URL:",
+        button: "Shorten URL",
+        success: "✅ Your shortened link:",
+      },
+      fa: {
+        title: "کوتاه‌کننده لینک 🔗",
+        desc: "لینک‌های کوتاه و قابل‌ردیابی برای اشتراک‌گذاری یا کمپین‌ها بسازید — سریع، رایگان و امن.",
+        label: "لینک اصلی خود را وارد کنید:",
+        button: "کوتاه کردن لینک",
+        success: "✅ لینک کوتاه شما:",
+      }
+    };
+
     function setLang(lang) {
-      document.body.dir = (lang === 'fa') ? 'rtl' : 'ltr';
+      const t = texts[lang];
+      document.body.dir = lang === "fa" ? "rtl" : "ltr";
+      document.getElementById("title").innerText = t.title;
+      document.getElementById("desc").innerText = t.desc;
+      document.getElementById("lblUrl").innerText = t.label;
+      document.getElementById("shortenBtn").innerText = t.button;
+      document.getElementById("resultMsg").innerText = t.success;
+      document.querySelectorAll(".lang-btns button").forEach(b => b.classList.remove("active"));
+      document.getElementById(lang === "fa" ? "btnFarsi" : "btnEnglish").classList.add("active");
     }
 
-    const shortenBtn = document.getElementById('shortenBtn');
-    const qrBtn = document.getElementById('qrBtn');
-    const shortResult = document.getElementById('shortResult');
-    const qrCanvas = document.getElementById('qrCanvas');
+    document.getElementById("btnEnglish").addEventListener("click", () => setLang("en"));
+    document.getElementById("btnFarsi").addEventListener("click", () => setLang("fa"));
+    setLang("en");
 
-    // URL Shortener Simulation
-    shortenBtn.addEventListener('click', () => {
-      const urlInput = document.getElementById('urlInput').value.trim();
-      if (!urlInput) {
-        shortResult.innerHTML = "<p style='color:red'>⚠️ Please enter a valid URL.</p>";
+    const shortenBtn = document.getElementById("shortenBtn");
+    const urlInput = document.getElementById("urlInput");
+    const output = document.getElementById("output");
+    const resultMsg = document.getElementById("resultMsg");
+    const shortLink = document.getElementById("shortLink");
+
+    shortenBtn.addEventListener("click", () => {
+      const url = urlInput.value.trim();
+      if (!url.startsWith("http")) {
+        alert("Please enter a valid URL starting with http or https.");
         return;
       }
 
-      const fakeShort = "https://bitadigital.link/" + Math.random().toString(36).substring(7);
-      shortResult.innerHTML = `
-        <div style="margin-top:1rem; text-align:center;">
-          <p style="color:#111827;">✅ Short URL:</p>
-          <a href="${fakeShort}" target="_blank" style="color:#6366f1; font-weight:600; text-decoration:none;">
-            ${fakeShort}
-          </a>
-          <p style="font-size:0.85rem; color:#64748b; margin-top:0.3rem;">Click to open your shortened link.</p>
-        </div>`;
-    });
+      // Generate random short link (client-side simulation)
+      const randomSlug = Math.random().toString(36).substring(2, 8);
+      const shortUrl = `https://bitadigitalhub.link/${randomSlug}`;
 
-    // QR Code Generator
-    qrBtn.addEventListener('click', () => {
-      const urlInput = document.getElementById('urlInput').value.trim();
-      if (!urlInput) {
-        alert("Please enter a URL to generate a QR Code.");
-        return;
-      }
-      new QRious({
-        element: qrCanvas,
-        value: urlInput,
-        size: 180
-      });
+      output.style.display = "block";
+      resultMsg.innerText = texts.en.success;
+      shortLink.href = shortUrl;
+      shortLink.innerText = shortUrl;
     });
   </script>
-
-  <!-- ✨ Animation -->
-  <style>
-    #shortResult {
-      opacity: 0;
-      transition: opacity 0.4s ease-in-out;
-    }
-    #shortResult:empty {
-      display: none;
-    }
-    #shortResult.show {
-      opacity: 1;
-    }
-  </style>
 </body>
 </html>
