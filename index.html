@@ -449,32 +449,7 @@
   }
 </script>
 
-<!-- ⌨️ Typing Animation -->
-<script>
-  const words = ["Convert 📄", "Clean 🧹", "Compress 📦", "Create 🔧", "Share 🌐"];
-  let i = 0, j = 0, isDeleting = false;
-  const typingSpeed = 120, deletingSpeed = 60, delayBetweenWords = 1000;
 
-  function type() {
-    const typingText = document.getElementById("typing-text");
-    const currentWord = words[i];
-    if (!isDeleting && j <= currentWord.length) {
-      typingText.textContent = currentWord.substring(0, j++);
-      setTimeout(type, typingSpeed);
-    } else if (isDeleting && j >= 0) {
-      typingText.textContent = currentWord.substring(0, j--);
-      setTimeout(type, deletingSpeed);
-    } else if (!isDeleting && j === currentWord.length) {
-      isDeleting = true;
-      setTimeout(type, delayBetweenWords);
-    } else {
-      isDeleting = false;
-      i = (i + 1) % words.length;
-      setTimeout(type, 200);
-    }
-  }
-  document.addEventListener("DOMContentLoaded", type);
-</script>
 
    <!-- Language Switch -->
 <script>
@@ -499,6 +474,7 @@
 </script>
 
 <!-- Typing Animation -->
+
 <script>
   const words = ["Convert 📄", "Clean 🧹", "Compress 📦", "Create 🔧", "Share 🌐"];
   let i = 0, j = 0, isDeleting = false;
