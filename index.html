@@ -14,86 +14,95 @@
   <header class="navbar">
     <div class="nav-left">
       <img src="assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" width="36" height="36" />
-      <a href="index.html" class="brand">Bita Digital Hub</a>
+      <div class="brand-group">
+        <a href="index-en.html" class="brand">Bita Digital Hub</a>
+        <span class="tagline">Digital Solutions & Innovation</span>
+      </div>
     </div>
-    <nav>
-      <a href="index.html" class="active">Home</a>
+
+    <nav class="nav-links">
+      <a href="index-en.html" class="active">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
+    </nav>
 
+    <div class="nav-actions">
       <!-- 🌐 Language Dropdown -->
       <div class="lang-switch">
-        <button id="langBtn" class="lang-toggle">
-          🌐 <span id="selectedLang"><img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English ▾</span>
+        <button class="lang-toggle">
+          🌐 <img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English ▾
         </button>
-        <ul id="langMenu" class="lang-menu">
-          <li data-lang="en"><img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English</li>
-          <li data-lang="fa"><img src="https://flagcdn.com/16x12/ir.png" alt="Persian flag" /> فارسی</li>
+        <ul class="lang-menu">
+          <li><a href="index-en.html"><img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English</a></li>
+          <li><a href="index-fa.html"><img src="https://flagcdn.com/16x12/ir.png" alt="Persian flag" /> فارسی</a></li>
         </ul>
       </div>
-    </nav>
+      <a href="contact.html" class="btn-primary get-started">Get Started</a>
+    </div>
   </header>
 
   <!-- 🌟 Hero Section -->
-  <section class="hero-section">
-    <div class="hero-badge">✨ Digital Transformation</div>
-    <h1 id="hero-title" class="hero-title">Innovative Digital Solutions</h1>
-    <p id="hero-desc" class="hero-subtitle">
-      Bita Digital Hub empowers creators and businesses to automate, scale, and grow 
-      using Data, Cloud, and AI-powered systems.
-    </p>
-    <div class="hero-buttons">
-      <a id="btnServices" href="services.html" class="btn-primary">View Services →</a>
-      <a id="btnContact" href="contact.html" class="btn-secondary">Book a Call</a>
-    </div>
-  </section>
-
-  <!-- ⚙️ Services -->
-  <section class="container" style="margin-top:3rem;">
-    <h2 class="section-title" id="services-title">What We Help You Build</h2>
-    <div class="tool-grid">
-      <a class="tool-card" href="services.html#digital-marketing">
-        <h3 id="srv1-title">Digital Marketing Systems</h3>
-        <p id="srv1-desc">Landing pages, lead magnets, and automated funnels with AI-powered content creation.</p>
-      </a>
-      <a class="tool-card" href="services.html#data-engineering">
-        <h3 id="srv2-title">Data & Automation</h3>
-        <p id="srv2-desc">ETL/ELT pipelines, dashboards, and Azure data integrations for smarter decisions.</p>
-      </a>
-      <a class="tool-card" href="tools/online-business.html">
-        <h3 id="srv3-title">Online Business Model</h3>
-        <p id="srv3-desc">Learn the 3-pillar model: proven system + high-paying partners + mentorship.</p>
-      </a>
-    </div>
-  </section>
-
-  <!-- 🚀 Projects -->
-  <section class="container" style="margin-top:3rem;">
-    <h2 class="section-title" id="projects-title">Recent Projects</h2>
-    <div class="tool-grid">
-      <div class="tool-card">
-        <h3 id="prj1-title">Marketing Data Hub</h3>
-        <p id="prj1-desc">Automated ingestion from Google Ads & GA into a centralized analytics warehouse.</p>
+  <main>
+    <section class="hero-section">
+      <div class="hero-badge">✨ Digital Transformation</div>
+      <h1 class="hero-title">Innovative Digital Solutions</h1>
+      <p class="hero-subtitle">
+        Bita Digital Hub empowers creators and businesses to automate, scale, and grow 
+        using Data, Cloud, and AI-powered systems.
+      </p>
+      <div class="hero-buttons">
+        <a href="services.html" class="btn-primary">View Services →</a>
+        <a href="contact.html" class="btn-secondary">Book a Call</a>
       </div>
-      <div class="tool-card">
-        <h3 id="prj2-title">AI Content Toolkit</h3>
-        <p id="prj2-desc">Set of smart tools — caption, bio, QR, and file converter — designed for creators.</p>
-      </div>
-      <div class="tool-card">
-        <h3 id="prj3-title">Online Course Funnel</h3>
-        <p id="prj3-desc">Landing page + Google Form + automated email follow-up for coaching programs.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 💬 Call to Action -->
-  <section class="contact-section">
-    <h2 id="cta-title">Ready to Launch Your Digital System?</h2>
-    <p id="cta-desc">Tell us your idea — we’ll help you choose the right tools and stack to make it real.</p>
-    <a href="contact.html" class="btn-primary" id="cta-btn" style="display:inline-block;text-align:center;">Contact Me</a>
-  </section>
+    <!-- ⚙️ Services -->
+    <section class="container" style="margin-top:3rem;">
+      <h2 class="section-title">What We Help You Build</h2>
+      <div class="tool-grid">
+        <a class="tool-card" href="services.html#digital-marketing">
+          <h3>Digital Marketing Systems</h3>
+          <p>Landing pages, lead magnets, and automated funnels with AI-powered content creation.</p>
+        </a>
+        <a class="tool-card" href="services.html#data-engineering">
+          <h3>Data & Automation</h3>
+          <p>ETL/ELT pipelines, dashboards, and Azure data integrations for smarter decisions.</p>
+        </a>
+        <a class="tool-card" href="tools/online-business.html">
+          <h3>Online Business Model</h3>
+          <p>Learn the 3-pillar model: proven system + high-paying partners + mentorship.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- 🚀 Projects -->
+    <section class="container" style="margin-top:3rem;">
+      <h2 class="section-title">Recent Projects</h2>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>Marketing Data Hub</h3>
+          <p>Automated ingestion from Google Ads & GA into a centralized analytics warehouse.</p>
+        </div>
+        <div class="tool-card">
+          <h3>AI Content Toolkit</h3>
+          <p>Set of smart tools — caption, bio, QR, and file converter — designed for creators.</p>
+        </div>
+        <div class="tool-card">
+          <h3>Online Course Funnel</h3>
+          <p>Landing page + Google Form + automated email follow-up for coaching programs.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 💬 Call to Action -->
+    <section class="contact-section">
+      <h2>Ready to Launch Your Digital System?</h2>
+      <p>Tell us your idea — we’ll help you choose the right tools and stack to make it real.</p>
+      <a href="contact.html" class="btn-primary">Contact Me</a>
+    </section>
+  </main>
 
   <!-- ⚫ Footer -->
   <footer class="footer">
@@ -102,7 +111,7 @@
         <div class="footer-logo">
           <img src="assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" width="36">
           <h3>Bita Digital Hub</h3>
-          <p id="footer-desc">Empowering creators and data-driven entrepreneurs with automation, analytics, and online-business solutions.</p>
+          <p>Empowering creators and data-driven entrepreneurs with automation, analytics, and online-business solutions.</p>
           <div class="social-links">
             <a href="https://linkedin.com/in/bitaashoori" target="_blank">LinkedIn</a>
             <a href="https://youtube.com/@bitadigital" target="_blank">YouTube</a>
@@ -112,18 +121,18 @@
       </div>
 
       <div class="footer-col">
-        <h4 id="footer-quicklinks">Quick Links</h4>
+        <h4>Quick Links</h4>
         <ul>
-          <li><a href="index.html" id="lnk-home">Home</a></li>
-          <li><a href="about.html" id="lnk-about">About</a></li>
-          <li><a href="services.html" id="lnk-services">Services</a></li>
-          <li><a href="projects.html" id="lnk-projects">Projects</a></li>
-          <li><a href="contact.html" id="lnk-contact">Contact</a></li>
+          <li><a href="index-en.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4 id="footer-services">Services</h4>
+        <h4>Services</h4>
         <ul>
           <li><a href="services.html#digital-marketing">Digital Marketing</a></li>
           <li><a href="services.html#data-engineering">Data & Automation</a></li>
@@ -132,7 +141,7 @@
       </div>
 
       <div class="footer-col">
-        <h4 id="footer-contact">Contact</h4>
+        <h4>Contact</h4>
         <ul>
           <li><strong>Email:</strong> bitadigitalhub@gmail.com</li>
           <li><strong>Phone:</strong> +1 (604) 724-6960</li>
@@ -142,102 +151,39 @@
     </div>
 
     <div class="footer-bottom">
-      <p id="footer-bottom-text">© 2025 Bita Digital Hub — Smart, Simple, Human.</p>
+      <p>© 2025 Bita Digital Hub — Smart, Simple, Human.</p>
       <div>
-        <a href="privacy.html" id="lnk-privacy">Privacy</a> | 
-        <a href="terms.html" id="lnk-terms">Terms</a> | 
-        <a href="cookies.html" id="lnk-cookies">Cookies</a>
+        <a href="privacy.html">Privacy</a> | 
+        <a href="terms.html">Terms</a> | 
+        <a href="cookies.html">Cookies</a>
       </div>
     </div>
   </footer>
 
-  <!-- 🌐 Language Script -->
+  <!-- 🌐 Simple dropdown JS -->
   <script>
-    const langBtn = document.getElementById("langBtn");
-    const langMenu = document.getElementById("langMenu");
-    const selectedLang = document.getElementById("selectedLang");
+    const langToggle = document.querySelector('.lang-toggle');
+    const langMenu = document.querySelector('.lang-menu');
 
-    langBtn.addEventListener("click", () => langMenu.classList.toggle("show"));
-    document.addEventListener("click", e => {
-      if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) langMenu.classList.remove("show");
+    langToggle.addEventListener('click', () => {
+      langMenu.classList.toggle('show');
     });
 
-    langMenu.querySelectorAll("li").forEach(item => {
-      item.addEventListener("click", () => {
-        const lang = item.dataset.lang;
-        const flagSrc = item.querySelector("img").src;
-        const langText = item.textContent.trim();
-        selectedLang.innerHTML = `<img src="${flagSrc}" alt="flag" /> ${langText} ▾`;
-        langMenu.classList.remove("show");
-        switchLanguage(lang);
-      });
-    });
-
-    const texts = {
-      en: {
-        heroTitle: "Innovative Digital Solutions",
-        heroDesc: "Bita Digital Hub empowers creators and businesses to automate, scale, and grow using Data, Cloud, and AI-powered systems.",
-        btnServices: "View Services →",
-        btnContact: "Book a Call",
-        servicesTitle: "What We Help You Build",
-        srv1Title: "Digital Marketing Systems",
-        srv1Desc: "Landing pages, lead magnets, and automated funnels with AI-powered content creation.",
-        srv2Title: "Data & Automation",
-        srv2Desc: "ETL/ELT pipelines, dashboards, and Azure data integrations for smarter decisions.",
-        srv3Title: "Online Business Model",
-        srv3Desc: "Learn the 3-pillar model: proven system + high-paying partners + mentorship.",
-        projectsTitle: "Recent Projects",
-        ctaTitle: "Ready to Launch Your Digital System?",
-        ctaDesc: "Tell us your idea — we’ll help you choose the right tools and stack to make it real.",
-        ctaBtn: "Contact Me",
-        footerDesc: "Empowering creators and data-driven entrepreneurs with automation, analytics, and online-business solutions.",
-        footerQuick: "Quick Links",
-        footerServices: "Services",
-        footerContact: "Contact",
-        footerBottom: "© 2025 Bita Digital Hub — Smart, Simple, Human."
-      },
-      fa: {
-        heroTitle: "راهکارهای دیجیتال نوآورانه",
-        heroDesc: "بیتا دیجیتال هاب به کسب‌وکارها و کریتور‌ها کمک می‌کند تا با هوش مصنوعی، دیتا و اتوماسیون رشد کنند.",
-        btnServices: "مشاهده خدمات →",
-        btnContact: "رزرو جلسه",
-        servicesTitle: "ما چه چیزهایی می‌سازیم",
-        srv1Title: "سیستم‌های دیجیتال مارکتینگ",
-        srv1Desc: "صفحه فرود، قیف فروش و محتوای خودکار با هوش مصنوعی.",
-        srv2Title: "دیتا و اتوماسیون",
-        srv2Desc: "ایجاد پایپ‌لاین‌های دیتا، داشبوردهای تحلیلی و یکپارچه‌سازی با Azure.",
-        srv3Title: "مدل کسب‌وکار آنلاین",
-        srv3Desc: "مدل سه‌ستون موفقیت: سیستم + شرکت‌های پردرآمد + منتورشیپ.",
-        projectsTitle: "پروژه‌های اخیر",
-        ctaTitle: "آماده‌ای سیستم دیجیتال خودت را راه‌اندازی کنی؟",
-        ctaDesc: "ایده‌ات را بگو تا با هم بهترین ابزار و استک را برایش انتخاب کنیم.",
-        ctaBtn: "تماس با من",
-        footerDesc: "کمک به کارآفرینان دیجیتال برای ساخت سیستم‌های خودکار و کسب درآمد آنلاین.",
-        footerQuick: "لینک‌های سریع",
-        footerServices: "خدمات",
-        footerContact: "ارتباط",
-        footerBottom: "© ۲۰۲۵ بیتا دیجیتال هاب — هوشمند، ساده، انسانی."
+    document.addEventListener('click', (e) => {
+      if (!langToggle.contains(e.target)) {
+        langMenu.classList.remove('show');
       }
-    };
-
-    function setLang(lang) {
-      const t = texts[lang];
-      document.body.dir = lang === "fa" ? "rtl" : "ltr";
-      document.querySelectorAll("[id]").forEach(el => {
-        const key = el.id.replace(/-/g, "");
-        if (t[key]) el.textContent = t[key];
-      });
-    }
-
-    function switchLanguage(lang) {
-      document.body.classList.add("fade-text");
-      setTimeout(() => {
-        setLang(lang);
-        document.body.classList.remove("fade-text");
-      }, 250);
-    }
-
-    setLang("en");
+    });
   </script>
+
+  <script>
+    // 🌐 Auto redirect based on browser language
+    const userLang = navigator.language || navigator.userLanguage;
+    if (userLang && userLang.toLowerCase().startsWith('fa')) {
+      window.location.href = "index-fa.html";
+    }
+  </script>
+
 </body>
 </html>
+
