@@ -24,6 +24,18 @@
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="projects.html">Projects</a>
+
+      <!-- 🔧 Tools Dropdown -->
+      <div class="dropdown">
+        <a href="tools.html" class="dropbtn">Tools ▾</a>
+        <div class="dropdown-content">
+          <a href="tools/file-converter.html">File Converter</a>
+          <a href="tools/social-audit.html">Social Audit</a>
+          <a href="tools/qr-generator.html">QR Generator</a>
+          <a href="tools/online-business.html">Online Business Model</a>
+        </div>
+      </div>
+
       <a href="contact.html">Contact</a>
     </nav>
 
@@ -126,6 +138,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="projects.html">Projects</a></li>
+          <li><a href="tools.html">Tools</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -159,30 +172,23 @@
     </div>
   </footer>
 
-  <!-- 🌐 Simple dropdown JS -->
+  <!-- 🌐 Dropdown Script -->
   <script>
     const langToggle = document.querySelector('.lang-toggle');
     const langMenu = document.querySelector('.lang-menu');
 
-    langToggle.addEventListener('click', () => {
-      langMenu.classList.toggle('show');
-    });
-
+    langToggle.addEventListener('click', () => langMenu.classList.toggle('show'));
     document.addEventListener('click', (e) => {
-      if (!langToggle.contains(e.target)) {
-        langMenu.classList.remove('show');
-      }
+      if (!langToggle.contains(e.target)) langMenu.classList.remove('show');
     });
   </script>
 
+  <!-- 🌍 Auto-redirect for Persian users -->
   <script>
-    // 🌐 Auto redirect based on browser language
     const userLang = navigator.language || navigator.userLanguage;
     if (userLang && userLang.toLowerCase().startsWith('fa')) {
       window.location.href = "index-fa.html";
     }
   </script>
-
 </body>
 </html>
-
