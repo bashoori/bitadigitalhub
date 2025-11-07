@@ -1,10 +1,33 @@
+# ===============================
+# 🤖 Bita Digital Hub Robots.txt
+# Optimized for Google AdSense + SEO
+# ===============================
+
 User-agent: *
+Disallow: /admin/
+Disallow: /assets/private/
 Allow: /
 
-# Block these folders if you ever add them
-Disallow: /admin/
-Disallow: /private/
-Disallow: /tmp/
-
-# Sitemap location
+# 📄 Sitemaps
 Sitemap: https://bitadigitalhub.com/sitemap.xml
+
+# 🈶 Multilingual versions
+Sitemap: https://bitadigitalhub.com/fa/sitemap-fa.xml
+
+# 🧠 Important Notes:
+# - Allowing Googlebot and AdSense crawlers full access to index public pages
+# - Blocking only admin or private asset paths
+# - Ensure sitemap.xml and ads.txt are accessible for proper validation
+
+# 🪙 AdSense crawler access
+User-agent: Mediapartners-Google
+Disallow:
+
+# 💡 Optional: allow fast crawling for SEO
+Crawl-delay: 5
+
+# 🧩 Example: custom pages (if you ever add them)
+# Allow: /tools/
+# Allow: /about.html
+# Allow: /privacy.html
+# Allow: /fa/
