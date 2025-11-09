@@ -4,69 +4,96 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Bita Digital Hub</title>
+  <meta name="description" content="Learn about Bita Digital Hub — a platform created by Bita Ashoori to empower creators, data professionals, and entrepreneurs with digital tools, automation, and online business systems." />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/png" href="assets/taskhub-logo.png" />
 </head>
 
 <body>
-  <!-- 🧭 Navbar -->
- <!-- 🔗 Header Import -->
-<div id="header"></div>
-<script>
-  fetch("components/header.html")
-    .then(res => res.text())
-    .then(html => document.getElementById("header").innerHTML = html)
-    .catch(err => console.error("Header failed to load:", err));
-</script>
+  <!-- 🔗 Header -->
+  <div id="header"></div>
+  <script>
+    fetch("components/header.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("header").innerHTML = html)
+      .catch(err => console.error("Header failed to load:", err));
+  </script>
 
+  <!-- 🌟 Hero -->
+  <main>
+    <section class="hero-section">
+      <div class="hero-badge">💡 Our Story</div>
+      <h1 class="hero-title">About Bita Digital Hub</h1>
+      <p class="hero-subtitle">
+        We believe technology and creativity should work together — empowering individuals to build businesses, automate workflows, and grow sustainably in the digital world.
+      </p>
+    </section>
 
-  <!-- 🧠 About Section -->
-  <main class="container" style="max-width: 1000px; padding: 3rem 1rem;">
-    <h1 style="font-size:2rem; font-weight:800; color:#1e3a8a; margin-bottom:1rem;">
-      About Bita Digital Hub
-    </h1>
+    <!-- 👩‍💻 Who We Are -->
+    <section class="container" style="margin-top:3rem; max-width:850px;">
+      <h2 class="section-title">Who We Are</h2>
+      <p style="color:var(--text-mid); font-size:1.05rem; line-height:1.8;">
+        Founded by <strong>Bita Ashoori</strong> in Vancouver, Canada, 
+        <em>Bita Digital Hub</em> is a learning and innovation space designed for creators, data engineers, and entrepreneurs.
+        Our mission is to simplify digital transformation — combining automation, analytics, and online-business tools in one accessible ecosystem.
+      </p>
+      <p style="color:var(--text-mid); margin-top:1rem;">
+        Whether you're building your first online business, creating AI-powered systems, or seeking modern marketing funnels, we help you do it efficiently — and with purpose.
+      </p>
+    </section>
 
-    <p style="font-size:1.1rem; color:#475569; margin-bottom:2rem;">
-      Blending data engineering, digital marketing, and automation into one practical space.
-    </p>
+    <!-- 🚀 What We Do -->
+    <section class="container" style="margin-top:3rem;">
+      <h2 class="section-title">What We Do</h2>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>1. Tools</h3>
+          <p>Free AI-powered and automation tools for creators — from QR and link generators to bio writers and analytics dashboards.</p>
+        </div>
+        <div class="tool-card">
+          <h3>2. Services</h3>
+          <p>Custom systems for automation, data pipelines, and marketing — built for startups, educators, and digital businesses.</p>
+        </div>
+        <div class="tool-card">
+          <h3>3. Sources</h3>
+          <p>A curated library of digital-marketing resources, AI datasets, and learning materials for your growth journey.</p>
+        </div>
+        <div class="tool-card">
+          <h3>4. Franchise</h3>
+          <p>The <strong>Digital Franchise Academy</strong>: a community model that teaches how to launch your own online business with training and mentorship.</p>
+        </div>
+      </div>
+    </section>
 
-    <p style="margin-bottom:1.2rem; color:#334155;">
-      <strong>Bita Digital Hub</strong> began as a place to share tools, templates, and projects built for real-world use —
-      spanning healthcare, retail, and public services — before evolving into a space for online education and creator tools.
-    </p>
+    <!-- 💰 AdSense -->
+    <div class="container" style="text-align:center; margin:3rem 0;">
+      <p style="color:gray;">(Ad space – insert your AdSense code here)</p>
+    </div>
 
-    <p style="margin-bottom:1.2rem; color:#334155;">
-      We focus on building systems that actually get used: data pipelines, lead-generation pages, dashboards, and AI-powered assistants.
-      Every solution is documented, simple, and crafted for those who prefer efficiency over reinvention.
-    </p>
+    <!-- 🌍 Vision -->
+    <section class="container" style="margin-top:3rem; max-width:800px;">
+      <h2 class="section-title">Our Vision</h2>
+      <p style="color:var(--text-mid); font-size:1.05rem; line-height:1.8;">
+        We envision a world where anyone — regardless of background or resources — can learn, create, and build meaningful digital systems that generate value for their communities.
+        By merging education, automation, and entrepreneurship, Bita Digital Hub turns digital literacy into opportunity.
+      </p>
+    </section>
 
-    <h2 style="margin-top:2rem; color:#1e3a8a;">What Makes Us Different</h2>
-    <ul style="margin-top:1rem; color:#334155; line-height:1.8;">
-      <li>Data mindset — reliable, repeatable, and logged</li>
-      <li>Marketing mindset — funnel-driven and scalable</li>
-      <li>Teaching mindset — clear, step-by-step, bilingual</li>
-    </ul>
+    <!-- 💬 CTA -->
+    <section class="contact-section">
+      <h2>Let’s Build the Future Together</h2>
+      <p>We’re always open to collaborations, partnerships, and creative ideas that help more people succeed online.</p>
+      <a href="contact.html" class="btn-primary">Get in Touch</a>
+    </section>
   </main>
 
-  <!-- ⚫ Footer -->
-  <!-- 🔗 Footer Import -->
+  <!-- 🔗 Footer -->
   <div id="footer"></div>
   <script>
     fetch("components/footer.html")
       .then(res => res.text())
       .then(html => document.getElementById("footer").innerHTML = html)
       .catch(err => console.error("Footer failed to load:", err));
-  </script>
-
-
-  <script>
-    // 🌐 Language dropdown
-    const langToggle = document.querySelector('.lang-toggle');
-    const langMenu = document.querySelector('.lang-menu');
-    langToggle.addEventListener('click', () => langMenu.classList.toggle('show'));
-    document.addEventListener('click', (e) => {
-      if (!langToggle.contains(e.target)) langMenu.classList.remove('show');
-    });
   </script>
 </body>
 </html>

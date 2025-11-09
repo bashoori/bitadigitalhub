@@ -4,235 +4,105 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy | Bita Digital Hub</title>
-  <meta name="description" content="Learn how Bita Digital Hub collects, uses, and protects your data. We value your privacy and ensure a secure, ad-supported experience.">
-  <meta name="keywords" content="Bita Digital Hub privacy policy, data protection, cookies, Google Analytics, AdSense, Vancouver, online tools">
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="icon" type="image/png" href="./assets/taskhub-logo.png" />
-
-  <!-- 📈 Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHKWTPXDHC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-YHKWTPXDHC');
-  </script>
-
-  <!-- 💰 Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-     crossorigin="anonymous"></script>
-
-  <!-- 🧭 Open Graph -->
-  <meta property="og:title" content="Privacy Policy | Bita Digital Hub">
-  <meta property="og:description" content="We protect your privacy. Learn how we use data responsibly at Bita Digital Hub.">
-  <meta property="og:image" content="https://bitadigitalhub.com/assets/taskhub-logo.png">
-  <meta property="og:url" content="https://bitadigitalhub.com/privacy.html">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="description" content="Learn how Bita Digital Hub collects, uses, and protects your personal data — including analytics, forms, and cookies." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="assets/taskhub-logo.png" />
 </head>
 
 <body>
-  <!-- 🧭 Navbar -->
-  <header class="navbar">
-    <div class="nav-left">
-      <img src="./assets/taskhub-logo.svg" alt="TaskHub Logo" class="nav-logo" width="36" height="36">
-      <a href="./index.html" class="brand">Bita Digital Hub</a>
-    </div>
-    <nav>
-      <a href="./index.html">Home</a>
-      <a href="./about.html">About</a>
-      <a href="./privacy.html" class="active">Privacy</a>
-      <a href="mailto:contact@bitadigitalhub.com">📩 contact@bitadigitalhub.com</a>
-    </nav>
-  </header>
+  <!-- 🔗 Header -->
+  <div id="header"></div>
+  <script>
+    fetch("components/header.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("header").innerHTML = html)
+      .catch(err => console.error("Header failed to load:", err));
+  </script>
 
-  <!-- 🌐 Language Toggle -->
-  <div class="lang-btns" style="margin-top: 2rem;">
-    <button id="btnEnglish">English</button>
-    <button id="btnFarsi">فارسی</button>
-  </div>
+  <!-- 🌟 Hero -->
+  <main>
+    <section class="hero-section">
+      <div class="hero-badge">🔒 Privacy & Transparency</div>
+      <h1 class="hero-title">Privacy Policy</h1>
+      <p class="hero-subtitle">
+        Your privacy matters to us. This page explains what information we collect, how we use it, 
+        and how you can control your data when using Bita Digital Hub.
+      </p>
+    </section>
 
-  <!-- 🧾 Privacy Section -->
-  <main class="tool-box" style="text-align:left; line-height:1.7;">
-    <h1 id="title">Privacy Policy</h1>
-    <p><em id="updated">Last updated: October 2025</em></p>
+    <!-- 📘 Policy Content -->
+    <section class="container" style="margin-top:3rem; max-width:900px;">
+      <h2 class="section-title">1. Information We Collect</h2>
+      <p style="color:var(--text-mid); line-height:1.8;">
+        We may collect personal information that you voluntarily provide through contact forms, 
+        newsletter sign-ups, or when using our digital tools. This can include your name, email address, and messages you send us.
+      </p>
 
-    <p id="intro">Welcome to <strong>Bita Digital Hub</strong>. Your privacy is important to us. This page explains what information we collect, how we use it, and how we protect it.</p>
+      <h2 class="section-title" style="margin-top:2rem;">2. How We Use Your Information</h2>
+      <p style="color:var(--text-mid); line-height:1.8;">
+        We use your data only to respond to inquiries, improve our website, and provide relevant content or services.  
+        We do not sell, rent, or share your personal information with third parties.
+      </p>
 
-    <h2 id="section1Title">1. Information We Collect</h2>
-    <ul id="section1List" style="margin-left:1.5rem;">
-      <li>We do not store uploaded files permanently. All file operations occur securely in your browser (client-side).</li>
-      <li>We may collect non-personal data such as device type, browser version, and anonymized analytics for performance improvements.</li>
-    </ul>
+      <h2 class="section-title" style="margin-top:2rem;">3. Cookies & Analytics</h2>
+      <p style="color:var(--text-mid); line-height:1.8;">
+        Our website uses cookies and Google Analytics to understand how visitors interact with the site.  
+        These tools help us measure performance, optimize content, and enhance user experience.  
+        You can disable cookies anytime in your browser settings.
+      </p>
 
-    <h2 id="section2Title">2. How We Use Information</h2>
-    <ul id="section2List" style="margin-left:1.5rem;">
-      <li>To improve user experience and optimize tool performance.</li>
-      <li>To display relevant ads via Google AdSense and gather usage insights through Google Analytics.</li>
-    </ul>
+      <h2 class="section-title" style="margin-top:2rem;">4. Google AdSense & Affiliate Links</h2>
+      <p style="color:var(--text-mid); line-height:1.8;">
+        Bita Digital Hub participates in advertising and affiliate programs, including Google AdSense.  
+        Ads or affiliate links may use cookies to serve relevant content.  
+        Clicking these links may result in commissions at no additional cost to you.
+      </p>
 
-    <h2 id="section3Title">3. Cookies</h2>
-    <p id="section3Text">We may use cookies for analytics and advertising. You can disable cookies anytime in your browser settings.</p>
+      <h2 class="section-title" style="margin-top:2rem;">5. Data Security</h2>
+      <p style="color:var(--text-mid); line-height:1.8;">
+        We use secure hosting (HTTPS) and regularly monitor our systems to protect your data.  
+        However, no system is completely secure — by using this site, you acknowledge that online data transmission carries some risk.
+      </p>
 
-    <h2 id="section4Title">4. Third-Party Services</h2>
-    <p id="section4Text">This site uses Google AdSense and Google Analytics, which may collect anonymized traffic data to show personalized ads and measure site engagement.</p>
+      <h2 class="section-title" style="margin-top:2rem;">6. Your Rights</h2>
+      <p style="color:var(--text-mid); line-height:1.8;">
+        You have the right to request access, correction, or deletion of your personal information.  
+        To make a request, contact us directly via the email below.
+      </p>
 
-    <h2 id="section5Title">5. Data Security</h2>
-    <p id="section5Text">Your data and uploaded files are never stored on our servers. We never share or sell any user data to third parties.</p>
+      <h2 class="section-title" style="margin-top:2rem;">7. Contact Us</h2>
+      <p style="color:var(--text-mid); line-height:1.8;">
+        If you have questions about this Privacy Policy or how we handle your data, please contact us at:<br />
+        <strong>Email:</strong> <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a><br />
+        <strong>Location:</strong> Vancouver, Canada
+      </p>
 
-    <h2 id="section6Title">6. Contact</h2>
-    <p id="section6Text">If you have any questions about this Privacy Policy, please reach out at <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a>.</p>
+      <h2 class="section-title" style="margin-top:2rem;">8. Updates to This Policy</h2>
+      <p style="color:var(--text-mid); line-height:1.8;">
+        This Privacy Policy may be updated periodically to reflect new features, tools, or legal requirements.  
+        The latest version will always be available on this page, with the updated date shown below.
+      </p>
+
+      <p style="text-align:right; margin-top:1.5rem; font-size:0.9rem; color:gray;">
+        Last updated: November 2025
+      </p>
+    </section>
+
+    <!-- 💬 CTA -->
+    <section class="contact-section">
+      <h2>Have a Privacy Concern?</h2>
+      <p>We’re here to ensure your experience with Bita Digital Hub is safe and transparent.</p>
+      <a href="contact.html" class="btn-primary">Contact Support</a>
+    </section>
   </main>
 
-  <!-- 📢 AdSense -->
-  <div style="text-align:center;margin:2rem auto;">
-    <ins class="adsbygoogle"
-         style="display:block; text-align:center;"
-         data-ad-client="ca-pub-3215014361489762"
-         data-ad-slot="6666666666"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
-
-   <!-- ⚫ Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <!-- Column 1 -->
-      <div class="footer-col">
-        <div class="footer-logo">
-          <img src="assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" width="36">
-          <h3>Bita Digital Hub</h3>
-          <p>
-            Empowering creators and data-driven professionals with automation,
-            analytics, and online-business solutions.
-          </p>
-          <div class="social-links">
-            <a href="https://linkedin.com/in/bitaashoori" target="_blank">LinkedIn</a>
-            <a href="https://youtube.com/@bitadigital" target="_blank">YouTube</a>
-            <a href="https://instagram.com/bitadigitalhub" target="_blank">Instagram</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Column 2 -->
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="tools.html">Tools</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- Column 3 -->
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="services.html#digital-marketing">Digital Marketing</a></li>
-          <li><a href="services.html#data-engineering">Data & Automation</a></li>
-          <li><a href="tools/online-business.html">Online Business</a></li>
-        </ul>
-      </div>
-
-      <!-- Column 4 -->
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><strong>Email:</strong>  Contact@bitadigitalhub.com</li>
-          <li><strong>Location:</strong> Vancouver, Canada</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>© 2025 Bita Digital Hub — Smart, Simple, Human.</p>
-      <div>
-        <a href="privacy.html">Privacy</a> | 
-        <a href="terms.html">Terms</a> | 
-        <a href="cookies.html">Cookies</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ⚙️ Language Script -->
+  <!-- 🔗 Footer -->
+  <div id="footer"></div>
   <script>
-    const texts = {
-      en: {
-        title: "Privacy Policy",
-        updated: "Last updated: October 2025",
-        intro: "Welcome to Bita Digital Hub. Your privacy is important to us. This page explains what information we collect, how we use it, and how we protect it.",
-        section1Title: "1. Information We Collect",
-        section1List: [
-          "We do not store uploaded files permanently. All file operations occur securely in your browser (client-side).",
-          "We may collect non-personal data such as device type, browser version, and anonymized analytics for performance improvements."
-        ],
-        section2Title: "2. How We Use Information",
-        section2List: [
-          "To improve user experience and optimize tool performance.",
-          "To display relevant ads via Google AdSense and gather usage insights through Google Analytics."
-        ],
-        section3Title: "3. Cookies",
-        section3Text: "We may use cookies for analytics and advertising. You can disable cookies anytime in your browser settings.",
-        section4Title: "4. Third-Party Services",
-        section4Text: "This site uses Google AdSense and Google Analytics, which may collect anonymized traffic data to show personalized ads and measure site engagement.",
-        section5Title: "5. Data Security",
-        section5Text: "Your data and uploaded files are never stored on our servers. We never share or sell any user data to third parties.",
-        section6Title: "6. Contact",
-        section6Text: "If you have any questions about this Privacy Policy, please reach out at contact@bitadigitalhub.com."
-      },
-      fa: {
-        title: "سیاست حفظ حریم خصوصی",
-        updated: "آخرین به‌روزرسانی: اکتبر ۲۰۲۵",
-        intro: "به بیتا دیجیتال هاب خوش آمدید. حریم خصوصی شما برای ما اهمیت دارد. این صفحه توضیح می‌دهد چه اطلاعاتی جمع‌آوری می‌کنیم، چگونه از آن استفاده می‌کنیم و چطور از آن محافظت می‌شود.",
-        section1Title: "۱. اطلاعاتی که جمع‌آوری می‌کنیم",
-        section1List: [
-          "ما فایل‌های بارگذاری‌شده را به‌صورت دائمی ذخیره نمی‌کنیم. همه عملیات فایل به‌صورت ایمن در مرورگر شما انجام می‌شود (سمت کاربر).",
-          "ممکن است داده‌های غیرشخصی مانند نوع دستگاه، نسخه مرورگر و آمار ناشناس برای بهبود عملکرد جمع‌آوری کنیم."
-        ],
-        section2Title: "۲. نحوه استفاده از اطلاعات",
-        section2List: [
-          "برای بهبود تجربه کاربری و بهینه‌سازی عملکرد ابزارها.",
-          "برای نمایش تبلیغات مرتبط از طریق Google AdSense و جمع‌آوری داده‌های تحلیلی از طریق Google Analytics."
-        ],
-        section3Title: "۳. کوکی‌ها",
-        section3Text: "ممکن است از کوکی‌ها برای تحلیل و تبلیغات استفاده کنیم. می‌توانید هر زمان در تنظیمات مرورگر خود کوکی‌ها را غیرفعال کنید.",
-        section4Title: "۴. خدمات شخص ثالث",
-        section4Text: "این سایت از Google AdSense و Google Analytics استفاده می‌کند که ممکن است داده‌های ترافیک ناشناس را برای نمایش تبلیغات شخصی‌سازی‌شده جمع‌آوری کنند.",
-        section5Title: "۵. امنیت داده‌ها",
-        section5Text: "داده‌ها و فایل‌های بارگذاری‌شده شما هرگز در سرورهای ما ذخیره نمی‌شوند. ما هیچ‌گاه داده کاربران را به اشخاص ثالث نمی‌فروشیم و به اشتراک نمی‌گذاریم.",
-        section6Title: "۶. تماس با ما",
-        section6Text: "اگر در مورد این سیاست حریم خصوصی پرسشی دارید، لطفاً از طریق contact@bitadigitalhub.com با ما تماس بگیرید."
-      }
-    };
-
-    function setLang(lang) {
-      const t = texts[lang];
-      document.body.dir = lang === "fa" ? "rtl" : "ltr";
-      document.getElementById("title").innerText = t.title;
-      document.getElementById("updated").innerText = t.updated;
-      document.getElementById("intro").innerText = t.intro;
-
-      document.getElementById("section1Title").innerText = t.section1Title;
-      document.getElementById("section1List").innerHTML = t.section1List.map(i => `<li>${i}</li>`).join("");
-
-      document.getElementById("section2Title").innerText = t.section2Title;
-      document.getElementById("section2List").innerHTML = t.section2List.map(i => `<li>${i}</li>`).join("");
-
-      document.getElementById("section3Title").innerText = t.section3Title;
-      document.getElementById("section3Text").innerText = t.section3Text;
-      document.getElementById("section4Title").innerText = t.section4Title;
-      document.getElementById("section4Text").innerText = t.section4Text;
-      document.getElementById("section5Title").innerText = t.section5Title;
-      document.getElementById("section5Text").innerText = t.section5Text;
-      document.getElementById("section6Title").innerText = t.section6Title;
-      document.getElementById("section6Text").innerText = t.section6Text;
-    }
-
-    document.getElementById("btnEnglish").addEventListener("click", () => setLang("en"));
-    document.getElementById("btnFarsi").addEventListener("click", () => setLang("fa"));
+    fetch("components/footer.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("footer").innerHTML = html)
+      .catch(err => console.error("Footer failed to load:", err));
   </script>
 </body>
 </html>
