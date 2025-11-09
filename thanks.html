@@ -4,153 +4,74 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thank You | Bita Digital Hub</title>
+  <meta name="description" content="Thank you for reaching out to Bita Digital Hub. We’ll get back to you shortly with a personalized reply." />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/png" href="assets/taskhub-logo.png" />
-  <style>
-    main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 70vh;
-      text-align: center;
-      padding: 2rem;
-    }
-    h1 {
-      font-size: 2rem;
-      color: #1e3a8a;
-      font-weight: 800;
-      margin-bottom: 1rem;
-    }
-    p {
-      color: #475569;
-      margin-bottom: 2rem;
-      font-size: 1.1rem;
-    }
-    .btn-primary {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background-color: #1e3a8a;
-      color: #fff;
-      border-radius: 0.5rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background-color 0.2s;
-    }
-    .btn-primary:hover {
-      background-color: #152c63;
-    }
-  </style>
 </head>
 
 <body>
-  <!-- 🧭 Navbar -->
-  <header class="navbar">
-    <div class="nav-left">
-      <img src="assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" width="36" height="36" />
-      <a href="index.html" class="brand">Bita Digital Hub</a>
-    </div>
+  <!-- 🔗 Header -->
+  <div id="header"></div>
+  <script>
+    fetch("components/header.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("header").innerHTML = html)
+      .catch(err => console.error("Header failed to load:", err));
+  </script>
 
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
-      <a href="tools.html">Tools</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-
-    <div class="nav-actions">
-      <div class="lang-switch">
-        <button class="lang-toggle">
-          <img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English ▾
-        </button>
-        <ul class="lang-menu">
-          <li><a href="index.html"><img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English</a></li>
-          <li><a href="index-fa.html"><img src="https://flagcdn.com/16x12/ir.png" alt="Persian flag" /> فارسی</a></li>
-        </ul>
-      </div>
-      <a href="login.html" class="btn-primary get-started">Login</a>
-    </div>
-  </header>
-
-  <!-- ✅ Thank You Message -->
+  <!-- 🌟 Hero -->
   <main>
-    <h1>Thank You!</h1>
-    <p>Your message has been received. We’ll get back to you soon.</p>
-    <a href="index.html" class="btn-primary">Return to Home</a>
+    <section class="hero-section">
+      <div class="hero-badge">🎉 Message Sent!</div>
+      <h1 class="hero-title">Thank You for Reaching Out</h1>
+      <p class="hero-subtitle">
+        Your message has been received.  
+        Our team will review it and get back to you as soon as possible.
+      </p>
+      <div class="hero-buttons">
+        <a href="index.html" class="btn-primary">Back to Home</a>
+        <a href="services.html" class="btn-secondary">Explore Our Services</a>
+      </div>
+    </section>
+
+    <!-- 💡 Extra Info -->
+    <section class="container" style="margin-top:3rem; text-align:center;">
+      <h2 class="section-title">What’s Next?</h2>
+      <p style="max-width:700px; margin:auto;">
+        While you wait for our reply, feel free to explore our tools and resources.
+        You might find something that helps you take your next digital step right away.
+      </p>
+
+      <div class="tool-grid" style="margin-top:2rem;">
+        <a class="tool-card" href="tools.html">
+          <h3>Explore Tools</h3>
+          <p>Try our free online tools for digital creators and marketers.</p>
+        </a>
+        <a class="tool-card" href="sources.html">
+          <h3>Free Learning Resources</h3>
+          <p>Browse marketing, AI, and data materials to grow your knowledge.</p>
+        </a>
+        <a class="tool-card" href="franchise.html">
+          <h3>Join the Digital Franchise</h3>
+          <p>Learn how to start your own online business with our mentorship.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- 💰 AdSense Area -->
+    <!-- 🟢 Place Google AdSense script here -->
+    <div class="container" style="text-align:center; margin:3rem 0;">
+      <p style="color:gray;">(Ad space – insert your AdSense code here)</p>
+    </div>
   </main>
 
-  <!-- ⚫ Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <!-- Column 1 -->
-      <div class="footer-col">
-        <div class="footer-logo">
-          <img src="assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" width="36">
-          <h3>Bita Digital Hub</h3>
-          <p>
-            Empowering creators and data-driven professionals with automation,
-            analytics, and online-business solutions.
-          </p>
-          <div class="social-links">
-            <a href="https://linkedin.com/in/bitaashoori" target="_blank">LinkedIn</a>
-            <a href="https://youtube.com/@bitadigital" target="_blank">YouTube</a>
-            <a href="https://instagram.com/bitadigitalhub" target="_blank">Instagram</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Column 2 -->
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="tools.html">Tools</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- Column 3 -->
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="services.html#digital-marketing">Digital Marketing</a></li>
-          <li><a href="services.html#data-engineering">Data & Automation</a></li>
-          <li><a href="tools/online-business.html">Online Business</a></li>
-        </ul>
-      </div>
-
-      <!-- Column 4 -->
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><strong>Email:</strong>  Contact@bitadigitalhub.com</li>
-          <li><strong>Location:</strong> Vancouver, Canada</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>© 2025 Bita Digital Hub — Smart, Simple, Human.</p>
-      <div>
-        <a href="privacy.html">Privacy</a> | 
-        <a href="terms.html">Terms</a> | 
-        <a href="cookies.html">Cookies</a>
-      </div>
-    </div>
-  </footer>
-
+  <!-- 🔗 Footer -->
+  <div id="footer"></div>
   <script>
-    const langToggle = document.querySelector('.lang-toggle');
-    const langMenu = document.querySelector('.lang-menu');
-    langToggle.addEventListener('click', () => langMenu.classList.toggle('show'));
-    document.addEventListener('click', (e) => {
-      if (!langToggle.contains(e.target)) langMenu.classList.remove('show');
-    });
+    fetch("components/footer.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("footer").innerHTML = html)
+      .catch(err => console.error("Footer failed to load:", err));
   </script>
 </body>
 </html>

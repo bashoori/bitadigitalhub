@@ -4,156 +4,91 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Bita Digital Hub</title>
+  <meta name="description" content="Get in touch with Bita Digital Hub — ask questions, request a quote, or collaborate on automation and digital systems." />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/png" href="assets/taskhub-logo.png" />
 </head>
 
 <body>
-  <!-- 🧭 Navbar -->
-  <header class="navbar">
-    <div class="nav-left">
-      <img src="assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" width="36" height="36" />
-      <a href="index.html" class="brand">Bita Digital Hub</a>
+  <!-- 🔗 Header -->
+  <div id="header"></div>
+  <script>
+    fetch("components/header.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("header").innerHTML = html)
+      .catch(err => console.error("Header failed to load:", err));
+  </script>
+
+  <!-- 🌟 Hero -->
+  <main>
+    <section class="hero-section">
+      <div class="hero-badge">📞 Let’s Connect</div>
+      <h1 class="hero-title">Contact Bita Digital Hub</h1>
+      <p class="hero-subtitle">
+        Have a question, collaboration idea, or project request?  
+        Send a message and we’ll get back to you soon.
+      </p>
+    </section>
+
+    <!-- 📬 Contact Form -->
+    <section class="container" style="margin-top:3rem; max-width:800px;">
+      <h2 class="section-title">Send a Message</h2>
+      <form 
+        action="https://formsubmit.co/contact@bitadigitalhub.com" 
+        method="POST" 
+        class="contact-form"
+      >
+        <input type="hidden" name="_subject" value="New message from Bita Digital Hub">
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://bitadigitalhub.com/thank-you.html" />
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="your@email.com" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+
+        <button type="submit" class="btn-primary" style="margin-top:1rem;">Send Message</button>
+      </form>
+    </section>
+
+    <!-- 💰 AdSense Area -->
+    <!-- 🟢 Place Google AdSense script here -->
+    <div class="container" style="text-align:center; margin:3rem 0;">
+      <p style="color:gray;">(Ad space – insert your AdSense code here)</p>
     </div>
 
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
-      <a href="tools.html">Tools</a>
-      <a href="contact.html" class="active">Contact</a>
-    </nav>
-
-    <div class="nav-actions">
-      <!-- 🌐 Language Dropdown -->
-      <div class="lang-switch">
-        <button class="lang-toggle">
-          <img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English ▾
-        </button>
-        <ul class="lang-menu">
-          <li><a href="index.html"><img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English</a></li>
-          <li><a href="index-fa.html"><img src="https://flagcdn.com/16x12/ir.png" alt="Persian flag" /> فارسی</a></li>
-        </ul>
+    <!-- 🗺️ Contact Info -->
+    <section class="container" style="margin-top:3rem; text-align:center;">
+      <h2 class="section-title">Other Ways to Reach Us</h2>
+      <p><strong>Email:</strong> contact@bitadigitalhub.com</p>
+      <p><strong>Location:</strong> Vancouver, Canada</p>
+      <div class="social-links" style="margin-top:1rem;">
+        <a href="https://linkedin.com/in/bitaashoori" target="_blank">LinkedIn</a> |
+        <a href="https://youtube.com/@bitadigital" target="_blank">YouTube</a> |
+        <a href="https://instagram.com/bitadigitalhub" target="_blank">Instagram</a> |
+        <a href="https://t.me/bitadigitalhub" target="_blank">Telegram</a>
       </div>
-      <a href="login.html" class="btn-primary get-started">Login</a>
-    </div>
-  </header>
+    </section>
 
-  <!-- 💬 Contact Section -->
-  <main class="container" style="max-width:1000px; padding:3rem 1rem;">
-    <h1 style="font-size:2rem; font-weight:800; color:#1e3a8a; text-align:center; margin-bottom:0.5rem;">
-      Contact Us
-    </h1>
-    <p style="text-align:center; color:#475569; margin-bottom:2.5rem;">
-      We'd love to hear from you. Whether it’s a project idea, collaboration, or question — reach out anytime.
-    </p>
-
-    <div class="contact-wrapper">
-      <div class="contact-info">
-        <h3>Get in Touch</h3>
-        <p><strong>Email:</strong> Contact@bitadigitalhub.com</p>
-        <p><strong>Location:</strong> Vancouver, Canada</p>
-
-        <p style="margin-top:1.5rem;">Follow us on:</p>
-        <div class="social-links">
-          <a href="https://linkedin.com/in/bitaashoori" target="_blank">LinkedIn</a> • 
-          <a href="https://youtube.com/@bitadigital" target="_blank">YouTube</a> • 
-          <a href="https://instagram.com/bitadigitalhub" target="_blank">Instagram</a>
-        </div>
-      </div>
-
-      <div class="contact-form">
-        <form action="https://formsubmit.co/bitadigitalhub@gmail.com" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <input type="text" name="subject" placeholder="Subject" />
-          <textarea name="message" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
-
-          <!-- Hidden options -->
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="https://bashoori.github.io/data-engineering-portfolio/thanks.html" />
-        </form>
-      </div>
-    </div>
+    <!-- 💬 CTA -->
+    <section class="contact-section">
+      <h2>Looking for a Custom Automation?</h2>
+      <p>We build bots, data pipelines, and marketing systems — tailor-made for your business.</p>
+      <a href="services.html" class="btn-primary">View Services</a>
+    </section>
   </main>
 
-   <!-- ⚫ Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <!-- Column 1 -->
-      <div class="footer-col">
-        <div class="footer-logo">
-          <img src="assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" width="36">
-          <h3>Bita Digital Hub</h3>
-          <p>
-            Empowering creators and data-driven professionals with automation,
-            analytics, and online-business solutions.
-          </p>
-          <div class="social-links">
-            <a href="https://linkedin.com/in/bitaashoori" target="_blank">LinkedIn</a>
-            <a href="https://youtube.com/@bitadigital" target="_blank">YouTube</a>
-            <a href="https://instagram.com/bitadigitalhub" target="_blank">Instagram</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Column 2 -->
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="tools.html">Tools</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- Column 3 -->
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="services.html#digital-marketing">Digital Marketing</a></li>
-          <li><a href="services.html#data-engineering">Data & Automation</a></li>
-          <li><a href="tools/online-business.html">Online Business</a></li>
-        </ul>
-      </div>
-
-      <!-- Column 4 -->
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><strong>Email:</strong> bitadigitalhub@gmail.com</li>
-          <li><strong>Location:</strong> Vancouver, Canada</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>© 2025 Bita Digital Hub — Smart, Simple, Human.</p>
-      <div>
-        <a href="privacy.html">Privacy</a> | 
-        <a href="terms.html">Terms</a> | 
-        <a href="cookies.html">Cookies</a>
-      </div>
-    </div>
-  </footer>
-  
+  <!-- 🔗 Footer -->
+  <div id="footer"></div>
   <script>
-    // 🌐 Dropdown toggle
-    const langToggle = document.querySelector('.lang-toggle');
-    const langMenu = document.querySelector('.lang-menu');
-
-    langToggle.addEventListener('click', () => {
-      langMenu.classList.toggle('show');
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!langToggle.contains(e.target)) langMenu.classList.remove('show');
-    });
+    fetch("components/footer.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("footer").innerHTML = html)
+      .catch(err => console.error("Footer failed to load:", err));
   </script>
 </body>
 </html>
