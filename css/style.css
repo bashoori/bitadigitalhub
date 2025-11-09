@@ -122,3 +122,27 @@
   height: 36px;
   opacity: 0.9;
 }
+
+/* Remove the default button square */
+button, .menu-toggle {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Optional: style the icon slightly for better centering */
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--primary-blue);
+  transition: opacity 0.2s ease;
+}
+
+.menu-toggle:hover {
+  opacity: 0.7;
+}
