@@ -10,35 +10,15 @@
 
 <body>
   <!-- 🧭 Navbar -->
-  <header class="navbar">
-    <div class="nav-left">
-      <img src="assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" width="36" height="36" />
-      <a href="index.html" class="brand">Bita Digital Hub</a>
-    </div>
+ <!-- 🔗 Header Import -->
+<div id="header"></div>
+<script>
+  fetch("components/header.html")
+    .then(res => res.text())
+    .then(html => document.getElementById("header").innerHTML = html)
+    .catch(err => console.error("Header failed to load:", err));
+</script>
 
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html" class="active">About</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
-      <a href="tools.html">Tools</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-
-    <div class="nav-actions">
-      <!-- 🌐 Language Dropdown -->
-      <div class="lang-switch">
-        <button class="lang-toggle">
-          <img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English ▾
-        </button>
-        <ul class="lang-menu">
-          <li><a href="about.html"><img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English</a></li>
-          <li><a href="about-fa.html"><img src="https://flagcdn.com/16x12/ir.png" alt="Persian flag" /> فارسی</a></li>
-        </ul>
-      </div>
-      <a href="login.html" class="btn-primary get-started">Login</a>
-    </div>
-  </header>
 
   <!-- 🧠 About Section -->
   <main class="container" style="max-width: 1000px; padding: 3rem 1rem;">
