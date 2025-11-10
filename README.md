@@ -21,3 +21,4 @@ All tools are:
 - ✅ Mobile-friendly and fast-loading
 
 
+pip install -r requirements.txt
