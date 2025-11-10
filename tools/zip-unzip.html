@@ -3,198 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ZIP & Unzip Tool | Bita Digital Hub</title>
-  <meta name="description" content="Compress or extract ZIP files instantly — simple, secure, and free tool by Bita Digital Hub." />
+  <title data-i18n="tools.zipUnzip.title">ZIP & Unzip Tool | Bita Digital Hub</title>
+  <meta name="description"
+        content="Compress or extract ZIP files instantly — simple, secure, and free tool by Bita Digital Hub." />
+
+  <!-- 🌈 Unified Styles -->
+  <link rel="stylesheet" href="../css/theme.css" />
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+
   <link rel="icon" type="image/png" href="../assets/taskhub-logo.png" />
 
   <!-- 💰 Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-    crossorigin="anonymous"></script>
+          crossorigin="anonymous"></script>
 
-  <!-- 📦 JSZip for compression/extraction -->
+  <!-- 📦 JSZip -->
   <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 </head>
 
 <body>
-  <!-- 🧭 Navbar -->
-  <header class="navbar">
-    <div class="nav-left">
-      <img src="../assets/taskhub-logo.svg" alt="Logo" width="36" height="36" />
-      <a href="../index.html" class="brand">Bita Digital Hub</a>
+  <!-- 🧭 Shared Header -->
+  <div id="header"></div>
+
+  <!-- 🌐 Brand Section -->
+  <section class="brand-header center">
+    <img src="../assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="brand-logo" />
+    <div class="brand-text">
+      <h1 class="brand-title" data-i18n="site.title">Bita Digital Hub</h1>
+      <p class="brand-subtitle" data-i18n="site.subtitle">Empowering Digital Growth</p>
     </div>
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="../about.html">About</a>
-      <a href="../privacy.html">Privacy</a>
-    </nav>
-  </header>
+  </section>
 
-  <div class="page-wrapper">
-    <!-- 📢 Left Ad -->
-    <aside class="ad-left">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-3215014361489762"
-           data-ad-slot="1111111111"
-           data-ad-format="auto"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </aside>
+  <!-- 🧰 ZIP / UnZIP Tool -->
+  <main class="tool-page">
+    <div class="tool-card">
+      <h2 id="title" data-i18n="tools.zipUnzip.title">ZIP & Unzip Files 📦</h2>
+      <p id="desc" data-i18n="tools.zipUnzip.desc">
+        Compress or extract ZIP files instantly — safe, simple, and fast.
+      </p>
 
-    <!-- 🧰 Main Section -->
-    <main class="container">
-      <section class="tool-header">
-        <h1 id="title">ZIP & Unzip Files 📦</h1>
-        <p id="desc">Compress or extract ZIP files instantly — safe and fast, right in your browser.</p>
+      <!-- 🌐 Language Buttons -->
+      <div class="lang-btns">
+        <button id="btnEnglish" data-lang="en" class="active">English</button>
+        <button id="btnFarsi" data-lang="fa">فارسی</button>
+      </div>
 
-        <!-- 🌐 Language Switch -->
-        <div class="lang-btns">
-          <button id="btnEnglish" class="active">English</button>
-          <button id="btnFarsi">فارسی</button>
-        </div>
-      </section>
-
-      <!-- 🗂️ Tool Box -->
-      <div class="tool-box" style="max-width:580px;">
-        <label id="lblMode">Select mode:</label>
-        <select id="modeSelect">
-          <option value="zip">Compress files (ZIP)</option>
-          <option value="unzip">Extract ZIP file</option>
+      <!-- 🗂️ Form -->
+      <div class="tool-form">
+        <label id="lblMode" data-i18n="tools.zipUnzip.mode">Select mode:</label>
+        <select id="modeSelect" class="select-input">
+          <option value="zip" data-i18n="tools.zipUnzip.optionZip">Compress files (ZIP)</option>
+          <option value="unzip" data-i18n="tools.zipUnzip.optionUnzip">Extract ZIP file</option>
         </select>
 
-        <label id="lblUpload" for="fileInput">Choose file(s):</label>
-        <input type="file" id="fileInput" multiple />
+        <label id="lblUpload" for="fileInput" data-i18n="tools.zipUnzip.upload">Choose file(s):</label>
+        <input type="file" id="fileInput" multiple class="file-input" />
 
-        <button id="processBtn" style="margin-top:1rem;">Start</button>
+        <button id="processBtn" class="primary-btn" data-i18n="tools.zipUnzip.start">Start</button>
 
-        <div id="output" class="output-box" style="display:none; text-align:center;">
+        <div id="output" class="output-box hidden">
           <p id="resultMsg"></p>
-          <a id="downloadLink" href="#" download="bita-archive.zip" style="color:#2563eb; display:block; margin-top:0.5rem;">⬇️ Download</a>
+          <a id="downloadLink" href="#" class="download-link" download="bita-archive.zip"
+             data-i18n="tools.zipUnzip.download">⬇️ Download</a>
         </div>
       </div>
+    </div>
 
-      <!-- 📢 Mid Ad -->
-      <div class="ad-mid">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-3215014361489762"
-             data-ad-slot="3333333333"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      </div>
-    </main>
-
-    <!-- 📢 Right Ad -->
-    <aside class="ad-right">
+    <!-- 📢 Ad -->
+    <div class="ad-container">
       <ins class="adsbygoogle"
            style="display:block"
            data-ad-client="ca-pub-3215014361489762"
-           data-ad-slot="2222222222"
-           data-ad-format="auto"></ins>
+           data-ad-slot="3333333333"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </aside>
-  </div>
+    </div>
+  </main>
 
-  <!-- 🧭 Footer -->
-  <footer>
-    <p>© 2025 <strong>Bita Digital Hub</strong> — Smart, Simple, Free Tools.</p>
-  </footer>
+  <!-- 🦶 Footer -->
+  <div id="footer"></div>
 
-  <!-- 📢 Sticky Ad -->
-  <div class="ad-sticky">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-3215014361489762"
-         data-ad-slot="5555555555"
-         data-ad-format="horizontal"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
-
-  <!-- ⚙️ Script -->
-  <script>
-    const texts = {
-      en: {
-        title: "ZIP & Unzip Files 📦",
-        desc: "Compress or extract ZIP files instantly — safe and fast, right in your browser.",
-        mode: "Select mode:",
-        upload: "Choose file(s):",
-        start: "Start",
-        compressSuccess: "✅ Files compressed successfully!",
-        extractSuccess: "✅ Files extracted successfully!",
-        download: "⬇️ Download"
-      },
-      fa: {
-        title: "فشرده‌سازی و استخراج 📦",
-        desc: "فایل‌ها را به سرعت فشرده یا از حالت ZIP خارج کنید — کاملاً امن و آنلاین.",
-        mode: "حالت را انتخاب کنید:",
-        upload: "فایل(ها) را انتخاب کنید:",
-        start: "شروع",
-        compressSuccess: "✅ فایل‌ها با موفقیت فشرده شدند!",
-        extractSuccess: "✅ فایل‌ها با موفقیت استخراج شدند!",
-        download: "⬇️ دانلود"
-      }
-    };
-
-    function setLang(lang) {
-      const t = texts[lang];
-      document.body.dir = lang === "fa" ? "rtl" : "ltr";
-      document.getElementById("title").innerText = t.title;
-      document.getElementById("desc").innerText = t.desc;
-      document.getElementById("lblMode").innerText = t.mode;
-      document.getElementById("lblUpload").innerText = t.upload;
-      document.getElementById("processBtn").innerText = t.start;
-
-      document.querySelectorAll(".lang-btns button").forEach(b => b.classList.remove("active"));
-      document.getElementById(lang === "fa" ? "btnFarsi" : "btnEnglish").classList.add("active");
-    }
-
-    document.getElementById("btnEnglish").addEventListener("click", () => setLang("en"));
-    document.getElementById("btnFarsi").addEventListener("click", () => setLang("fa"));
-    setLang("en");
-
-    const btn = document.getElementById("processBtn");
-    const modeSelect = document.getElementById("modeSelect");
-    const fileInput = document.getElementById("fileInput");
-    const outputBox = document.getElementById("output");
-    const resultMsg = document.getElementById("resultMsg");
-    const downloadLink = document.getElementById("downloadLink");
-
-    btn.addEventListener("click", async () => {
-      const mode = modeSelect.value;
-      const files = fileInput.files;
-      if (!files.length) {
-        alert("Please select at least one file.");
-        return;
-      }
-
-      const zip = new JSZip();
-
-      if (mode === "zip") {
-        for (const f of files) {
-          const content = await f.arrayBuffer();
-          zip.file(f.name, content);
-        }
-        const blob = await zip.generateAsync({ type: "blob" });
-        const url = URL.createObjectURL(blob);
-        downloadLink.href = url;
-        resultMsg.innerText = texts.en.compressSuccess;
-        outputBox.style.display = "block";
-      } else {
-        const zipFile = files[0];
-        const data = await zip.loadAsync(await zipFile.arrayBuffer());
-        const folderZip = new JSZip();
-        for (const filename of Object.keys(data.files)) {
-          const content = await data.files[filename].async("blob");
-          folderZip.file(filename, content);
-        }
-        const blob = await folderZip.generateAsync({ type: "blob" });
-        const url = URL.createObjectURL(blob);
-        downloadLink.href = url;
-        resultMsg.innerText = texts.en.extractSuccess;
-        outputBox.style.display = "block";
-      }
-    });
-  </script>
+  <!-- 📜 Scripts -->
+  <script type="module" src="../js/main.js"></script>
+  <script src="../js/zip-main.js"></script>
 </body>
 </html>

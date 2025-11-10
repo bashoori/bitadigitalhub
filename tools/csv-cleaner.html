@@ -3,206 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CSV & Excel Cleaner | Bita Digital Hub</title>
+  <title data-i18n="tools.csv.title">CSV & Excel Cleaner | Bita Digital Hub</title>
   <meta name="description" content="Upload and clean your CSV or Excel files — remove duplicates, empty rows, or trim spaces. Free, fast, and secure tool by Bita Digital Hub." />
+
+  <!-- 🌈 Unified Styles -->
+  <link rel="stylesheet" href="../css/theme.css" />
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
   <link rel="icon" type="image/png" href="../assets/taskhub-logo.png" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762" crossorigin="anonymous"></script>
+
+  <!-- 💰 Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
+          crossorigin="anonymous"></script>
+
+  <!-- 🧩 XLSX -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 </head>
 
 <body>
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="nav-left">
-      <img src="../assets/taskhub-logo.svg" alt="Logo" width="36" height="36" />
-      <a href="../index.html" class="brand">Bita Digital Hub</a>
+  <!-- 🧭 Shared Header -->
+  <div id="header"></div>
+
+  <!-- 🌐 Brand Section -->
+  <section class="brand-header center">
+    <img src="../assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="brand-logo" />
+    <div class="brand-text">
+      <h1 class="brand-title" data-i18n="site.title">Bita Digital Hub</h1>
+      <p class="brand-subtitle" data-i18n="site.subtitle">Empowering Digital Growth</p>
     </div>
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="../about.html">About</a>
-      <a href="../privacy.html">Privacy</a>
-    </nav>
-  </header>
+  </section>
 
-  <div class="page-wrapper">
-    <!-- Left Ad -->
-    <aside class="ad-left">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-3215014361489762"
-           data-ad-slot="6666666666"
-           data-ad-format="auto"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </aside>
+  <!-- 🧹 CSV Cleaner -->
+  <main class="tool-page">
+    <div class="tool-card">
+      <h2 id="title" data-i18n="tools.csv.title">CSV & Excel Cleaner 🧹</h2>
+      <p id="desc" data-i18n="tools.csv.desc">
+        Upload and clean your spreadsheet — remove duplicates, empty rows, and trim spaces instantly.
+      </p>
 
-    <main class="container">
-      <section class="tool-header">
-        <h1 id="title">CSV & Excel Cleaner 🧹</h1>
-        <p id="desc">Upload and clean your spreadsheet — remove duplicates, empty rows, and trim spaces instantly.</p>
+      <!-- 🌐 Language Buttons -->
+      <div class="lang-btns">
+        <button id="btnEnglish" data-lang="en" class="active">English</button>
+        <button id="btnFarsi" data-lang="fa">فارسی</button>
+      </div>
 
-        <!-- Language Buttons -->
-        <div class="lang-btns">
-          <button id="btnEnglish" class="active">English</button>
-          <button id="btnFarsi">فارسی</button>
-        </div>
-      </section>
-
-      <div class="tool-box" style="max-width:600px;">
-        <label id="lblUpload" for="fileInput">Upload a CSV or Excel file:</label>
+      <div class="tool-form">
+        <label id="lblUpload" for="fileInput" data-i18n="tools.csv.upload">Upload a CSV or Excel file:</label>
         <input type="file" id="fileInput" accept=".csv, .xlsx" />
 
-        <label id="lblOptions" style="margin-top:1rem;">Cleaning options:</label>
-        <div style="text-align:left; display:flex; flex-direction:column; gap:0.4rem;">
-          <label><input type="checkbox" id="trimSpaces" checked /> <span id="txtTrim">Trim spaces</span></label>
-          <label><input type="checkbox" id="dropEmpty" checked /> <span id="txtDrop">Remove empty rows</span></label>
-          <label><input type="checkbox" id="removeDupes" checked /> <span id="txtDupes">Remove duplicates</span></label>
+        <label id="lblOptions" data-i18n="tools.csv.options" style="margin-top:1rem;">Cleaning options:</label>
+        <div class="options-group">
+          <label><input type="checkbox" id="trimSpaces" checked /> <span id="txtTrim" data-i18n="tools.csv.trim">Trim spaces</span></label>
+          <label><input type="checkbox" id="dropEmpty" checked /> <span id="txtDrop" data-i18n="tools.csv.drop">Remove empty rows</span></label>
+          <label><input type="checkbox" id="removeDupes" checked /> <span id="txtDupes" data-i18n="tools.csv.dupes">Remove duplicates</span></label>
         </div>
 
-        <button id="btnClean" style="margin-top:1.2rem;">Clean File</button>
+        <button id="btnClean" class="primary-btn" data-i18n="tools.csv.clean">Clean File</button>
 
-        <div id="output" class="output-box" style="display:none;">
-          <p id="resultMsg" style="margin-bottom:1rem;">✅ File cleaned successfully!</p>
-          <a id="downloadLink" href="#" download="cleaned.csv" style="color:#2563eb;">⬇️ Download cleaned file</a>
+        <div id="output" class="output-box hidden">
+          <p id="resultMsg" data-i18n="tools.csv.success">✅ File cleaned successfully!</p>
+          <a id="downloadLink" href="#" class="download-link" download="cleaned.csv" data-i18n="tools.csv.download">⬇️ Download cleaned file</a>
         </div>
       </div>
+    </div>
 
-      <!-- Mid Ad -->
-      <div class="ad-mid">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-3215014361489762"
-             data-ad-slot="8888888888"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      </div>
-    </main>
-
-    <!-- Right Ad -->
-    <aside class="ad-right">
+    <!-- 📢 Ad -->
+    <div class="ad-container">
       <ins class="adsbygoogle"
            style="display:block"
            data-ad-client="ca-pub-3215014361489762"
-           data-ad-slot="9999999999"
-           data-ad-format="auto"></ins>
+           data-ad-slot="3333333333"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </aside>
-  </div>
+    </div>
+  </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 <strong>Bita Digital Hub</strong> — Smart, Simple, Free Tools.</p>
-  </footer>
+  <!-- 🦶 Shared Footer -->
+  <div id="footer"></div>
 
-  <!-- Sticky Ad -->
-  <div class="ad-sticky">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-3215014361489762"
-         data-ad-slot="5555555555"
-         data-ad-format="horizontal"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
-
-  <!-- Script -->
-  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-  <script>
-    const texts = {
-      en: {
-        title: "CSV & Excel Cleaner 🧹",
-        desc: "Upload and clean your spreadsheet — remove duplicates, empty rows, and trim spaces instantly.",
-        upload: "Upload a CSV or Excel file:",
-        options: "Cleaning options:",
-        trim: "Trim spaces",
-        drop: "Remove empty rows",
-        dupes: "Remove duplicates",
-        clean: "Clean File",
-        success: "✅ File cleaned successfully!",
-      },
-      fa: {
-        title: "پاک‌کننده CSV و Excel 🧹",
-        desc: "فایل جدول خود را آپلود کنید — سطرهای خالی را حذف کنید، فاصله‌ها را ببُرید و داده‌ها را تمیز کنید.",
-        upload: "فایل CSV یا Excel را آپلود کنید:",
-        options: "گزینه‌های پاک‌سازی:",
-        trim: "حذف فاصله‌ها",
-        drop: "حذف سطرهای خالی",
-        dupes: "حذف داده‌های تکراری",
-        clean: "پاک‌سازی فایل",
-        success: "✅ فایل با موفقیت تمیز شد!",
-      }
-    };
-
-    function setLang(lang) {
-      const t = texts[lang];
-      document.body.dir = lang === "fa" ? "rtl" : "ltr";
-      document.getElementById("title").innerText = t.title;
-      document.getElementById("desc").innerText = t.desc;
-      document.getElementById("lblUpload").innerText = t.upload;
-      document.getElementById("lblOptions").innerText = t.options;
-      document.getElementById("txtTrim").innerText = t.trim;
-      document.getElementById("txtDrop").innerText = t.drop;
-      document.getElementById("txtDupes").innerText = t.dupes;
-      document.getElementById("btnClean").innerText = t.clean;
-      document.getElementById("resultMsg").innerText = t.success;
-
-      document.querySelectorAll(".lang-btns button").forEach(b => b.classList.remove("active"));
-      document.getElementById(lang === "fa" ? "btnFarsi" : "btnEnglish").classList.add("active");
-    }
-
-    document.getElementById("btnEnglish").addEventListener("click", () => setLang("en"));
-    document.getElementById("btnFarsi").addEventListener("click", () => setLang("fa"));
-    setLang("en");
-
-    // Clean logic
-    document.getElementById("btnClean").addEventListener("click", () => {
-      const file = document.getElementById("fileInput").files[0];
-      if (!file) return alert("Please select a file.");
-
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        let data = e.target.result;
-        let workbook, rows = [];
-
-        if (file.name.endsWith(".csv")) {
-          const csv = data.split("\n").map(r => r.split(","));
-          rows = csv;
-        } else {
-          workbook = XLSX.read(data, { type: "binary" });
-          const sheet = workbook.Sheets[workbook.SheetNames[0]];
-          rows = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-        }
-
-        const trim = document.getElementById("trimSpaces").checked;
-        const drop = document.getElementById("dropEmpty").checked;
-        const dupes = document.getElementById("removeDupes").checked;
-
-        // Trim
-        if (trim) {
-          rows = rows.map(r => r.map(v => (typeof v === "string" ? v.trim() : v)));
-        }
-
-        // Remove empty rows
-        if (drop) {
-          rows = rows.filter(r => r.join("").trim() !== "");
-        }
-
-        // Remove duplicates
-        if (dupes) {
-          const unique = new Set(rows.map(r => JSON.stringify(r)));
-          rows = Array.from(unique).map(r => JSON.parse(r));
-        }
-
-        const csvContent = rows.map(r => r.join(",")).join("\n");
-        const blob = new Blob([csvContent], { type: "text/csv" });
-        const url = URL.createObjectURL(blob);
-        const downloadLink = document.getElementById("downloadLink");
-        downloadLink.href = url;
-        document.getElementById("output").style.display = "block";
-      };
-
-      if (file.name.endsWith(".csv")) reader.readAsText(file);
-      else reader.readAsBinaryString(file);
-    });
-  </script>
+  <!-- 📜 Scripts -->
+  <script type="module" src="../js/main.js"></script>
+  <script src="../js/csv-main.js"></script>
 </body>
 </html>

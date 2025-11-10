@@ -3,108 +3,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free Digital Tools | Bita Digital Hub</title>
-  <meta name="description" content="Free AI-powered tools by Bita Digital Hub — create QR codes, shorten URLs, write bios, and convert files instantly online." />
+  <title data-i18n="tools.meta.title">Free Digital Tools | Bita Digital Hub</title>
+  <meta name="description" content="Free AI-powered tools by Bita Digital Hub — from QR generation to SEO analysis, social audits, and file conversion for digital creators." />
+  
+  <!-- 🌈 Unified Styles -->
+  <link rel="stylesheet" href="css/theme.css" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
   <link rel="icon" type="image/png" href="assets/taskhub-logo.png" />
+
+  <!-- 💰 Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
+          crossorigin="anonymous"></script>
 </head>
 
 <body>
-    
-  <!-- 🔗 Header Import -->
+  <!-- 🧭 Shared Header -->
   <div id="header"></div>
-  <script>
-    fetch("components/header.html")
-      .then(res => res.text())
-      .then(html => document.getElementById("header").innerHTML = html)
-      .catch(err => console.error("Header failed to load:", err));
-  </script>
+
+  <!-- 🌐 Brand Section -->
+  <section class="brand-header center">
+    <img src="assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="brand-logo" />
+    <div class="brand-text">
+      <h1 class="brand-title" data-i18n="site.title">Bita Digital Hub</h1>
+      <p class="brand-subtitle" data-i18n="site.subtitle">Empowering Digital Growth</p>
+    </div>
+  </section>
 
   <!-- 🌟 Hero Section -->
-  <main>
-    <section class="hero-section">
-      <div class="hero-badge">🧰 AI & Productivity Tools</div>
-      <h1 class="hero-title">Free Tools for Digital Creators</h1>
-      <p class="hero-subtitle">
-        Simplify your workflow with our free online tools — from QR code creation to smart bio generation and file conversion.
-      </p>
-    </section>
+  <section class="hero-section">
+    <div class="hero-badge" data-i18n="tools.hero.badge">🧰 AI & Productivity Tools</div>
+    <h1 class="hero-title" data-i18n="tools.hero.title">Free Tools for Digital Creators</h1>
+    <p class="hero-subtitle" data-i18n="tools.hero.desc">
+      Simplify your workflow with our free online tools — from QR generation to SEO analysis and file conversion.
+    </p>
+  </section>
 
-    <!-- 🧩 Tool Cards -->
-    <section class="container" style="margin-top:3rem;">
-      <h2 class="section-title">Explore Our Tools</h2>
-      <div class="tool-grid">
-
-        <!-- Tool 1 -->
-        <a class="tool-card" href="tools/qr-generator.html">
-          <h3>QR Code Generator</h3>
-          <p>Create custom QR codes instantly for links, text, or contact info — share them anywhere.</p>
-        </a>
-
-        <!-- Tool 2 -->
-        <a class="tool-card" href="tools/url-shortener.html">
-          <h3>URL Shortener</h3>
-          <p>Turn long links into short, trackable URLs. Perfect for campaigns and social media.</p>
-        </a>
-
-        <!-- Tool 3 -->
-        <a class="tool-card" href="tools/ai-bio-generator.html">
-          <h3>AI Bio Generator</h3>
-          <p>Write professional social media bios or About sections powered by AI in seconds.</p>
-        </a>
-
-        <!-- Tool 4 -->
-        <a class="tool-card" href="tools/file-converter.html">
-          <h3>File Converter</h3>
-          <p>Convert files easily — PDF ↔ Word, PNG ↔ JPG, or more. Fast, free, and online.</p>
-        </a>
-
-        <!-- Tool 5 -->
-        <a class="tool-card" href="tools/social-audit.html">
-          <h3>Social Media Audit</h3>
-          <p>Analyze your Instagram or YouTube content with engagement and hashtag insights.</p>
-        </a>
-
-        <!-- Tool 6 -->
-        <a class="tool-card" href="tools/seo-analyzer.html">
-          <h3>SEO Analyzer</h3>
-          <p>Check your website’s SEO performance — keywords, titles, and structure optimization.</p>
-        </a>
-      </div>
-    </section>
-
-    <!-- 💰 AdSense Section -->
-    <!-- 🟢 Place AdSense Script Here -->
-    <div class="container" style="text-align:center; margin:2rem 0;">
-      <p style="color:gray;">(Ad space – add your AdSense snippet here)</p>
+  <!-- 🧩 Tools Grid -->
+  <main class="container" style="margin-top:3rem;">
+    <h2 class="section-title" data-i18n="tools.section.title">Explore Our Tools</h2>
+    <div class="lang-btns">
+      <button id="btnEnglish" data-lang="en" class="active">English</button>
+      <button id="btnFarsi" data-lang="fa">فارسی</button>
     </div>
 
-    <!-- 📣 Share Section -->
-    <section class="container" style="margin-top:3rem; text-align:center;">
-      <h2 class="section-title">Share These Tools</h2>
-      <p>Help more creators and entrepreneurs discover these free tools.</p>
-      <div class="share-buttons" style="margin-top:1rem;">
-        <a href="https://t.me/share/url?url=https://bitadigitalhub.com/tools" target="_blank" class="btn-secondary">Share on Telegram</a>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://bitadigitalhub.com/tools" target="_blank" class="btn-secondary">Share on LinkedIn</a>
-        <a href="https://twitter.com/intent/tweet?url=https://bitadigitalhub.com/tools&text=Try%20these%20free%20digital%20tools!" target="_blank" class="btn-secondary">Share on X</a>
-      </div>
-    </section>
+    <div class="tool-grid">
+      <a class="tool-card" href="tools/qr-generator.html">
+        <h3 data-i18n="tools.qr.title">QR Code Generator</h3>
+        <p data-i18n="tools.qr.desc">Create custom QR codes instantly for links, text, or contact info.</p>
+      </a>
 
-    <!-- 💬 CTA -->
-    <section class="contact-section">
-      <h2>Need a Custom Tool or Integration?</h2>
-      <p>We build custom automation tools and dashboards for creators, agencies, and startups.</p>
-      <a href="contact.html" class="btn-primary">Request a Custom Build</a>
-    </section>
+      <a class="tool-card" href="tools/url-shortener.html">
+        <h3 data-i18n="tools.shortener.title">URL Shortener</h3>
+        <p data-i18n="tools.shortener.desc">Turn long links into short, trackable URLs. Perfect for campaigns and social media.</p>
+      </a>
+
+      <a class="tool-card" href="tools/file-converter.html">
+        <h3 data-i18n="tools.converter.title">File Converter</h3>
+        <p data-i18n="tools.converter.desc">Convert files easily — PDF ↔ Word, PNG ↔ JPG, and more.</p>
+      </a>
+
+      <a class="tool-card" href="tools/csv-cleaner.html">
+        <h3 data-i18n="tools.csv.title">CSV & Excel Cleaner</h3>
+        <p data-i18n="tools.csv.desc">Upload and clean spreadsheets — remove duplicates, spaces, and empty rows.</p>
+      </a>
+
+      <a class="tool-card" href="tools/password-generator.html">
+        <h3 data-i18n="tools.password.title">Password Generator</h3>
+        <p data-i18n="tools.password.desc">Generate strong, secure passwords instantly — customizable and safe.</p>
+      </a>
+
+      <a class="tool-card" href="tools/audio-transcriber.html">
+        <h3 data-i18n="tools.audio.title">Audio Transcriber</h3>
+        <p data-i18n="tools.audio.desc">Upload an audio file (.mp3 or .wav) and get instant transcription.</p>
+      </a>
+
+      <a class="tool-card" href="tools/zip-unzip.html">
+        <h3 data-i18n="tools.zip.title">ZIP & Unzip Files</h3>
+        <p data-i18n="tools.zip.desc">Compress or extract ZIP files instantly — simple, secure, and fast.</p>
+      </a>
+    </div>
   </main>
 
-  <!-- 🔗 Footer -->
+  <!-- 📣 Share Section -->
+  <section class="container" style="margin-top:3rem; text-align:center;">
+    <h2 class="section-title" data-i18n="tools.share.title">Share These Tools</h2>
+    <p data-i18n="tools.share.desc">Help more creators and entrepreneurs discover these free tools.</p>
+    <div class="share-buttons">
+      <a href="https://t.me/share/url?url=https://bitadigitalhub.com/tools" target="_blank" class="btn-secondary">Share on Telegram</a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://bitadigitalhub.com/tools" target="_blank" class="btn-secondary">Share on LinkedIn</a>
+      <a href="https://twitter.com/intent/tweet?url=https://bitadigitalhub.com/tools&text=Try%20these%20free%20digital%20tools!" target="_blank" class="btn-secondary">Share on X</a>
+    </div>
+  </section>
+
+  <!-- 💬 CTA -->
+  <section class="contact-section">
+    <h2 data-i18n="tools.cta.title">Need a Custom Tool or Integration?</h2>
+    <p data-i18n="tools.cta.desc">We build custom automation tools and dashboards for creators, agencies, and startups.</p>
+    <a href="contact.html" class="btn-primary" data-i18n="tools.cta.button">Request a Custom Build</a>
+  </section>
+
+  <!-- 🦶 Footer -->
   <div id="footer"></div>
-  <script>
-    fetch("components/footer.html")
-      .then(res => res.text())
-      .then(html => document.getElementById("footer").innerHTML = html)
-      .catch(err => console.error("Footer failed to load:", err));
-  </script>
+
+  <!-- 📜 Scripts -->
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

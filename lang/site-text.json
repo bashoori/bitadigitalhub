@@ -144,3 +144,228 @@
     }
   }
 }
+{
+  "en": {
+    "tools": {
+      "zipUnzip": {
+        "title": "ZIP & Unzip Files 📦",
+        "desc": "Compress or extract ZIP files instantly — safe, simple, and fast.",
+        "mode": "Select mode:",
+        "optionZip": "Compress files (ZIP)",
+        "optionUnzip": "Extract ZIP file",
+        "upload": "Choose file(s):",
+        "start": "Start",
+        "compressSuccess": "✅ Files compressed successfully!",
+        "extractSuccess": "✅ Files extracted successfully!",
+        "download": "⬇️ Download"
+      }
+    }
+  },
+  "fa": {
+    "tools": {
+      "zipUnzip": {
+        "title": "فشرده‌سازی و استخراج 📦",
+        "desc": "فایل‌ها را به سرعت فشرده یا از حالت ZIP خارج کنید — کاملاً امن و آنلاین.",
+        "mode": "انتخاب حالت:",
+        "optionZip": "فشرده‌سازی فایل‌ها (ZIP)",
+        "optionUnzip": "استخراج فایل ZIP",
+        "upload": "انتخاب فایل(ها):",
+        "start": "شروع",
+        "compressSuccess": "✅ فایل‌ها با موفقیت فشرده شدند!",
+        "extractSuccess": "✅ فایل‌ها با موفقیت استخراج شدند!",
+        "download": "⬇️ دانلود"
+      }
+    }
+  }
+}
+{
+  "en": {
+    "tools": {
+      "urlShortener": {
+        "title": "URL Shortener 🔗",
+        "desc": "Create short, trackable links for campaigns and sharing — fast, free, and secure.",
+        "label": "Enter your long URL:",
+        "button": "Shorten URL",
+        "success": "✅ Your shortened link:"
+      }
+    }
+  },
+  "fa": {
+    "tools": {
+      "urlShortener": {
+        "title": "کوتاه‌کننده لینک 🔗",
+        "desc": "لینک‌های کوتاه و قابل‌ردیابی برای اشتراک‌گذاری یا کمپین‌ها بسازید — سریع، رایگان و امن.",
+        "label": "لینک اصلی خود را وارد کنید:",
+        "button": "کوتاه کردن لینک",
+        "success": "✅ لینک کوتاه شما:"
+      }
+    }
+  }
+}
+{
+  "en": {
+    "tools": {
+      "qrGenerator": {
+        "title": "QR Code Generator 🔳",
+        "desc": "Generate QR codes for any text, link, or contact info instantly.",
+        "label": "Enter text or URL:",
+        "placeholder": "https://example.com",
+        "button": "Generate QR Code",
+        "download": "⬇️ Download QR"
+      }
+    }
+  },
+  "fa": {
+    "tools": {
+      "qrGenerator": {
+        "title": "تولیدکننده کد QR 🔳",
+        "desc": "کد QR برای هر متن یا لینک را فوراً بسازید.",
+        "label": "متن یا لینک را وارد کنید:",
+        "placeholder": "https://example.com",
+        "button": "تولید کد QR",
+        "download": "⬇️ دانلود کد QR"
+      }
+    }
+  }
+}
+{
+  "en": {
+    "tools": {
+      "password": {
+        "title": "Password Generator 🔐",
+        "desc": "Generate strong, secure passwords instantly — customizable and safe.",
+        "length": "Password length",
+        "options": "Options",
+        "lower": "Include lowercase (a-z)",
+        "upper": "Include uppercase (A-Z)",
+        "nums": "Include numbers (0-9)",
+        "syms": "Include symbols (!@#$%)",
+        "generate": "Generate Password",
+        "copy": "Copy",
+        "copied": "✅ Password copied!"
+      }
+    }
+  },
+  "fa": {
+    "tools": {
+      "password": {
+        "title": "تولیدکننده رمز عبور 🔐",
+        "desc": "درجا رمزهای قوی و امن بسازید — با تنظیمات دلخواه.",
+        "length": "طول رمز عبور",
+        "options": "گزینه‌ها",
+        "lower": "شامل حروف کوچک (a-z)",
+        "upper": "شامل حروف بزرگ (A-Z)",
+        "nums": "شامل اعداد (0-9)",
+        "syms": "شامل نمادها (!@#$%)",
+        "generate": "تولید رمز",
+        "copy": "کپی",
+        "copied": "✅ رمز کپی شد!"
+      }
+    }
+  }
+}
+{
+  "en": {
+    "tools": {
+      "csv": {
+        "title": "CSV & Excel Cleaner 🧹",
+        "desc": "Upload and clean your spreadsheet — remove duplicates, empty rows, and trim spaces instantly.",
+        "upload": "Upload a CSV or Excel file:",
+        "options": "Cleaning options:",
+        "trim": "Trim spaces",
+        "drop": "Remove empty rows",
+        "dupes": "Remove duplicates",
+        "clean": "Clean File",
+        "success": "✅ File cleaned successfully!",
+        "download": "⬇️ Download cleaned file"
+      }
+    }
+  },
+  "fa": {
+    "tools": {
+      "csv": {
+        "title": "پاک‌کننده CSV و Excel 🧹",
+        "desc": "فایل جدول خود را آپلود کنید — سطرهای خالی را حذف کنید، فاصله‌ها را ببُرید و داده‌ها را تمیز کنید.",
+        "upload": "فایل CSV یا Excel را آپلود کنید:",
+        "options": "گزینه‌های پاک‌سازی:",
+        "trim": "حذف فاصله‌ها",
+        "drop": "حذف سطرهای خالی",
+        "dupes": "حذف داده‌های تکراری",
+        "clean": "پاک‌سازی فایل",
+        "success": "✅ فایل با موفقیت تمیز شد!",
+        "download": "⬇️ دانلود فایل تمیزشده"
+      }
+    }
+  }
+}
+
+{
+  "en": {
+    "tools": {
+      "audio": {
+        "title": "🎧 Audio Transcriber",
+        "desc": "Upload an English audio file (.mp3 or .wav) and get the full transcription below.",
+        "upload": "Upload your audio file:",
+        "button": "Transcribe Audio",
+        "resultTitle": "Transcription Result",
+        "placeholder": "Your transcription will appear here...",
+        "loading": "⏳ Transcribing... please wait..."
+      }
+    }
+  },
+  "fa": {
+    "tools": {
+      "audio": {
+        "title": "🎧 تبدیل گفتار به متن",
+        "desc": "فایل صوتی انگلیسی (.mp3 یا .wav) خود را آپلود کنید تا متن کامل آن نمایش داده شود.",
+        "upload": "فایل صوتی خود را آپلود کنید:",
+        "button": "تبدیل صوت به متن",
+        "resultTitle": "نتیجه تبدیل",
+        "placeholder": "نتیجه تبدیل اینجا نمایش داده می‌شود...",
+        "loading": "⏳ در حال تبدیل... لطفاً منتظر بمانید..."
+      }
+    }
+  }
+}
+{
+  "en": {
+    "tools": {
+      "meta": { "title": "Free Digital Tools | Bita Digital Hub" },
+      "hero": {
+        "badge": "🧰 AI & Productivity Tools",
+        "title": "Free Tools for Digital Creators",
+        "desc": "Simplify your workflow with our free online tools — from QR generation to SEO analysis and file conversion."
+      },
+      "section": { "title": "Explore Our Tools" },
+      "share": {
+        "title": "Share These Tools",
+        "desc": "Help more creators and entrepreneurs discover these free tools."
+      },
+      "cta": {
+        "title": "Need a Custom Tool or Integration?",
+        "desc": "We build custom automation tools and dashboards for creators, agencies, and startups.",
+        "button": "Request a Custom Build"
+      }
+    }
+  },
+  "fa": {
+    "tools": {
+      "meta": { "title": "ابزارهای دیجیتال رایگان | بیتا دیجیتال هاب" },
+      "hero": {
+        "badge": "🧰 ابزارهای هوش مصنوعی و بهره‌وری",
+        "title": "ابزارهای رایگان برای خلاقان دیجیتال",
+        "desc": "فرآیند کار خود را با ابزارهای آنلاین ما ساده‌تر کنید — از تولید کد QR تا تحلیل سئو و تبدیل فایل."
+      },
+      "section": { "title": "ابزارهای موجود" },
+      "share": {
+        "title": "اشتراک‌گذاری ابزارها",
+        "desc": "به دیگر خلاقان و کارآفرینان کمک کنید تا این ابزارهای رایگان را بشناسند."
+      },
+      "cta": {
+        "title": "نیاز به ابزار یا اتوماسیون اختصاصی داری؟",
+        "desc": "ما ابزارها و داشبوردهای سفارشی برای برندها، آژانس‌ها و استارتاپ‌ها می‌سازیم.",
+        "button": "درخواست ساخت اختصاصی"
+      }
+    }
+  }
+}

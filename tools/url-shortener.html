@@ -3,162 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>URL Shortener | Bita Digital Hub</title>
-  <meta name="description" content="Create short, shareable links instantly — smart, fast, and free online tool by Bita Digital Hub." />
+  <title data-i18n="tools.urlShortener.title">URL Shortener | Bita Digital Hub</title>
+  <meta name="description"
+        content="Create short, shareable links instantly — smart, fast, and free online tool by Bita Digital Hub." />
+
+  <!-- 🌈 Unified Styles -->
+  <link rel="stylesheet" href="../css/theme.css" />
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+
   <link rel="icon" type="image/png" href="../assets/taskhub-logo.png" />
 
   <!-- 💰 Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-    crossorigin="anonymous"></script>
+          crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <!-- 🧭 Navbar -->
-  <header class="navbar">
-    <div class="nav-left">
-      <img src="../assets/taskhub-logo.svg" alt="Logo" width="36" height="36" />
-      <a href="../index.html" class="brand">Bita Digital Hub</a>
+  <!-- 🧭 Shared Header -->
+  <div id="header"></div>
+
+  <!-- 🌐 Brand Section -->
+  <section class="brand-header center">
+    <img src="../assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="brand-logo" />
+    <div class="brand-text">
+      <h1 class="brand-title" data-i18n="site.title">Bita Digital Hub</h1>
+      <p class="brand-subtitle" data-i18n="site.subtitle">Empowering Digital Growth</p>
     </div>
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="../about.html">About</a>
-      <a href="../privacy.html">Privacy</a>
-    </nav>
-  </header>
+  </section>
 
-  <div class="page-wrapper">
-    <!-- 📢 Left Ad -->
-    <aside class="ad-left">
+  <!-- 🧰 URL Shortener Tool -->
+  <main class="tool-page">
+    <div class="tool-card">
+      <h2 id="title" data-i18n="tools.urlShortener.title">URL Shortener 🔗</h2>
+      <p id="desc" data-i18n="tools.urlShortener.desc">
+        Create short, trackable links for campaigns and sharing — fast, free, and secure.
+      </p>
+
+      <!-- 🌐 Language Buttons -->
+      <div class="lang-btns">
+        <button id="btnEnglish" data-lang="en" class="active">English</button>
+        <button id="btnFarsi" data-lang="fa">فارسی</button>
+      </div>
+
+      <!-- 🧠 Form -->
+      <div class="tool-form">
+        <label id="lblUrl" for="urlInput" data-i18n="tools.urlShortener.label">Enter your long URL:</label>
+        <input type="text" id="urlInput" class="file-input" placeholder="https://example.com/your-long-link" />
+
+        <button id="shortenBtn" class="primary-btn" data-i18n="tools.urlShortener.button">Shorten URL</button>
+
+        <div id="output" class="output-box hidden">
+          <p id="resultMsg" data-i18n="tools.urlShortener.success">✅ Your shortened link:</p>
+          <a id="shortLink" href="#" target="_blank" class="download-link"></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 📢 Ad -->
+    <div class="ad-container">
       <ins class="adsbygoogle"
            style="display:block"
            data-ad-client="ca-pub-3215014361489762"
-           data-ad-slot="1111111111"
-           data-ad-format="auto"></ins>
+           data-ad-slot="3333333333"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </aside>
+    </div>
+  </main>
 
-    <!-- 🧠 Main Content -->
-    <main class="container">
-      <section class="tool-header">
-        <h1 id="title">URL Shortener 🔗</h1>
-        <p id="desc">Create short, trackable links for campaigns and sharing — fast, free, and secure.</p>
+  <!-- 🦶 Shared Footer -->
+  <div id="footer"></div>
 
-        <!-- 🌐 Language Toggle -->
-        <div class="lang-btns">
-          <button id="btnEnglish" class="active">English</button>
-          <button id="btnFarsi">فارسی</button>
-        </div>
-      </section>
-
-      <!-- 🧰 Tool -->
-      <div class="tool-box" style="max-width:580px;">
-        <label id="lblUrl">Enter your long URL:</label>
-        <input type="text" id="urlInput" placeholder="https://example.com/your-long-link" />
-
-        <button id="shortenBtn">Shorten URL</button>
-
-        <div id="output" class="output-box" style="display:none;">
-          <p id="resultMsg"></p>
-          <a id="shortLink" href="#" target="_blank" style="color:#2563eb;"></a>
-        </div>
-      </div>
-
-      <!-- 📢 Mid Ad -->
-      <div class="ad-mid">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-3215014361489762"
-             data-ad-slot="3333333333"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      </div>
-    </main>
-
-    <!-- 📢 Right Ad -->
-    <aside class="ad-right">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-3215014361489762"
-           data-ad-slot="2222222222"
-           data-ad-format="auto"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </aside>
-  </div>
-
-  <!-- 🧭 Footer -->
-  <footer>
-    <p>© 2025 <strong>Bita Digital Hub</strong> — Smart, Simple, Free Tools.</p>
-  </footer>
-
-  <!-- 📢 Sticky Ad -->
-  <div class="ad-sticky">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-3215014361489762"
-         data-ad-slot="5555555555"
-         data-ad-format="horizontal"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
-
-  <!-- ⚙️ Script -->
-  <script>
-    const texts = {
-      en: {
-        title: "URL Shortener 🔗",
-        desc: "Create short, trackable links for campaigns and sharing — fast, free, and secure.",
-        label: "Enter your long URL:",
-        button: "Shorten URL",
-        success: "✅ Your shortened link:",
-      },
-      fa: {
-        title: "کوتاه‌کننده لینک 🔗",
-        desc: "لینک‌های کوتاه و قابل‌ردیابی برای اشتراک‌گذاری یا کمپین‌ها بسازید — سریع، رایگان و امن.",
-        label: "لینک اصلی خود را وارد کنید:",
-        button: "کوتاه کردن لینک",
-        success: "✅ لینک کوتاه شما:",
-      }
-    };
-
-    function setLang(lang) {
-      const t = texts[lang];
-      document.body.dir = lang === "fa" ? "rtl" : "ltr";
-      document.getElementById("title").innerText = t.title;
-      document.getElementById("desc").innerText = t.desc;
-      document.getElementById("lblUrl").innerText = t.label;
-      document.getElementById("shortenBtn").innerText = t.button;
-      document.getElementById("resultMsg").innerText = t.success;
-      document.querySelectorAll(".lang-btns button").forEach(b => b.classList.remove("active"));
-      document.getElementById(lang === "fa" ? "btnFarsi" : "btnEnglish").classList.add("active");
-    }
-
-    document.getElementById("btnEnglish").addEventListener("click", () => setLang("en"));
-    document.getElementById("btnFarsi").addEventListener("click", () => setLang("fa"));
-    setLang("en");
-
-    const shortenBtn = document.getElementById("shortenBtn");
-    const urlInput = document.getElementById("urlInput");
-    const output = document.getElementById("output");
-    const resultMsg = document.getElementById("resultMsg");
-    const shortLink = document.getElementById("shortLink");
-
-    shortenBtn.addEventListener("click", () => {
-      const url = urlInput.value.trim();
-      if (!url.startsWith("http")) {
-        alert("Please enter a valid URL starting with http or https.");
-        return;
-      }
-
-      // Generate random short link (client-side simulation)
-      const randomSlug = Math.random().toString(36).substring(2, 8);
-      const shortUrl = `https://bitadigitalhub.link/${randomSlug}`;
-
-      output.style.display = "block";
-      resultMsg.innerText = texts.en.success;
-      shortLink.href = shortUrl;
-      shortLink.innerText = shortUrl;
-    });
-  </script>
+  <!-- 📜 Scripts -->
+  <script type="module" src="../js/main.js"></script>
+  <script src="../js/url-main.js"></script>
 </body>
 </html>
