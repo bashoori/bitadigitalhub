@@ -97,6 +97,40 @@ a:hover {
   color: var(--primary-blue);
 }
 
+/* ---------- Brand Alignment (Logo + Text) ---------- */
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.1;
+}
+
+.brand-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+}
+
+.brand-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  margin-top: 0.15rem;
+  font-weight: 500;
+}
+
 /* ---------- Dropdown Menus ---------- */
 .dropdown {
   position: relative;
