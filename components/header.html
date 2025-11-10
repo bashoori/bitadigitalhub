@@ -1,4 +1,8 @@
-<!-- 🧭 Header / Navbar Component -->
+<!-- =========================================================
+🧭 Header / Navbar Component – Bita Digital Hub
+Now fully bilingual, theme-ready, and modular
+========================================================= -->
+
 <header class="navbar">
   <div class="nav-container">
 
@@ -7,67 +11,68 @@
       <a href="index.html" class="brand-group">
         <img src="assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="brand-logo" />
         <div class="brand-text">
-          <span class="brand-title">Bita Digital Hub</span>
-          <span class="brand-subtitle">Empowering Digital Growth</span>
+          <span class="brand-title" data-i18n="site.title">Bita Digital Hub</span>
+          <span class="brand-subtitle" data-i18n="site.subtitle">Empowering Digital Growth</span>
         </div>
       </a>
     </div>
 
     <!-- 🔹 Center: Navigation -->
     <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="about.html" data-i18n="nav.about">About</a>
 
       <div class="dropdown">
-        <button class="dropbtn">Tools ▾</button>
+        <button class="dropbtn" data-i18n="nav.tools">Tools ▾</button>
         <div class="dropdown-content">
-          <a href="tools.html#overview">Overview</a>
-          <a href="tools/file-converter.html">File Converter</a>
-          <a href="tools/csv-cleaner.html">CSV Cleaner</a>
-          <a href="tools/zip-unzip.html">Zip / UnZip</a>
-          <a href="tools/qr-generator.html">QR Generator</a>
-          <a href="tools/audio-transcriber.html">Audio Transcriber</a>
-          <a href="tools/url-shortener.html">URL Shortener</a>
-          <a href="tools/password-generator.html">Password Generator</a>
-          
+          <a href="tools.html#overview" data-i18n="tools.overview">Overview</a>
+          <a href="tools/file-converter.html" data-i18n="tools.fileConverter">File Converter</a>
+          <a href="tools/csv-cleaner.html" data-i18n="tools.csvCleaner">CSV Cleaner</a>
+          <a href="tools/zip-unzip.html" data-i18n="tools.zipUnzip">Zip / UnZip</a>
+          <a href="tools/qr-generator.html" data-i18n="tools.qrGenerator">QR Generator</a>
+          <a href="tools/audio-transcriber.html" data-i18n="tools.audioTranscriber">Audio Transcriber</a>
+          <a href="tools/url-shortener.html" data-i18n="tools.urlShortener">URL Shortener</a>
+          <a href="tools/password-generator.html" data-i18n="tools.passwordGenerator">Password Generator</a>
         </div>
       </div>
 
       <div class="dropdown">
-        <button class="dropbtn">Services ▾</button>
+        <button class="dropbtn" data-i18n="nav.services">Services ▾</button>
         <div class="dropdown-content">
-          <a href="services.html#overview">Overview</a>
-          <a href="services/online-business.html">Online Franchise Business</a>
-          <a href="services/affiliateprogram.html">Affiliate Programs</a>
-          <a href="services/telegram_bot.html">Automation</a>
-         </div>
-      </div>
-
-      <div class="dropdown">
-        <button class="dropbtn">Courses ▾</button>
-        <div class="dropdown-content">
-          <a href="courses.html#overview">Overview</a> 
-          <a href="courses/freecourses.html">Free Learning Courses</a>
-          
+          <a href="services.html#overview" data-i18n="services.overview">Overview</a>
+          <a href="services/online-business.html" data-i18n="services.onlineBusiness">Online Franchise Business</a>
+          <a href="services/affiliateprogram.html" data-i18n="services.affiliateProgram">Affiliate Programs</a>
+          <a href="services/telegram_bot.html" data-i18n="services.automation">Automation</a>
         </div>
       </div>
 
-      <a href="contact.html">Contact</a>
+      <div class="dropdown">
+        <button class="dropbtn" data-i18n="nav.courses">Courses ▾</button>
+        <div class="dropdown-content">
+          <a href="courses.html#overview" data-i18n="courses.overview">Overview</a>
+          <a href="courses/freecourses.html" data-i18n="courses.freeCourses">Free Learning Courses</a>
+        </div>
+      </div>
+
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
     </nav>
 
-    <!-- 🔹 Right: Language + Login -->
+    <!-- 🔹 Right: Language + Theme + Login -->
     <div class="nav-actions">
-      <div class="lang-switch">
-        <button class="lang-toggle">
-          <img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English ▾
-        </button>
-        <ul class="lang-menu">
-          <li><a href="index.html"><img src="https://flagcdn.com/16x12/gb.png" /> English</a></li>
-          <li><a href="index-fa.html"><img src="https://flagcdn.com/16x12/ir.png" /> فارسی</a></li>
-        </ul>
-      </div>
-      <a href="login.html" class="btn-primary get-started">Login</a>
-    </div>
 
+      <!-- 🌐 Language Switch (dynamic with i18n.js) -->
+      <div class="lang-switch">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="fa">فا</button>
+      </div>
+
+      <!-- 🌓 Theme toggle -->
+      <button id="theme-toggle" class="btn-secondary" title="Switch Theme">
+        <span id="theme-icon">☀️</span>
+      </button>
+
+      <!-- 🔑 Login -->
+      <a href="login.html" class="btn-primary get-started" data-i18n="nav.login">Login</a>
+    </div>
   </div>
 </header>

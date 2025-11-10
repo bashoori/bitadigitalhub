@@ -1,0 +1,52 @@
+/* =========================================================
+🧰 Tools Pages (File Converter, QR, Audio Transcriber)
+========================================================= */
+
+.tool-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 75vh;
+  padding: 3rem 1rem;
+  background: linear-gradient(to bottom right, #eef2ff, #e0e7ff);
+}
+
+.tool-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(30, 58, 138, 0.15);
+  padding: 2rem 2.5rem;
+  width: 100%;
+  max-width: 640px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.2);
+}
+
+.lang-btns {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.lang-btns button {
+  border: 1px solid var(--border);
+  background: var(--white);
+  padding: 0.35rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.lang-btns button.active {
+  background: var(--primary-blue);
+  color: var(--white);
+}

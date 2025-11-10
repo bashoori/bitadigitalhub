@@ -3,48 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>File Converter | Bita Digital Hub</title>
+  <title data-i18n="tools.fileConverter.title">File Converter | Bita Digital Hub</title>
   <meta name="description" content="Convert PDF ⇄ Word / Excel / JPG / PNG / TXT — free, fast, and secure online tool by Bita Digital Hub." />
+
+  <!-- 🌈 Unified Styles -->
+  <link rel="stylesheet" href="../css/theme.css" />
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+
   <link rel="icon" type="image/png" href="../assets/taskhub-logo.png" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/main.js?client=ca-pub-3215014361489762"
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
     crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <!-- 🧭 Shared Header -->
+  <!-- 🧭 Header -->
   <div id="header"></div>
-  <script>
-    fetch("../components/header.html")
-      .then(res => res.text())
-      .then(html => document.getElementById("header").innerHTML = html);
-  </script>
 
   <!-- 🌐 Brand Section -->
   <section class="brand-header center">
     <img src="../assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="brand-logo" />
     <div class="brand-text">
-      <h1 class="brand-title">Bita Digital Hub</h1>
-      <p class="brand-subtitle">Start and Grow Your Digital Business</p>
+      <h1 class="brand-title" data-i18n="site.title">Bita Digital Hub</h1>
+      <p class="brand-subtitle" data-i18n="site.subtitle">Start and Grow Your Digital Business</p>
     </div>
   </section>
 
-  <!-- 🧰 File Converter Tool -->
+  <!-- 🧰 Main Converter -->
   <main class="tool-page">
     <div class="tool-card">
-      <h2 id="title">File Converter 🔁</h2>
-      <p id="desc">Convert between PDF, Word, Excel, JPG, PNG, and TXT — fast, secure, and free.</p>
+      <h2 id="title" data-i18n="tools.fileConverter.title">File Converter 🔁</h2>
+      <p id="desc" data-i18n="tools.fileConverter.desc">
+        Convert between PDF, Word, Excel, JPG, PNG, and TXT — fast, secure, and free.
+      </p>
 
+      <!-- 🌐 Language Buttons -->
       <div class="lang-btns">
-        <button id="btnEnglish" class="active">English</button>
-        <button id="btnFarsi">فارسی</button>
+        <button id="btnEnglish" data-lang="en" class="active">English</button>
+        <button id="btnFarsi" data-lang="fa">فارسی</button>
       </div>
 
+      <!-- ⚙️ Converter Form -->
       <div class="tool-form">
-        <label id="lblUpload" for="fileInput">Select a file to convert:</label>
+        <label id="lblUpload" for="fileInput" data-i18n="tools.fileConverter.upload">Select a file to convert:</label>
         <input type="file" id="fileInput" class="file-input" />
 
-        <label id="lblFormat">Choose output format:</label>
+        <label id="lblFormat" data-i18n="tools.fileConverter.format">Choose output format:</label>
         <select id="formatSelect" class="select-input">
           <option value="txt">TXT</option>
           <option value="pdf">PDF</option>
@@ -52,16 +57,17 @@
           <option value="jpg">JPG</option>
         </select>
 
-        <button id="convertBtn" class="primary-btn">Convert</button>
+        <button id="convertBtn" class="primary-btn" data-i18n="tools.fileConverter.convert">Convert</button>
       </div>
 
+      <!-- 📦 Output -->
       <div id="output" class="output-box hidden">
-        <p id="resultMsg"></p>
-        <a id="downloadLink" href="#" class="download-link">⬇️ Download converted file</a>
+        <p id="resultMsg" data-i18n="tools.fileConverter.success">✅ File converted successfully!</p>
+        <a id="downloadLink" href="#" class="download-link" data-i18n="tools.fileConverter.download">⬇️ Download converted file</a>
       </div>
     </div>
 
-    <!-- 📢 Ad Space -->
+    <!-- 📢 Ad -->
     <div class="ad-container">
       <ins class="adsbygoogle"
            style="display:block"
@@ -73,15 +79,11 @@
     </div>
   </main>
 
-  <!-- 🦶 Shared Footer -->
+  <!-- 🦶 Footer -->
   <div id="footer"></div>
-  <script>
-    fetch("../components/footer.html")
-      .then(res => res.text())
-      .then(html => document.getElementById("footer").innerHTML = html);
-  </script>
 
-  <!-- ⚙️ Converter Script -->
+  <!-- 📜 Scripts -->
+  <script type="module" src="../js/main.js"></script>
   <script src="../js/file-main.js"></script>
 </body>
 </html>

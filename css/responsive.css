@@ -1,0 +1,40 @@
+/* =========================================================
+📱 Responsive Adjustments
+========================================================= */
+
+@media (max-width: 992px) {
+  .nav-links {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .brand-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .tool-card {
+    padding: 1.5rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+}

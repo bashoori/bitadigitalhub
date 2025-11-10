@@ -1,0 +1,146 @@
+{
+  "en": {
+    "site": {
+      "title": "Bita Digital Hub",
+      "subtitle": "Empowering Digital Growth"
+    },
+    "meta": {
+      "title": "Bita Digital Hub | Digital Solutions & Online Business"
+    },
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "tools": "Tools",
+      "services": "Services",
+      "courses": "Courses",
+      "contact": "Contact",
+      "login": "Login"
+    },
+    "hero": {
+      "badge": "✨ Build Smarter, Work Freer",
+      "title": "All-in-One Hub for Digital Growth",
+      "subtitle": "Tools, systems, and learning resources to help you automate, grow, and monetize your digital business.",
+      "button": "Start Your Business"
+    },
+    "section": {
+      "title": "What You’ll Find Here",
+      "tools": {
+        "title": "Online Tools",
+        "desc": "Free, AI-powered tools to simplify your workflow — QR generator, URL shortener, file converter, and more."
+      },
+      "services": {
+        "title": "Digital Services",
+        "desc": "Custom-built systems for automation, Telegram bots, and marketing funnels designed to grow your brand."
+      },
+      "sources": {
+        "title": "Marketing & Data Sources",
+        "desc": "Curated digital marketing templates, AI datasets, and learning materials to support your projects."
+      },
+      "franchise": {
+        "title": "Digital Franchise Academy",
+        "desc": "Learn the franchise model — get mentorship, marketing assets, and start your own online business."
+      }
+    },
+    "cta": {
+      "title": "Ready to Launch Your Digital System?",
+      "subtitle": "Tell us your idea — we’ll help you choose the right tools and strategy to make it real.",
+      "button": "Contact Me"
+    },
+    "footer": {
+      "description": "Empowering creators and professionals with automation, analytics, and online-business solutions.",
+      "explore": "Explore",
+      "sources": "Sources",
+      "franchise": "Franchise",
+      "emailLabel": "Email:",
+      "locationLabel": "Location:",
+      "locationValue": "Vancouver, Canada",
+      "rights": "© 2025 Bita Digital Hub. All rights reserved.",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookies": "Cookie Policy"
+    },
+    "tools": {
+      "fileConverter": {
+        "title": "File Converter 🔁",
+        "desc": "Convert between PDF, Word, Excel, JPG, PNG, and TXT — fast, secure, and free.",
+        "upload": "Select a file to convert:",
+        "format": "Choose output format:",
+        "convert": "Convert",
+        "success": "✅ File converted successfully!",
+        "download": "⬇️ Download converted file"
+      }
+    }
+  },
+  "fa": {
+    "site": {
+      "title": "بیتا دیجیتال هاب",
+      "subtitle": "رشد دیجیتال با قدرت"
+    },
+    "meta": {
+      "title": "بیتا دیجیتال هاب | راهکارهای دیجیتال و کسب‌وکار آنلاین"
+    },
+    "nav": {
+      "home": "خانه",
+      "about": "درباره ما",
+      "tools": "ابزارها",
+      "services": "خدمات",
+      "courses": "دوره‌ها",
+      "contact": "تماس",
+      "login": "ورود"
+    },
+    "hero": {
+      "badge": "✨ هوشمندتر بساز، آزادتر کار کن",
+      "title": "هاب جامع رشد دیجیتال",
+      "subtitle": "ابزارها، سیستم‌ها و آموزش‌هایی برای خودکارسازی، رشد و درآمدزایی از کسب‌وکار دیجیتال شما.",
+      "button": "شروع کسب‌وکار"
+    },
+    "section": {
+      "title": "در اینجا چه پیدا می‌کنید",
+      "tools": {
+        "title": "ابزارهای آنلاین",
+        "desc": "ابزارهای هوش مصنوعی رایگان برای ساده‌تر کردن کارها — تولید QR، کوتاه‌کننده لینک، مبدل فایل و موارد دیگر."
+      },
+      "services": {
+        "title": "خدمات دیجیتال",
+        "desc": "سیستم‌های اختصاصی برای اتوماسیون، ربات‌های تلگرام و قیف‌های بازاریابی برای رشد برند شما."
+      },
+      "sources": {
+        "title": "منابع بازاریابی و داده",
+        "desc": "قالب‌ها و مجموعه‌داده‌های بازاریابی دیجیتال برای پشتیبانی از پروژه‌های شما."
+      },
+      "franchise": {
+        "title": "آکادمی فرنچایز دیجیتال",
+        "desc": "مدل فرنچایز را یاد بگیرید — آموزش، ابزارها و دارایی‌های بازاریابی برای شروع کسب‌وکار آنلاین خود."
+      }
+    },
+    "cta": {
+      "title": "آماده‌ای سیستم دیجیتال خودت را بسازی؟",
+      "subtitle": "ایده‌ات را با ما در میان بگذار — ما بهترین ابزارها و استراتژی را برای واقعی کردنش انتخاب می‌کنیم.",
+      "button": "تماس با ما"
+    },
+    "footer": {
+      "description": "قدرت‌بخش به سازندگان و حرفه‌ای‌ها با راهکارهای خودکارسازی، تحلیل داده و کسب‌وکار آنلاین.",
+      "explore": "کاوش کنید",
+      "sources": "منابع",
+      "franchise": "فرنچایز",
+      "emailLabel": "ایمیل:",
+      "locationLabel": "مکان:",
+      "locationValue": "ونکوور، کانادا",
+      "rights": "© ۲۰۲۵ بیتا دیجیتال هاب. تمام حقوق محفوظ است.",
+      "privacy": "سیاست حفظ حریم خصوصی",
+      "terms": "شرایط استفاده",
+      "cookies": "سیاست کوکی‌ها"
+    },
+    "tools": {
+      "fileConverter": {
+        "title": "تبدیل‌گر فایل 🔁",
+        "desc": "تبدیل بین فرمت‌های PDF، Word، Excel، JPG، PNG و TXT — سریع، امن و رایگان.",
+        "upload": "فایل مورد نظر برای تبدیل را انتخاب کنید:",
+        "format": "فرمت خروجی را انتخاب کنید:",
+        "convert": "تبدیل",
+        "success": "✅ فایل با موفقیت تبدیل شد!",
+        "download": "⬇️ دانلود فایل تبدیل‌شده"
+      }
+    }
+  }
+}
