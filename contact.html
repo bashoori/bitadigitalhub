@@ -1,49 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Bita Digital Hub</title>
-
-  <link rel="stylesheet" href="css/style.css" />
-  <script src="js/script.js" defer></script>
-</head>
-
-<body>
-  <!-- Header -->
-  <div id="header-placeholder"></div>
-
+<!-- ================= CONTACT FORM ================= -->
   <section id="contact" class="section contact light">
     <h2>Contact Us</h2>
     <p class="section-sub">Let’s build something amazing together</p>
 
-    <div class="contact-wrapper">
-      <!-- Left info -->
-      <div class="contact-info">
-        <h4>Reach Bita Digital Hub</h4>
-        <p>Tell us about your project, automation idea, or training needs — we’ll reply as soon as we can.</p>
-        <p><strong>Email:</strong> <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a></p>
-        <p><strong>Location:</strong> Vancouver, Canada</p>
+    <form class="contact-form" action="https://formsubmit.co/contact@bitadigitalhub.com" method="POST">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
+        </div>
       </div>
 
-      <!-- Form -->
-      <form
-        class="contact-form"
-        action="mailto:contact@bitadigitalhub.com"
-        method="POST"
-        enctype="text/plain"
-      >
-        <div class="form-row">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" placeholder="Company name" />
         </div>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn primary">Send Message</button>
-      </form>
-    </div>
-  </section>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="text" id="phone" name="phone" placeholder="+1 604 000 0000" />
+        </div>
+      </div>
 
-  <!-- Footer -->
-  <div id="footer-placeholder"></div>
-</body>
-</html>
+      <div class="form-group">
+        <label for="service">Service Interested In *</label>
+        <select id="service" name="service" required>
+          <option value="">Select a service</option>
+          <option>AI Personal Branding</option>
+          <option>Website Creation</option>
+          <option>Data & Analytics</option>
+          <option>Telegram Automation</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn primary">Send Message</button>
+    </form>
+  </section>
