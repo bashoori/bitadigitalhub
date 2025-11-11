@@ -1,5 +1,5 @@
 /* =========================================================
-🌐 Bita Digital Hub – Global Stylesheet (Pastel Edition, v2)
+🌐 Bita Digital Hub – Global Stylesheet (Pastel Edition v3)
 Author: Bita Ashoori
 ========================================================= */
 
@@ -31,28 +31,30 @@ img {
 }
 
 /* =========================================================
-🧭 HEADER / NAVBAR
+🧭 HEADER / NAVBAR (Full-Width + Fixed)
 ========================================================= */
 .navbar.modern {
   width: 100%;
-  max-width: 1300px;
-  margin: 0 auto;
   background: var(--white);
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.8rem 2rem;
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   z-index: 1000;
   transition: all 0.3s ease;
 }
 
+.nav-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+}
+
+/* --- Brand --- */
 .nav-left {
-  flex: 1;
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -121,6 +123,11 @@ img {
   background: #e2e8f0;
 }
 
+.lang-toggle img {
+  width: 18px;
+  height: 12px;
+}
+
 .lang-menu {
   display: none;
   position: absolute;
@@ -154,6 +161,22 @@ img {
 .lang-menu li a:hover {
   background: #f1f5f9;
   color: var(--primary);
+}
+
+/* 🚀 Get Started Button */
+.btn-primary.get-started {
+  background: var(--primary);
+  color: var(--white);
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-primary.get-started:hover {
+  background: var(--primary-hover);
 }
 
 /* =========================================================
@@ -338,7 +361,7 @@ img {
 }
 
 /* =========================================================
-📩 CONTACT FORM (Modern Two-Column Layout)
+📩 CONTACT FORM
 ========================================================= */
 .contact-form {
   background: var(--white);
@@ -431,11 +454,8 @@ img {
 📱 RESPONSIVE
 ========================================================= */
 @media (max-width: 900px) {
-  .navbar.modern {
+  .nav-inner {
     padding: 0.8rem 1.2rem;
-    width: 100%;
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.95);
   }
 
   .nav-actions {

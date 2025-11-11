@@ -1,62 +1,50 @@
 <!-- =========================================================
-🧭 Bita Digital Hub – Responsive Header
-Clean version with language dropdown + smooth scroll
+🧭 Bita Digital Hub – Responsive Header (v3)
+Full-width header with language dropdown + smooth scroll
 ========================================================= -->
 
 <header class="navbar modern">
-  <!-- 🔹 Brand -->
-  <div class="nav-left">
-    <img src="assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" width="36" height="36" />
-    <div class="brand-info">
-      <a href="index.html#home" class="brand">Bita Digital Hub</a>
-      <p class="tagline">Innovative Digital Solutions</p>
+  <div class="nav-inner">
+    <!-- 🔹 Brand -->
+    <div class="nav-left">
+      <img src="assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" width="36" height="36" />
+      <div class="brand-info">
+        <a href="index.html#home" class="brand">Bita Digital Hub</a>
+        <p class="tagline">Innovative Digital Solutions</p>
+      </div>
     </div>
-  </div>
 
-  <!-- 🔹 Navigation -->
-  <nav class="nav-links" aria-label="Main navigation">
-    <a href="index.html#home" class="active">Home</a>
-    <a href="index.html#about">About</a>
-    <a href="index.html#services">Services</a>
-    <a href="index.html#courses">Courses</a>
-    <a href="index.html#tools">Tools</a>
-    <a href="contact.html">Contact</a>
+    <!-- 🔹 Main Navigation -->
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html#home" class="active">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#courses">Courses</a>
+      <a href="index.html#tools">Tools</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-    <!-- 📱 Mobile-only actions -->
-    <div class="mobile-actions">
+    <!-- 🔹 Right Actions -->
+    <div class="nav-actions">
       <div class="lang-switch">
-        <button class="lang-toggle" id="lang-btn-mobile" aria-haspopup="listbox" aria-expanded="false">
+        <button class="lang-toggle" id="lang-btn" aria-haspopup="listbox" aria-expanded="false">
           <img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English ▾
         </button>
-        <ul class="lang-menu" id="lang-menu-mobile" role="listbox">
+        <ul class="lang-menu" id="lang-menu" role="listbox">
           <li><a href="index.html"><img src="https://flagcdn.com/16x12/gb.png" /> English</a></li>
           <li><a href="index-fa.html"><img src="https://flagcdn.com/16x12/ir.png" /> فارسی</a></li>
         </ul>
       </div>
       <a href="contact.html" class="btn-primary get-started">Get Started</a>
     </div>
-  </nav>
 
-  <!-- 🔹 Desktop Actions -->
-  <div class="nav-actions">
-    <div class="lang-switch">
-      <button class="lang-toggle" id="lang-btn" aria-haspopup="listbox" aria-expanded="false">
-        <img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English ▾
-      </button>
-      <ul class="lang-menu" id="lang-menu" role="listbox">
-        <li><a href="index.html"><img src="https://flagcdn.com/16x12/gb.png" /> English</a></li>
-        <li><a href="index-fa.html"><img src="https://flagcdn.com/16x12/ir.png" /> فارسی</a></li>
-      </ul>
-    </div>
-    <a href="contact.html" class="btn-primary get-started">Get Started</a>
+    <!-- ☰ Mobile Menu -->
+    <button class="menu-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
-
-  <!-- ☰ Mobile Menu -->
-  <button class="menu-toggle" aria-label="Toggle navigation">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
 </header>
 
 <!-- =========================================================
@@ -64,30 +52,26 @@ Clean version with language dropdown + smooth scroll
 ========================================================= -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    // 🌍 Language Dropdowns
-    const setupLangDropdown = (btnId, menuId) => {
-      const btn = document.getElementById(btnId);
-      const menu = document.getElementById(menuId);
-      if (!btn || !menu) return;
+    // 🌍 Language Dropdown
+    const langBtn = document.getElementById("lang-btn");
+    const langMenu = document.getElementById("lang-menu");
 
-      btn.addEventListener("click", (e) => {
+    if (langBtn && langMenu) {
+      langBtn.addEventListener("click", (e) => {
         e.stopPropagation();
-        menu.classList.toggle("show");
-        btn.setAttribute("aria-expanded", menu.classList.contains("show"));
+        langMenu.classList.toggle("show");
+        langBtn.setAttribute("aria-expanded", langMenu.classList.contains("show"));
       });
 
       document.addEventListener("click", (e) => {
-        if (!btn.contains(e.target)) {
-          menu.classList.remove("show");
-          btn.setAttribute("aria-expanded", "false");
+        if (!langBtn.contains(e.target)) {
+          langMenu.classList.remove("show");
+          langBtn.setAttribute("aria-expanded", "false");
         }
       });
-    };
+    }
 
-    setupLangDropdown("lang-btn", "lang-menu");
-    setupLangDropdown("lang-btn-mobile", "lang-menu-mobile");
-
-    // 📱 Mobile Menu
+    // 📱 Mobile Menu Toggle
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
 
@@ -98,16 +82,14 @@ Clean version with language dropdown + smooth scroll
       });
     }
 
-    // 🌀 Smooth Scroll (only if anchors exist)
-    document.querySelectorAll('.nav-links a[href^="#"], .get-started[href^="#"]').forEach((link) => {
+    // 🌀 Smooth Scroll
+    document.querySelectorAll('.nav-links a[href^="#"]').forEach((link) => {
       link.addEventListener("click", (e) => {
         const href = link.getAttribute("href");
-        if (href.startsWith("#")) {
-          const target = document.querySelector(href);
-          if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: "smooth" });
-          }
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: "smooth" });
           navLinks.classList.remove("show");
           menuToggle.classList.remove("open");
         }
