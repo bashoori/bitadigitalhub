@@ -325,18 +325,18 @@ img {
   border-left: 5px solid #db2777;
 }
 .gradient-orange {
-  background: linear-gradient(145deg, #fff1e6, #fff8f3);
-  border-left: 5px solid #f97316;
-}
-
-.gradient-purple {
-  background: linear-gradient(145deg, #ede9fe, #f7f5ff);
-  border-left: 5px solid #7c3aed;
+  background: linear-gradient(145deg, #fff7ed, #fffaf3);
+  border-left: 5px solid #fb923c;
 }
 
 .gradient-cyan {
-  background: linear-gradient(145deg, #e0faff, #f4fdff);
+  background: linear-gradient(145deg, #ecfeff, #f0f9ff);
   border-left: 5px solid #06b6d4;
+}
+
+.gradient-purple {
+  background: linear-gradient(145deg, #f5f3ff, #faf5ff);
+  border-left: 5px solid #8b5cf6;
 }
 
 .gradient-red {
