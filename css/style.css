@@ -1,6 +1,7 @@
 /* =========================================================
-🌐 Bita Digital Hub – Global Stylesheet (Pastel Edition v3)
+🌐 Bita Digital Hub – Global Stylesheet (Pastel Edition v4)
 Author: Bita Ashoori
+Clean, Responsive, and Unified
 ========================================================= */
 
 /* ---------- Theme Variables ---------- */
@@ -31,15 +32,15 @@ img {
 }
 
 /* =========================================================
-🧭 HEADER / NAVBAR (Full-Width + Fixed)
+🧭 HEADER / NAVBAR (Full Width + Fixed)
 ========================================================= */
 .navbar.modern {
   width: 100%;
-  background: var(--white);
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
   position: fixed;
   top: 0;
   left: 0;
+  background: var(--white);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
   z-index: 1000;
   transition: all 0.3s ease;
 }
@@ -47,10 +48,10 @@ img {
 .nav-inner {
   max-width: 1300px;
   margin: 0 auto;
+  padding: 0.8rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 2rem;
 }
 
 /* --- Brand --- */
@@ -71,14 +72,12 @@ img {
   font-size: 0.85rem;
   color: var(--text-mid);
   margin: 0;
-  line-height: 1.2;
 }
 
-/* --- Center Links --- */
+/* --- Navigation Links --- */
 .nav-links {
   display: flex;
   gap: 2rem;
-  justify-content: center;
 }
 
 .nav-links a {
@@ -123,11 +122,6 @@ img {
   background: #e2e8f0;
 }
 
-.lang-toggle img {
-  width: 18px;
-  height: 12px;
-}
-
 .lang-menu {
   display: none;
   position: absolute;
@@ -163,7 +157,7 @@ img {
   color: var(--primary);
 }
 
-/* 🚀 Get Started Button */
+/* --- Get Started Button --- */
 .btn-primary.get-started {
   background: var(--primary);
   color: var(--white);
@@ -180,7 +174,7 @@ img {
 }
 
 /* =========================================================
-🏠 MAIN SECTIONS
+🏠 SECTIONS
 ========================================================= */
 .section {
   padding: 6rem 2rem;
@@ -201,7 +195,7 @@ img {
 
 .section-sub {
   color: var(--text-mid);
-  margin-bottom: 2.2rem;
+  margin-bottom: 2rem;
   font-size: 1.05rem;
 }
 
@@ -268,17 +262,6 @@ img {
   color: #fff;
 }
 
-@media (max-width: 600px) {
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  .btn {
-    width: 80%;
-    text-align: center;
-  }
-}
-
 /* =========================================================
 💡 ABOUT SECTION
 ========================================================= */
@@ -300,7 +283,7 @@ img {
 }
 
 /* =========================================================
-💎 CARDS (Pastel Edition)
+💎 CARDS
 ========================================================= */
 .cards,
 .tools-grid {
@@ -315,7 +298,6 @@ img {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
 }
 
 .card:hover {
@@ -343,41 +325,31 @@ img {
   border-left: 5px solid #db2777;
 }
 
-.card h3 {
-  color: var(--text-dark);
-  font-weight: 600;
-  margin-bottom: 0.6rem;
-}
-
-.card p {
-  color: var(--text-mid);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.card .card-icon {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
 /* =========================================================
-📩 CONTACT FORM
+📩 CONTACT FORM (Fixed Width)
 ========================================================= */
 .contact-form {
   background: var(--white);
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
   padding: 2.5rem 2rem;
-  max-width: 800px;
+  max-width: 720px;
   margin: 0 auto;
   text-align: left;
+  box-sizing: border-box;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
 }
 
 .contact-form label {
-  display: block;
   font-weight: 600;
   color: var(--text-dark);
   margin-bottom: 0.4rem;
+  display: block;
 }
 
 .contact-form input,
@@ -388,11 +360,11 @@ img {
   border-radius: 8px;
   padding: 0.9rem 1rem;
   font-size: 1rem;
-  font-family: inherit;
-  color: var(--text-dark);
   background: #f9fafb;
+  color: var(--text-dark);
   margin-bottom: 1.2rem;
   transition: all 0.2s ease;
+  box-sizing: border-box;
 }
 
 .contact-form input:focus,
@@ -407,12 +379,6 @@ img {
 .contact-form textarea {
   resize: none;
   min-height: 130px;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.2rem;
 }
 
 .contact-form button {
@@ -433,7 +399,7 @@ img {
 }
 
 /* =========================================================
-🦶 FOOTER
+🦶 FOOTER (Unified)
 ========================================================= */
 .footer.dark {
   background: #0f172a;
@@ -449,6 +415,7 @@ img {
   max-width: 1200px;
   margin: 0 auto;
 }
+
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: 2rem;
@@ -481,10 +448,6 @@ img {
 📱 RESPONSIVE
 ========================================================= */
 @media (max-width: 900px) {
-  .nav-inner {
-    padding: 0.8rem 1.2rem;
-  }
-
   .nav-actions {
     display: none;
   }
@@ -512,11 +475,9 @@ img {
   .menu-toggle.open span:nth-child(1) {
     transform: rotate(45deg) translateY(7px);
   }
-
   .menu-toggle.open span:nth-child(2) {
     opacity: 0;
   }
-
   .menu-toggle.open span:nth-child(3) {
     transform: rotate(-45deg) translateY(-7px);
   }
@@ -560,39 +521,12 @@ img {
     background: #f8fafc;
     color: var(--primary);
   }
-}
-.footer.dark {
-  background: #0f172a;
-  color: #cbd5e1;
-  padding: 4rem 2rem 2rem;
-  font-size: 0.95rem;
-}
 
-.footer-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+  .cta-buttons {
+    flex-direction: column;
+  }
 
-.footer-bottom {
-  max-width: 1200px;
-  margin: 2rem auto 0;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: left;
-  color: #94a3b8;
-  font-size: 0.9rem;
-}
-
-.footer-bottom a {
-  color: #93c5fd;
-  text-decoration: none;
-  margin-right: 1rem;
-  transition: color 0.3s ease;
-}
-
-.footer-bottom a:hover {
-  color: #bfdbfe;
+  .contact-form {
+    padding: 1.8rem 1.2rem;
+  }
 }
