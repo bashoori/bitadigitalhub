@@ -4,19 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZIP & Unzip Tool | Bita Digital Hub</title>
-  <meta name="description"
-        content="Compress or extract ZIP files instantly — safe, simple, and fast tool by Bita Digital Hub." />
+  <meta name="description" content="Compress or extract ZIP files instantly — safe, simple, and fast tool by Bita Digital Hub." />
 
   <!-- 🌈 Unified Styles -->
-  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="icon" type="image/svg+xml" href="../assets/taskhub-logo.svg" />
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/theme.css" />
   <link rel="stylesheet" href="../css/components.css" />
   <link rel="stylesheet" href="../css/responsive.css" />
-  <link rel="icon" type="image/svg+xml" href="../assets/taskhub-logo.svg" />
 
   <!-- 💰 Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-          crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762" crossorigin="anonymous"></script>
 
   <!-- 📦 JSZip -->
   <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
@@ -26,7 +24,7 @@
   <!-- 🧭 Shared Header -->
   <div id="header-placeholder"></div>
 
-  <!-- 🌐 Brand Header -->
+  <!-- 🌐 Brand Section -->
   <section class="brand-header center">
     <div class="brand-inner">
       <img src="../assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="brand-logo" />
@@ -52,18 +50,18 @@
 
     <!-- Tool Core -->
     <section class="tool-center">
-      <div class="tool-card gradient-gray">
+      <div class="tool-card">
         <h2>ZIP & Unzip Files 📦</h2>
         <p>Compress or extract ZIP files instantly — safe, simple, and fast.</p>
 
-        <!-- 🌐 Language Buttons -->
+        <!-- 🌐 Language Switch -->
         <div class="lang-btns">
           <button id="btnEnglish" class="active">English</button>
           <button id="btnFarsi">فارسی</button>
         </div>
 
         <!-- 🗂️ Form -->
-        <div class="tool-form">
+        <form class="tool-form">
           <label for="modeSelect">Select mode:</label>
           <select id="modeSelect" class="select-input">
             <option value="zip">Compress files (ZIP)</option>
@@ -73,13 +71,13 @@
           <label for="fileInput">Choose file(s):</label>
           <input type="file" id="fileInput" multiple class="file-input" />
 
-          <button id="processBtn" class="btn primary">Start</button>
+          <button type="button" id="processBtn" class="primary-btn">Start</button>
 
           <div id="output" class="output-box hidden">
             <p id="resultMsg"></p>
             <a id="downloadLink" href="#" class="btn outline" download="bita-archive.zip">⬇️ Download</a>
           </div>
-        </div>
+        </form>
       </div>
     </section>
 
