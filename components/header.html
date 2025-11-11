@@ -14,32 +14,30 @@ Features: Language Dropdown | Mobile Menu | Smooth Scroll
   </div>
 
   <!-- 🔹 Navigation -->
-  <div class="nav-wrapper">
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="#home" class="active">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#courses">Courses</a>
-      <a href="#tools">Tools</a>
-      <a href="#contact">Contact</a>
+  <nav class="nav-links" aria-label="Main navigation">
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#courses">Courses</a>
+    <a href="#tools">Tools</a>
+    <a href="#contact">Contact</a>
 
-      <!-- 📱 Mobile actions -->
-      <div class="mobile-actions">
-        <div class="lang-switch">
-          <button class="lang-toggle" id="lang-btn-mobile">
-            <img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English ▾
-          </button>
-          <ul class="lang-menu" id="lang-menu-mobile">
-            <li><a href="index.html"><img src="https://flagcdn.com/16x12/gb.png" /> English</a></li>
-            <li><a href="index-fa.html"><img src="https://flagcdn.com/16x12/ir.png" /> فارسی</a></li>
-          </ul>
-        </div>
-        <a href="#contact" class="btn-primary get-started">Get Started</a>
+    <!-- 📱 Mobile-only actions -->
+    <div class="mobile-actions">
+      <div class="lang-switch">
+        <button class="lang-toggle" id="lang-btn-mobile" aria-haspopup="listbox" aria-expanded="false">
+          <img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English ▾
+        </button>
+        <ul class="lang-menu" id="lang-menu-mobile" role="listbox">
+          <li><a href="index.html"><img src="https://flagcdn.com/16x12/gb.png" /> English</a></li>
+          <li><a href="index-fa.html"><img src="https://flagcdn.com/16x12/ir.png" /> فارسی</a></li>
+        </ul>
       </div>
-    </nav>
-  </div>
+      <a href="#contact" class="btn-primary get-started">Get Started</a>
+    </div>
+  </nav>
 
-  <!-- 🔹 Right Actions -->
+  <!-- 🔹 Right-side Actions (Desktop only) -->
   <div class="nav-actions">
     <div class="lang-switch">
       <button class="lang-toggle" id="lang-btn" aria-haspopup="listbox" aria-expanded="false">
@@ -53,11 +51,9 @@ Features: Language Dropdown | Mobile Menu | Smooth Scroll
     <a href="#contact" class="btn-primary get-started">Get Started</a>
   </div>
 
-  <!-- ☰ Mobile Toggle -->
+  <!-- ☰ Mobile Menu Button -->
   <button class="menu-toggle" aria-label="Toggle navigation">
-    <span></span>
-    <span></span>
-    <span></span>
+    <span></span><span></span><span></span>
   </button>
 </header>
 
@@ -66,8 +62,8 @@ Features: Language Dropdown | Mobile Menu | Smooth Scroll
 ========================================================= -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    // 🌍 Language dropdowns (desktop + mobile)
-    const setupLangDropdown = (btnId, menuId) => {
+    // 🌍 Language dropdown setup (desktop + mobile)
+    function setupLangDropdown(btnId, menuId) {
       const btn = document.getElementById(btnId);
       const menu = document.getElementById(menuId);
       if (!btn || !menu) return;
@@ -85,25 +81,30 @@ Features: Language Dropdown | Mobile Menu | Smooth Scroll
           btn.setAttribute("aria-expanded", "false");
         }
       });
-    };
+    }
 
     setupLangDropdown("lang-btn", "lang-menu");
     setupLangDropdown("lang-btn-mobile", "lang-menu-mobile");
 
-    // 📱 Mobile Menu Toggle
+    // 📱 Mobile menu toggle
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("show");
-      menuToggle.classList.toggle("open");
-    });
 
-    // 🌀 Smooth Scroll for internal links
-    document.querySelectorAll('.nav-links a[href^="#"], .get-started[href^="#"]').forEach(link => {
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+        menuToggle.classList.toggle("open");
+      });
+    }
+
+    // 🌀 Smooth scroll for internal links
+    document.querySelectorAll('.nav-links a[href^="#"], .get-started[href^="#"]').forEach((link) => {
       link.addEventListener("click", (e) => {
-        e.preventDefault();
         const target = document.querySelector(link.getAttribute("href"));
-        if (target) target.scrollIntoView({ behavior: "smooth" });
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: "smooth" });
+        }
         navLinks.classList.remove("show");
         menuToggle.classList.remove("open");
       });

@@ -1,5 +1,5 @@
 /* =========================================================
-🌐 Bita Digital Hub – Global Stylesheet (Final Refined)
+🌐 Bita Digital Hub – Global Stylesheet (Polished Edition)
 Author: Bita Ashoori
 ========================================================= */
 
@@ -15,7 +15,7 @@ Author: Bita Ashoori
   --border: #e2e8f0;
 }
 
-/* ---------- Base Styles ---------- */
+/* ---------- Base ---------- */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -48,10 +48,10 @@ img {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  gap: 1rem;
+  transition: all 0.3s ease;
 }
 
-/* Brand */
+/* --- Brand --- */
 .nav-left {
   flex: 1;
   display: flex;
@@ -62,7 +62,7 @@ img {
 
 .brand-info .brand {
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: var(--primary);
   text-decoration: none;
 }
@@ -74,16 +74,9 @@ img {
   line-height: 1.2;
 }
 
-/* Center Links */
-.nav-wrapper {
-  flex: 2;
-  display: flex;
-  justify-content: center;
-}
-
+/* --- Center Links --- */
 .nav-links {
   display: flex;
-  flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
 }
@@ -100,20 +93,16 @@ img {
   color: var(--primary);
 }
 
-/* Right Actions */
+/* --- Right Actions --- */
 .nav-actions {
-  flex: 1;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   gap: 1rem;
-  min-width: 220px;
 }
 
-/* Language Dropdown */
+/* 🌍 Language Dropdown */
 .lang-switch {
   position: relative;
-  display: inline-block;
 }
 
 .lang-toggle {
@@ -174,7 +163,7 @@ img {
   color: var(--primary);
 }
 
-/* Button: Get Started */
+/* 🚀 Get Started Button */
 .btn-primary.get-started {
   background: var(--primary);
   color: var(--white);
@@ -183,6 +172,7 @@ img {
   font-weight: 600;
   text-decoration: none;
   transition: background 0.3s ease;
+  white-space: nowrap;
 }
 
 .btn-primary.get-started:hover {
@@ -234,7 +224,7 @@ img {
   color: var(--text-mid);
 }
 
-/* About */
+/* About Section */
 .about-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -257,13 +247,6 @@ img {
   margin-bottom: 1rem;
 }
 
-.about-values {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 3rem;
-}
-
 .value-box {
   flex: 1;
   min-width: 250px;
@@ -271,58 +254,6 @@ img {
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  text-align: left;
-}
-
-/* Cards */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-.card {
-  background: var(--white);
-  padding: 1.8rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  text-align: left;
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card h3 {
-  color: var(--primary);
-  margin-bottom: 0.5rem;
-}
-
-.card p {
-  color: var(--text-mid);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-/* =========================================================
-📞 CONTACT FORM
-========================================================= */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 400px;
-  margin: 2rem auto;
-}
-
-input,
-textarea {
-  padding: 0.8rem;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  font-size: 0.95rem;
-  font-family: inherit;
 }
 
 /* =========================================================
@@ -405,35 +336,17 @@ textarea {
 }
 
 /* =========================================================
-📱 MOBILE HEADER (Enhanced)
+📱 MOBILE HEADER
 ========================================================= */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .navbar.modern {
     justify-content: space-between;
-    padding: 0.8rem 1.2rem;
+    padding: 0.7rem 1.2rem;
     width: 100%;
-    backdrop-filter: blur(12px);
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
   }
 
-  .nav-left {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-  }
-
-  .brand-info .brand {
-    font-size: 1.1rem;
-  }
-
-  .brand-info .tagline {
-    font-size: 0.75rem;
-    color: #64748b;
-  }
-
-  .nav-wrapper,
   .nav-actions {
     display: none;
   }
@@ -447,7 +360,6 @@ textarea {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 4px;
   }
 
   .menu-toggle span {
@@ -462,25 +374,27 @@ textarea {
   .menu-toggle.open span:nth-child(1) {
     transform: rotate(45deg) translateY(7px);
   }
+
   .menu-toggle.open span:nth-child(2) {
     opacity: 0;
   }
+
   .menu-toggle.open span:nth-child(3) {
     transform: rotate(-45deg) translateY(-7px);
   }
 
-  /* Mobile Dropdown Menu */
   .nav-links {
     display: none;
     flex-direction: column;
-    background: #fff;
+    background: var(--white);
     width: 100%;
     position: absolute;
     top: 100%;
     left: 0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid var(--border);
     animation: slideDown 0.3s ease forwards;
+    z-index: 999;
   }
 
   .nav-links.show {
@@ -500,37 +414,12 @@ textarea {
 
   .nav-links a {
     padding: 1rem 0;
-    color: var(--text-dark);
-    font-weight: 500;
     text-align: center;
     border-bottom: 1px solid #f1f5f9;
-    transition: background 0.2s ease;
   }
 
   .nav-links a:hover {
     background: #f8fafc;
     color: var(--primary);
-  }
-
-  /* Language & CTA inside mobile menu */
-  .nav-links .mobile-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 1rem 0;
-  }
-
-  .lang-toggle {
-    background: #f1f5f9;
-    border-radius: 8px;
-    padding: 0.5rem 0.8rem;
-    font-size: 0.9rem;
-  }
-
-  .btn-primary.get-started {
-    width: 80%;
-    text-align: center;
-    padding: 0.8rem;
   }
 }
