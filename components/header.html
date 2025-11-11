@@ -1,10 +1,10 @@
 <!-- =========================================================
-🧭 Header / Navbar Component – Bita Digital Hub
-Responsive | Language Dropdown | Mobile Menu
+🧭 Bita Digital Hub – Responsive Navbar
+Features: Language Dropdown | Mobile Menu | Smooth Scroll
 ========================================================= -->
 
 <header class="navbar modern">
-  <!-- 🔹 Left: Brand -->
+  <!-- 🔹 Brand -->
   <div class="nav-left">
     <img src="assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" width="36" height="36" />
     <div class="brand-info">
@@ -13,44 +13,47 @@ Responsive | Language Dropdown | Mobile Menu
     </div>
   </div>
 
-  <!-- 🔹 Center: Navigation -->
+  <!-- 🔹 Navigation -->
   <div class="nav-wrapper">
-    <nav class="nav-links" role="navigation" aria-label="Main navigation">
+    <nav class="nav-links" aria-label="Main navigation">
       <a href="#home" class="active">Home</a>
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#courses">Courses</a>
       <a href="#tools">Tools</a>
       <a href="#contact">Contact</a>
+
+      <!-- 📱 Mobile actions -->
+      <div class="mobile-actions">
+        <div class="lang-switch">
+          <button class="lang-toggle" id="lang-btn-mobile">
+            <img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English ▾
+          </button>
+          <ul class="lang-menu" id="lang-menu-mobile">
+            <li><a href="index.html"><img src="https://flagcdn.com/16x12/gb.png" /> English</a></li>
+            <li><a href="index-fa.html"><img src="https://flagcdn.com/16x12/ir.png" /> فارسی</a></li>
+          </ul>
+        </div>
+        <a href="#contact" class="btn-primary get-started">Get Started</a>
+      </div>
     </nav>
   </div>
 
-  <!-- 🔹 Right: Actions -->
+  <!-- 🔹 Right Actions -->
   <div class="nav-actions">
-    <!-- 🌍 Language Switch -->
     <div class="lang-switch">
       <button class="lang-toggle" id="lang-btn" aria-haspopup="listbox" aria-expanded="false">
         <img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English ▾
       </button>
       <ul class="lang-menu" id="lang-menu" role="listbox">
-        <li>
-          <a href="index.html">
-            <img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English
-          </a>
-        </li>
-        <li>
-          <a href="index-fa.html">
-            <img src="https://flagcdn.com/16x12/ir.png" alt="Persian flag" /> فارسی
-          </a>
-        </li>
+        <li><a href="index.html"><img src="https://flagcdn.com/16x12/gb.png" /> English</a></li>
+        <li><a href="index-fa.html"><img src="https://flagcdn.com/16x12/ir.png" /> فارسی</a></li>
       </ul>
     </div>
-
-    <!-- 🚀 Call to Action -->
     <a href="#contact" class="btn-primary get-started">Get Started</a>
   </div>
 
-  <!-- ☰ Mobile Menu Button -->
+  <!-- ☰ Mobile Toggle -->
   <button class="menu-toggle" aria-label="Toggle navigation">
     <span></span>
     <span></span>
@@ -59,49 +62,48 @@ Responsive | Language Dropdown | Mobile Menu
 </header>
 
 <!-- =========================================================
-🔧 Inline Script – Header Interactions
+🔧 Header Script – Interactions
 ========================================================= -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    // 🌍 Language Dropdown
-    const langBtn = document.getElementById("lang-btn");
-    const langMenu = document.getElementById("lang-menu");
+    // 🌍 Language dropdowns (desktop + mobile)
+    const setupLangDropdown = (btnId, menuId) => {
+      const btn = document.getElementById(btnId);
+      const menu = document.getElementById(menuId);
+      if (!btn || !menu) return;
 
-    if (langBtn && langMenu) {
-      langBtn.addEventListener("click", (e) => {
+      btn.addEventListener("click", (e) => {
         e.stopPropagation();
-        langMenu.classList.toggle("show");
-        const expanded = langBtn.getAttribute("aria-expanded") === "true";
-        langBtn.setAttribute("aria-expanded", !expanded);
+        menu.classList.toggle("show");
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", !expanded);
       });
 
       document.addEventListener("click", (e) => {
-        if (!langBtn.contains(e.target)) {
-          langMenu.classList.remove("show");
-          langBtn.setAttribute("aria-expanded", "false");
+        if (!btn.contains(e.target)) {
+          menu.classList.remove("show");
+          btn.setAttribute("aria-expanded", "false");
         }
       });
-    }
+    };
+
+    setupLangDropdown("lang-btn", "lang-menu");
+    setupLangDropdown("lang-btn-mobile", "lang-menu-mobile");
 
     // 📱 Mobile Menu Toggle
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+      menuToggle.classList.toggle("open");
+    });
 
-    if (menuToggle && navLinks) {
-      menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("show");
-        menuToggle.classList.toggle("open");
-      });
-    }
-
-    // 🌀 Smooth Scrolling
+    // 🌀 Smooth Scroll for internal links
     document.querySelectorAll('.nav-links a[href^="#"], .get-started[href^="#"]').forEach(link => {
       link.addEventListener("click", (e) => {
         e.preventDefault();
         const target = document.querySelector(link.getAttribute("href"));
         if (target) target.scrollIntoView({ behavior: "smooth" });
-
-        // Close mobile nav after click
         navLinks.classList.remove("show");
         menuToggle.classList.remove("open");
       });
