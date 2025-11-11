@@ -1,5 +1,5 @@
 /* =========================================================
-🌐 Bita Digital Hub – Unified Global Stylesheet (Final Version)
+🌐 Bita Digital Hub – Global Stylesheet (Final Refined)
 Author: Bita Ashoori
 ========================================================= */
 
@@ -15,7 +15,7 @@ Author: Bita Ashoori
   --border: #e2e8f0;
 }
 
-/* ---------- Base ---------- */
+/* ---------- Base Styles ---------- */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -48,11 +48,10 @@ img {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  flex-wrap: wrap;
   gap: 1rem;
 }
 
-/* --- Left: Brand --- */
+/* Brand */
 .nav-left {
   flex: 1;
   display: flex;
@@ -75,7 +74,7 @@ img {
   line-height: 1.2;
 }
 
-/* --- Center: Navigation Links --- */
+/* Center Links */
 .nav-wrapper {
   flex: 2;
   display: flex;
@@ -101,7 +100,7 @@ img {
   color: var(--primary);
 }
 
-/* --- Right: Actions --- */
+/* Right Actions */
 .nav-actions {
   flex: 1;
   display: flex;
@@ -111,7 +110,7 @@ img {
   min-width: 220px;
 }
 
-/* 🌍 Language Dropdown */
+/* Language Dropdown */
 .lang-switch {
   position: relative;
   display: inline-block;
@@ -128,8 +127,7 @@ img {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  transition: background 0.2s;
-  white-space: nowrap;
+  transition: background 0.2s ease;
 }
 
 .lang-toggle:hover {
@@ -176,7 +174,7 @@ img {
   color: var(--primary);
 }
 
-/* 🚀 Get Started Button */
+/* Button: Get Started */
 .btn-primary.get-started {
   background: var(--primary);
   color: var(--white);
@@ -184,8 +182,7 @@ img {
   border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
-  transition: background 0.3s;
-  white-space: nowrap;
+  transition: background 0.3s ease;
 }
 
 .btn-primary.get-started:hover {
@@ -207,7 +204,7 @@ img {
 }
 
 .section h2 {
-  font-size: 2rem;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
   color: var(--text-dark);
   margin-bottom: 1rem;
 }
@@ -225,7 +222,7 @@ img {
 }
 
 .hero h1 {
-  font-size: 3rem; /* 👈 larger on desktop */
+  font-size: clamp(2rem, 6vw, 3.5rem);
   font-weight: 700;
   color: var(--text-dark);
   line-height: 1.2;
@@ -237,7 +234,7 @@ img {
   color: var(--text-mid);
 }
 
-/* About Section */
+/* About */
 .about-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -337,7 +334,7 @@ textarea {
   border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
-  transition: transform 0.3s, background 0.3s;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .btn.primary {
@@ -378,15 +375,6 @@ textarea {
   font-size: 1.1rem;
 }
 
-.footer-col ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-col ul li {
-  margin-bottom: 0.5rem;
-}
-
 .footer-col a {
   color: #94a3b8;
   text-decoration: none;
@@ -406,10 +394,6 @@ textarea {
   color: #94a3b8;
 }
 
-.footer-links {
-  margin-top: 0.5rem;
-}
-
 .footer-links a {
   color: #94a3b8;
   margin: 0 0.6rem;
@@ -421,65 +405,18 @@ textarea {
 }
 
 /* =========================================================
-📱 RESPONSIVE DESIGN
-========================================================= */
-@media (max-width: 1024px) {
-  .navbar.modern {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem 2rem;
-  }
-
-  .nav-links {
-    justify-content: center;
-    margin: 0.5rem 0;
-  }
-
-  .nav-actions {
-    justify-content: center;
-    width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-    gap: 1rem;
-  }
-
-  .lang-toggle {
-    padding: 0.5rem 0.8rem;
-  }
-
-  .btn-primary.get-started {
-    padding: 0.5rem 1rem;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .section {
-    padding: 5rem 1.5rem;
-  }
-}
-
-//* =========================================================
 📱 MOBILE HEADER (Enhanced)
 ========================================================= */
 @media (max-width: 768px) {
   .navbar.modern {
     justify-content: space-between;
     padding: 0.8rem 1.2rem;
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     backdrop-filter: blur(12px);
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   }
 
-  /* Brand */
   .nav-left {
     flex: 1;
     display: flex;
@@ -496,13 +433,11 @@ textarea {
     color: #64748b;
   }
 
-  /* Hide desktop nav + actions by default */
   .nav-wrapper,
   .nav-actions {
     display: none;
   }
 
-  /* ☰ Mobile Menu Button */
   .menu-toggle {
     display: flex;
     flex-direction: column;
@@ -534,7 +469,7 @@ textarea {
     transform: rotate(-45deg) translateY(-7px);
   }
 
-  /* ✅ Mobile Dropdown Menu */
+  /* Mobile Dropdown Menu */
   .nav-links {
     display: none;
     flex-direction: column;
@@ -569,7 +504,7 @@ textarea {
     font-weight: 500;
     text-align: center;
     border-bottom: 1px solid #f1f5f9;
-    transition: background 0.2s;
+    transition: background 0.2s ease;
   }
 
   .nav-links a:hover {
