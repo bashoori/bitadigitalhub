@@ -18,41 +18,54 @@
           crossorigin="anonymous"></script>
 
   <!-- 📦 JSZip -->
-  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js" defer></script>
 </head>
 
 <body>
-  <!-- 🧭 Header -->
+  <!-- 🧭 Header (Loaded Dynamically) -->
   <div id="header-placeholder"></div>
   <script>
     fetch("../components/header-tools.html")
       .then(res => res.text())
-      .then(html => document.getElementById("header-placeholder").innerHTML = html)
-      .catch(console.error);
+      .then(html => {
+        document.getElementById("header-placeholder").innerHTML = html;
+      })
+      .catch(err => console.error("Header load error:", err));
   </script>
 
-  <!-- 🧰 Tool Section -->
-  <main class="tool-layout">
-    <aside class="ad-side"></aside>
+  <!-- 🌐 Brand Section -->
+  <header class="brand-header center">
+    <div class="brand-inner">
+      <img src="../assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="brand-logo" />
+      <div class="brand-text">
+        <h1 class="brand-title">Bita Digital Hub</h1>
+        <p class="brand-subtitle">Empowering Digital Growth</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- 🧰 Tool Layout -->
+  <main class="tool-layout" role="main">
+    <aside class="ad-side" aria-label="Advertisement Area"></aside>
 
     <section class="tool-center">
       <div class="tool-card gradient-gray">
         <h2>ZIP & Unzip Files 📦</h2>
         <p>Compress or extract ZIP files instantly — safe, simple, and fast.</p>
 
-        <form class="tool-form">
+        <form class="tool-form" aria-label="ZIP and Unzip Form">
           <label for="modeSelect">Select mode:</label>
-          <select id="modeSelect" class="select-input">
+          <select id="modeSelect" class="select-input" aria-label="Select compression mode">
             <option value="zip">Compress files (ZIP)</option>
             <option value="unzip">Extract ZIP file</option>
           </select>
 
           <label for="fileInput">Choose file(s):</label>
-          <input type="file" id="fileInput" multiple class="file-input" />
+          <input type="file" id="fileInput" multiple class="file-input" aria-label="Select files to compress or extract" />
 
           <button type="button" id="processBtn" class="primary-btn">Start</button>
 
-          <div id="output" class="output-box hidden">
+          <div id="output" class="output-box hidden" aria-live="polite">
             <p id="resultMsg"></p>
             <a id="downloadLink" href="#" class="btn outline" download="bita-archive.zip">⬇️ Download</a>
           </div>
@@ -60,18 +73,21 @@
       </div>
     </section>
 
-    <aside class="ad-side"></aside>
+    <aside class="ad-side" aria-label="Advertisement Area"></aside>
   </main>
 
-  <!-- 🦶 Footer -->
+  <!-- 🦶 Footer (Loaded Dynamically) -->
   <div id="footer-placeholder"></div>
   <script>
     fetch("../components/footer-tools.html")
       .then(res => res.text())
-      .then(html => document.getElementById("footer-placeholder").innerHTML = html)
-      .catch(console.error);
+      .then(html => {
+        document.getElementById("footer-placeholder").innerHTML = html;
+      })
+      .catch(err => console.error("Footer load error:", err));
   </script>
 
-  <script src="../js/zip-main.js"></script>
+  <!-- ⚙️ Tool Script -->
+  <script src="../js/zip-main.js" defer></script>
 </body>
 </html>
