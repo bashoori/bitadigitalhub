@@ -222,17 +222,15 @@ a {
 }
 
 .btn-back-home {
-  background: var(--primary);
-  color: #fff;
-  padding: 0.5rem 1.2rem;
-  border-radius: var(--radius);
-  font-weight: 500;
-  transition: background 0.3s ease, transform 0.2s ease;
+  background: #fff;
+  color: #1e3a8a !important;
+  border: 2px solid #1e3a8a;
+  font-weight: 600;
 }
 
 .btn-back-home:hover {
-  background: var(--primary-hover);
-  transform: translateY(-1px);
+  background: #1e3a8a;
+  color: #fff !important;
 }
 
 /* =========================================================
