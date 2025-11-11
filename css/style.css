@@ -1,5 +1,5 @@
 /* =========================================================
-🌐 Bita Digital Hub – Unified Global Stylesheet
+🌐 Bita Digital Hub – Unified Global Stylesheet (Final Version)
 Author: Bita Ashoori
 ========================================================= */
 
@@ -35,6 +35,8 @@ img {
 ========================================================= */
 .navbar.modern {
   width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
   background: var(--white);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
   display: flex;
@@ -43,13 +45,14 @@ img {
   padding: 0.8rem 2rem;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1000;
-  flex-wrap: wrap; /* ✅ Prevent overflow */
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
-/* --- Left Section --- */
+/* --- Left: Brand --- */
 .nav-left {
   flex: 1;
   display: flex;
@@ -72,13 +75,18 @@ img {
   line-height: 1.2;
 }
 
-/* --- Center Navigation Links --- */
-.nav-links {
+/* --- Center: Navigation Links --- */
+.nav-wrapper {
   flex: 2;
   display: flex;
   justify-content: center;
+}
+
+.nav-links {
+  display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+  justify-content: center;
 }
 
 .nav-links a {
@@ -93,7 +101,7 @@ img {
   color: var(--primary);
 }
 
-/* --- Right Actions (Lang + Button) --- */
+/* --- Right: Actions --- */
 .nav-actions {
   flex: 1;
   display: flex;
@@ -268,7 +276,7 @@ img {
   text-align: left;
 }
 
-/* Cards Grid */
+/* Cards */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -388,7 +396,6 @@ textarea {
   color: #38bdf8;
 }
 
-/* Footer Bottom */
 .footer-bottom {
   border-top: 1px solid #1e293b;
   margin-top: 2rem;
@@ -413,7 +420,7 @@ textarea {
 }
 
 /* =========================================================
-📱 RESPONSIVE
+📱 RESPONSIVE DESIGN
 ========================================================= */
 @media (max-width: 1024px) {
   .navbar.modern {
@@ -454,8 +461,9 @@ textarea {
     padding: 5rem 1.5rem;
   }
 }
+
 /* =========================================================
-📱 MOBILE MENU TOGGLE
+📱 MOBILE MENU
 ========================================================= */
 .menu-toggle {
   display: none;
