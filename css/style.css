@@ -118,18 +118,22 @@ a {
   gap: 1rem;
 }
 
-/* --- Language Switch --- */
+
+/* =========================================================
+🌐 LANGUAGE SWITCH (Updated, Clean)
+========================================================= */
 .lang-switch {
   position: relative;
+  display: inline-block;
+  margin-left: 1rem;
 }
 
 .lang-toggle {
   background: #f1f5f9;
   border: none;
-  border-radius: var(--radius);
+  border-radius: 10px;
   padding: 0.5rem 0.8rem;
   font-weight: 500;
-  color: #1e293b;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -137,37 +141,43 @@ a {
   transition: background 0.2s ease;
 }
 
-.lang-toggle:hover { background: #e2e8f0; }
+.lang-toggle:hover {
+  background: #e2e8f0;
+}
 
 .lang-menu {
   display: none;
   position: absolute;
   top: 110%;
-  right: 0;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-md);
+  left: 0;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
   list-style: none;
   padding: 0.4rem 0;
-  width: 160px;
   z-index: 2000;
+  min-width: 140px;
 }
-
-.lang-menu.show { display: block; }
 
 .lang-menu li a {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.55rem 0.9rem;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
   color: #334155;
   font-size: 0.9rem;
+  text-decoration: none;
 }
 
 .lang-menu li a:hover {
-  background: #f1f5f9;
-  color: var(--primary);
+  background: #f8fafc;
+  color: #1e3a8a;
+}
+
+.lang-menu.show {
+  display: block;
 }
 
 /* --- Primary Button --- */
