@@ -13,72 +13,120 @@
   <link rel="stylesheet" href="../css/components.css" />
   <link rel="stylesheet" href="../css/responsive.css" />
 
-  <!-- 💰 Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-          crossorigin="anonymous"></script>
-
   <!-- 📦 JSZip -->
   <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js" defer></script>
 </head>
 
 <body>
-  <!-- 🧭 Header (Loaded Dynamically) -->
+  <!-- 🧭 Header -->
   <div id="header-placeholder"></div>
   <script>
     fetch("../components/header-tools.html")
       .then(res => res.text())
-      .then(html => {
-        document.getElementById("header-placeholder").innerHTML = html;
-      })
+      .then(html => document.getElementById("header-placeholder").innerHTML = html)
       .catch(err => console.error("Header load error:", err));
   </script>
 
-
-
   <!-- 🧰 Tool Layout -->
   <main class="tool-layout" role="main">
-    <aside class="ad-side" aria-label="Advertisement Area"></aside>
-
     <section class="tool-center">
       <div class="tool-card gradient-gray">
         <h2>ZIP & Unzip Files 📦</h2>
         <p>Compress or extract ZIP files instantly — safe, simple, and fast.</p>
 
-        <form class="tool-form" aria-label="ZIP and Unzip Form">
+        <form class="tool-form" onsubmit="return false;">
           <label for="modeSelect">Select mode:</label>
-          <select id="modeSelect" class="select-input" aria-label="Select compression mode">
+          <select id="modeSelect" class="select-input">
             <option value="zip">Compress files (ZIP)</option>
             <option value="unzip">Extract ZIP file</option>
           </select>
 
           <label for="fileInput">Choose file(s):</label>
-          <input type="file" id="fileInput" multiple class="file-input" aria-label="Select files to compress or extract" />
+          <input type="file" id="fileInput" multiple class="file-input" />
 
           <button type="button" id="processBtn" class="primary-btn">Start</button>
 
-          <div id="output" class="output-box hidden" aria-live="polite">
+          <div id="outputBox" class="output-box hidden">
             <p id="resultMsg"></p>
-            <a id="downloadLink" href="#" class="btn outline" download="bita-archive.zip">⬇️ Download</a>
+            <a id="downloadLink" href="#" class="btn outline" download>⬇️ Download</a>
           </div>
         </form>
       </div>
     </section>
-
-    <aside class="ad-side" aria-label="Advertisement Area"></aside>
   </main>
 
-  <!-- 🦶 Footer (Loaded Dynamically) -->
+  <!-- 🦶 Footer -->
   <div id="footer-placeholder"></div>
   <script>
     fetch("../components/footer-tools.html")
       .then(res => res.text())
-      .then(html => {
-        document.getElementById("footer-placeholder").innerHTML = html;
-      })
+      .then(html => document.getElementById("footer-placeholder").innerHTML = html)
       .catch(err => console.error("Footer load error:", err));
   </script>
 
-  <!-- ⚙️ Tool Script -->
-  <script src="../js/zip-main.js" defer></script>
+  <!-- ⚙️ ZIP & UNZIP Logic -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const modeSelect   = document.getElementById("modeSelect");
+      const fileInput    = document.getElementById("fileInput");
+      const processBtn   = document.getElementById("processBtn");
+      const outputBox    = document.getElementById("outputBox");
+      const resultMsg    = document.getElementById("resultMsg");
+      const downloadLink = document.getElementById("downloadLink");
+
+      async function compressFiles(files) {
+        if (!files.length) return alert("Please select at least one file to compress.");
+        const zip = new JSZip();
+
+        Array.from(files).forEach(file => zip.file(file.name, file));
+
+        resultMsg.textContent = "Creating ZIP file...";
+        outputBox.classList.remove("hidden");
+
+        const blob = await zip.generateAsync({ type: "blob" });
+        const url  = URL.createObjectURL(blob);
+
+        downloadLink.href = url;
+        downloadLink.download = "compressed-files.zip";
+        resultMsg.textContent = `✅ Successfully compressed ${files.length} file(s).`;
+      }
+
+      async function extractZip(file) {
+        if (!file) return alert("Please select a ZIP file to extract.");
+        if (!file.name.toLowerCase().endsWith(".zip")) return alert("This is not a valid ZIP file.");
+
+        resultMsg.textContent = "Extracting ZIP contents...";
+        outputBox.classList.remove("hidden");
+
+        const zip = await JSZip.loadAsync(file);
+        const outZip = new JSZip();
+        const extractedFiles = [];
+
+        await Promise.all(Object.keys(zip.files).map(async name => {
+          const entry = zip.files[name];
+          if (!entry.dir) {
+            const data = await entry.async("blob");
+            outZip.file(name, data);
+            extractedFiles.push(name);
+          }
+        }));
+
+        const outBlob = await outZip.generateAsync({ type: "blob" });
+        const url = URL.createObjectURL(outBlob);
+        downloadLink.href = url;
+        downloadLink.download = "extracted-files.zip";
+
+        resultMsg.textContent = `✅ Extracted ${extractedFiles.length} file(s) successfully.`;
+      }
+
+      processBtn.addEventListener("click", async () => {
+        const mode = modeSelect.value;
+        const files = fileInput.files;
+
+        if (mode === "zip") await compressFiles(files);
+        else await extractZip(files[0]);
+      });
+    });
+  </script>
 </body>
 </html>
