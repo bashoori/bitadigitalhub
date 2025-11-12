@@ -13,7 +13,32 @@
   <link rel="stylesheet" href="../css/components.css" />
   <link rel="stylesheet" href="../css/responsive.css" />
 
-  <!-- 🧩 JS libraries -->
+  <style>
+    /* 🧩 Ad Styling */
+    [data-page="tools"] .ad-side {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 2rem;
+    }
+
+    [data-page="tools"] .ad-side ins.adsbygoogle {
+      width: 160px;
+      height: 600px;
+      max-width: 100%;
+      background: transparent;
+    }
+
+    @media (max-width: 1000px) {
+      [data-page="tools"] .ad-side { display: none; }
+      [data-page="tools"] .tool-layout {
+        grid-template-columns: 1fr;
+        padding: 2rem 1rem 3rem;
+      }
+    }
+  </style>
+
+  <!-- 🧩 JS Libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
 </head>
@@ -29,8 +54,17 @@
 
   <!-- 🧰 Tool Layout -->
   <main class="tool-layout">
-    <aside class="ad-side"></aside>
+    <!-- 🧭 Left Ad -->
+    <aside class="ad-side">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-3215014361489762"
+        data-ad-slot="1234567890"   <!-- replace with your AdSense slot -->
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    </aside>
 
+    <!-- 🎯 Tool Center -->
     <section class="tool-center">
       <div class="tool-card gradient-pink">
         <h2>File Converter 📄</h2>
@@ -55,9 +89,27 @@
           </div>
         </form>
       </div>
+
+      <!-- 💡 Optional: Bottom Ad (for mobile) -->
+      <div class="mobile-ad" style="margin-top:2rem; text-align:center;">
+        <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-3215014361489762"
+          data-ad-slot="5555555555"   <!-- replace with your AdSense slot -->
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      </div>
     </section>
 
-    <aside class="ad-side"></aside>
+    <!-- 🧭 Right Ad -->
+    <aside class="ad-side">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-3215014361489762"
+        data-ad-slot="9876543210"   <!-- replace with your AdSense slot -->
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    </aside>
   </main>
 
   <!-- 🦶 Footer -->
@@ -68,7 +120,7 @@
       .then(html => { document.getElementById("footer-placeholder").innerHTML = html; });
   </script>
 
-  <!-- ⚙️ Converter Logic -->
+  <!-- ⚙️ File Converter Script -->
   <script>
   document.addEventListener("DOMContentLoaded", () => {
     const fileInput = document.querySelector("#fileInput");
@@ -125,13 +177,11 @@
   });
   </script>
 
-   <!-- 💰 AdSense -->
+  <!-- 💰 Google AdSense Loader -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-     crossorigin="anonymous"></script>
+          crossorigin="anonymous"></script>
   <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
-
-  
 </body>
 </html>

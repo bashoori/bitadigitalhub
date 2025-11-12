@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page="tools">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,8 +7,166 @@
   <meta name="description" content="Create catchy captions and hashtags for Instagram, LinkedIn, or YouTube posts — powered by AI.">
   <meta name="keywords" content="caption generator, hashtag generator, AI content creator, social media tool, Bita Digital Hub">
 
-  <link rel="stylesheet" href="../css/style.css" />
+  <!-- 🌈 Styles -->
   <link rel="icon" type="image/png" href="../assets/taskhub-logo.png" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f9fafb;
+      color: #0f172a;
+      margin: 0;
+    }
+
+    header.navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header.navbar nav a {
+      margin: 0 0.6rem;
+      text-decoration: none;
+      color: #1e3a8a;
+      font-weight: 500;
+    }
+
+    .tool-header {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+      background: linear-gradient(135deg, #eef2ff, #fafafa);
+    }
+
+    .tool-header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e3a8a;
+      margin: 1rem 0;
+    }
+
+    .tool-header p {
+      color: #475569;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .lang-btns {
+      text-align: center;
+      margin: 1rem 0;
+    }
+
+    .lang-btns button {
+      margin: 0 0.5rem;
+      background: #f1f5f9;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.2s ease;
+    }
+
+    .lang-btns button:hover {
+      background: #e2e8f0;
+    }
+
+    /* Layout with Ads */
+    main.tool-layout {
+      display: grid;
+      grid-template-columns: 180px 1fr 180px;
+      gap: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+    }
+
+    .ad-side {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 2rem;
+    }
+
+    .tool-center {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+      padding: 2rem;
+    }
+
+    .tool-box label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    textarea, select, button {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+
+    textarea {
+      height: 100px;
+      resize: vertical;
+      padding: 0.6rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+    }
+
+    select {
+      padding: 0.5rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+    }
+
+    #btnGenerate {
+      margin-top: 1.2rem;
+      padding: 0.8rem;
+      background: #1e3a8a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    #output .output-box {
+      margin-top: 1.5rem;
+      background: #f1f5f9;
+      border-radius: 12px;
+      padding: 1rem;
+      line-height: 1.6;
+      color: #0f172a;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #475569;
+      background: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    @media (max-width: 900px) {
+      main.tool-layout {
+        grid-template-columns: 1fr;
+      }
+      .ad-side { display: none; }
+    }
+  </style>
 
   <!-- 📈 Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHKWTPXDHC"></script>
@@ -21,22 +179,14 @@
 
   <!-- 💰 Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-     crossorigin="anonymous"></script>
-
-  <!-- 🧭 Open Graph -->
-  <meta property="og:title" content="AI Caption & Hashtag Generator | Bita Digital Hub">
-  <meta property="og:description" content="Create catchy captions and hashtags for Instagram, LinkedIn, or YouTube — free, smart & powered by AI.">
-  <meta property="og:image" content="https://bitadigitalhub.com/assets/taskhub-logo.png">
-  <meta property="og:url" content="https://bitadigitalhub.com/tools/ai-caption-generator.html">
-  <meta name="twitter:card" content="summary_large_image">
-
+          crossorigin="anonymous"></script>
 </head>
 
 <body>
   <!-- 🔝 Navbar -->
   <header class="navbar">
     <div class="nav-left">
-      <img src="../assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="nav-logo" width="36" height="36" />
+      <img src="../assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" width="36" height="36" />
       <a href="../index.html" class="brand">Bita Digital Hub</a>
     </div>
     <nav>
@@ -47,9 +197,9 @@
     </nav>
   </header>
 
-  <!-- 🧠 Tool Header -->
+  <!-- 🧠 Header -->
   <section class="tool-header">
-    <img src="../assets/ai-tool-icon.svg" alt="AI Tool Icon" class="tool-icon" />
+    <img src="../assets/ai-tool-icon.svg" alt="AI Tool Icon" width="64" height="64" />
     <h1 id="title">AI Caption & Hashtag Generator</h1>
     <p id="subtitle">Create catchy captions and hashtags for Instagram, LinkedIn, or YouTube — powered by AI.</p>
   </section>
@@ -60,43 +210,67 @@
     <button id="btnFarsi">🌐 فارسی</button>
   </div>
 
-  <!-- 🧰 Tool Box -->
-  <div class="tool-box">
-    <form id="captionForm">
-      <label id="lblPlatform">Platform</label>
-      <select id="platform">
-        <option value="instagram">Instagram</option>
-        <option value="linkedin">LinkedIn</option>
-        <option value="youtube">YouTube</option>
-      </select>
+  <!-- 🧰 Main Tool Layout -->
+  <main class="tool-layout">
+    <!-- Left Ad -->
+    <aside class="ad-side">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-3215014361489762"
+        data-ad-slot="1234567890"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    </aside>
 
-      <label id="lblTopic">What is your post about?</label>
-      <textarea id="topic" placeholder="e.g. Coffee morning routine, productivity, or AI tips"></textarea>
+    <!-- Center Tool -->
+    <section class="tool-center">
+      <div class="tool-box">
+        <form id="captionForm">
+          <label id="lblPlatform">Platform</label>
+          <select id="platform">
+            <option value="instagram">Instagram</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="youtube">YouTube</option>
+          </select>
 
-      <label id="lblTone">Tone</label>
-      <select id="tone">
-        <option value="friendly">Friendly</option>
-        <option value="motivational">Motivational</option>
-        <option value="professional">Professional</option>
-      </select>
+          <label id="lblTopic">What is your post about?</label>
+          <textarea id="topic" placeholder="e.g. Coffee morning routine, productivity, or AI tips"></textarea>
 
-      <button type="submit" id="btnGenerate">Generate Captions</button>
-    </form>
+          <label id="lblTone">Tone</label>
+          <select id="tone">
+            <option value="friendly">Friendly</option>
+            <option value="motivational">Motivational</option>
+            <option value="professional">Professional</option>
+          </select>
 
-    <div id="status" style="margin-top:1rem; color:#64748b;"></div>
-    <div id="output"></div>
-  </div>
+          <button type="submit" id="btnGenerate">Generate Captions</button>
+        </form>
 
-  <!-- 📢 AdSense -->
-  <div class="ad-placeholder" style="text-align:center; margin:2rem auto;">
-    <ins class="adsbygoogle"
-         style="display:block; text-align:center;"
-         data-ad-client="ca-pub-3215014361489762"
-         data-ad-slot="2768335564"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
+        <div id="status" style="margin-top:1rem; color:#64748b;"></div>
+        <div id="output"></div>
+
+        <!-- Inline Ad for Mobile -->
+        <div style="margin-top:2rem; text-align:center;">
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-3215014361489762"
+               data-ad-slot="5555555555"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right Ad -->
+    <aside class="ad-side">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-3215014361489762"
+        data-ad-slot="9876543210"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    </aside>
+  </main>
 
   <!-- 🧭 Footer -->
   <footer>
@@ -108,7 +282,7 @@
     </p>
   </footer>
 
-  <!-- ⚙️ Script -->
+  <!-- ⚙️ JS Logic -->
   <script>
     const texts = {
       en: {
@@ -132,11 +306,10 @@
     };
 
     let lang = "en";
-
     const setLang = (lng) => {
       lang = lng;
       const t = texts[lng];
-      document.body.dir = (lng === "fa") ? "rtl" : "ltr";
+      document.body.dir = lng === "fa" ? "rtl" : "ltr";
       document.getElementById("title").innerText = t.title;
       document.getElementById("subtitle").innerText = t.subtitle;
       document.getElementById("lblPlatform").innerText = t.lblPlatform;
@@ -161,6 +334,7 @@
 
       status.textContent = t.loading;
       output.innerHTML = "";
+
       setTimeout(() => {
         status.textContent = "";
         const icon = tone === "friendly" ? "😊" : tone === "motivational" ? "💪" : "💼";
@@ -175,14 +349,9 @@
     });
   </script>
 
-
- <!-- 💰 AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-     crossorigin="anonymous"></script>
+  <!-- 💰 AdSense Loader -->
   <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
-
-  
 </body>
 </html>
