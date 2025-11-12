@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>بیتا دیجیتال هاب | ساخت، اتوماسیون و درآمد آنلاین</title>
-  <meta name="description" content="توانمندسازی افراد و کسب‌وکارها با داده، اتوماسیون و هوش مصنوعی. ابزارها، دوره‌ها و خدمات دیجیتال در بیتا دیجیتال هاب." />
+  <title>بیتا دیجیتال هاب | رشد، اتوماسیون و درآمد آنلاین</title>
+  <meta name="description" content="بیتا دیجیتال هاب با استفاده از داده، فضای ابری و هوش مصنوعی به افراد و کسب‌وکارها کمک می‌کند تا مسیر رشد و درآمد آنلاین خود را هوشمند و ساده کنند." />
 
   <!-- 🌈 Styles -->
   <link rel="stylesheet" href="css/style.css" />
@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 
-  <!-- 🎨 Beautiful Persian Fonts -->
+  <!-- 🎨 Persian Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&family=Estedad:wght@500;700&display=swap" rel="stylesheet" />
 
   <!-- ⚙️ Scripts -->
@@ -27,26 +27,24 @@
     body {
       margin: 0;
       padding-top: 80px;
-      font-family: "Vazirmatn", "Estedad", "Tahoma", sans-serif;
+      font-family: "Vazirmatn", "Estedad", sans-serif;
       background: #f9fafb;
       color: #0f172a;
       line-height: 1.8;
       font-size: 1rem;
     }
 
-        /* ---------- SECTION SPACING CONTROL ---------- */
+    /* ---------- Section Layout ---------- */
     .section {
-      padding: 4rem 1rem;         /* reduce vertical padding */
+      padding: 4rem 1rem;
       margin: 0 auto;
       max-width: 1200px;
     }
 
-    .section.light {
-      background: #f9fafb;
-    }
+    .section.light { background: #f9fafb; }
 
     .section + .section {
-      margin-top: 2rem;           /* tighten the space between sections */
+      margin-top: 2rem;
     }
 
     h2 {
@@ -63,41 +61,24 @@
       margin-bottom: 1.5rem;
     }
 
-    /* tighten padding for hero */
-    .hero {
-      padding: 5rem 1rem 4rem;    /* less vertical space than before */
-    }
-
-
-    /* Keep header/footer LTR */
-    #header-placeholder, #footer-placeholder {
-      direction: ltr;
-    }
-
-    /* RTL layout for main content */
-    main, section, h1, h2, h3, p, a, button {
-      direction: rtl;
-      text-align: center;
-    }
-
-    /* ---------- HERO ---------- */
+    /* ---------- Hero Section ---------- */
     .hero {
       text-align: center;
-      padding: 6rem 1rem 5rem;
+      padding: 5rem 1rem 4rem;
       background: #f8fafc;
     }
 
     .hero h1 {
-      font-family: "Estedad", "Vazirmatn", sans-serif;
+      font-family: "Estedad", sans-serif;
       font-weight: 800;
       font-size: 3rem;
-      color: #0f172a;
-      margin-bottom: 1.2rem;
       line-height: 1.4;
+      margin-bottom: 1.2rem;
+      color: #0f172a;
     }
 
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       color: #475569;
       max-width: 720px;
       margin: 0 auto 2rem;
@@ -105,6 +86,7 @@
       line-height: 2;
     }
 
+    /* ---------- Buttons ---------- */
     .cta-buttons {
       display: flex;
       justify-content: center;
@@ -112,15 +94,39 @@
       flex-wrap: wrap;
     }
 
-    /* ---------- BUTTONS ---------- */
-    .btn.primary { background: #1e3a8a; color: #fff; font-weight: 600; padding: 0.8rem 1.8rem; border-radius: 8px; }
+    .btn.primary {
+      background: #1e3a8a;
+      color: #fff;
+      font-weight: 600;
+      padding: 0.8rem 1.8rem;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
     .btn.primary:hover { background: #2563eb; }
-    .btn.outline { border: 2px solid #1e3a8a; color: #1e3a8a; background: transparent; font-weight: 600; padding: 0.8rem 1.8rem; border-radius: 8px; }
+
+    .btn.outline {
+      border: 2px solid #1e3a8a;
+      color: #1e3a8a;
+      background: transparent;
+      font-weight: 600;
+      padding: 0.8rem 1.8rem;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
     .btn.outline:hover { background: #1e3a8a; color: #fff; }
 
-    /* ---------- GRID ---------- */
-    .tools-grid,
-    .cards {
+    /* ---------- RTL Content ---------- */
+    #header-placeholder, #footer-placeholder { direction: ltr; }
+
+    main, section, h1, h2, h3, p, a, button {
+      direction: rtl;
+      text-align: center;
+    }
+
+    /* ---------- Card Grid ---------- */
+    .tools-grid, .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.2rem;
@@ -135,14 +141,12 @@
       .tools-grid, .cards { grid-template-columns: 1fr; }
     }
 
-    /* ---------- CARDS ---------- */
     .card {
       border-radius: 16px;
       padding: 1.5rem 1.2rem;
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
       background: #fff;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
-      height: auto;
     }
 
     .card:hover {
@@ -151,10 +155,10 @@
     }
 
     .card h3 {
-      font-family: "Estedad", "Vazirmatn", sans-serif;
+      font-family: "Estedad", sans-serif;
       font-weight: 600;
-      margin-bottom: 0.4rem;
       font-size: 1.05rem;
+      margin-bottom: 0.4rem;
       color: #0f172a;
     }
 
@@ -173,16 +177,15 @@
       margin-bottom: 0.6rem;
     }
 
-    /* ---------- COLORS ---------- */
+    /* ---------- Color Variants ---------- */
     .gradient-blue   { background: linear-gradient(145deg, #eef4ff, #f7f9ff); border-right: 5px solid #2563eb; }
     .gradient-pink   { background: linear-gradient(145deg, #fff5f7, #fff8fb); border-right: 5px solid #db2777; }
     .gradient-cyan   { background: linear-gradient(145deg, #ecfeff, #f0f9ff); border-right: 5px solid #06b6d4; }
-    .gradient-purple { background: linear-gradient(145deg, #f5f3ff, #faf5ff); border-right: 5px solid #8b5cf6; }
     .gradient-green  { background: linear-gradient(145deg, #ecfdf5, #f6fff9); border-right: 5px solid #16a34a; }
     .gradient-yellow { background: linear-gradient(145deg, #fffbea, #fffdf5); border-right: 5px solid #f59e0b; }
     .gradient-gray   { background: linear-gradient(145deg, #f3f4f6, #ffffff); border-right: 5px solid #64748b; }
 
-    /* ---------- CONTACT FORM ---------- */
+    /* ---------- Contact Form ---------- */
     .contact-form {
       max-width: 700px;
       margin: 2rem auto;
@@ -227,7 +230,7 @@
     <!-- 🌟 Hero -->
     <section id="home" class="section hero">
       <h1>بساز، رشد کن و از دنیای آنلاین درآمد داشته باش</h1>
-      <p>بیتا دیجیتال هاب به افراد و کسب‌وکارها کمک می‌کند تا با داده، فضای ابری و هوش مصنوعی مسیر رشد خود را هوشمند کنند.</p>
+      <p>بیتا دیجیتال هاب به شما کمک می‌کند تا با استفاده از داده، فضای ابری و هوش مصنوعی، مسیر رشد خود را هوشمند کنید.</p>
       <div class="cta-buttons">
         <a href="https://www.bitaashoori.com" target="_blank" rel="noopener noreferrer" class="btn primary">شروع کسب‌وکار آنلاین</a>
         <a href="#contact" class="btn outline">رزرو مشاوره</a>
@@ -235,14 +238,14 @@
     </section>
 
     <!-- 💡 About -->
-    <section id="about" class="section about light">
+    <section id="about" class="section light">
       <h2>به بیتا دیجیتال هاب خوش آمدید</h2>
       <p>در بیتا دیجیتال هاب، به قدرت فناوری برای خلق فرصت‌های نو باور داریم. هدف ما ساده‌سازی مسیر موفقیت دیجیتال است — از استراتژی هوشمند تا اتوماسیون کامل سیستم‌ها.</p>
       <p>— بیتا عاشوری، بنیان‌گذار</p>
     </section>
 
     <!-- 🧰 Tools -->
-    <section id="tools" class="section tools light">
+    <section id="tools" class="section light">
       <h2>ابزارهای رایگان</h2>
       <p class="section-sub">ابزارهای هوش مصنوعی و اتوماسیون برای افزایش بهره‌وری</p>
 
@@ -261,7 +264,7 @@
       <h2>دوره‌ها و آموزش‌ها</h2>
       <p class="section-sub">یاد بگیرید و در دنیای دیجیتال رشد کنید</p>
       <div class="cards">
-        <div class="card gradient-green"><div class="card-icon"><i data-lucide="book-open"></i></div><h3>دوره‌های رایگان</h3><p>دوره‌های مقدماتی در زمینه داده، هوش مصنوعی و بازاریابی دیجیتال.</p></div>
+        <div class="card gradient-green"><div class="card-icon"><i data-lucide="book-open"></i></div><h3>دوره‌های رایگان</h3><p>آموزش مقدماتی داده، هوش مصنوعی و بازاریابی دیجیتال.</p></div>
         <div class="card gradient-blue"><div class="card-icon"><i data-lucide="megaphone"></i></div><h3>استادی بازاریابی دیجیتال</h3><p>یاد بگیرید برند خود را مؤثر و هوشمندانه توسعه دهید.</p></div>
         <div class="card gradient-pink"><div class="card-icon"><i data-lucide="briefcase"></i></div><h3>فرنچایز آنلاین</h3><p>کسب‌وکار خود را با سیستم آماده اتوماسیون راه‌اندازی کنید.</p></div>
       </div>
@@ -281,7 +284,7 @@
     </section>
 
     <!-- 💬 Contact -->
-    <section id="contact" class="section contact light">
+    <section id="contact" class="section light">
       <h2>تماس با ما</h2>
       <p class="section-sub">با هم مسیر موفقیت دیجیتال شما را می‌سازیم</p>
       <form class="contact-form" action="https://formsubmit.co/contact@bitadigitalhub.com" method="POST">
@@ -316,6 +319,4 @@
 
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </body>
-
-
 </html>
