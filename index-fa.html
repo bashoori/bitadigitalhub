@@ -4,13 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>بیتا دیجیتال هاب | ساخت، اتوماسیون و درآمد آنلاین</title>
-  <meta name="description" content="توانمندسازی خالقان و کسب‌وکارها با داده، اتوماسیون و هوش مصنوعی. ابزارها، دوره‌ها و خدمات دیجیتال در بیتا دیجیتال هاب." />
+  <meta name="description" content="توانمندسازی افراد و کسب‌وکارها با داده، اتوماسیون و هوش مصنوعی. ابزارها، دوره‌ها و خدمات دیجیتال در بیتا دیجیتال هاب." />
 
   <!-- 🌈 Styles -->
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/theme.css" />
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/responsive.css" />
+
+  <!-- 🎨 Beautiful Persian Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&family=Estedad:wght@400;600&display=swap" rel="stylesheet" />
 
   <!-- ⚙️ Scripts -->
   <script src="https://unpkg.com/lucide@latest" defer></script>
@@ -24,18 +27,20 @@
     body {
       margin: 0;
       padding-top: 80px;
-      font-family: "Vazirmatn", "Tahoma", sans-serif;
+      font-family: "Vazirmatn", "Estedad", "Tahoma", sans-serif;
       background: #f9fafb;
       color: #0f172a;
+      line-height: 1.8;
+      font-size: 1rem;
     }
 
-    /* keep header & footer LTR */
+    /* Keep header/footer LTR */
     #header-placeholder, #footer-placeholder {
       direction: ltr;
     }
 
-    /* general RTL direction for content */
-    main, section, h1, h2, h3, p, a, button, input, textarea {
+    /* RTL layout for content */
+    main, section, h1, h2, h3, p, a, button {
       direction: rtl;
       text-align: center;
     }
@@ -47,6 +52,21 @@
       background: #f8fafc;
     }
 
+    .hero h1 {
+      font-family: "Estedad", "Vazirmatn", sans-serif;
+      font-weight: 700;
+      font-size: 2.2rem;
+      color: #0f172a;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #475569;
+      max-width: 720px;
+      margin: 0 auto 2rem;
+    }
+
     .cta-buttons {
       display: flex;
       justify-content: center;
@@ -55,33 +75,53 @@
     }
 
     /* ---------- BUTTONS ---------- */
-    .btn.primary { background: #1e3a8a; color: #fff; }
+    .btn.primary { background: #1e3a8a; color: #fff; font-weight: 600; }
     .btn.primary:hover { background: #2563eb; }
-    .btn.outline { border: 2px solid #1e3a8a; color: #1e3a8a; background: transparent; }
+    .btn.outline { border: 2px solid #1e3a8a; color: #1e3a8a; background: transparent; font-weight: 600; }
     .btn.outline:hover { background: #1e3a8a; color: #fff; }
 
-    /* ---------- CARDS & GRID ---------- */
+    /* ---------- GRID ---------- */
     .tools-grid,
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
       margin-top: 2rem;
-      text-align: center;
     }
 
+    @media (max-width: 900px) {
+      .tools-grid, .cards { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .tools-grid, .cards { grid-template-columns: 1fr; }
+    }
+
+    /* ---------- CARDS ---------- */
     .card {
       border-radius: 16px;
       padding: 2rem 1.5rem;
       box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
       background: #fff;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
-      color: #0f172a;
     }
 
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .card h3 {
+      font-family: "Estedad", "Vazirmatn", sans-serif;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      color: #0f172a;
+    }
+
+    .card p {
+      font-family: "Vazirmatn", sans-serif;
+      color: #475569;
+      font-size: 0.95rem;
     }
 
     .card-icon {
@@ -90,7 +130,7 @@
       margin-bottom: 1rem;
     }
 
-    /* ---------- GRADIENTS ---------- */
+    /* ---------- COLORS ---------- */
     .gradient-blue   { background: linear-gradient(145deg, #eef4ff, #f7f9ff); border-right: 5px solid #2563eb; }
     .gradient-pink   { background: linear-gradient(145deg, #fff5f7, #fff8fb); border-right: 5px solid #db2777; }
     .gradient-cyan   { background: linear-gradient(145deg, #ecfeff, #f0f9ff); border-right: 5px solid #06b6d4; }
@@ -116,11 +156,11 @@
 
     input, textarea {
       width: 100%;
-      padding: 0.7rem 0.9rem;
+      padding: 0.8rem 0.9rem;
       border: 1px solid #e2e8f0;
       border-radius: 8px;
       background: #f9fafb;
-      font-family: inherit;
+      font-family: "Vazirmatn", sans-serif;
     }
 
     textarea {
@@ -143,13 +183,10 @@
   <main>
     <!-- 🌟 Hero -->
     <section id="home" class="section hero">
-      <h1>بساز، رشد کن و از دنیای آنلاین درآمد کسب کن</h1>
-      <h1> بیتا دیجیتال هاب به افراد و کسب‌وکارها کمک می‌کند تا با داده، فضای ابری و هوش مصنوعی، مسیر رشد خود را هوشمند کنند. </h1>
-      <p>ب</p>
+      <h1>بساز، رشد کن و از دنیای آنلاین درآمد داشته باش</h1>
+      <p>بیتا دیجیتال هاب به افراد و کسب‌وکارها کمک می‌کند تا با داده، فضای ابری و هوش مصنوعی مسیر رشد خود را هوشمند کنند.</p>
       <div class="cta-buttons">
-        <a href="https://www.bitaashoori.com" target="_blank" rel="noopener noreferrer" class="btn primary">
-          شروع کسب‌وکار آنلاین
-        </a>
+        <a href="https://www.bitaashoori.com" target="_blank" rel="noopener noreferrer" class="btn primary">شروع کسب‌وکار آنلاین</a>
         <a href="#contact" class="btn outline">رزرو مشاوره</a>
       </div>
     </section>
@@ -157,8 +194,8 @@
     <!-- 💡 About -->
     <section id="about" class="section about light">
       <h2>به بیتا دیجیتال هاب خوش آمدید</h2>
-      <p>در بیتا دیجیتال هاب، ما به قدرت تکنولوژی برای خلق فرصت‌های نو باور داریم. هدف ما ساده‌سازی مسیر موفقیت دیجیتال است — از استراتژی هوشمند تا اتوماسیون کامل سیستم‌ها.</p>
-      <p>— بیتا آشوری، بنیان‌گذار</p>
+      <p>در بیتا دیجیتال هاب، به قدرت فناوری برای خلق فرصت‌های نو باور داریم. هدف ما ساده‌سازی مسیر موفقیت دیجیتال است — از استراتژی هوشمند تا اتوماسیون کامل سیستم‌ها.</p>
+      <p>— بیتا عاشوری، بنیان‌گذار</p>
     </section>
 
     <!-- 🧰 Tools -->
@@ -167,46 +204,12 @@
       <p class="section-sub">ابزارهای هوش مصنوعی و اتوماسیون برای افزایش بهره‌وری</p>
 
       <div class="tools-grid">
-        <a href="tools/password-generator.html" class="card gradient-blue">
-          <div class="card-icon"><i data-lucide="shield"></i></div>
-          <h3>تولید رمز عبور</h3>
-          <p>رمزهای قوی و امن برای حفاظت از حساب‌های دیجیتال شما.</p>
-        </a>
-        <a href="tools/file-converter.html" class="card gradient-pink">
-          <div class="card-icon"><i data-lucide="file"></i></div>
-          <h3>تبدیل فایل‌ها</h3>
-          <p>تبدیل سریع فایل‌های PDF، Word و داده‌ای با یک کلیک.</p>
-        </a>
-        <a href="tools/csv-cleaner.html" class="card gradient-cyan">
-          <div class="card-icon"><i data-lucide="table"></i></div>
-          <h3>پاکسازی CSV</h3>
-          <p>حذف داده‌های تکراری و آماده‌سازی فایل‌ها برای تحلیل.</p>
-        </a>
-        <a href="tools/zip-unzip.html" class="card gradient-gray">
-          <div class="card-icon"><i data-lucide="archive"></i></div>
-          <h3>فشرده‌سازی و استخراج فایل</h3>
-          <p>ایجاد و باز کردن فایل‌های ZIP به‌صورت سریع و ایمن.</p>
-        </a>
-        <a href="tools/url-shortener.html" class="card gradient-green">
-          <div class="card-icon"><i data-lucide="link-2"></i></div>
-          <h3>کوتاه‌کننده لینک</h3>
-          <p>مدیریت و رهگیری لینک‌ها برای بازاریابی و تحلیل داده.</p>
-        </a>
-        <a href="tools/qr-generator.html" class="card gradient-yellow">
-          <div class="card-icon"><i data-lucide="qr-code"></i></div>
-          <h3>تولید QR کد</h3>
-          <p>ساخت QR اختصاصی برای وب‌سایت‌ها و محصولات در چند ثانیه.</p>
-        </a>
-        <a href="tools/audio-transcriber.html" class="card gradient-purple">
-          <div class="card-icon"><i data-lucide="mic"></i></div>
-          <h3>تبدیل صوت به متن</h3>
-          <p>تبدیل گفتار به متن قابل ویرایش با هوش مصنوعی.</p>
-        </a>
-        <a href="tools/convert-to-mp3.html" class="card gradient-pink">
-          <div class="card-icon">🎵</div>
-          <h3>تبدیل ویدیو یا صدا به MP3</h3>
-          <p>تبدیل سریع و خصوصی فایل‌های صوتی یا تصویری به MP3.</p>
-        </a>
+        <a href="tools/password-generator.html" class="card gradient-blue"><div class="card-icon"><i data-lucide="shield"></i></div><h3>تولید رمز عبور</h3><p>رمزهای قوی و امن برای حفاظت از حساب‌های دیجیتال شما.</p></a>
+        <a href="tools/file-converter.html" class="card gradient-pink"><div class="card-icon"><i data-lucide="file"></i></div><h3>تبدیل فایل‌ها</h3><p>تبدیل سریع فایل‌های PDF، Word و داده‌ای با یک کلیک.</p></a>
+        <a href="tools/csv-cleaner.html" class="card gradient-cyan"><div class="card-icon"><i data-lucide="table"></i></div><h3>پاکسازی CSV</h3><p>حذف داده‌های تکراری و آماده‌سازی فایل‌ها برای تحلیل.</p></a>
+        <a href="tools/zip-unzip.html" class="card gradient-gray"><div class="card-icon"><i data-lucide="archive"></i></div><h3>فشرده‌سازی و استخراج فایل</h3><p>ایجاد و باز کردن فایل‌های ZIP به‌صورت سریع و ایمن.</p></a>
+        <a href="tools/url-shortener.html" class="card gradient-green"><div class="card-icon"><i data-lucide="link-2"></i></div><h3>کوتاه‌کننده لینک</h3><p>مدیریت و رهگیری لینک‌ها برای بازاریابی و تحلیل داده.</p></a>
+        <a href="tools/qr-generator.html" class="card gradient-yellow"><div class="card-icon"><i data-lucide="qr-code"></i></div><h3>تولید QR کد</h3><p>ساخت QR اختصاصی برای وب‌سایت‌ها و محصولات در چند ثانیه.</p></a>
       </div>
     </section>
 
@@ -215,25 +218,11 @@
       <h2>دوره‌ها و آموزش‌ها</h2>
       <p class="section-sub">یاد بگیرید و در دنیای دیجیتال رشد کنید</p>
       <div class="cards">
-        <div class="card gradient-green">
-          <div class="card-icon"><i data-lucide="book-open"></i></div>
-          <h3>دوره‌های رایگان</h3>
-          <p>دوره‌های مقدماتی در زمینه داده، هوش مصنوعی و مارکتینگ دیجیتال.</p>
-        </div>
-        <div class="card gradient-blue">
-          <div class="card-icon"><i data-lucide="megaphone"></i></div>
-          <h3>استادی بازاریابی دیجیتال</h3>
-          <p>یاد بگیرید برند خود را مؤثر و هوشمندانه توسعه دهید.</p>
-        </div>
-        <div class="card gradient-pink">
-          <div class="card-icon"><i data-lucide="briefcase"></i></div>
-          <h3>فرنچایز آنلاین</h3>
-          <p>کسب‌وکار خود را با سیستم آماده اتوماسیون راه‌اندازی کنید.</p>
-        </div>
+        <div class="card gradient-green"><div class="card-icon"><i data-lucide="book-open"></i></div><h3>دوره‌های رایگان</h3><p>دوره‌های مقدماتی در زمینه داده، هوش مصنوعی و بازاریابی دیجیتال.</p></div>
+        <div class="card gradient-blue"><div class="card-icon"><i data-lucide="megaphone"></i></div><h3>استادی بازاریابی دیجیتال</h3><p>یاد بگیرید برند خود را مؤثر و هوشمندانه توسعه دهید.</p></div>
+        <div class="card gradient-pink"><div class="card-icon"><i data-lucide="briefcase"></i></div><h3>فرنچایز آنلاین</h3><p>کسب‌وکار خود را با سیستم آماده اتوماسیون راه‌اندازی کنید.</p></div>
       </div>
-      <div class="cta-buttons">
-        <a href="#contact" class="btn primary">درخواست مشاوره</a>
-      </div>
+      <div class="cta-buttons"><a href="#contact" class="btn primary">درخواست مشاوره</a></div>
     </section>
 
     <!-- ⚙️ Services -->
@@ -241,25 +230,11 @@
       <h2>خدمات ما</h2>
       <p class="section-sub">راهکارهای جامع برای تحول دیجیتال کسب‌وکار شما</p>
       <div class="cards">
-        <div class="card gradient-green">
-          <div class="card-icon"><i data-lucide="layout-dashboard"></i></div>
-          <h3>طراحی وب‌سایت</h3>
-          <p>وب‌سایت‌های واکنش‌گرا، سریع و مدرن متناسب با برند شما.</p>
-        </div>
-        <div class="card gradient-yellow">
-          <div class="card-icon"><i data-lucide="bar-chart-3"></i></div>
-          <h3>داده و تحلیل</h3>
-          <p>تبدیل داده‌های خام به بینش‌های کاربردی و گزارش‌های تحلیلی.</p>
-        </div>
-        <div class="card gradient-pink">
-          <div class="card-icon"><i data-lucide="bot"></i></div>
-          <h3>ربات‌های تلگرام</h3>
-          <p>اتوماسیون گفتگو، جمع‌آوری مشتری و بازاریابی هوشمند.</p>
-        </div>
+        <div class="card gradient-green"><div class="card-icon"><i data-lucide="layout-dashboard"></i></div><h3>طراحی وب‌سایت</h3><p>وب‌سایت‌های واکنش‌گرا، سریع و مدرن متناسب با برند شما.</p></div>
+        <div class="card gradient-yellow"><div class="card-icon"><i data-lucide="bar-chart-3"></i></div><h3>داده و تحلیل</h3><p>تبدیل داده‌های خام به بینش‌های کاربردی و گزارش‌های تحلیلی.</p></div>
+        <div class="card gradient-pink"><div class="card-icon"><i data-lucide="bot"></i></div><h3>ربات‌های تلگرام</h3><p>اتوماسیون گفتگو، جمع‌آوری مشتری و بازاریابی هوشمند.</p></div>
       </div>
-      <div class="cta-buttons">
-        <a href="#contact" class="btn primary">درخواست مشاوره</a>
-      </div>
+      <div class="cta-buttons"><a href="#contact" class="btn primary">درخواست مشاوره</a></div>
     </section>
 
     <!-- 💬 Contact -->
@@ -277,7 +252,6 @@
         </div>
         <textarea name="message" placeholder="درباره پروژه خود بنویسید..." required></textarea>
         <button type="submit" class="btn primary" id="contactSubmitBtn">ارسال پیام</button>
-
         <input type="hidden" name="_subject" value="پیام جدید از فرم تماس - بیتا دیجیتال هاب">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
@@ -297,7 +271,6 @@
       .catch(console.error);
   </script>
 
-  <!-- 💰 Initialize Ads -->
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </body>
 </html>
