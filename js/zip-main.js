@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const blob = await zip.generateAsync({ type: "blob" });
     const url  = URL.createObjectURL(blob);
     downloadLink.href     = url;
-    downloadLink.download = "bita-archive.zip";
+    downloadLink.download = "archive_file.zip";
     resultMsg.textContent = `✅ Compressed ${files.length} file(s). Click download.`;
   }
 
