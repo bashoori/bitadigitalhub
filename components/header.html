@@ -1,10 +1,11 @@
 <!-- =========================================================
-🧭 Bita Digital Hub – Modern Responsive Header (v4)
-Aligned brand, bilingual dropdown, and mobile menu
+🧭 Bita Digital Hub – Modern Responsive Header (v5)
+Includes: Blog Link + Clean SEO Structure + Mobile Menu
 ========================================================= -->
 
 <header class="navbar">
   <div class="nav-inner">
+
     <!-- 🔹 Brand -->
     <div class="nav-left">
       <a href="index.html#home" class="brand-link">
@@ -21,6 +22,7 @@ Aligned brand, bilingual dropdown, and mobile menu
       <a href="index.html#home" class="active">Home</a>
       <a href="index.html#about">About</a>
       <a href="index.html#tools">Tools</a>
+      <a href="blog/index.html">Blog</a> <!-- ⭐ Added Blog -->
       <a href="index.html#services">Services</a>
       <a href="index.html#courses">Courses</a>
       <a href="contact.html#contact">Contact</a>
@@ -29,17 +31,17 @@ Aligned brand, bilingual dropdown, and mobile menu
     <!-- 🔹 Actions -->
     <div class="nav-actions">
       <div class="lang-switch">
-        <button class="lang-toggle" id="lang-btn" aria-haspopup="listbox" aria-expanded="false">🇬🇧 English ▾
+        <button class="lang-toggle" id="lang-btn" aria-haspopup="listbox" aria-expanded="false">
+          🇬🇧 English ▾
         </button>
         <ul class="lang-menu" id="lang-menu" role="listbox">
           <li><a href="index.html">🇬🇧 English</a></li>
-          <li><a href="index-fa.html">🇮🇷 فارسی </a></li>
+          <li><a href="index-fa.html">🇮🇷 فارسی</a></li>
         </ul>
       </div>
-      <!-- <a href="contact.html" class="btn-primary get-started">Login</a>-->
     </div>
 
-    <!-- ☰ Mobile Menu Toggle -->
+    <!-- ☰ Mobile Toggle -->
     <button class="menu-toggle" aria-label="Toggle navigation">
       <span></span><span></span><span></span>
     </button>
@@ -50,53 +52,55 @@ Aligned brand, bilingual dropdown, and mobile menu
 🔧 Header Behavior
 ========================================================= -->
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // 🌍 Language Dropdown
-    const langBtn = document.getElementById("lang-btn");
-    const langMenu = document.getElementById("lang-menu");
-    if (langBtn && langMenu) {
-      langBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        langMenu.classList.toggle("show");
-        langBtn.setAttribute("aria-expanded", langMenu.classList.contains("show"));
-      });
-      document.addEventListener("click", (e) => {
-        if (!langBtn.contains(e.target)) {
-          langMenu.classList.remove("show");
-          langBtn.setAttribute("aria-expanded", "false");
-        }
-      });
-    }
+document.addEventListener("DOMContentLoaded", () => {
 
-    // 📱 Mobile Menu Toggle
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
-    if (menuToggle && navLinks) {
-      menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("show");
-        menuToggle.classList.toggle("open");
-      });
-    }
+  /* 🌍 Language Dropdown */
+  const langBtn = document.getElementById("lang-btn");
+  const langMenu = document.getElementById("lang-menu");
 
-    // 🌀 Smooth Scroll (in-page only)
-    document.querySelectorAll('.nav-links a[href^="#"]').forEach((link) => {
-      link.addEventListener("click", (e) => {
-        const href = link.getAttribute("href");
-        const target = document.querySelector(href);
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: "smooth" });
-          navLinks.classList.remove("show");
-          menuToggle.classList.remove("open");
-        }
-      });
+  if (langBtn && langMenu) {
+    langBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      langMenu.classList.toggle("show");
+      langBtn.setAttribute("aria-expanded", langMenu.classList.contains("show"));
+    });
+
+    document.addEventListener("click", () => {
+      langMenu.classList.remove("show");
+      langBtn.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  /* 📱 Mobile Menu Toggle */
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+      menuToggle.classList.toggle("open");
+    });
+  }
+
+  /* 🌀 Smooth Scroll Only for same-page anchors */
+  document.querySelectorAll('.nav-links a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const href = link.getAttribute("href");
+      const target = document.querySelector(href);
+
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
+        navLinks.classList.remove("show");
+        menuToggle.classList.remove("open");
+      }
     });
   });
+});
 </script>
 
 <!-- =========================================================
-🎨 Recommended CSS Snippet
-Add this to your main stylesheet
+🎨 CSS — Add to global stylesheet
 ========================================================= -->
 <style>
 /* ---------- Header Layout ---------- */
@@ -116,15 +120,14 @@ Add this to your main stylesheet
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
 }
 
 /* ---------- Brand ---------- */
 .brand-link {
   display: flex;
   align-items: center;
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
 .brand-logo {
@@ -136,7 +139,7 @@ Add this to your main stylesheet
 .brand-info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  line-height: 1.2;
 }
 
 .brand-title {
@@ -144,14 +147,12 @@ Add this to your main stylesheet
   font-weight: 700;
   color: #1e3a8a;
   margin: 0;
-  line-height: 1.2;
 }
 
 .brand-tagline {
   font-size: 0.85rem;
   color: #475569;
   margin: 0;
-  line-height: 1.2;
 }
 
 /* ---------- Navigation ---------- */
@@ -173,27 +174,6 @@ Add this to your main stylesheet
   color: #1e3a8a;
 }
 
-/* ---------- Actions ---------- */
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.btn-primary {
-  background: #1e3a8a;
-  color: #ffffff;
-  padding: 0.6rem 1.4rem;
-  border-radius: 10px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.btn-primary:hover {
-  background: #152b6b;
-}
-
 /* ---------- Language Switch ---------- */
 .lang-switch {
   position: relative;
@@ -205,9 +185,6 @@ Add this to your main stylesheet
   border-radius: 8px;
   padding: 0.45rem 0.8rem;
   font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 6px;
   cursor: pointer;
 }
 
@@ -215,61 +192,43 @@ Add this to your main stylesheet
   position: absolute;
   top: 120%;
   right: 0;
-  list-style: none;
   background: #ffffff;
   border-radius: 8px;
+  list-style: none;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   display: none;
   min-width: 140px;
   padding: 0.3rem 0;
-  z-index: 50;
 }
 
 .lang-menu.show {
   display: block;
 }
 
-.lang-menu li a {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 0.5rem 0.9rem;
-  text-decoration: none;
-  color: #0f172a;
-  font-size: 0.9rem;
-}
-
-.lang-menu li a:hover {
-  background: #f1f5f9;
-}
-
 /* ---------- Mobile Menu ---------- */
 .menu-toggle {
   display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 4px;
   background: none;
   border: none;
   cursor: pointer;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .menu-toggle span {
   width: 24px;
   height: 2px;
   background: #0f172a;
-  border-radius: 2px;
-  transition: all 0.3s;
+  transition: 0.3s;
 }
 
+/* Hamburger Animation */
 .menu-toggle.open span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
-
 .menu-toggle.open span:nth-child(2) {
   opacity: 0;
 }
-
 .menu-toggle.open span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
@@ -279,14 +238,12 @@ Add this to your main stylesheet
   .nav-links {
     position: absolute;
     top: 100%;
-    left: 0;
-    right: 0;
+    left: 0; right: 0;
     background: #ffffff;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    padding: 1rem 0;
     display: none;
+    padding: 1rem 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
 
@@ -298,12 +255,8 @@ Add this to your main stylesheet
     display: flex;
   }
 
-  .nav-actions {
-    gap: 0.5rem;
-  }
-
   .brand-tagline {
-    display: none; /* Hide small tagline on mobile for cleaner look */
+    display: none;
   }
 }
 </style>
