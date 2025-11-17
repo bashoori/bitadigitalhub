@@ -184,22 +184,38 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section">
-  <h2>Contact Us</h2>
-  <p class="section-sub">Let’s build something amazing together.</p>
+<section id="contact" class="section contact light">
+  <div class="contact-wrapper">
+    <h2>Contact Us</h2>
+    <p class="section-sub">Let’s build something amazing together.</p>
 
-  <form class="contact-form" action="https://formsubmit.co/contact@bitadigitalhub.com" method="POST">
+    <form class="contact-form" 
+          action="https://formsubmit.co/contact@bitadigitalhub.com" method="POST">
 
-    <div class="form-grid">
-      <input type="text" name="name" placeholder="Full Name *" required />
-      <input type="email" name="email" placeholder="Email Address *" required />
-    </div>
+      <div class="form-grid">
+        <input type="text" name="name" placeholder="Full Name *" required />
+        <input type="email" name="email" placeholder="Email Address *" required />
+      </div>
 
-    <textarea name="message" placeholder="Tell us about your project..." required></textarea>
+      <div class="form-grid">
+        <input type="text" name="company" placeholder="Company (optional)" />
+        <input type="text" name="phone" placeholder="Phone" />
+      </div>
 
-    <button type="submit" class="btn primary">Send Message</button>
-  </form>
+      <textarea name="message" placeholder="Tell us about your project..." required></textarea>
+
+      <button type="submit" class="btn primary contact-btn">Send Message</button>
+
+      <!-- Hidden FormSubmit fields -->
+      <input type="hidden" name="_subject" value="New Contact Form Submission - Bita Digital Hub" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_next" value="https://bitadigitalhub.com/thank-you.html" />
+      <input type="text" name="_honey" style="display:none">
+    </form>
+  </div>
 </section>
+
 
 <!-- FOOTER -->
 <div id="footer-placeholder"></div>
