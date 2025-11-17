@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Blog | Bita Digital Hub</title>
-
   <meta name="description"
-        content="Read the latest articles on online business, AI tools, digital marketing, and automation. Learn how to build and grow a successful digital business in 2025." />
+        content="Latest articles on online business, AI automation, digital marketing, and tools to help you grow in 2025." />
 
   <!-- Global Styles -->
   <link rel="stylesheet" href="../css/style.css" />
@@ -16,14 +15,15 @@
   <link rel="stylesheet" href="../css/responsive.css" />
 
   <style>
+    /* BLOG HEADER */
     .blog-header {
       text-align: center;
       margin-top: 6rem;
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
     }
 
     .blog-header h1 {
-      font-size: 2.6rem;
+      font-size: 2.8rem;
       font-weight: 800;
       color: #0f172a;
     }
@@ -31,145 +31,145 @@
     .blog-header p {
       color: #475569;
       font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0.5rem auto 0;
+      max-width: 780px;
+      margin: 0.6rem auto 0;
     }
 
+    /* GRID */
     .blog-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
-      max-width: 1200px;
+      max-width: 1300px;
       margin: 2rem auto 4rem;
       padding: 0 1.5rem;
     }
 
+    /* BLOG CARD */
     .blog-card {
+      display: block;
       background: #ffffff;
-      border-radius: 14px;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-      transition: transform .25s ease, box-shadow .25s ease;
       text-decoration: none;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      transition: transform .25s ease, box-shadow .25s ease;
     }
 
     .blog-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transform: translateY(-6px);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.1);
     }
 
     .blog-card img {
       width: 100%;
-      height: 180px;
+      height: 190px;
       object-fit: cover;
+      background: #eef2f7;
     }
 
-    .blog-card .card-body {
-      padding: 1.2rem 1.2rem 1.6rem;
+    .card-body {
+      padding: 1.3rem 1.2rem 1.7rem;
     }
 
-    .blog-card h3 {
-      font-size: 1.2rem;
+    .card-body h3 {
+      font-size: 1.3rem;
       font-weight: 700;
-      color: #0f172a;
       margin-bottom: 0.6rem;
+      color: #0f172a;
     }
 
-    .blog-card p {
+    .card-body p {
+      font-size: 1rem;
       color: #475569;
-      font-size: 0.95rem;
       line-height: 1.5;
-      margin: 0;
+    }
+
+    /* CTA BUTTON */
+    .center-btn {
+      text-align: center;
+      margin-top: 3rem;
     }
   </style>
 </head>
 
 <body>
 
-<!-- Header -->
+<!-- HEADER -->
 <div id="header-placeholder"></div>
 <script>
   fetch("../components/header-tools.html")
     .then(res => res.text())
-    .then(html => {
-      document.getElementById("header-placeholder").innerHTML = html;
-    });
+    .then(html => { document.getElementById("header-placeholder").innerHTML = html; });
 </script>
 
-<!-- 📝 BLOG SECTION -->
-<section id="latest-articles" class="articles-section">
-  <div class="container">
-
-    <header class="section-header">
-      <h2 class="section-title">Latest Articles</h2>
-      <p class="section-subtitle">Insights to help you grow your online business</p>
-    </header>
-
-    <div class="articles-grid">
-
-      <!-- Article 1 -->
-      <article class="article-card yellow">
-        <a href="start-online-business-2025.html">
-          <div class="icon">🚀</div>
-          <h3>How to Start a Successful Online Business in 2025</h3>
-          <p>Essential steps for launching a profitable online business — even as a complete beginner.</p>
-        </a>
-      </article>
-
-      <!-- Article 2 -->
-      <article class="article-card purple">
-        <a href="ai-automation-for-solopreneurs-2025.html">
-          <div class="icon">⚙️</div>
-          <h3>The Rise of AI Automation for Solopreneurs in 2025</h3>
-          <p>How AI is transforming online work, automating tasks, and helping creators scale faster.</p>
-        </a>
-      </article>
-
-      <!-- Article 3 -->
-      <article class="article-card blue">
-        <a href="top-ai-tools-small-business-2025.html">
-          <div class="icon">🤖</div>
-          <h3>Top AI Tools Small Business Owners Should Use in 2025</h3>
-          <p>The essential AI tools every business owner should use to save time and grow.</p>
-        </a>
-      </article>
-
-      <!-- Article 4 -->
-      <article class="article-card green">
-        <a href="best-digital-marketing-strategies-2025.html">
-          <div class="icon">📈</div>
-          <h3>The Best Digital Marketing Strategies for Beginners in 2025</h3>
-          <p>Beginner-friendly marketing strategies to build your presence and audience.</p>
-        </a>
-      </article>
-
-      <!-- Article 5 -->
-      <article class="article-card pink">
-        <a href="essential-digital-marketing-skills-2025.html">
-          <div class="icon">✨</div>
-          <h3>Essential Digital Marketing Skills You Need in 2025</h3>
-          <p>The top skills every creator, marketer, and business owner needs this year.</p>
-        </a>
-      </article>
-
-    </div>
-
-    <div class="cta-buttons">
-      <a href="../index.html" class="btn primary">Back to Home</a>
-    </div>
-
-  </div>
+<!-- BLOG HEADER -->
+<section class="blog-header">
+  <h1>Latest Articles</h1>
+  <p>Insights, tools, and strategies to help you grow your online business in 2025.</p>
 </section>
 
+<!-- BLOG GRID -->
+<div class="blog-grid">
 
-<!-- Footer -->
+  <!-- Card 1 -->
+  <a href="start-online-business.html" class="blog-card">
+    <img src="image/start-online-business.jpg" alt="How to Start an Online Business in 2025">
+    <div class="card-body">
+      <h3>How to Start a Successful Online Business in 2025</h3>
+      <p>Essential steps to launch a profitable online business — even as a complete beginner.</p>
+    </div>
+  </a>
+
+  <!-- Card 2 -->
+  <a href="ai-automation-solopreneurs-2025.html" class="blog-card">
+    <img src="image/ai-solopreneurs.jpg" alt="AI Automation for Solopreneurs">
+    <div class="card-body">
+      <h3>The Rise of AI Automation for Solopreneurs in 2025</h3>
+      <p>How AI is transforming online work, automating tasks, and helping creators scale faster.</p>
+    </div>
+  </a>
+
+  <!-- Card 3 -->
+  <a href="top-ai-tools-small-business-2025.html" class="blog-card">
+    <img src="image/ai-business-tools.jpg" alt="Top AI Tools for Small Businesses">
+    <div class="card-body">
+      <h3>Top AI Tools Small Business Owners Should Use in 2025</h3>
+      <p>The must-have AI tools every business owner needs to save time and grow faster.</p>
+    </div>
+  </a>
+
+  <!-- Card 4 -->
+  <a href="digital-marketing-strategies-2025.html" class="blog-card">
+    <img src="image/best-marketing-strategies.jpg" alt="Digital Marketing Strategies 2025">
+    <div class="card-body">
+      <h3>The Best Digital Marketing Strategies for Beginners in 2025</h3>
+      <p>Beginner-friendly strategies to build your presence and audience.</p>
+    </div>
+  </a>
+
+  <!-- Card 5 -->
+  <a href="marketing-skills-2025.html" class="blog-card">
+    <img src="image/essential-digital-marketing-skills.jpg" alt="Digital Marketing Skills 2025">
+    <div class="card-body">
+      <h3>Essential Digital Marketing Skills You Need in 2025</h3>
+      <p>The top skills every creator, marketer, and business owner needs this year.</p>
+    </div>
+  </a>
+
+</div>
+
+<!-- CTA -->
+<div class="center-btn">
+  <a class="btn primary" href="../index.html">Back to Home</a>
+</div>
+
+<!-- FOOTER -->
 <div id="footer-placeholder"></div>
 <script>
   fetch("../components/footer-tools.html")
     .then(res => res.text())
-    .then(html => {
-      document.getElementById("footer-placeholder").innerHTML = html;
-    });
+    .then(html => { document.getElementById("footer-placeholder").innerHTML = html; });
 </script>
 
 </body>
