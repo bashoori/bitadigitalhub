@@ -1,0 +1,14 @@
+/* -------------------------------------
+   RESPONSIVE.CSS — MOBILE FIXES
+-------------------------------------- */
+
+@media (max-width: 900px) {
+  [data-page="home"] .articles-grid,
+  [data-page="blog"] .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  [data-page="tools"] .tool-layout {
+    grid-template-columns: 1fr;
+  }
+}
