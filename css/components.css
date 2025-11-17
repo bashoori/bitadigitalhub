@@ -1,43 +1,45 @@
-.tool-layout {
-  display: grid;
-  grid-template-columns: 1fr minmax(320px, 700px) 1fr;
-  gap: 1.5rem;
-  padding: 2rem 1rem;
-}
+/* -------------------------------------
+   COMPONENTS.CSS — REUSABLE COMPONENTS
+-------------------------------------- */
 
-.tool-card {
-  border-radius: 16px;
-  padding: 2.5rem 2rem;
-  text-align: center;
-  color: #fff;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-
-.tool-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 3rem;
-}
-
-.primary-btn {
-  background: #1e3a8a;
-  color: #fff;
-  border: none;
-  padding: 0.9rem 1.4rem;
-  border-radius: 10px;
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius);
   font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s ease;
+  text-align: center;
 }
 
-.primary-btn:hover { background: #2563eb; }
-
-.output-box {
-  background: rgba(255,255,255,0.15);
-  border-radius: 10px;
-  padding: 1rem;
-  color: #f1f5f9;
+.btn.primary {
+  background: var(--primary);
+  color: var(--white);
 }
 
-.hidden { display: none; }
+.btn.primary:hover {
+  background: var(--primary-hover);
+}
+
+/* Card base */
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+/* Header */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--white);
+  z-index: 1000;
+  box-shadow: var(--shadow);
+}
