@@ -1,10 +1,10 @@
-<header class="navbar modern blog-navbar">
+<header class="blog-navbar">
   <div class="nav-inner">
 
     <!-- Logo -->
     <a href="../index.html" class="brand-link">
       <img src="../assets/taskhub-logo.svg" 
-           alt="Bita Digital Hub Logo" 
+           alt="Bita Digital Hub Logo"
            class="brand-logo" />
 
       <div class="brand-info">
@@ -13,30 +13,13 @@
       </div>
     </a>
 
-    <!-- Navigation -->
+    <!-- Back Button -->
     <nav class="nav-links">
-      <a href="../index.html#home">Home</a>
-      <a href="../index.html#about">About</a>
-      <a href="../index.html#tools">Tools</a>
-      <a href="../index.html#services">Services</a>
-      <a href="../index.html#courses">Courses</a>
-      <a href="index-blog.html" class="active">Blog</a>
-      <a href="../index.html#contact">Contact</a>
+      <a href="../index.html" class="btn-primary back-btn">Back to Home</a>
     </nav>
 
-    <!-- Language Switch -->
-    <div class="nav-actions">
-      <div class="lang-switch">
-        <button class="lang-toggle" id="lang-btn">🇬🇧 English ▾</button>
-        <ul class="lang-menu" id="lang-menu">
-          <li><a href="../index.html">🇬🇧 English</a></li>
-          <li><a href="../index-fa.html">🇮🇷 فارسی</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Mobile Menu -->
-    <button class="menu-toggle">
+    <!-- Mobile Menu Icon -->
+    <button class="menu-toggle" id="blog-menu-toggle">
       <span></span><span></span><span></span>
     </button>
 
@@ -45,33 +28,119 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const langBtn = document.getElementById("lang-btn");
-  const langMenu = document.getElementById("lang-menu");
+  const toggle = document.getElementById("blog-menu-toggle");
+  const links = document.querySelector(".nav-links");
 
-  langBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    langMenu.classList.toggle("show");
-  });
-
-  document.addEventListener("click", () => langMenu.classList.remove("show"));
-
-  const menuToggle = document.querySelector(".menu-toggle");
-  const navLinks = document.querySelector(".nav-links");
-
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-    menuToggle.classList.toggle("open");
+  toggle.addEventListener("click", () => {
+    toggle.classList.toggle("open");
+    links.classList.toggle("show");
   });
 });
 </script>
 
 <style>
+/* =======================
+   BLOG HEADER (Optimized)
+======================= */
+
 .blog-navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #fff;
-  z-index: 1000;
+  background: #ffffff;
+  padding: 0.9rem 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  z-index: 1000;
+}
+
+.blog-navbar .nav-inner {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.brand-logo { width: 42px; }
+
+.brand-info .brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+.brand-info .tagline {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* BACK BUTTON */
+.btn-primary.back-btn {
+  background: #1e3a8a;
+  padding: 0.55rem 1.2rem;
+  color: #fff !important;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.25s ease;
+}
+
+.btn-primary.back-btn:hover {
+  background: #2563eb;
+}
+
+/* MOBILE MENU TOGGLE */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 24px;
+  height: 2px;
+  background: #0f172a;
+  transition: 0.3s;
+}
+
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+.menu-toggle.open span:nth-child(2) { opacity: 0; }
+
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .menu-toggle { display: flex; }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #ffffff;
+    padding: 1rem;
+    display: none;
+    flex-direction: column;
+    width: 200px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.show { display: flex; }
+  
+  .brand-info .tagline { display: none; }
 }
 </style>
