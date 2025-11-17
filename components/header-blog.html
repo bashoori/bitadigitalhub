@@ -1,5 +1,5 @@
 <header class="blog-navbar">
-  <div class="nav-inner">
+  <div class="blog-nav">
 
     <!-- Logo -->
     <a href="../index.html" class="brand-link">
@@ -14,11 +14,11 @@
     </a>
 
     <!-- Back Button -->
-    <nav class="nav-links">
+    <nav class="nav-links" id="blog-nav-links">
       <a href="../index.html" class="btn-primary back-btn">Back to Home</a>
     </nav>
 
-    <!-- Mobile Menu Icon -->
+    <!-- Mobile Menu -->
     <button class="menu-toggle" id="blog-menu-toggle">
       <span></span><span></span><span></span>
     </button>
@@ -29,7 +29,7 @@
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("blog-menu-toggle");
-  const links = document.querySelector(".nav-links");
+  const links = document.getElementById("blog-nav-links");
 
   toggle.addEventListener("click", () => {
     toggle.classList.toggle("open");
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <style>
 /* =======================
-   BLOG HEADER (Optimized)
+   BLOG HEADER (Refined)
 ======================= */
 
 .blog-navbar {
@@ -48,47 +48,55 @@ document.addEventListener("DOMContentLoaded", () => {
   top: 0;
   width: 100%;
   background: #ffffff;
-  padding: 0.9rem 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 0.8rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   z-index: 1000;
 }
 
-.blog-navbar .nav-inner {
-  max-width: 1250px;
+.blog-nav {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
 
+/* LOGO */
 .brand-link {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.75rem;
+  text-decoration: none;
 }
 
-.brand-logo { width: 42px; }
+.brand-logo {
+  width: 40px;
+  height: 40px;
+}
 
 .brand-info .brand {
-  font-size: 1.25rem;
+  font-size: 1.22rem;
   font-weight: 700;
   color: #1e3a8a;
 }
 
 .brand-info .tagline {
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   color: #64748b;
 }
 
 /* BACK BUTTON */
 .btn-primary.back-btn {
   background: #1e3a8a;
-  padding: 0.55rem 1.2rem;
+  padding: 0.58rem 1.15rem;
   color: #fff !important;
-  border-radius: 10px;
+  border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
+  display: inline-block;
   transition: background 0.25s ease;
 }
 
@@ -96,14 +104,14 @@ document.addEventListener("DOMContentLoaded", () => {
   background: #2563eb;
 }
 
-/* MOBILE MENU TOGGLE */
+/* MOBILE MENU BUTTON */
 .menu-toggle {
   display: none;
-  background: none;
   border: none;
+  background: transparent;
+  cursor: pointer;
   flex-direction: column;
   gap: 4px;
-  cursor: pointer;
 }
 
 .menu-toggle span {
@@ -116,21 +124,30 @@ document.addEventListener("DOMContentLoaded", () => {
 .menu-toggle.open span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 6px);
 }
-
-.menu-toggle.open span:nth-child(2) { opacity: 0; }
-
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
 .menu-toggle.open span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -6px);
 }
 
-/* RESPONSIVE */
+/* NAV LINKS ON DESKTOP */
+.nav-links a {
+  text-decoration: none;
+}
+
+/* MOBILE */
 @media (max-width: 900px) {
-  .menu-toggle { display: flex; }
+  .brand-info .tagline { display: none; }
+
+  .menu-toggle {
+    display: flex;
+  }
 
   .nav-links {
     position: absolute;
-    top: 100%;
     right: 0;
+    top: 100%;
     background: #ffffff;
     padding: 1rem;
     display: none;
@@ -139,8 +156,8 @@ document.addEventListener("DOMContentLoaded", () => {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
 
-  .nav-links.show { display: flex; }
-  
-  .brand-info .tagline { display: none; }
+  .nav-links.show {
+    display: flex;
+  }
 }
 </style>
