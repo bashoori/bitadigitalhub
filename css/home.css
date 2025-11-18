@@ -1,205 +1,176 @@
-/* ============================================================
-   HOME.CSS — Clean Hero + Articles + Tools + Sections Layout
-   Professional • Minimal • Google-Friendly • 2025 UI System
-============================================================ */
+/* =======================
+   HOME.CSS – Homepage UI
+   (Hero + Card Sections)
+======================= */
 
-
-/* ------------------------------------------------------------
-   HERO SECTION
------------------------------------------------------------- */
+/* ---------- HERO SECTION ---------- */
 .hero {
   background: #f8fafc;
   text-align: center;
-  padding: 5.5rem 2rem 5rem; /* balanced with fixed navbar */
+  padding: 6rem 1.5rem 4rem;
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 2.7rem;
   font-weight: 800;
   color: #0f172a;
   margin-bottom: 1rem;
-  line-height: 1.2;
 }
 
 .hero p {
   max-width: 720px;
-  margin: 0 auto 2.5rem;
-  font-size: 1.05rem;
-  line-height: 1.65;
-  color: #475569;
+  margin: 0 auto 2rem;
+  color: #334155;
+  line-height: 1.7;
+  font-size: 1.04rem;
 }
 
-
-/* ------------------------------------------------------------
-   SECTION BASE
------------------------------------------------------------- */
-.section {
-  padding: 4rem 1.5rem;
-  max-width: 1120px;
-  margin: 0 auto;
+.hero .cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.section.light {
-  background: #f9fafb;
-}
+/* ==============================
+   SECTIONS WITH CARDS (3 COLUMNS)
+   Used for:
+   - Latest Articles
+   - Tools
+   - Services
+   - Courses
+============================== */
 
-.section h2 {
-  font-size: 2.2rem;
+/* Section title + subtitle (already used در index) */
+.section-title {
+  font-size: 2.1rem;
   font-weight: 800;
-  color: #0f172a;
-  text-align: center;
   margin-bottom: 0.6rem;
+  color: #0f172a;
 }
 
 .section-sub {
-  max-width: 720px;
-  margin: 0.2rem auto 2.4rem;
-  color: #64748b;
-  text-align: center;
-  font-size: 1.02rem;
+  color: #475569;
+  font-size: 1rem;
+  max-width: 760px;
+  margin: 0 auto 2.2rem;
   line-height: 1.6;
 }
 
-
-/* ------------------------------------------------------------
-   ABOUT SECTION
------------------------------------------------------------- */
-.about p {
-  max-width: 720px;
-  margin: 0.5rem auto;
-  text-align: center;
-  color: #475569;
-  line-height: 1.7;
-}
-
-
-/* ------------------------------------------------------------
-   LATEST ARTICLES (ICON CARDS)
-   Uses the NEW content-card system from components.css
------------------------------------------------------------- */
+/* Slight spacing for the latest-articles section */
 .latest-articles {
-  padding-top: 1rem;
+  margin-top: 3rem;  /* کمترش کردیم که فاصله از هدر زیاد نباشه */
+  text-align: center;
 }
 
-.latest-articles .section-sub {
-  margin-bottom: 2rem;
-}
+/* ---------- CARD GRID (3 columns) ---------- */
 
+.latest-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 
-/* ------------------------------------------------------------
-   CONTENT GRID (Universal for Tools, Services, Courses)
------------------------------------------------------------- */
-.content-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.8rem;
+  gap: 2rem;
 }
 
+/* Responsive breakpoints */
 @media (max-width: 992px) {
-  .content-grid {
+  .latest-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 640px) {
-  .content-grid {
+  .latest-grid {
     grid-template-columns: 1fr;
   }
 }
 
+/* ---------- CARD BASE ---------- */
 
-/* ------------------------------------------------------------
-   CONTENT CARDS (Unified globally)
-   This section is intentionally minimal because the full styles
-   exist in components.css — this only adds page-level tweaks.
------------------------------------------------------------- */
-.content-card {
+.latest-card {
+  display: block;
   background: #ffffff;
-  border: 1px solid #e2e8f0;
-  padding: 1.3rem 1.4rem;
-  border-radius: 16px;
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
+  border-radius: 18px;
+  overflow: hidden;
   text-decoration: none;
-  transition: all 0.22s ease;
+  color: inherit;
+  border: 1px solid #e2e8f0;
+
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
 }
 
-.content-card:hover {
+.latest-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.12);
   border-color: #cbd5f5;
 }
 
-.content-text h3 {
-  margin-bottom: 0.3rem;
-  font-size: 1.1rem;
-  color: #0f172a;
-  font-weight: 700;
-}
+/* ---------- IMAGE ON TOP (Articles & Services) ---------- */
 
-.content-text p {
-  color: #475569;
-  font-size: 0.92rem;
-  line-height: 1.55;
-}
-
-
-/* ------------------------------------------------------------
-   CONTACT SECTION
------------------------------------------------------------- */
-.contact-form {
-  max-width: 720px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding-top: 1rem;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-
-@media (max-width: 640px) {
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.contact-form input,
-.contact-form textarea {
+.latest-card img {
+  display: block;
   width: 100%;
-  padding: 0.85rem 1rem;
-  border-radius: 10px;
-  border: 1px solid #e2e8f0;
-  background: #ffffff;
-  font-size: 1rem;
+  aspect-ratio: 16 / 9;      /* نسبت ثابت → کارت‌ها هم‌قد می‌شن */
+  object-fit: cover;
+  background: #e5e7eb;
+}
+
+/* ---------- CARD TEXT ---------- */
+
+.latest-card .text {
+  padding: 1.3rem 1.2rem 1.5rem;
+  text-align: left;
+}
+
+.latest-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
   color: #0f172a;
+  line-height: 1.4;
 }
 
-.contact-form textarea {
-  min-height: 140px;
-  resize: vertical;
+.latest-card p {
+  margin: 0;
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
-.contact-form button {
-  margin-top: 0.5rem;
-  align-self: flex-start;
+/* ==============================
+   TOOL CARDS (ICON-ONLY VARIANT)
+   اگر برای Tools فقط از آیکون استفاده کنی
+   می‌تونی از همین ساختار استفاده کنی بدون <img>
+============================== */
+
+.latest-card.tool-card {
+  text-align: left;
 }
 
-
-/* ------------------------------------------------------------
-   SPACING FIXES (Page polish)
------------------------------------------------------------- */
-.section + .section {
-  margin-top: 1rem;
+/* اگر کارت ابزار img نداشته باشه،
+   padding کمی بیشتر می‌شه تا بالای کارت خالی نباشه */
+.latest-card.tool-card .text {
+  padding-top: 1.1rem;
 }
 
-@media (max-width: 640px) {
-  .hero h1 {
-    font-size: 2.3rem;
-  }
+/* آیکون در بالا، شبیه تصویر کوچک */
+.tool-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.1rem 1.2rem 0.4rem;
+}
+
+.tool-icon i {
+  width: 24px;
+  height: 24px;
 }
