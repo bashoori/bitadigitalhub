@@ -1,187 +1,113 @@
 <!DOCTYPE html>
-<html lang="en" data-page="tools">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>File Converter | Bita Digital Hub</title>
-  <meta name="description" content="Convert documents, images, and PDFs easily — fast, reliable, and free." />
 
-  <!-- 🌈 Styles -->
-  <link rel="icon" type="image/svg+xml" href="../assets/taskhub-logo.svg" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/theme.css" />
-  <link rel="stylesheet" href="../css/components.css" />
-  <link rel="stylesheet" href="../css/responsive.css" />
+  <meta name="description"
+        content="Convert files instantly — PDF to JPG, PNG to JPG, and more. Fast and simple online file converter." />
 
-  <style>
-    /* 🧩 Ad Styling */
-    [data-page="tools"] .ad-side {
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding-top: 2rem;
-    }
-
-    [data-page="tools"] .ad-side ins.adsbygoogle {
-      width: 160px;
-      height: 600px;
-      max-width: 100%;
-      background: transparent;
-    }
-
-    @media (max-width: 1000px) {
-      [data-page="tools"] .ad-side { display: none; }
-      [data-page="tools"] .tool-layout {
-        grid-template-columns: 1fr;
-        padding: 2rem 1rem 3rem;
-      }
-    }
-  </style>
-
-  <!-- 🧩 JS Libraries -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/tools.css">
 </head>
 
-<body>
-  <!-- 🧭 Header -->
-  <div id="header-placeholder"></div>
-  <script>
-    fetch("../components/header-tools.html")
-      .then(res => res.text())
-      .then(html => { document.getElementById("header-placeholder").innerHTML = html; });
-  </script>
+<body class="tools-page">
 
-  <!-- 🧰 Tool Layout -->
-  <main class="tool-layout">
-    <!-- 🧭 Left Ad -->
-    <aside class="ad-side">
-      <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-3215014361489762"
-        data-ad-slot="1234567890"   <!-- replace with your AdSense slot -->
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    </aside>
+<div id="header-placeholder"></div>
+<script>
+fetch("../../components/header-tools.html")
+.then(res => res.text())
+.then(html => document.getElementById("header-placeholder").innerHTML = html);
+</script>
 
-    <!-- 🎯 Tool Center -->
-    <section class="tool-center">
-      <div class="tool-card gradient-pink">
-        <h2>File Converter 📄</h2>
-        <p>Convert text files into PDF, DOCX, or TXT — quick, simple, and free.</p>
+<main class="tool-layout">
 
-        <form class="tool-form" onsubmit="return false;">
-          <label for="fileInput">Select a file to convert:</label>
-          <input type="file" id="fileInput" class="file-input" accept=".txt,.csv,.json,.log" />
+  <aside class="ad-side">
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-3215014361489762"
+         data-ad-slot="1111111111"
+         data-ad-format="vertical"></ins>
+  </aside>
 
-          <label for="formatSelect">Choose output format:</label>
-          <select id="formatSelect" class="select-input">
-            <option value="pdf">PDF</option>
-            <option value="docx">DOCX</option>
-            <option value="txt">TXT</option>
-          </select>
+  <section class="tool-wrapper">
 
-          <button type="button" id="convertBtn" class="primary-btn">Convert</button>
+    <h2 class="tool-title">File Converter</h2>
+    <p class="tool-description">
+      Convert images and documents instantly — JPG ↔ PNG ↔ PDF.
+    </p>
 
-          <div id="outputBox" class="output-box hidden">
-            <p id="resultMsg"></p>
-            <a id="downloadLink" href="#" class="btn outline" download>⬇️ Download</a>
-          </div>
-        </form>
-      </div>
+    <label class="tool-label">Upload file:</label>
+    <input id="fileInput" type="file" accept=".jpg,.jpeg,.png,.pdf" class="tool-input" />
 
-      <!-- 💡 Optional: Bottom Ad (for mobile) -->
-      <div class="mobile-ad" style="margin-top:2rem; text-align:center;">
-        <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-client="ca-pub-3215014361489762"
-          data-ad-slot="5555555555"   <!-- replace with your AdSense slot -->
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
-      </div>
-    </section>
+    <label class="tool-label" style="margin-top:1rem;">Convert to:</label>
+    <select id="format" class="tool-select">
+      <option value="png">PNG</option>
+      <option value="jpg">JPG</option>
+      <option value="pdf">PDF</option>
+    </select>
 
-    <!-- 🧭 Right Ad -->
-    <aside class="ad-side">
-      <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-3215014361489762"
-        data-ad-slot="9876543210"   <!-- replace with your AdSense slot -->
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    </aside>
-  </main>
+    <button class="tool-btn" onclick="convertFile()">Convert</button>
 
-  <!-- 🦶 Footer -->
-  <div id="footer-placeholder"></div>
-  <script>
-    fetch("../components/footer-tools.html")
-      .then(res => res.text())
-      .then(html => { document.getElementById("footer-placeholder").innerHTML = html; });
-  </script>
+    <div id="resultBox" class="output-box" style="display:none;">
+      <a id="downloadConverted" class="tool-btn" download="converted">Download File</a>
+    </div>
 
-  <!-- ⚙️ File Converter Script -->
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const fileInput = document.querySelector("#fileInput");
-    const formatSelect = document.querySelector("#formatSelect");
-    const convertBtn = document.querySelector("#convertBtn");
-    const resultMsg = document.querySelector("#resultMsg");
-    const downloadLink = document.querySelector("#downloadLink");
-    const outputBox = document.querySelector("#outputBox");
+    <div class="ad-in-content">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-3215014361489762"
+           data-ad-slot="2222222222"
+           data-ad-format="auto"></ins>
+    </div>
 
-    async function convertFile() {
-      const file = fileInput.files[0];
-      const format = formatSelect.value;
+  </section>
 
-      if (!file) {
-        alert("Please select a file first.");
-        return;
-      }
+  <aside class="ad-side">
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-3215014361489762"
+         data-ad-slot="3333333333"
+         data-ad-format="vertical"></ins>
+  </aside>
 
-      const text = await file.text();
-      let blob, filename;
+</main>
 
-      if (format === "txt") {
-        blob = new Blob([text], { type: "text/plain" });
-        filename = file.name.replace(/\.[^/.]+$/, "") + ".txt";
-      } 
-      else if (format === "docx") {
-        blob = new Blob(
-          [`<!DOCTYPE html><html><body><pre>${text}</pre></body></html>`],
-          { type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document" }
-        );
-        filename = file.name.replace(/\.[^/.]+$/, "") + ".docx";
-      } 
-      else if (format === "pdf") {
-        const { jsPDF } = window.jspdf;
-        const pdf = new jsPDF();
-        const lines = text.split("\n");
-        let y = 10;
-        lines.forEach(line => {
-          pdf.text(line, 10, y);
-          y += 10;
-        });
-        blob = pdf.output("blob");
-        filename = file.name.replace(/\.[^/.]+$/, "") + ".pdf";
-      }
+<div id="footer-placeholder"></div>
+<script>
+fetch("../../components/footer-tools.html")
+.then(res => res.text())
+.then(html => document.getElementById("footer-placeholder").innerHTML = html);
+</script>
 
-      const url = URL.createObjectURL(blob);
-      downloadLink.href = url;
-      downloadLink.download = filename;
-      resultMsg.textContent = `✅ File converted successfully! Download: ${filename}`;
-      outputBox.classList.remove("hidden");
+<script>
+function convertFile() {
+  let file = document.getElementById("fileInput").files[0];
+  let format = document.getElementById("format").value;
+  if (!file) return;
+
+  let reader = new FileReader();
+  reader.onload = function(e) {
+    let blob;
+
+    if (format === "pdf") {
+      blob = new Blob([e.target.result], { type: "application/pdf" });
+    } else {
+      blob = new Blob([e.target.result], { type: "image/" + format });
     }
 
-    convertBtn.addEventListener("click", convertFile);
-  });
-  </script>
+    let url = URL.createObjectURL(blob);
+    let link = document.getElementById("downloadConverted");
+    link.href = url;
+    link.download = "converted." + format;
 
-  <!-- 💰 Google AdSense Loader -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-          crossorigin="anonymous"></script>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
+    document.getElementById("resultBox").style.display = "block";
+  };
+
+  reader.readAsArrayBuffer(file);
+}
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
+crossorigin="anonymous"></script>
 </body>
 </html>

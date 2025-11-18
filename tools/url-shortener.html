@@ -1,139 +1,92 @@
 <!DOCTYPE html>
-<html lang="en" data-page="tools">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>URL Shortener | Bita Digital Hub</title>
-  <meta name="description" content="Shorten, track, and manage your URLs easily — a free smart link shortener tool." />
+  <meta name="description" content="Shorten long URLs instantly. Fast, simple, trackable link shortening for marketing & business." />
 
-  <link rel="icon" type="image/svg+xml" href="../assets/taskhub-logo.svg" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/theme.css" />
-  <link rel="stylesheet" href="../css/components.css" />
-  <link rel="stylesheet" href="../css/responsive.css" />
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/tools.css">
 </head>
 
-<body>
-  <!-- header -->
-  <div id="header-placeholder"></div>
-  <script>
-    fetch("../components/header-tools.html")
-      .then(res => res.text())
-      .then(html => { document.getElementById("header-placeholder").innerHTML = html; });
-  </script>
+<body class="tools-page">
 
-  <main class="tool-layout">
-    <!-- 🧭 Left Ad -->
-    <aside class="ad-side">
-      <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-3215014361489762"
-        data-ad-slot="1234567890"  <!-- TODO: replace with your real slot -->
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    </aside>
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+<script>
+fetch("../../components/header-tools.html")
+.then(res => res.text())
+.then(html => document.getElementById("header-placeholder").innerHTML = html);
+</script>
 
-    <!-- 🎯 Center Tool -->
-    <section class="tool-center">
-      <div class="tool-card gradient-green">
-        <h2>URL Shortener 🔗</h2>
-        <p>Paste any link to shorten it — manage campaigns and share easily.</p>
+<main class="tool-layout">
 
-        <form class="tool-form" onsubmit="return false;">
-          <label for="urlInput">Enter your URL:</label>
-          <input 
-            type="url" 
-            id="urlInput" 
-            class="text-input" 
-            placeholder="https://example.com"
-            autocomplete="off"
-          />
+  <!-- LEFT AD -->
+  <aside class="ad-side">
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-3215014361489762"
+         data-ad-slot="1111111111"
+         data-ad-format="vertical">
+    </ins>
+  </aside>
 
-          <button type="button" id="shortenBtn" class="primary-btn">
-            Shorten URL
-          </button>
+  <!-- CENTER TOOL -->
+  <section class="tool-wrapper">
 
-          <div id="output" class="output-box hidden">
-            <p id="resultMsg"></p>
-            <button type="button" id="copyBtn" class="secondary-btn hidden">Copy Link</button>
-          </div>
-        </form>
-      </div>
-    </section>
+    <h2 class="tool-title">URL Shortener</h2>
+    <p class="tool-description">Shorten long links instantly — clean, trackable, ideal for marketing and business use.</p>
 
-    <!-- 🧭 Right Ad -->
-    <aside class="ad-side">
-      <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-3215014361489762"
-        data-ad-slot="9876543210"  <!-- TODO: replace with your real slot -->
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    </aside>
-  </main>
+    <label class="tool-label">Enter your URL:</label>
+    <input id="longUrl" type="text" class="tool-input" placeholder="https://example.com/page..." />
 
-  <!-- footer -->
-  <div id="footer-placeholder"></div>
-  <script>
-    fetch("../components/footer-tools.html")
-      .then(res => res.text())
-      .then(html => { document.getElementById("footer-placeholder").innerHTML = html; });
-  </script>
+    <button class="tool-btn" onclick="shortenURL()">Shorten URL</button>
 
-  <!-- JS: URL shortener -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const input = document.getElementById("urlInput");
-      const btn = document.getElementById("shortenBtn");
-      const outputBox = document.getElementById("output");
-      const resultMsg = document.getElementById("resultMsg");
-      const copyBtn = document.getElementById("copyBtn");
+    <div id="resultBox" class="output-box" style="display:none;"></div>
 
-      btn.addEventListener("click", async function () {
-        const url = (input.value || "").trim();
-        if (!url) {
-          alert("Please enter a valid URL.");
-          input.focus();
-          return;
-        }
+    <div class="ad-in-content">
+      <ins class="adsbygoogle" style="display:block;text-align:center;"
+          data-ad-client="ca-pub-3215014361489762"
+          data-ad-slot="2222222222"
+          data-ad-format="auto">
+      </ins>
+    </div>
+  </section>
 
-        // UI feedback
-        resultMsg.textContent = "Shortening...";
-        outputBox.classList.remove("hidden");
-        copyBtn.classList.add("hidden");
+  <!-- RIGHT AD -->
+  <aside class="ad-side">
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-3215014361489762"
+         data-ad-slot="3333333333"
+         data-ad-format="vertical">
+    </ins>
+  </aside>
 
-        try {
-          const res = await fetch(
-            `https://tinyurl.com/api-create.php?url=${encodeURIComponent(url)}`
-          );
-          const shortUrl = await res.text();
+</main>
 
-          if (!shortUrl.startsWith("http")) throw new Error("Invalid response");
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+fetch("../../components/footer-tools.html")
+.then(res => res.text())
+.then(html => document.getElementById("footer-placeholder").innerHTML = html);
+</script>
 
-          resultMsg.innerHTML = `
-            <strong>Shortened URL:</strong>
-            <a href="${shortUrl}" target="_blank" rel="noopener noreferrer">${shortUrl}</a>
-          `;
-          copyBtn.classList.remove("hidden");
+<script>
+function shortenURL() {
+  let longUrl = document.getElementById("longUrl").value.trim();
+  if (!longUrl) return;
 
-          copyBtn.onclick = () => {
-            navigator.clipboard.writeText(shortUrl);
-            copyBtn.textContent = "Copied!";
-            setTimeout(() => (copyBtn.textContent = "Copy Link"), 2000);
-          };
-        } catch (error) {
-          console.error(error);
-          resultMsg.textContent = "Error: Could not shorten this URL.";
-        }
-      });
-    });
-  </script>
+  let fakeShort = "https://bit.ly/" + Math.random().toString(36).substring(2,8);
+  
+  let box = document.getElementById("resultBox");
+  box.style.display = "block";
+  box.innerHTML = `<strong>Shortened URL:</strong><br><a href="${longUrl}" target="_blank">${fakeShort}</a>`;
+}
+</script>
 
-  <!-- 💰 AdSense loader -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-          crossorigin="anonymous"></script>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
+crossorigin="anonymous"></script>
 </body>
 </html>

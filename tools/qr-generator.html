@@ -1,146 +1,82 @@
 <!DOCTYPE html>
-<html lang="en" data-page="tools">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QR Generator | Bita Digital Hub</title>
-  <meta name="description" content="Generate custom QR codes instantly — perfect for links, campaigns, and products." />
+  <title>QR Code Generator | Bita Digital Hub</title>
+  <meta name="description" content="Generate clean, high-quality QR codes instantly for business, marketing, and personal use." />
 
-  <!-- 🌈 Unified Styles -->
-  <link rel="icon" type="image/svg+xml" href="../assets/taskhub-logo.svg" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/theme.css" />
-  <link rel="stylesheet" href="../css/components.css" />
-  <link rel="stylesheet" href="../css/responsive.css" />
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/tools.css">
 </head>
 
-<body>
-  <!-- header -->
-  <div id="header-placeholder"></div>
-  <script>
-    fetch("../components/header-tools.html")
-      .then(res => res.text())
-      .then(html => { document.getElementById("header-placeholder").innerHTML = html; });
-  </script>
+<body class="tools-page">
 
-  <!-- 🧰 Tool Layout -->
-  <main class="tool-layout">
-    <!-- 🧭 Left Ad -->
-    <aside class="ad-side">
-      <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-3215014361489762"
-        data-ad-slot="1234567890"  <!-- replace with your real slot -->
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    </aside>
+<div id="header-placeholder"></div>
+<script>
+fetch("../../components/header-tools.html")
+.then(res => res.text())
+.then(html => document.getElementById("header-placeholder").innerHTML = html);
+</script>
 
-    <!-- 🎯 Main Tool -->
-    <section class="tool-center">
-      <div class="tool-card gradient-yellow">
-        <h2>QR Generator 🟨</h2>
-        <p>Create QR codes for URLs or text — download instantly as PNG.</p>
+<main class="tool-layout">
 
-        <form class="tool-form" onsubmit="return false;">
-          <label for="qrText">Enter text or URL:</label>
-          <input
-            type="text"
-            id="qrText"
-            class="text-input"
-            placeholder="https://bitadigitalhub.com"
-            autocomplete="off"
-          />
+  <aside class="ad-side">
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-3215014361489762"
+         data-ad-slot="1111111111"
+         data-ad-format="vertical"></ins>
+  </aside>
 
-          <button type="button" id="generateQRBtn" class="primary-btn">
-            Generate QR
-          </button>
+  <section class="tool-wrapper">
+    <h2 class="tool-title">QR Code Generator</h2>
+    <p class="tool-description">Generate custom QR codes instantly — perfect for business cards, marketing, and personal use.</p>
 
-          <div id="output" class="output-box hidden">
-            <canvas id="qrCanvas"></canvas>
-            <a id="downloadLink" class="secondary-btn" download="bita-qr.png">Download PNG</a>
-          </div>
-        </form>
-      </div>
-    </section>
+    <label class="tool-label">Enter text or URL:</label>
+    <input id="qrInput" type="text" class="tool-input" placeholder="https://example.com" />
 
-    <!-- 🧭 Right Ad -->
-    <aside class="ad-side">
-      <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-3215014361489762"
-        data-ad-slot="9876543210"  <!-- replace with your real slot -->
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    </aside>
-  </main>
+    <button class="tool-btn" onclick="generateQR()">Generate QR</button>
 
-  <!-- footer -->
-  <div id="footer-placeholder"></div>
-  <script>
-    fetch("../components/footer-tools.html")
-      .then(res => res.text())
-      .then(html => { document.getElementById("footer-placeholder").innerHTML = html; });
-  </script>
+    <div id="qrBox" class="output-box" style="display:none; text-align:center;"></div>
 
-  <!-- 📦 QR Library -->
-  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <div class="ad-in-content">
+      <ins class="adsbygoogle" style="display:block"
+          data-ad-client="ca-pub-3215014361489762"
+          data-ad-slot="2222222222"
+          data-ad-format="auto"></ins>
+    </div>
+  </section>
 
-  <!-- ⚙️ QR Generator Script -->
-  <script>
-    window.addEventListener("DOMContentLoaded", function () {
-      const input = document.getElementById("qrText");
-      const btn = document.getElementById("generateQRBtn");
-      const outputBox = document.getElementById("output");
-      const canvas = document.getElementById("qrCanvas");
-      const downloadLink = document.getElementById("downloadLink");
+  <aside class="ad-side">
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-3215014361489762"
+         data-ad-slot="3333333333"
+         data-ad-format="vertical"></ins>
+  </aside>
 
-      // ensure library is loaded
-      if (typeof QRCode === "undefined") {
-        console.error("QRCode library not loaded.");
-        return;
-      }
+</main>
 
-      btn.addEventListener("click", function () {
-        const text = (input.value || "").trim();
-        if (!text) {
-          alert("Please enter a URL or text.");
-          return;
-        }
+<div id="footer-placeholder"></div>
+<script>
+fetch("../../components/footer-tools.html")
+.then(res => res.text())
+.then(html => document.getElementById("footer-placeholder").innerHTML = html);
+</script>
 
-        // clear old QR
-        const ctx = canvas.getContext("2d");
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+<script>
+function generateQR() {
+  let text = document.getElementById("qrInput").value.trim();
+  if (!text) return;
 
-        // generate QR
-        QRCode.toCanvas(
-          canvas,
-          text,
-          {
-            width: 256,
-            margin: 2,
-            errorCorrectionLevel: "H",
-          },
-          function (err) {
-            if (err) {
-              console.error(err);
-              alert("Could not generate QR.");
-              return;
-            }
+  let qrImage = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(text)}`;
 
-            outputBox.classList.remove("hidden");
-            const dataURL = canvas.toDataURL("image/png");
-            downloadLink.href = dataURL;
-          }
-        );
-      });
-    });
-  </script>
+  document.getElementById("qrBox").style.display = "block";
+  document.getElementById("qrBox").innerHTML =
+    `<img src="${qrImage}" style="width:220px;height:220px;"><br><br>${text}`;
+}
+</script>
 
-  <!-- 💰 AdSense Loader -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-          crossorigin="anonymous"></script>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762" crossorigin="anonymous"></script>
 </body>
 </html>
