@@ -3,111 +3,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>File Converter | Bita Digital Hub</title>
+  <meta name="description" content="Convert images and documents instantly — JPG ↔ PNG ↔ PDF." />
 
-  <meta name="description"
-        content="Convert files instantly — PDF to JPG, PNG to JPG, and more. Fast and simple online file converter." />
-
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/components.css">
-  <link rel="stylesheet" href="../../css/tools.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/tools.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
 </head>
 
 <body class="tools-page">
 
-<div id="header-placeholder"></div>
-<script>
-fetch("../../components/header-tools.html")
-.then(res => res.text())
-.then(html => document.getElementById("header-placeholder").innerHTML = html);
-</script>
+  <!-- HEADER -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("/components/header-tools.html")
+      .then(res => res.text())
+      .then(html => { document.getElementById("header-placeholder").innerHTML = html; });
+  </script>
 
-<main class="tool-layout">
 
-  <aside class="ad-side">
-    <ins class="adsbygoogle" style="display:block"
-         data-ad-client="ca-pub-3215014361489762"
-         data-ad-slot="1111111111"
-         data-ad-format="vertical"></ins>
-  </aside>
+  <!-- TOOL WRAPPER -->
+  <main class="tool-wrapper">
 
-  <section class="tool-wrapper">
-
-    <h2 class="tool-title">File Converter</h2>
+    <h1 class="tool-title">File Converter</h1>
     <p class="tool-description">
       Convert images and documents instantly — JPG ↔ PNG ↔ PDF.
     </p>
 
-    <label class="tool-label">Upload file:</label>
-    <input id="fileInput" type="file" accept=".jpg,.jpeg,.png,.pdf" class="tool-input" />
+    <!-- TOOL CONTENT -->
+    <div class="tool-content">
 
-    <label class="tool-label" style="margin-top:1rem;">Convert to:</label>
-    <select id="format" class="tool-select">
-      <option value="png">PNG</option>
-      <option value="jpg">JPG</option>
-      <option value="pdf">PDF</option>
-    </select>
+      <label class="tool-label">Upload a file</label>
+      <input type="file" id="fileInput" class="tool-input" accept=".jpg,.jpeg,.png,.pdf" />
 
-    <button class="tool-btn" onclick="convertFile()">Convert</button>
+      <label class="tool-label" style="margin-top:1.3rem;">Convert to:</label>
+      <select id="convertTo" class="tool-select">
+        <option value="jpg">JPG</option>
+        <option value="png">PNG</option>
+        <option value="pdf">PDF</option>
+      </select>
 
-    <div id="resultBox" class="output-box" style="display:none;">
-      <a id="downloadConverted" class="tool-btn" download="converted">Download File</a>
+      <button id="convertBtn" class="tool-btn" style="margin-top:1.6rem;">
+        Convert File
+      </button>
+
+      <div id="outputBox" class="output-box" style="display:none; margin-top:1.8rem;">
+        <a id="downloadLink" href="#" download style="font-weight:600; color:#1e3a8a;">
+          Download Converted File
+        </a>
+      </div>
+
     </div>
 
-    <div class="ad-in-content">
-      <ins class="adsbygoogle" style="display:block"
-           data-ad-client="ca-pub-3215014361489762"
-           data-ad-slot="2222222222"
-           data-ad-format="auto"></ins>
-    </div>
+  </main>
 
-  </section>
 
-  <aside class="ad-side">
-    <ins class="adsbygoogle" style="display:block"
-         data-ad-client="ca-pub-3215014361489762"
-         data-ad-slot="3333333333"
-         data-ad-format="vertical"></ins>
-  </aside>
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("/components/footer.html")
+      .then(res => res.text())
+      .then(html => { document.getElementById("footer-placeholder").innerHTML = html; });
+  </script>
 
-</main>
 
-<div id="footer-placeholder"></div>
-<script>
-fetch("../../components/footer-tools.html")
-.then(res => res.text())
-.then(html => document.getElementById("footer-placeholder").innerHTML = html);
-</script>
+  <!-- JS LOGIC -->
+  <script>
+    document.getElementById("convertBtn").addEventListener("click", () => {
+      const fileInput = document.getElementById("fileInput");
+      const convertTo = document.getElementById("convertTo").value;
 
-<script>
-function convertFile() {
-  let file = document.getElementById("fileInput").files[0];
-  let format = document.getElementById("format").value;
-  if (!file) return;
+      if (!fileInput.files.length) {
+        alert("Please upload a file first.");
+        return;
+      }
 
-  let reader = new FileReader();
-  reader.onload = function(e) {
-    let blob;
+      const file = fileInput.files[0];
+      const reader = new FileReader();
 
-    if (format === "pdf") {
-      blob = new Blob([e.target.result], { type: "application/pdf" });
-    } else {
-      blob = new Blob([e.target.result], { type: "image/" + format });
-    }
+      reader.onload = function (e) {
+        const link = document.getElementById("downloadLink");
+        const outputBox = document.getElementById("outputBox");
 
-    let url = URL.createObjectURL(blob);
-    let link = document.getElementById("downloadConverted");
-    link.href = url;
-    link.download = "converted." + format;
+        if (convertTo === "pdf") {
+          link.href = e.target.result;
+          link.download = file.name.replace(/\.[^/.]+$/, "") + ".pdf";
+        } else if (convertTo === "png") {
+          link.href = e.target.result;
+          link.download = file.name.replace(/\.[^/.]+$/, "") + ".png";
+        } else if (convertTo === "jpg") {
+          link.href = e.target.result;
+          link.download = file.name.replace(/\.[^/.]+$/, "") + ".jpg";
+        }
 
-    document.getElementById("resultBox").style.display = "block";
-  };
+        outputBox.style.display = "block";
+      };
 
-  reader.readAsArrayBuffer(file);
-}
-</script>
+      reader.readAsDataURL(file);
+    });
+  </script>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-crossorigin="anonymous"></script>
 </body>
 </html>
