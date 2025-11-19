@@ -69,22 +69,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- 🔹 Bilingual Versions (فارسی) -->
-  <url>
-    <loc>https://bitadigitalhub.com/fa/index-fa.html</loc>
-    <lastmod>2025-11-05</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://bitadigitalhub.com/fa/about-fa.html</loc>
-    <lastmod>2025-11-05</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://bitadigitalhub.com/fa/privacy-fa.html</loc>
-    <lastmod>2025-11-05</lastmod>
-    <priority>0.7</priority>
-  </url>
+ 
 
   <!-- 🔹 Optional Additions (future or utilities) -->
   <url>
