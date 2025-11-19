@@ -4,12 +4,34 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy | Bita Digital Hub</title>
+
+<!-- Optional: use your global styles so header/footer look correct -->
+<link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href../css/components.css" />
+<link rel="stylesheet" href="../css/tools.css" />
+
 <style>
-body { font-family: Arial, sans-serif; padding: 2rem; max-width: 800px; margin: auto; line-height: 1.7; color:#333; }
+body { 
+  font-family: Arial, sans-serif; 
+  padding: 2rem; 
+  max-width: 900px; 
+  margin: auto; 
+  line-height: 1.7; 
+  color:#333; 
+}
 h1, h2 { color:#0f172a; }
 </style>
 </head>
-<body>
+
+<body class="tools-page">
+
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+<script>
+fetch("../components/header-tools.html")
+  .then(res => res.text())
+  .then(html => document.getElementById("header-placeholder").innerHTML = html);
+</script>
 
 <h1>Privacy Policy</h1>
 <p>Last updated: February 2025</p>
@@ -80,6 +102,14 @@ We may update this Privacy Policy occasionally. The revised date will always app
 If you have any questions, email us at:  
 <strong>info@bitadigitalhub.com</strong>
 </p>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+fetch("../components/footer-tools.html")
+  .then(res => res.text())
+  .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+</script>
 
 </body>
 </html>
