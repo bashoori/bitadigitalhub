@@ -1,47 +1,46 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>تست شخصیت کسب‌وکار آنلاین</title>
+  <title>سؤالات تست شخصیت کسب‌وکار</title>
 
   <style>
     body {
-      direction: rtl;
       font-family: "Poppins", sans-serif;
-      background: #f9fafb;
+      background: #f8fafc;
       margin: 0;
-      padding: 0;
-      text-align: center;
       color: #0f172a;
+      text-align: center;
+      direction: rtl;
     }
 
     .container {
       max-width: 650px;
       margin: 0 auto;
-      padding: 2rem 1.4rem;
+      padding: 2rem 1.5rem;
     }
 
     .progress-bar {
       width: 100%;
       height: 10px;
       background: #e2e8f0;
-      border-radius: 10px;
       margin-bottom: 2rem;
+      border-radius: 10px;
       overflow: hidden;
     }
     .progress {
-      height: 10px;
+      height: 100%;
       width: 0%;
       background: #2563eb;
-      transition: width 0.3s ease;
+      transition: width .3s ease;
     }
 
     h2 {
       font-size: 1.6rem;
-      margin-bottom: 1.2rem;
-      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.9;
     }
 
     .answers {
@@ -52,14 +51,13 @@
     }
 
     .answer-option {
-      background: #fff;
+      background: white;
       padding: 1rem 1.2rem;
+      border: 1px solid #cbd5e1;
       border-radius: 12px;
-      border: 1px solid #e2e8f0;
       cursor: pointer;
-      transition: 0.2s;
+      transition: .2s;
     }
-
     .answer-option:hover {
       background: #f1f5f9;
       transform: translateY(-2px);
@@ -67,18 +65,17 @@
 
     .btn-next {
       background: #1e3a8a;
-      color: #fff;
+      color: white;
       padding: 1rem;
-      margin-top: 2rem;
       width: 100%;
       border: none;
       border-radius: 12px;
       font-size: 1.1rem;
+      margin-top: 2rem;
       cursor: pointer;
       display: none;
       transition: 0.2s;
     }
-
     .btn-next:hover {
       background: #2563eb;
       transform: translateY(-2px);
@@ -98,74 +95,80 @@
 
   <div class="answers" id="answers"></div>
 
-  <button class="btn-next" id="next-btn" onclick="nextQuestion()">سؤال بعدی</button>
+  <button id="next-btn" class="btn-next" onclick="nextQuestion()">سؤال بعدی</button>
 
 </div>
 
 <script>
+  
   const questions = [
-    "وقتی برای شروع یک کار جدید هیجان‌زده می‌شوید، معمولاً اولین قدمتان چیست؟",
-    "در کار، بیشتر به دنبال نظم هستید یا آزادی عمل؟",
-    "وقتی کسی از شما نظر تخصصی می‌خواهد، چه حسی دارید؟",
-    "در یک پروژه جدید، کدام بخش برای شما جذاب‌تر است؟",
-    "اگر یک مشکل سخت سر راهتان قرار بگیرد، چه واکنشی دارید؟",
-    "تعامل اجتماعی برای شما انرژی‌بخش است یا خسته‌کننده؟",
-    "آیا از تولید محتوا لذت می‌برید؟",
-    "اگر مجبور باشید هر روز جلوی دوربین باشید، چقدر راحتید؟",
-    "در کارهای تکراری، صبور هستید یا خسته می‌شوید؟",
-    "در فروش، کدام بخش برای شما سخت‌تر است؟",
-    "وقتی تحت فشار هستید، تمرکزتان بالاتر می‌رود یا کمتر؟",
-    "آیا از کارهای تحلیلی لذت می‌برید؟",
-    "وقتی با چند پروژه هم‌زمان مواجه می‌شوید، واکنش‌تان چیست؟",
-    "اگر کار جدیدی سخت باشد، آیا سریع رهایش می‌کنید؟",
-    "از یادگیری چیزهای جدید لذت می‌برید؟",
-    "وقتی وظیفه‌ای را شروع می‌کنید، چقدر احتمال دارد نیمه‌کاره رهایش کنید؟",
-    "چقدر با برنامه‌ریزی دقیق راحت هستید؟",
-    "آیا کار تیمی را ترجیح می‌دهید یا کار مستقل؟",
-    "در تصمیم‌گیری‌ها سریع هستید یا کند؟",
-    "در کار، بیشتر به احساسات اعتماد می‌کنید یا منطق؟",
-    "در برخورد با مشتری سخت‌گیر، معمولاً چطور رفتار می‌کنید؟",
-    "به بازاریابی علاقه دارید؟",
-    "ترجیح می‌دهید محصول دیجیتال بسازید یا خدمات ارائه دهید؟",
-    "وقتی نتیجه نمی‌گیرید، چقدر زود ناامید می‌شوید؟",
-    "اگر از صفر شروع کنید، بیشترین نگرانی‌تان چیست؟",
-    "آیا دوست دارید در آینده یک برند شخصی داشته باشید؟",
-    "چقدر دوست دارید کارتان را اتوماتیک کنید؟",
-    "به درآمد ثابت علاقه دارید یا درآمد نامحدود با ریسک؟",
-    "اگر شکست بخورید، چقدر طول می‌کشد تا دوباره شروع کنید؟",
-    "در نهایت، بزرگ‌ترین انگیزه شما برای کسب‌وکار چیست؟"
+  "وقتی یک کار جدید می‌بینی، بیشتر هیجان‌زده می‌شی یا می‌ترسی؟",
+  "دوست داری خودت ایده بسازی یا از روی نمونه انجام بدی؟",
+  "با آدم‌های جدید راحتی یا سخت؟",
+  "وقتی مشکلی پیش میاد، سریع دنبال راه‌حل می‌گردی یا صبر می‌کنی؟",
+  "دوست داری چیزی بسازی یا چیزی را معرفی کنی؟",
+  "در تصمیم‌گیری بیشتر به احساسات اعتماد می‌کنی یا منطق؟",
+  "چقدر از یاد گرفتن چیزهای جدید لذت می‌بری؟",
+  "ترجیح می‌دی تنهایی کار کنی یا با دیگران؟",
+  "چقدر راحت می‌تونی چیزی را برای بقیه توضیح بدی؟",
+  "وقتی کاری را شروع می‌کنی، سریع شروع می‌کنی یا اول زیاد فکر می‌کنی؟",
+  "از کمک کردن به دیگران خوشحال می‌شی یا خسته؟",
+  "حرف زدن جلوی دوربین برات راحته یا سخت؟",
+  "در کارهای تکراری زود خسته می‌شی؟",
+  "وقتی یک هدف داری، جدی دنبالش می‌کنی یا نصفه رها می‌کنی؟",
+  "زیر فشار بهتر کار می‌کنی یا بدتر؟",
+  "آزادی را بیشتر دوست داری یا نظم را؟",
+  "اگر ایده جدید داشته باشی، فوری شروع می‌کنی یا اول تحقیق می‌کنی؟",
+  "از حل کردن مشکلات لذت می‌بری؟",
+  "دوست داری برای خودت برنامه‌ریزی کنی یا همه‌چیز را به جریان بسپاری؟",
+  "از صحبت با آدم‌های جدید لذت می‌بری؟",
+  "وقتی خسته می‌شی، زود ناامید می‌شی یا ادامه می‌دی؟",
+  "دوست داری آموزش بدی یا محصول بسازی؟",
+  "به کارهای دقیق علاقه داری؟",
+  "در روزهای آزاد بیشتر استراحت می‌کنی یا یادگیری؟",
+  "وقتی برای یک کار هدف می‌گذاری، چقدر پایبند می‌مونی؟",
+  "برای حل مشکل دنبال راه خلاقانه می‌گردی یا راه منطقی؟",
+  "دوست داری محصول یا خدمات را به بقیه بفروشی؟",
+  "وقتی با چالش سخت روبه‌رو می‌شی، سریع جا می‌زنی؟",
+  "بیشتر احساسی هستی یا منطقی؟",
+  "بزرگ‌ترین انگیزه‌ات در زندگی چیه؟ آزادی؟ درآمد؟ کمک به دیگران؟"
+];
+
+  const answers = [
+    "کاملاً موافقم",
+    "تا حدی موافقم",
+    "مطمئن نیستم",
+    "تا حدی مخالفم",
+    "کاملاً مخالفم"
   ];
 
-  let currentIndex = 0;
-  
-  function loadQuestion() {
-    document.getElementById("question-text").innerText = questions[currentIndex];
+  let index = 0;
+  const userAnswers = [];
 
-    const answers = [
-      "کاملاً موافقم",
-      "تا حدی موافقم",
-      "مطمئن نیستم",
-      "تا حدی مخالفم",
-      "کاملاً مخالفم",
-    ];
+  function loadQuestion() {
+    document.getElementById("question-text").innerText = questions[index];
 
     let html = "";
-    answers.forEach(a => {
-      html += `<div class="answer-option" onclick="selectAnswer(this)">${a}</div>`;
+    answers.forEach((a, i) => {
+      html += `<div class="answer-option" onclick="selectAnswer(${i}, this)">${a}</div>`;
     });
 
     document.getElementById("answers").innerHTML = html;
 
     document.getElementById("progress").style.width =
-      ((currentIndex + 1) / questions.length) * 100 + "%";
+      ((index + 1) / questions.length) * 100 + "%";
   }
 
   let selected = false;
-  function selectAnswer(el) {
+
+  function selectAnswer(answerIndex, el) {
     selected = true;
+
+    userAnswers[index] = answerIndex;
+
     document.querySelectorAll(".answer-option").forEach(o => {
       o.style.background = "#fff";
-      o.style.borderColor = "#e2e8f0";
+      o.style.borderColor = "#cbd5e1";
     });
 
     el.style.background = "#dbeafe";
@@ -180,9 +183,10 @@
     selected = false;
     document.getElementById("next-btn").style.display = "none";
 
-    currentIndex++;
+    index++;
 
-    if (currentIndex >= questions.length) {
+    if (index >= questions.length) {
+      localStorage.setItem("test_answers", JSON.stringify(userAnswers));
       window.location.href = "results.html";
       return;
     }

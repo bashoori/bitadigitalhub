@@ -1,16 +1,116 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>تست شخصیت کسب‌وکار آنلاین | Bita Digital Hub</title>
-  <meta name="description"
-        content="با یک تست کوتاه مسیر مناسب شما برای درآمدزایی آنلاین مشخص می‌شود.">
 
-  <link rel="stylesheet" href="../../css/style.css" />
-  <link rel="stylesheet" href="../../css/components.css" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+
+  <style>
+    body {
+      direction: rtl;
+      font-family: "Poppins", sans-serif;
+      background: #f9fafb;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #0f172a;
+    }
+
+    .landing-container {
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    p.subtitle {
+      color: #64748b;
+      font-size: 1.1rem;
+      margin-bottom: 2.8rem;
+      line-height: 1.9;
+    }
+
+    /* EMAIL FORM */
+    .email-box {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      margin-bottom: 3rem;
+    }
+
+    .email-box input {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+      font-family: "Poppins", sans-serif;
+      background: #f8fafc;
+    }
+
+    .email-box button {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 10px;
+      border: none;
+      background: #1e3a8a;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.05rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .email-box button:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+    }
+
+    /* FEATURES SECTION */
+    .features {
+      text-align: right;
+      margin-top: 3rem;
+    }
+    .features h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .features ul {
+      line-height: 2rem;
+      color: #334155;
+      margin-bottom: 3rem;
+    }
+
+    /* START BUTTON */
+    .start-btn {
+      background: #1e3a8a;
+      color: #fff;
+      margin-top: 1rem;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      display: inline-block;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .start-btn:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+    }
+
+  </style>
 </head>
 
 <body>
@@ -18,41 +118,70 @@
 <!-- HEADER -->
 <div id="header-placeholder"></div>
 <script>
-fetch("../../components/header-tools.html")
+fetch("../components/header-tools.html")
 .then(res => res.text())
 .then(html => document.getElementById("header-placeholder").innerHTML = html);
 </script>
 
-<section class="test-hero">
+<div class="landing-container">
+
   <h1>تست شخصیت کسب‌وکار آنلاین</h1>
-  <p>کشف کنید کدام مسیر آنلاین مناسب‌تر و سریع‌تر شما را به درآمد می‌رساند.</p>
-
-  <a href="index.html" class="start-btn">شروع تست</a>
-</section>
-
-<section class="test-info">
-  <h2>این تست برای چه کسانی است؟</h2>
-  <p>
-    اگر می‌خواهید وارد دنیای درآمد آنلاین شوید اما نمی‌دانید کدام مدل به شخصیت،
-    مهارت‌ها و سبک زندگی شما نزدیک‌تر است، این تست دقیقاً برای شما طراحی شده.
+  <p class="subtitle">
+    این تست کوتاه به شما کمک می‌کند تشخیص دهید کدام مدل کسب‌وکار آنلاین با شخصیت، مهارت‌ها و سبک زندگی شما بیشترین هماهنگی را دارد و سریع‌تر شما را به درآمد می‌رساند.
   </p>
 
-  <ul>
-    <li>افرادی که می‌خواهند تازه شروع کنند</li>
-    <li>کسانی که هنوز نمی‌دانند چه مدل بیزنسی مناسب‌شان است</li>
-    <li>کسانی که می‌خواهند سریع‌تر به درآمد برسند</li>
-  </ul>
+  <!-- EMAIL BOX -->
+  <div class="email-box">
+    <input type="email" id="userEmail" placeholder="ایمیل خود را وارد کنید..." required>
+    <button onclick="startTest()">شروع تست</button>
+  </div>
 
-  <a href="index.html" class="start-btn secondary">شروع تست</a>
-</section>
+  <!-- WHAT THIS TEST MEASURES -->
+  <div class="features">
+    <h3>این تست چه چیزهایی را می‌سنجد؟</h3>
+    <ul>
+      <li>تیپ عملکرد شما (سازنده، تولیدکننده، خلاق، اجراکننده)</li>
+      <li>سطح مهارت‌های نرم و توانایی‌های کارآفرینی</li>
+      <li>علاقه شما به ساختن، ایجاد کردن یا اجرا</li>
+      <li>توانایی تمرکز، تصمیم‌گیری و سیستم‌سازی</li>
+    </ul>
 
+    <h3>بعد از تست چه چیزی دریافت می‌کنید؟</h3>
+    <ul>
+      <li>مدل کسب‌وکار مناسب شما</li>
+      <li>تحلیل اختصاصی شخصیت کارآفرینی</li>
+      <li>نقاط قوت + مسیر سریع رشد</li>
+      <li>پیشنهاد ابزارها و مسیر یادگیری</li>
+    </ul>
+  </div>
+
+  <a href="#" class="start-btn" onclick="startTest()">شروع تست</a>
+
+</div>
 
 <!-- FOOTER -->
 <div id="footer-placeholder"></div>
 <script>
-fetch("../../components/footer-tools.html")
+fetch("../components/footer-tools.html")
 .then(res => res.text())
 .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+</script>
+
+<script>
+function startTest() {
+  const email = document.getElementById("userEmail").value.trim();
+
+  if (email === "") {
+    alert("لطفاً ایمیل خود را وارد کنید.");
+    return;
+  }
+
+  // Save email in localStorage
+  localStorage.setItem("test_user_email", email);
+
+  // Redirect to questions
+  window.location.href = "questions.html";
+}
 </script>
 
 </body>
