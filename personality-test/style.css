@@ -1,0 +1,210 @@
+/* پایه صفحه */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "IRANSans", sans-serif;
+  margin: 0;
+  background: #f4f7fb;
+  color: #222;
+}
+
+/* کانتینر اصلی تست */
+.test-container {
+  max-width: 640px;
+  margin: 40px auto;
+  padding: 24px 20px 40px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(15, 35, 52, 0.08);
+}
+
+/* هدر */
+.test-header h1 {
+  font-size: 22px;
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.test-header p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  text-align: center;
+  color: #555;
+}
+
+/* پروگرس بار */
+.progress-wrapper {
+  margin: 24px 0 16px;
+}
+
+#progress-text {
+  font-size: 13px;
+  display: block;
+  margin-bottom: 6px;
+  text-align: center;
+  color: #444;
+}
+
+.progress-bar {
+  width: 100%;
+  background: #e3e7f0;
+  height: 8px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+#progress-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #12b981, #0ea5e9);
+  transition: width 0.35s ease;
+}
+
+/* بلوک سؤال */
+.question {
+  background: #f9fbff;
+  padding: 18px 16px 16px;
+  border-radius: 16px;
+  border: 1px solid #e0e6f2;
+}
+
+.question h2 {
+  font-size: 16px;
+  line-height: 1.9;
+  margin: 0 0 16px;
+}
+
+/* گزینه‌ها */
+.options-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 10px 12px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #dde3f0;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.05s ease;
+}
+
+.option-label {
+  font-size: 14px;
+  color: #333;
+  flex: 1;
+}
+
+.option-letter {
+  font-size: 12px;
+  margin-left: 8px;
+  color: #666;
+}
+
+.option:hover {
+  background: #eef5ff;
+  border-color: #bfdbfe;
+  transform: translateY(-1px);
+}
+
+.option.selected {
+  border-color: #0ea5e9;
+  background: #e0f2fe;
+  box-shadow: 0 0 0 1px rgba(14, 165, 233, 0.3);
+}
+
+/* دکمه‌ها */
+.navigation {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.btn {
+  padding: 11px 20px;
+  border-radius: 999px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, #0ea5e9, #6366f1);
+  color: #fff;
+}
+
+.btn.gray {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* نتیجه */
+.result-box h2 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.result-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  margin-bottom: 8px;
+  background: #ecfdf3;
+  color: #166534;
+}
+
+.result-box p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #444;
+}
+
+.result-box ul {
+  font-size: 14px;
+  padding-right: 18px;
+}
+
+/* فوتر */
+.test-footer {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+}
+
+/* ریسپانسیو موبایل */
+@media (max-width: 640px) {
+  .test-container {
+    margin: 16px;
+    padding: 18px 14px 24px;
+  }
+
+  .navigation {
+    flex-direction: column-reverse;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
