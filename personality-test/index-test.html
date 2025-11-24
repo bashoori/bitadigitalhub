@@ -1,107 +1,114 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl" data-page="tools">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>تست شخصیت کسب‌وکار آنلاین | Bita Digital Hub</title>
 
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/components.css">
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/tools.css" />
 
   <style>
-    body {
-      direction: rtl;
-      font-family: "Poppins", sans-serif;
-      background: #f9fafb;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      color: #0f172a;
+    /* فاصله زیر هدر */
+    .tools-page {
+      padding-top: 5rem;
+      background: #f8fafc;
     }
 
+    /* باکس اصلی */
     .landing-container {
-      max-width: 750px;
-      margin: 0 auto;
-      padding: 3.5rem 1.5rem;
+      max-width: 850px;
+      margin: 2rem auto 3rem;
+      background: #ffffff;
+      padding: 2.5rem;
+      border-radius: 18px;
+      box-shadow: 0 8px 22px rgba(15,23,42,0.06);
+      text-align: center;
     }
 
     h1 {
       font-size: 2rem;
       font-weight: 800;
       margin-bottom: 1rem;
+      color: #0f172a;
     }
 
     p.subtitle {
-      color: #64748b;
-      font-size: 1.1rem;
-      margin-bottom: 2.8rem;
-      line-height: 1.9;
+      color: #475569;
+      font-size: 1.05rem;
+      margin-bottom: 2.4rem;
+      line-height: 1.85;
     }
 
-    /* EMAIL FORM */
+    /* Email Box */
     .email-box {
-      background: #ffffff;
+      background: #f8fafc;
       padding: 2rem;
       border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-      margin-bottom: 3rem;
+      border: 1px solid #e2e8f0;
+      margin-bottom: 2.5rem;
     }
 
     .email-box input {
       width: 100%;
-      padding: 0.9rem 1rem;
+      padding: 0.85rem 1rem;
       border-radius: 10px;
-      border: 1px solid #d1d5db;
+      border: 1px solid #cbd5e1;
       font-size: 1rem;
-      margin-bottom: 1.2rem;
-      font-family: "Poppins", sans-serif;
-      background: #f8fafc;
+      background: #ffffff;
+      margin-bottom: 1rem;
     }
 
     .email-box button {
       width: 100%;
-      padding: 1rem;
-      border-radius: 10px;
-      border: none;
+      padding: 0.9rem;
       background: #1e3a8a;
       color: #fff;
-      font-weight: 600;
+      border: none;
+      border-radius: 10px;
       font-size: 1.05rem;
+      font-weight: 600;
       cursor: pointer;
-      transition: 0.3s;
+      transition: 0.25s;
     }
     .email-box button:hover {
       background: #2563eb;
       transform: translateY(-2px);
     }
 
-    /* FEATURES SECTION */
+    /* Features */
     .features {
       text-align: right;
-      margin-top: 3rem;
-    }
-    .features h3 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-    .features ul {
-      line-height: 2rem;
+      margin-top: 2rem;
       color: #334155;
-      margin-bottom: 3rem;
+      line-height: 2rem;
     }
 
-    /* START BUTTON */
+    .features h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      color: #0f172a;
+    }
+
+    .features ul {
+      margin-bottom: 1.8rem;
+      padding-right: 1.2rem;
+    }
+
+    /* Start button */
     .start-btn {
       background: #1e3a8a;
       color: #fff;
-      margin-top: 1rem;
-      padding: 1rem 2rem;
+      padding: 0.9rem 2rem;
       border-radius: 12px;
       display: inline-block;
-      font-size: 1.1rem;
+      margin-top: 1rem;
       font-weight: 600;
+      font-size: 1.1rem;
       text-decoration: none;
       transition: 0.3s;
     }
@@ -113,7 +120,7 @@
   </style>
 </head>
 
-<body>
+<body class="tools-page">
 
 <!-- HEADER -->
 <div id="header-placeholder"></div>
@@ -123,26 +130,29 @@ fetch("../components/header-tools.html")
 .then(html => document.getElementById("header-placeholder").innerHTML = html);
 </script>
 
+<!-- MAIN CONTENT -->
 <div class="landing-container">
 
   <h1>تست شخصیت کسب‌وکار آنلاین</h1>
+
   <p class="subtitle">
-    این تست کوتاه به شما کمک می‌کند تشخیص دهید کدام مدل کسب‌وکار آنلاین با شخصیت، مهارت‌ها و سبک زندگی شما بیشترین هماهنگی را دارد و سریع‌تر شما را به درآمد می‌رساند.
+    این تست کوتاه به شما کمک می‌کند تشخیص دهید کدام مدل کسب‌وکار آنلاین با شخصیت،
+    مهارت‌ها و سبک زندگی شما هماهنگ‌تر است — و کدام مسیر سریع‌تر شما را به درآمد می‌رساند.
   </p>
 
-  <!-- EMAIL BOX -->
+  <!-- Email Form -->
   <div class="email-box">
     <input type="email" id="userEmail" placeholder="ایمیل خود را وارد کنید..." required>
     <button onclick="startTest()">شروع تست</button>
   </div>
 
-  <!-- WHAT THIS TEST MEASURES -->
+  <!-- Features Section -->
   <div class="features">
     <h3>این تست چه چیزهایی را می‌سنجد؟</h3>
     <ul>
       <li>تیپ عملکرد شما (سازنده، تولیدکننده، خلاق، اجراکننده)</li>
       <li>سطح مهارت‌های نرم و توانایی‌های کارآفرینی</li>
-      <li>علاقه شما به ساختن، ایجاد کردن یا اجرا</li>
+      <li>علاقه شما به ساختن یا اجرا</li>
       <li>توانایی تمرکز، تصمیم‌گیری و سیستم‌سازی</li>
     </ul>
 
@@ -155,7 +165,7 @@ fetch("../components/header-tools.html")
     </ul>
   </div>
 
-  <a href="#" class="start-btn" onclick="startTest()">شروع تست</a>
+  <a class="start-btn" onclick="startTest()">شروع تست</a>
 
 </div>
 
@@ -176,10 +186,7 @@ function startTest() {
     return;
   }
 
-  // Save email in localStorage
   localStorage.setItem("test_user_email", email);
-
-  // Redirect to questions
   window.location.href = "questions.html";
 }
 </script>
