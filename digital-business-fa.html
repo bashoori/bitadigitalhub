@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>مسیر ساخت بیزنس آنلاین | کوچینگ</title>
 
+<!-- Global site styles (روت) -->
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/components.css">
+
 <style>
   body {
     margin: 0;
@@ -91,21 +95,30 @@
 </style>
 
 </head>
+
 <body>
+
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+<script>
+fetch("/components/header-tools.html")
+  .then(res => res.text())
+  .then(html => document.getElementById("header-placeholder").innerHTML = html);
+</script>
 
 <div class="container">
 
   <h1>قدم اول ساخت یک بیزنس آنلاین پایدار</h1>
 
   <p>
-    اگر به دنبال ساخت درآمد پایدار، واقعی و قابل‌اعتماد هستی،  
-    اولین چیزی که نیاز داری نه عجله‌ست و نه تکنیک.  
+    اگر به دنبال ساخت درآمد پایدار، واقعی و قابل‌اعتماد هستی،
+    اولین چیزی که نیاز داری نه عجله‌ست و نه تکنیک.
     فقط یک <span class="highlight">استراتژی درست</span> و یک مسیر مشخص.
   </p>
 
   <p>
-    در این صفحه به تو یک ویدیوی کوتاه می‌دهم  
-    که مهم‌ترین اصل ساخت یک سیستم درآمدی حرفه‌ای را توضیح می‌دهد.  
+    در این صفحه به تو یک ویدیوی کوتاه می‌دهم
+    که مهم‌ترین اصل ساخت یک سیستم درآمدی حرفه‌ای را توضیح می‌دهد.
     کاملاً ساده، روشن و بدون اغراق.
   </p>
 
@@ -124,7 +137,7 @@
     </h2>
 
     <p>
-      نسخه کامل ویدیوی آموزش استراتژی + یک PDF خلاصه‌شده  
+      نسخه کامل ویدیوی آموزش استراتژی + یک PDF خلاصه‌شده
       را فقط برای کسانی ارسال می‌کنم که واقعاً قصد شروع دارند.
     </p>
 
@@ -134,7 +147,7 @@
     </form>
 
     <p class="small-note">
-      ایمیل‌ات فقط برای ارسال محتوا استفاده می‌شود.  
+      ایمیل‌ات فقط برای ارسال محتوا استفاده می‌شود.
       بدون اسپم. بدون تبلیغات.
     </p>
   </div>
@@ -143,14 +156,22 @@
     <h2 style="font-size:1.6rem; font-weight:900;">این ویدیو برای چه کسانی مناسب است؟</h2>
     <p>
       برای کسانی که می‌خواهند:
-      <br>– بیزنس آنلاین واقعی ایجاد کنند  
-      <br>– برند شخصی قوی بسازند  
-      <br>– درآمد High-Ticket را شروع کنند  
-      <br>– مسیر را بدون سردرگمی طی کنند  
+      <br>– بیزنس آنلاین واقعی ایجاد کنند
+      <br>– برند شخصی قوی بسازند
+      <br>– درآمد High-Ticket را شروع کنند
+      <br>– مسیر را بدون سردرگمی طی کنند
     </p>
   </div>
 
 </div>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+fetch("/components/footer-tools.html")
+  .then(res => res.text())
+  .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+</script>
 
 </body>
 </html>
