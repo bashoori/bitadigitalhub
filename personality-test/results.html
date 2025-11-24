@@ -1,91 +1,97 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" data-page="tools">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>نتیجه تست شخصیت کسب‌وکار آنلاین</title>
+  <title>نتیجه تست شخصیت کسب‌وکار آنلاین | Bita Digital Hub</title>
+
+  <!-- GLOBAL STYLES -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/tools.css" />
 
   <style>
-    body {
-      font-family: "Poppins", sans-serif;
+    .tools-page {
+      padding-top: 5rem;
       background: #f8fafc;
-      margin: 0;
-      padding: 0;
-      color: #0f172a;
-      text-align: center;
     }
 
     .container {
       max-width: 750px;
       margin: 0 auto;
       padding: 2.5rem 1.5rem 4rem;
+      text-align: center;
     }
 
     h1 {
-      font-size: 1.9rem;
-      margin-bottom: 1rem;
+      font-size: 2rem;
       font-weight: 800;
+      margin-bottom: 1.2rem;
+      color: #0f172a;
     }
 
     .result-box {
-      background: white;
+      background: #ffffff;
       padding: 2rem;
       border-radius: 18px;
       box-shadow: 0 8px 28px rgba(0,0,0,0.08);
       margin-top: 2rem;
+      line-height: 2;
       text-align: right;
-      line-height: 1.9;
     }
 
-    .result-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 0.8rem;
+    .type-badge {
+      font-size: 1.15rem;
+      background: #dbeafe;
       color: #1e3a8a;
+      padding: 0.6rem 1.2rem;
+      border-radius: 12px;
+      display: inline-block;
+      font-weight: 600;
+      margin-bottom: 1rem;
     }
 
     .cta-box {
-      margin-top: 2.5rem;
+      margin-top: 3rem;
       background: #1e3a8a;
-      color: white;
-      padding: 1.8rem;
+      color: #fff;
+      padding: 2rem;
       border-radius: 16px;
-      line-height: 1.9;
       text-align: center;
+      line-height: 1.9;
     }
 
     .cta-box a {
       display: inline-block;
-      background: #fff;
+      background: #ffffff;
       color: #1e3a8a;
-      padding: 0.9rem 1.5rem;
+      padding: 0.9rem 1.6rem;
       border-radius: 12px;
-      margin-top: 1rem;
       font-weight: 600;
+      margin-top: 1rem;
       text-decoration: none;
-      transition: .2s;
+      transition: 0.25s;
     }
     .cta-box a:hover {
       background: #e2e8f0;
       transform: translateY(-2px);
     }
 
-    .type-badge {
-      font-size: 1.1rem;
-      background: #dbeafe;
-      color: #1e3a8a;
-      padding: 0.5rem 1rem;
-      border-radius: 12px;
-      display: inline-block;
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
   </style>
 </head>
 
-<body>
+<body class="tools-page">
 
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+<script>
+fetch("../components/header-tools.html")
+.then(res => res.text())
+.then(html => (document.getElementById("header-placeholder").innerHTML = html));
+</script>
+
+<!-- MAIN CONTENT -->
 <div class="container">
 
   <h1>نتیجه تست شخصیت کسب‌وکار آنلاین</h1>
@@ -93,14 +99,23 @@
   <div id="result"></div>
 
   <div class="cta-box">
-    <h3>قدم بعدی؟ ساخت سیستم درآمدزایی مخصوص شخصیت شما</h3>
-    <p>من سیستم دقیقاً مطابق تیپ شخصیتی شما طراحی می‌کنم تا سریع‌تر و آسان‌تر وارد درآمد شوید.</p>
+    <h3>قدم بعدی؟ ساخت سیستم درآمدزایی مطابق شخصیت شما</h3>
+    <p>یک مسیر آماده بر اساس تیپ شخصیتی‌تان دریافت می‌کنید تا سریع‌تر وارد درآمد شوید.</p>
+
     <a href="https://63cb-bitadigitalacademy.systeme.io/429534fb" target="_blank">
       دریافت سیستم آماده درآمدزایی
     </a>
   </div>
 
 </div>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+fetch("../components/footer-tools.html")
+.then(res => res.text())
+.then(html => (document.getElementById("footer-placeholder").innerHTML = html));
+</script>
 
 <script>
   const answers = JSON.parse(localStorage.getItem("test_answers")) || [];
@@ -110,9 +125,6 @@
       "<p>پاسخی ثبت نشده است. لطفاً دوباره تست را انجام دهید.</p>";
   }
 
-  // -------------------------------
-  // ساده‌ترین امتیازدهی: هر 5 سؤال = یک گروه
-  // -------------------------------
   let creator = 0;
   let analyst = 0;
   let builder = 0;
@@ -131,36 +143,26 @@
   if (creator >= analyst && creator >= builder && creator >= closer) {
     finalType = "Creator – خلاق و توضیح‌گر";
     description = `
-      <p>تو آدم خلاقی هستی. خیلی راحت می‌تونی ایده بسازی، محتوا تولید کنی و
-      چیزها را برای دیگران توضیح بدی. ارتباط گرفتن مردم با تو ساده است و
-      این یعنی برای مدل‌های درآمدی مثل آموزش ساده، تولید محتوا، نقد محصولات،
-      و همکاری در فروش کاملاً مناسب هستی.</p>
-    `;
+      <p>شما توانایی تولید محتوا، توضیح دادن، اعتمادسازی و ساخت ایده‌های جذاب دارید.
+      مسیرهای مناسب: آموزش، یوتیوب، نقد محصولات، تولید محتوا، افیلیت مارکتینگ.</p>`;
   }
   else if (analyst >= builder && analyst >= closer) {
     finalType = "Analyst – منطقی و دقیق";
     description = `
-      <p>تو آدم منظمی هستی. قبل از هرکاری فکر می‌کنی. از تحلیل و نظم خوشت می‌آید.
-      بهترین مسیر برای تو مدل‌هایی است که نیاز به تفکر، مدیریت و پشت صحنه دارد:
-      مدیریت تبلیغات، تحلیل مشتری، سیستم‌سازی سبک، و کمک به بقیه برای نظم دادن
-      به کارهایشان.</p>
-    `;
+      <p>شما نظم، تحلیل و تفکر عمیق دارید. بهترین مسیرها: مدیریت تبلیغات، آنالیز،
+      سیستم‌سازی سبک، مدیریت پروژه، بهینه‌سازی و پشتیبانی کسب‌وکارها.</p>`;
   }
   else if (builder >= closer) {
     finalType = "Builder – سیستم‌ساز و عمل‌گرا";
     description = `
-      <p>تو عاشق ساختن هستی و سریع وارد عمل می‌شی. دوست داری کارها ساختار داشته باشد
-      و از اتومات‌سازی لذت می‌بری. تو برای ساخت لندینگ، Funnel، سیستم فروش و کارهای
-      عملی فوق‌العاده‌ای.</p>
-    `;
+      <p>شما سریع وارد عمل می‌شوید، ساختار ذهنی قوی دارید و از ساخت سیستم‌ها لذت می‌برید.
+      گزینه‌های مناسب: ساخت funnel، ایجاد صفحات فروش، اتومات‌سازی، راه‌اندازی کسب‌وکار.</p>`;
   }
   else {
     finalType = "Closer – اجتماعی و فروشنده";
     description = `
-      <p>تو به‌طور طبیعی ارتباط‌گیری بلدی. مردم بهت اعتماد می‌کنن و توضیح دادن
-      برات راحته. برای فروش، معرفی محصول، همکاری در فروش، و کارهای مشاوره‌ای
-      عالی هستی. این تیپ معمولاً سریع‌ترین رشد درآمد را دارد.</p>
-    `;
+      <p>شما قدرت ارتباط‌گیری بالا، توضیح دادن، اعتمادسازی و معرفی محصول دارید.
+      مسیرهای عالی: فروش، مشاوره، افیلیت حرفه‌ای، معرفی محصول و کارهای مشاوره‌ای.</p>`;
   }
 
   document.getElementById("result").innerHTML = `
