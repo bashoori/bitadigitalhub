@@ -21,3 +21,9 @@
   margin-top: 6rem;
   padding-top: 2rem;
 }
+.main-header .nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
