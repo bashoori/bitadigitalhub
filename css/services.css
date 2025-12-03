@@ -1,0 +1,71 @@
+/* ============
+   SERVICES GRID
+   ============ */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+/* ============
+   SERVICE CARD
+   ============ */
+.service-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  overflow: hidden;
+}
+
+/* Hover Animation */
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* === IMAGE STYLE === */
+.service-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+/* === TITLE === */
+.service-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+/* === DESCRIPTION === */
+.service-card p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #555;
+}
+
+/* ============
+   Responsive tweaks
+   ============ */
+@media (max-width: 768px) {
+  .service-card img {
+    height: 160px;
+  }
+
+  .services-grid {
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    padding: 1.25rem;
+  }
+}
