@@ -1,6 +1,6 @@
-/* ==========================
-   SERVICES GRID
-========================== */
+/* ==================================
+   SERVICES GRID LAYOUT
+================================== */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -10,19 +10,19 @@
 }
 
 
-/* ==========================
+/* ==================================
    SERVICE CARD
-========================== */
+================================== */
 .service-card {
-  background: #fff;
+  background: #ffffff;
   border-radius: 18px;
   padding: 1.75rem;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .service-card:hover {
@@ -31,9 +31,9 @@
 }
 
 
-/* ==========================
-   CARD IMAGE
-========================== */
+/* ==================================
+   SERVICE CARD IMAGE
+================================== */
 .service-card img {
   width: 100%;
   height: 190px;
@@ -43,9 +43,9 @@
 }
 
 
-/* ==========================
+/* ==================================
    CARD TITLE
-========================== */
+================================== */
 .service-card h3 {
   font-size: 1.32rem;
   font-weight: 700;
@@ -54,21 +54,21 @@
 }
 
 
-/* ==========================
+/* ==================================
    CARD DESCRIPTION
-========================== */
+================================== */
 .service-card p {
   font-size: 0.97rem;
   color: #444;
   line-height: 1.6;
-  margin-bottom: 0.3rem;
   flex-grow: 1;
+  margin-bottom: 0.3rem;
 }
 
 
-/* ==========================
-   RESPONSIVE
-========================== */
+/* ==================================
+   RESPONSIVE BREAKPOINTS
+================================== */
 @media (max-width: 768px) {
   .services-grid {
     gap: 1.6rem;
