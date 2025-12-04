@@ -1,203 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Google Business Profile Optimization</title>
 
-  <!-- Base and Global Styles -->
+  <!-- Base + Global Styles -->
   <link rel="stylesheet" href="/css/base.css" />
   <link rel="stylesheet" href="/css/layout.css" />
   <link rel="stylesheet" href="/css/style.css" />
 
-  <!-- Components + Buttons + Cards -->
+  <!-- Components -->
   <link rel="stylesheet" href="/css/components.css" />
   <link rel="stylesheet" href="/css/cards.css" />
 
-  <!-- Pages -->
+  <!-- Service Page Styles -->
   <link rel="stylesheet" href="/css/service-page.css" />
 
-  <!-- Optional: Tools, Blog, etc. only if used on this page -->
-  <!-- <link rel="stylesheet" href="/css/tools.css" /> -->
-  <!-- <link rel="stylesheet" href="/css/blog.css" /> -->
-
-  <!-- Responsive (GLOBAL) -->
+  <!-- Global Responsive Rules -->
   <link rel="stylesheet" href="/css/responsive.css" />
 </head>
 
+<body class="service-page">
 
-<!-- HERO SECTION -->
-<section class="service-hero">
-  <div class="container">
-    <img 
-      src="/services/images/google-business.jpg" 
-      alt="Google Business Profile Optimization" 
-      class="service-hero-img"
-    />
-
-    <h1>Google Business Profile Optimization</h1>
-
-    <p class="subtitle">
-      Get discovered by more local customers with a fully optimized, high-performing Google Business Profile.
-    </p>
-
-    <a href="/contact" class="btn-primary">Get Started</a>
-  </div>
-</section>
+  <!-- ======================
+       HEADER
+  ======================= -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("../../components/header-tools.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("header-placeholder").innerHTML = html;
+      });
+  </script>
 
 
-<!-- OVERVIEW -->
-<section class="service-overview">
-  <div class="container">
-    <h2>What This Service Does</h2>
+  <!-- ======================
+       HERO SECTION
+  ======================= -->
+  <section class="service-hero">
+    <div class="container">
+      <img 
+        src="/services/images/google-business.jpg"
+        alt="Google Business Profile Optimization"
+        class="service-hero-img"
+      />
 
-    <p>
-      Your Google Business Profile is the first thing customers see when they search for services in your area.
-      A complete, optimized profile dramatically improves visibility, phone calls, website clicks,
-      and customer trust — especially for local businesses in competitive markets.
-    </p>
-  </div>
-</section>
+      <h1>Google Business Profile Optimization</h1>
 
+      <p class="subtitle">
+        Get discovered by more local customers with a fully optimized, high-performing Google Business Profile.
+      </p>
 
-<!-- FEATURES -->
-<section class="service-features">
-  <div class="container">
-    <h2>What You Get</h2>
-
-    <div class="feature-grid">
-
-      <div class="feature-item">
-        <h3>Full Profile Audit</h3>
-        <p>We identify gaps, missing info, errors, and ranking issues holding your business back.</p>
-      </div>
-
-      <div class="feature-item">
-        <h3>Profile Completion</h3>
-        <p>We update categories, hours, contact details, service areas, and business description.</p>
-      </div>
-
-      <div class="feature-item">
-        <h3>Professional Description</h3>
-        <p>SEO-optimized, trust-building writing that increases both visibility and conversions.</p>
-      </div>
-
-      <div class="feature-item">
-        <h3>Photo Upload & Optimization</h3>
-        <p>We upload high-quality photos (or enhance yours) to improve ranking and engagement.</p>
-      </div>
-
-      <div class="feature-item">
-        <h3>Review Strategy</h3>
-        <p>Simple templates and guidance for getting more positive reviews and handling negatives.</p>
-      </div>
-
-      <div class="feature-item">
-        <h3>Ranking Boost</h3>
-        <p>Local SEO improvements to help your business appear higher in Google Maps search.</p>
-      </div>
-
+      <a href="/contact" class="btn-primary">Get Started</a>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- WHY IT MATTERS -->
-<section class="why-it-matters">
-  <div class="container">
-    <h2>Why This Matters</h2>
+  <!-- ======================
+       OVERVIEW
+  ======================= -->
+  <section class="service-overview">
+    <div class="container">
+      <h2>What This Service Does</h2>
 
-    <p>
-      Most customers choose from the top three results on Google Maps.
-      If your profile is incomplete, outdated, or ranked low, you're losing visibility, calls, and real revenue.
-      A properly optimized profile makes your business easier to find, trust, and contact.
-    </p>
-  </div>
-</section>
+      <p>
+        Your Google Business Profile is the first thing customers see when they search for services in your area.
+        A complete, optimized profile dramatically improves visibility, phone calls, website clicks,
+        and customer trust — especially for local businesses in competitive markets.
+      </p>
+    </div>
+  </section>
 
 
-<!-- PRICING -->
-<section class="pricing">
-  <div class="container">
-    <h2>Pricing</h2>
+  <!-- ======================
+       FEATURES
+  ======================= -->
+  <section class="service-features">
+    <div class="container">
+      <h2>What You Get</h2>
 
-    <div class="pricing-wrapper">
+      <div class="feature-grid">
 
-      <div class="pricing-box">
-        <h3>Profile Optimization</h3>
-        <p class="price">$149 CAD <span>one-time</span></p>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <img src="/services/icons/audit.svg" alt="Full Profile Audit" />
+          </div>
+          <h3>Full Profile Audit</h3>
+          <p>We identify gaps, missing info, errors, and ranking issues holding your business back.</p>
+        </div>
 
-        <ul>
-          <li>Full profile setup + optimization</li>
-          <li>Photo upload + descriptions</li>
-          <li>SEO keyword integration</li>
-          <li>Review & rating strategy</li>
-          <li>3–5 day delivery</li>
-        </ul>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <img src="/services/icons/completion.svg" alt="Profile Completion" />
+          </div>
+          <h3>Profile Completion</h3>
+          <p>We update categories, hours, contact details, service areas, and business description.</p>
+        </div>
 
-        <a href="/contact" class="btn-primary">Start Now</a>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <img src="/services/icons/description.svg" alt="Professional Description" />
+          </div>
+          <h3>Professional Description</h3>
+          <p>SEO-optimized writing that increases visibility and builds trust.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <img src="/services/icons/photos.svg" alt="Photo Optimization" />
+          </div>
+          <h3>Photo Upload & Optimization</h3>
+          <p>We upload or enhance your photos to boost engagement and ranking signals.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <img src="/services/icons/reviews.svg" alt="Review Strategy" />
+          </div>
+          <h3>Review Strategy</h3>
+          <p>Simple templates and guidance to get more positive reviews and handle negatives.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <img src="/services/icons/ranking.svg" alt="Ranking Boost" />
+          </div>
+          <h3>Ranking Boost</h3>
+          <p>Local SEO improvements to help your business appear higher in Google Maps results.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======================
+       WHY IT MATTERS
+  ======================= -->
+  <section class="why-it-matters">
+    <div class="container">
+      <h2>Why This Matters</h2>
+
+      <p>
+        Most customers choose from the top three results on Google Maps.
+        If your profile is incomplete, outdated, or ranked low, you're losing visibility, calls, and real revenue.
+        A well-optimized profile makes your business easier to find, trust, and contact.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ======================
+       PRICING
+  ======================= -->
+  <section class="pricing">
+    <div class="container">
+      <h2>Pricing</h2>
+
+      <div class="pricing-wrapper">
+
+        <div class="pricing-box">
+          <h3>Profile Optimization</h3>
+          <p class="price">$149 CAD <span>one-time</span></p>
+
+          <ul>
+            <li>Full profile setup + optimization</li>
+            <li>Photo upload + descriptions</li>
+            <li>SEO keyword integration</li>
+            <li>Review & rating strategy</li>
+            <li>3–5 day delivery</li>
+          </ul>
+
+          <a href="/contact" class="btn-primary">Start Now</a>
+        </div>
+
+        <div class="pricing-box">
+          <h3>Profile + Growth</h3>
+          <p class="price">$249 CAD <span>one-time</span></p>
+
+          <ul>
+            <li>Everything in Optimization</li>
+            <li>2 Google Posts</li>
+            <li>30-day profile monitoring</li>
+            <li>Review response guidance</li>
+            <li>Priority support</li>
+          </ul>
+
+          <a href="/contact" class="btn-outline">Choose Plan</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======================
+       FAQ
+  ======================= -->
+  <section class="faq">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h4>How long does the optimization take?</h4>
+        <p>Most projects finish in 3–5 business days depending on the business size.</p>
       </div>
 
-      <div class="pricing-box">
-        <h3>Profile + Growth</h3>
-        <p class="price">$249 CAD <span>one-time</span></p>
-
-        <ul>
-          <li>Everything in Optimization</li>
-          <li>2 Google Posts (updates or promotions)</li>
-          <li>30-day profile monitoring</li>
-          <li>Review response guidance</li>
-          <li>Priority support</li>
-        </ul>
-
-        <a href="/contact" class="btn-outline">Choose Plan</a>
+      <div class="faq-item">
+        <h4>Do you need access to my Google Business Profile?</h4>
+        <p>Yes — we guide you through adding us as a temporary manager. You can remove access anytime.</p>
       </div>
 
+      <div class="faq-item">
+        <h4>Will this help me get more customers?</h4>
+        <p>Yes. Most businesses see more calls, website visits, and inquiries within weeks.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Is the service safe?</h4>
+        <p>Completely safe — everything is done through Google's official tools and best practices.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- FAQ -->
-<section class="faq">
-  <div class="container">
-    <h2>Frequently Asked Questions</h2>
-
-    <div class="faq-item">
-      <h4>How long does the optimization take?</h4>
-      <p>Most projects finish in 3–5 business days depending on the business size.</p>
+  <!-- ======================
+       CTA
+  ======================= -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Boost Your Local Visibility?</h2>
+      <p>Let’s make your business stand out on Google Maps.</p>
+      <a href="/contact" class="btn-primary">Get Started Today</a>
     </div>
-
-    <div class="faq-item">
-      <h4>Do you need access to my Google Business Profile?</h4>
-      <p>Yes — we guide you through adding us as a temporary manager. You can remove access anytime.</p>
-    </div>
-
-    <div class="faq-item">
-      <h4>Will this help me get more customers?</h4>
-      <p>Yes. Most businesses see more calls, website visits, and inquiries within a few weeks.</p>
-    </div>
-
-    <div class="faq-item">
-      <h4>Is the service safe?</h4>
-      <p>Completely safe — everything is done through Google’s official tools and best practices.</p>
-    </div>
-
-  </div>
-</section>
+  </section>
 
 
-<!-- CTA -->
-<section class="cta">
-  <div class="container">
-    <h2>Ready to Boost Your Local Visibility?</h2>
-    <p>Let’s make your business stand out on Google Maps.</p>
-    <a href="/contact" class="btn-primary">Get Started Today</a>
-  </div>
-</section>
-
-
-  <!-- Footer -->
-<div id="footer-placeholder"></div>
-
+  <!-- ======================
+       FOOTER
+  ======================= -->
+  <div id="footer-placeholder"></div>
   <script>
     fetch("../components/footer-tools.html")
       .then(res => res.text())
@@ -205,3 +249,6 @@
         document.getElementById("footer-placeholder").innerHTML = html;
       });
   </script>
+
+</body>
+</html>
