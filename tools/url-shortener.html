@@ -23,6 +23,7 @@
       display: grid;
       grid-template-columns: 160px 1fr 160px;
       gap: 1.5rem;
+      align-items: start; /* FIX: All columns align at top */
     }
 
     @media(max-width: 1000px) {
@@ -101,33 +102,30 @@ fetch("../../components/header-tools.html")
          data-ad-format="vertical"></ins>
   </aside>
 
- <!-- TOOL WRAPPER -->
-<section class="tool-wrapper">
+  <!-- TOOL WRAPPER (CENTER COLUMN) -->
+  <section class="tool-wrapper">
+    <h2 class="tool-title">URL Shortener</h2>
+    <p class="tool-description">
+      Shorten long URLs instantly — clean, reliable, and perfect for marketing campaigns, social media, and business use.
+    </p>
 
-  <h2 class="tool-title">URL Shortener</h2>
-  <p class="tool-description">
-    Shorten long URLs instantly — clean, reliable, and perfect for marketing campaigns, social media, and business use.
-  </p>
+    <label for="longUrl" class="tool-label">Enter your URL:</label>
+    <input 
+        id="longUrl" 
+        type="url" 
+        class="tool-input"
+        placeholder="https://example.com/page..."
+        autocomplete="off"
+        required
+    />
 
-  <label for="longUrl" class="tool-label">Enter your URL:</label>
-  <input 
-      id="longUrl" 
-      type="url" 
-      class="tool-input"
-      placeholder="https://example.com/page..."
-      autocomplete="off"
-      required
-  />
+    <button id="shortenBtn" class="tool-btn" onclick="shortenURL()">
+      Shorten URL
+    </button>
 
-  <button id="shortenBtn" class="tool-btn" onclick="shortenURL()">
-    Shorten URL
-  </button>
+    <div id="resultBox" class="output-box" style="display:none;"></div>
 
-  <div id="resultBox" class="output-box" style="display:none;"></div>
-
-</section>
-
-    <!-- IN-CONTENT AD -->
+    <!-- IN-CONTENT AD stays INSIDE the center column -->
     <div class="ad-in-content">
       <ins class="adsbygoogle"
            style="display:block; text-align:center;"
@@ -136,13 +134,11 @@ fetch("../../components/header-tools.html")
            data-ad-format="auto"></ins>
     </div>
 
-    <!-- NEW CONTENT FOR ADSENSE -->
+    <!-- CONTENT SECTION ALSO stays INSIDE center column -->
     <section class="content-section">
       <h2>What Is a URL Shortener?</h2>
       <p>
-        A URL shortener reduces a long web address into a clean, compact link. These shorter links 
-        are easier to remember, share, and use across platforms — especially where space matters, 
-        like social media posts, SMS messages, or print materials.
+        A URL shortener reduces a long web address into a clean, compact link...
       </p>
 
       <h3>Why Use Short Links?</h3>
@@ -151,11 +147,12 @@ fetch("../../components/header-tools.html")
         <li>Improve the appearance of marketing content</li>
         <li>Increase click-through rates on campaigns</li>
         <li>Track link performance (with advanced tools)</li>
-        <li>Reduce character usage for platforms like X (Twitter)</li>
+        <li>Reduce character usage on platforms</li>
       </ul>
 
       <h3>Benefits for Businesses & Creators</h3>
-      <p>This tool is helpful for small businesses, marketers, influencers, and solopreneurs who need shareable links.</p>
+      <p>This tool is helpful for...</p>
+
       <ul>
         <li>Share clean links in ads and landing pages</li>
         <li>Use branded short links in campaigns</li>
@@ -165,40 +162,15 @@ fetch("../../components/header-tools.html")
 
       <h3>How This Tool Works</h3>
       <p>
-        This shortener creates a simplified demo link locally in your browser. 
-        It does not send or store your URL on any server — ensuring full privacy.
+        This shortener creates a simplified demo link locally in your browser...
       </p>
-
-      <h3>Is It Secure?</h3>
-      <p>
-        Yes. The shortening process runs directly in your browser. Nothing is logged, 
-        and your original URL remains private.
-      </p>
-
-      <h3>Common Use Cases</h3>
-      <ul>
-        <li>Short links for Instagram, TikTok, YouTube, and blogs</li>
-        <li>Tracking marketing campaigns (with external analytics)</li>
-        <li>Sharing event links or product pages</li>
-        <li>Clean links for QR codes</li>
-        <li>Creating memorable links for printed materials</li>
-      </ul>
 
       <h3>FAQ</h3>
 
       <h4>Do short links expire?</h4>
-      <p>No — the generated demo link works as long as you keep it saved.</p>
-
-      <h4>Are shortened links safe?</h4>
-      <p>
-        Yes, but like all links, only share content you trust. 
-        This tool does not hide the destination; you can still preview where it leads.
-      </p>
-
-      <h4>Can I use these links in ads?</h4>
-      <p>Yes, short links are commonly used in Google Ads, Meta Ads, and newsletters.</p>
+      <p>No — the demo link works as long as you save it.</p>
     </section>
-
+  </section>
 
   <!-- RIGHT AD -->
   <aside class="ad-side">
