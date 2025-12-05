@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Bita Digital Hub</title>
 
-  <!-- Styles -->
+  <!-- Global Styles -->
   <link rel="stylesheet" href="../../assets/css/style.css" />
 
   <meta
@@ -22,10 +22,11 @@
       color: #0f172a;
     }
 
+    /* Fix header overlap */
     .page-wrapper {
       max-width: 860px;
       margin: 0 auto;
-      padding: 3rem 1.5rem;
+      padding: 6.5rem 1.5rem 4rem; /* Top padding increased */
     }
 
     .section {
@@ -36,6 +37,7 @@
     h1, h2 {
       font-weight: 700;
       margin-bottom: 1rem;
+      color: #0f172a;
     }
 
     .tagline {
@@ -82,6 +84,12 @@
       font-style: italic;
       color: #475569;
     }
+
+    @media (max-width: 640px) {
+      .page-wrapper {
+        padding-top: 7rem;
+      }
+    }
   </style>
 </head>
 
@@ -103,7 +111,7 @@
       <p class="tagline">AI-first tools to build, manage, and grow your online business — all in one place.</p>
       <p class="intro-text">
         Bita Digital Hub is an AI-powered platform designed for entrepreneurs, creators, and small
-        businesses who want to grow online without getting lost in tech, tools, and complexity.  
+        businesses who want to grow online without getting lost in tech, tools, and complexity.
         We build practical tools that automate repetitive work, so you can focus on strategy,
         customers, and real growth.
       </p>
@@ -133,7 +141,7 @@
         <li><strong>Business & decision tools</strong> that support smarter choices.</li>
       </ul>
 
-      <p>These tools are the foundation of a more advanced AI-assisted business system.</p>
+      <p>These tools form the foundation of a more advanced AI-assisted business system.</p>
     </section>
 
     <!-- WHY AI-FIRST -->
@@ -175,7 +183,7 @@
 
       <ul class="feature-list">
         <li><strong>AI-assisted content and funnel workflows</strong> for faster execution.</li>
-        <li><strong>Simple dashboards</strong> to highlight metrics that matter.</li>
+        <li><strong>Simple dashboards</strong> to highlight the metrics that matter most.</li>
         <li><strong>Pro accounts and APIs</strong> for advanced customization & integrations.</li>
       </ul>
 
