@@ -1,198 +1,185 @@
 <!DOCTYPE html>
-<html lang="en" data-page="tools">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Product Overview | Bita Digital Hub</title>
 
-  <link rel="stylesheet" href="../../css/style.css" />
-  <link rel="stylesheet" href="../../css/components.css" />
-  <link rel="stylesheet" href="../../css/tools.css" />
+  <title>Product | Bita Digital Hub</title>
 
-  <style>
-    .product-wrapper {
-      font-family: Arial, sans-serif;
-      padding: 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      line-height: 1.7;
-      color: #333;
-    }
-    h1, h2 { color: #0f172a; }
-    .section-block { margin-top: 3rem; }
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/system.css" />
 
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
-
-    .feature-card {
-      padding: 1.3rem 1.5rem;
-      border-radius: 10px;
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-    }
-
-    .feature-card h3 {
-      margin-top: 0;
-      color: #0f172a;
-    }
-  </style>
-
+  <meta
+    name="description"
+    content="Explore the Bita Digital Hub AI-first platform — smart tools, automated workflows, and a unified system for building and growing your online business."
+  />
 </head>
 
-<body class="tools-page">
+<body>
 
-<!-- HEADER -->
-<div id="header-placeholder"></div>
-<script>
-fetch("../../components/header-tools.html")
-  .then(res => res.text())
-  .then(html => {
-    document.getElementById("header-placeholder").innerHTML = html;
-  })
-  .catch(err => console.error("Header load error:", err));
-</script>
+  <!-- HEADER -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("../../components/header-tools.html")
+      .then(res => res.text())
+      .then(html => (document.getElementById('header-placeholder').innerHTML = html));
+  </script>
 
-<div class="product-wrapper">
+  <main class="page-wrapper mt-xl">
 
-  <!-- HERO -->
-  <section class="section-block">
-    <h1>Product Overview</h1>
-    <p class="tagline">
-      A unified AI-powered platform designed to help creators, entrepreneurs, and small businesses
-      build, optimize, and grow their digital presence — all in one place.
-    </p>
-    <p>
-      Bita Digital Hub brings together essential business tools and wraps them in intelligent
-      automation. Instead of switching between multiple websites, you work inside one platform that
-      adapts to your workflow.
-    </p>
-  </section>
+    <!-- HERO -->
+    <section class="section text-center">
+      <h1 class="page-title">AI-First Tools for Modern Online Businesses</h1>
+      <p class="tagline max-700 center">
+        A unified platform designed to help entrepreneurs, freelancers, and creators automate manual work,
+        improve decision-making, and scale their online growth.
+      </p>
 
-  <!-- PLATFORM STRUCTURE -->
-  <section class="section-block">
-    <h2>The Platform</h2>
-    <p>
-      The platform is organized into three core layers — each supporting a different part of your
-      online business journey.
-    </p>
+      <img
+        src="../../assets/images/product/hero-abstract-ai.png"
+        class="hero-illustration"
+        alt="AI Workflow Illustration"
+      />
 
-    <div class="feature-grid">
-      <div class="feature-card">
-        <h3>1. Creation Tools</h3>
-        <p>Prepare and generate digital assets quickly:</p>
-        <ul>
-          <li>File Converter</li>
-          <li>Image Compression</li>
-          <li>QR Code Generator</li>
-          <li>CSV Cleaner & Data Formatter</li>
-        </ul>
+      <div class="mt-lg">
+        <a href="../signup/signup.html" class="btn primary">Get Started</a>
+      </div>
+    </section>
+
+    <!-- VALUE PROPOSITION -->
+    <section class="section">
+      <h2 class="section-title">A Smarter Way to Build Your Online Business</h2>
+
+      <p class="text-base max-700 center">
+        The digital world moves fast — but most tools slow you down. Bita Digital Hub combines
+        AI-assisted workflows, automation, and smart insights to help you work faster, reduce complexity,
+        and stay focused on opportunities that matter.
+      </p>
+
+      <div class="three-cols mt-xl">
+
+        <div class="feature-card-lg">
+          <img src="../../assets/images/product/icon-automation.png" class="icon-lg" />
+          <h3>Automation Built In</h3>
+          <p>
+            Remove repetitive tasks from your workflow. Let AI handle formatting, decision support,
+            content structuring, and more.
+          </p>
+        </div>
+
+        <div class="feature-card-lg">
+          <img src="../../assets/images/product/icon-insights.png" class="icon-lg" />
+          <h3>Instant Insights</h3>
+          <p>
+            Turn scattered numbers into clear business signals. No dashboards. No tech headaches.
+            Just answers.
+          </p>
+        </div>
+
+        <div class="feature-card-lg">
+          <img src="../../assets/images/product/icon-tools.png" class="icon-lg" />
+          <h3>Smart Integrated Tools</h3>
+          <p>
+            File converters, SEO helpers, business intelligence utilities — all in one simple platform.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FEATURE BLOCKS WITH ILLUSTRATIONS -->
+    <section class="section">
+      <h2 class="section-title">Powerful Tools — Unified Experience</h2>
+
+      <div class="feature-block">
+        <div class="feature-text">
+          <h3>AI-Enhanced File & Content Tools</h3>
+          <p>
+            Convert, clean, rewrite, or analyze content with high accuracy. Everything runs fast,
+            lightweight, and inside your browser or cloud — depending on the tool.
+          </p>
+        </div>
+
+        <img
+          src="../../assets/images/product/illustration-file-tools.png"
+          class="feature-illustration"
+          alt="File Tools Illustration"
+        />
       </div>
 
-      <div class="feature-card">
-        <h3>2. Optimization Tools</h3>
-        <p>Improve how your website performs and ranks:</p>
-        <ul>
-          <li>SEO Analyzer</li>
-          <li>Website Performance Testing</li>
-          <li>Meta Tag Generator</li>
-          <li>Structured Data Helper</li>
-        </ul>
+      <div class="feature-block reverse">
+        <div class="feature-text">
+          <h3>SEO & Website Optimization Tools</h3>
+          <p>
+            Improve rankings, structure your content, and automate fixes that normally take hours.
+            Ideal for freelancers and small businesses.
+          </p>
+        </div>
+
+        <img
+          src="../../assets/images/product/illustration-seo.png"
+          class="feature-illustration"
+          alt="SEO Tools Illustration"
+        />
       </div>
 
-      <div class="feature-card">
-        <h3>3. Business Tools</h3>
-        <p>Support planning and smarter decisions:</p>
-        <ul>
-          <li>Business Personality Test</li>
-          <li>Idea Validation Tools</li>
-          <li>Marketing Assistants</li>
-        </ul>
+      <div class="feature-block">
+        <div class="feature-text">
+          <h3>Decision Tools for Entrepreneurs</h3>
+          <p>
+            Validate ideas, test assumptions, and plan your business operations with AI-driven support.
+          </p>
+        </div>
+
+        <img
+          src="../../assets/images/product/illustration-decisions.png"
+          class="feature-illustration"
+          alt="Decision Tools Illustration"
+        />
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- AI-FIRST FOUNDATION -->
-  <section class="section-block">
-    <h2>AI at the Core</h2>
-    <p>
-      As Bita Digital Hub evolves, AI becomes the engine that connects every part of the platform.
-      The goal is to move from isolated tools to a guided system that understands what users need.
-    </p>
+    <!-- AI WORKFLOW (Abstract Illustration Section) -->
+    <section class="section">
+      <h2 class="section-title">How the AI Workflow Works</h2>
 
-    <ul>
-      <li>AI-assisted content improvement</li>
-      <li>Automatic SEO scoring & suggestions</li>
-      <li>AI-based metadata optimization</li>
-      <li>Smart workflow recommendations</li>
-      <li>Automated decision support for small business tasks</li>
-    </ul>
+      <p class="text-base max-700 center">
+        Every tool is connected by a lightweight AI layer that understands your goals and adapts to your workflow.
+      </p>
 
-    <p>
-      This transforms the platform from utilities into an intelligent companion that grows with your business.
-    </p>
-  </section>
+      <img
+        src="../../assets/images/product/ai-flow-abstract.png"
+        class="workflow-illustration"
+        alt="AI Workflow Diagram"
+      />
 
-  <!-- FUTURE CONNECTIVITY -->
-  <section class="section-block">
-    <h2>Future Integrations</h2>
-    <p>
-      The platform is being designed for scalability and advanced features. Upcoming developments:
-    </p>
+      <ul class="feature-list mt-lg">
+        <li class="feature-card">AI understands your task and context.</li>
+        <li class="feature-card">It automates formatting, structure, and early decisions.</li>
+        <li class="feature-card">You stay focused on strategy, creativity, and growth.</li>
+      </ul>
+    </section>
 
-    <ul>
-      <li>User accounts & saved workflows</li>
-      <li>Pro version with advanced AI tools</li>
-      <li>API access for developers</li>
-      <li>Automated content pipelines</li>
-      <li>Cloud storage integrations</li>
-    </ul>
-  </section>
+    <!-- CTA -->
+    <section class="section text-center">
+      <h2 class="section-title">Ready to Build Smarter?</h2>
+      <p class="text-base max-700 center">
+        Join thousands of entrepreneurs who save hours every week with AI-powered business tools.
+      </p>
 
-  <!-- BENEFITS -->
-  <section class="section-block">
-    <h2>Why Bita Digital Hub?</h2>
+      <a href="../signup/signup.html" class="btn primary mt-md">Create Your Free Account</a>
+    </section>
 
-    <div class="feature-grid">
+  </main>
 
-      <div class="feature-card">
-        <h3>All-in-One Simplicity</h3>
-        <p>Replace multiple websites with one consistent platform.</p>
-      </div>
-
-      <div class="feature-card">
-        <h3>Smarter Workflows</h3>
-        <p>AI guides your actions and suggests what to do next.</p>
-      </div>
-
-      <div class="feature-card">
-        <h3>Beginner-Friendly</h3>
-        <p>No technical experience required — everything is intuitive.</p>
-      </div>
-
-      <div class="feature-card">
-        <h3>Built for Growth</h3>
-        <p>The platform expands as your business grows.</p>
-      </div>
-
-    </div>
-  </section>
-
-</div>
-
-<!-- FOOTER -->
-<div id="footer-placeholder"></div>
-<script>
-fetch("../../components/footer-tools.html")
-  .then(res => res.text())
-  .then(html => {
-    document.getElementById("footer-placeholder").innerHTML = html;
-  })
-  .catch(err => console.error("Footer load error:", err));
-</script>
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("../../components/footer.html")
+      .then(res => res.text())
+      .then(html => (document.getElementById('footer-placeholder').innerHTML = html));
+  </script>
 
 </body>
 </html>

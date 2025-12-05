@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onboarding – Step 1</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/system.css" />
+
+  <style>
+    .onboard-wrapper {
+      max-width: 720px;
+      margin: 4rem auto;
+      text-align: center;
+    }
+
+    .goal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .goal-card {
+      padding: 1.3rem;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .goal-card:hover {
+      border-color: #1e3a8a;
+      background: #eef2ff;
+    }
+
+    .next-btn {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="header-placeholder"></div>
+<script>
+  fetch("../../components/header-tools.html")
+    .then(res => res.text())
+    .then(html => (document.getElementById("header-placeholder").innerHTML = html));
+</script>
+
+<main class="page-wrapper">
+
+  <div class="onboard-wrapper">
+    <h1>What brings you to Bita Digital Hub?</h1>
+    <p class="tagline">Choose the goals that best describe your journey.</p>
+
+    <div class="goal-grid">
+      <div class="goal-card">Launch a new online business</div>
+      <div class="goal-card">Grow my existing business</div>
+      <div class="goal-card">Use tools for freelancing</div>
+      <div class="goal-card">Improve my digital presence</div>
+      <div class="goal-card">Automate repetitive tasks</div>
+    </div>
+
+    <a href="onboarding-step2.html" class="btn primary next-btn">Continue</a>
+  </div>
+
+</main>
+
+</body>
+</html>

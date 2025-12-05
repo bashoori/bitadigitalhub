@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Login | Bita Digital Hub</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/system.css" />
+
+  <meta
+    name="description"
+    content="Log in to your Bita Digital Hub account and access AI-powered business tools."
+  />
+
+  <style>
+    .auth-container {
+      max-width: 460px;
+      margin: 6rem auto 3rem;
+      padding: 2.6rem;
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 20px 45px rgba(15,23,42,0.08);
+      animation: fadeUp .45s ease;
+    }
+
+    .auth-hero {
+      width: 120px;
+      display: block;
+      margin: 0 auto 1.5rem;
+    }
+
+    h1.auth-title {
+      text-align: center;
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .auth-subtitle {
+      text-align: center;
+      color: #64748b;
+      margin-bottom: 2rem;
+    }
+
+    .auth-form input {
+      width: 100%;
+      padding: 0.95rem 1rem;
+      margin-bottom: 1.1rem;
+      border-radius: 12px;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+    }
+
+    .auth-form input:focus {
+      border-color: #2563eb;
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.18);
+      outline: none;
+    }
+
+    .auth-btn {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-radius: 12px;
+      background: #1e3a8a;
+      color: #fff;
+      font-weight: 600;
+      margin-top: .5rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .auth-btn:hover {
+      background: #2563eb;
+      transform: translateY(-1px);
+    }
+
+    .auth-footer {
+      text-align: center;
+      margin-top: 1.5rem;
+      color: #64748b;
+    }
+
+    .auth-footer a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page-wrapper">
+
+    <div class="auth-container">
+
+      <img
+        src="../../assets/images/onboarding/login-hero.png"
+        class="auth-hero"
+        alt="Login Illustration"
+      />
+
+      <h1 class="auth-title">Welcome Back</h1>
+      <p class="auth-subtitle">Sign in to continue to your dashboard</p>
+
+      <form class="auth-form" action="../dashboard/dashboard.html">
+        <input type="email" placeholder="Email Address" required />
+        <input type="password" placeholder="Password" required />
+
+        <button class="auth-btn" type="submit">Log In</button>
+      </form>
+
+      <div class="auth-footer">
+        <a href="forgot.html">Forgot password?</a>
+        <br /><br />
+        Don’t have an account?
+        <a href="../signup/signup.html">Create one</a>
+      </div>
+
+    </div>
+
+  </main>
+
+</body>
+</html>

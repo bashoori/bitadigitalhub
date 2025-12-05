@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Pricing | Bita Digital Hub</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/system.css" />
+
+  <meta
+    name="description"
+    content="Flexible pricing for creators and entrepreneurs. Choose the plan that fits your online business — Free, Pro, or Business."
+  />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("../../components/header-tools.html")
+      .then(res => res.text())
+      .then(html => (document.getElementById("header-placeholder").innerHTML = html));
+  </script>
+
+  <main class="page-wrapper mt-xl">
+
+    <!-- HERO -->
+    <section class="section text-center">
+      <h1 class="page-title">Simple, Transparent Pricing</h1>
+      <p class="tagline max-700 center">
+        Start free. Upgrade when you're ready to scale your online business with AI.
+      </p>
+
+      <img
+        src="../../assets/images/product/hero-abstract-ai.png"
+        class="hero-illustration"
+        alt="Pricing Illustration"
+      />
+    </section>
+
+    <!-- PRICING PLANS -->
+    <section class="section">
+      <h2 class="section-title text-center">Choose Your Plan</h2>
+
+      <div class="pricing-grid mt-xl">
+
+        <!-- FREE PLAN -->
+        <div class="pricing-card">
+          <h3 class="pricing-title">Free</h3>
+          <p class="pricing-subtitle">For beginners trying the platform</p>
+
+          <div class="price">$0<span>/month</span></div>
+
+          <ul class="pricing-features">
+            <li>Access to 6 basic tools</li>
+            <li>Standard conversions</li>
+            <li>Basic QR & Password tools</li>
+            <li>Community support</li>
+          </ul>
+
+          <a href="../signup/signup.html" class="btn outline mt-md">Get Started Free</a>
+        </div>
+
+        <!-- PRO PLAN -->
+        <div class="pricing-card featured">
+          <div class="badge">Most Popular</div>
+
+          <h3 class="pricing-title">Pro</h3>
+          <p class="pricing-subtitle">For creators & freelancers</p>
+
+          <div class="price">$19<span>/month</span></div>
+
+          <ul class="pricing-features">
+            <li>Everything in Free</li>
+            <li>AI-enhanced workflows</li>
+            <li>Advanced file tools (Cleaner, Converter)</li>
+            <li>SEO tools & website insights</li>
+            <li>Priority support</li>
+          </ul>
+
+          <a href="../signup/signup.html" class="btn primary mt-md">Start Pro</a>
+        </div>
+
+        <!-- BUSINESS PLAN -->
+        <div class="pricing-card">
+          <h3 class="pricing-title">Business</h3>
+          <p class="pricing-subtitle">For teams & online businesses</p>
+
+          <div class="price">$49<span>/month</span></div>
+
+          <ul class="pricing-features">
+            <li>Everything in Pro</li>
+            <li>Team accounts & permissions</li>
+            <li>Advanced AI automations</li>
+            <li>Custom workflows</li>
+            <li>Direct support channel</li>
+          </ul>
+
+          <a href="../signup/signup.html" class="btn outline mt-md">Upgrade</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COMPARISON TABLE -->
+    <section class="section">
+      <h2 class="section-title text-center">Compare Plans</h2>
+
+      <div class="comparison-table mt-lg">
+
+        <div class="row header">
+          <div class="col feature">Feature</div>
+          <div class="col">Free</div>
+          <div class="col">Pro</div>
+          <div class="col">Business</div>
+        </div>
+
+        <div class="row">
+          <div class="col feature">AI Workflows</div>
+          <div class="col">—</div>
+          <div class="col">✔</div>
+          <div class="col">✔</div>
+        </div>
+
+        <div class="row">
+          <div class="col feature">Advanced File Tools</div>
+          <div class="col">—</div>
+          <div class="col">✔</div>
+          <div class="col">✔</div>
+        </div>
+
+        <div class="row">
+          <div class="col feature">SEO Toolset</div>
+          <div class="col">—</div>
+          <div class="col">✔</div>
+          <div class="col">✔</div>
+        </div>
+
+        <div class="row">
+          <div class="col feature">Team Access</div>
+          <div class="col">—</div>
+          <div class="col">—</div>
+          <div class="col">✔</div>
+        </div>
+
+        <div class="row">
+          <div class="col feature">Custom Workflows</div>
+          <div class="col">—</div>
+          <div class="col">—</div>
+          <div class="col">✔</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BOTTOM CTA -->
+    <section class="section text-center mt-xl">
+      <h2 class="section-title">Ready to Get Started?</h2>
+      <p class="text-base max-700 center">
+        Create your free account in seconds — no credit card required.
+      </p>
+
+      <a href="../signup/signup.html" class="btn primary mt-md">Create Account</a>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("../../components/footer.html")
+      .then(res => res.text())
+      .then(html => (document.getElementById("footer-placeholder").innerHTML = html));
+  </script>
+
+</body>
+</html>

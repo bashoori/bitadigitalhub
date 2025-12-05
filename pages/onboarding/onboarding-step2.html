@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onboarding – Step 2</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/system.css" />
+
+  <style>
+    .onboard-wrapper {
+      max-width: 640px;
+      margin: 4rem auto;
+      text-align: center;
+    }
+
+    .onboard-form input,
+    .onboard-form select {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+    }
+
+    .next-btn {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.1rem;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+<script>
+  fetch("../../components/header-tools.html")
+    .then(res => res.text())
+    .then(html => (document.getElementById("header-placeholder").innerHTML = html));
+</script>
+
+<main class="page-wrapper">
+  <div class="onboard-wrapper">
+
+    <h1>Tell us about your business</h1>
+    <p class="tagline">This helps us personalize your dashboard.</p>
+
+    <form class="onboard-form" action="onboarding-complete.html">
+      <input type="text" placeholder="Business Name (if any)" />
+      <input type="text" placeholder="Website (optional)" />
+      <select>
+        <option selected disabled>Industry</option>
+        <option>Coaching</option>
+        <option>E-commerce</option>
+        <option>Design or Freelancing</option>
+        <option>Local Business</option>
+        <option>Startup / SaaS</option>
+      </select>
+      <button class="btn primary next-btn">Finish Setup</button>
+    </form>
+
+  </div>
+</main>
+
+</body>
+</html>
