@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>File Converter | Bita Digital Hub</title>
 
-  <meta name="description"
-        content="Convert images and documents instantly — JPG ↔ PNG ↔ PDF. Simple and fast online file converter." />
+  <title>File Converter | Bita Digital Hub</title>
+  <meta name="description" content="Convert images and documents instantly — JPG ↔ PNG ↔ PDF. Simple and fast online file converter." />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="../../css/style.css" />
-  <link rel="stylesheet" href="../../css/components.css" />
-  <link rel="stylesheet" href="../../css/tools.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/tools.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
 
   <style>
     .tools-page { padding-top: 5rem; }
@@ -36,11 +36,6 @@
       padding-top: 1rem;
     }
 
-    .ad-side ins.adsbygoogle {
-      width: 160px;
-      height: 600px;
-    }
-
     .tool-wrapper {
       background: #ffffff;
       padding: 2.2rem;
@@ -48,7 +43,7 @@
       box-shadow: 0 8px 25px rgba(15,23,42,0.06);
     }
 
-    /* NEW CONTENT SECTION FOR GOOGLE APPROVAL */
+    /* Content block (for Adsense approval) */
     .content-section {
       max-width: 780px;
       margin: 3rem auto 4rem;
@@ -60,24 +55,10 @@
       color: #334155;
       font-size: 1rem;
     }
-    .content-section h2 {
-      font-size: 1.7rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      color: #0f172a;
-    }
-    .content-section h3 {
-      margin-top: 1.5rem;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #1e293b;
-    }
-    .content-section ul {
-      padding-left: 1.4rem;
-      margin-top: 0.5rem;
-    }
+    .content-section h2 { font-size: 1.7rem; font-weight: 800; margin-bottom: 1rem; color: #0f172a; }
+    .content-section h3 { margin-top: 1.5rem; font-size: 1.3rem; font-weight: 700; color: #1e293b; }
+    .content-section ul { padding-left: 1.4rem; margin-top: 0.5rem; }
     .content-section li { margin-bottom: 0.45rem; }
-    .content-section p { margin-top: 0.5rem; }
   </style>
 </head>
 
@@ -86,9 +67,9 @@
 <!-- HEADER -->
 <div id="header-placeholder"></div>
 <script>
-fetch("../../components/header-tools.html")
+fetch("/components/header-tools.html")
 .then(res => res.text())
-.then(html => document.getElementById("header-placeholder").innerHTML = html);
+.then(html => (document.getElementById("header-placeholder").innerHTML = html));
 </script>
 
 <!-- MAIN TOOL GRID -->
@@ -106,29 +87,30 @@ fetch("../../components/header-tools.html")
   <!-- TOOL -->
   <section class="tool-wrapper">
 
-    <h2 class="tool-title">File Converter</h2>
-    <p class="tool-description">
-      Convert images and documents instantly — JPG ↔ PNG ↔ PDF.
-    </p>
+    <h1 class="tool-title">File Converter</h1>
+    <p class="tool-description">Convert images and documents instantly — JPG ↔ PNG ↔ PDF.</p>
 
-    <label class="tool-label" for="fileInput">Upload file:</label>
+    <label class="tool-label">Upload a file</label>
     <input id="fileInput" type="file" accept=".jpg,.jpeg,.png,.pdf" class="tool-input" />
 
-    <label class="tool-label" style="margin-top:1rem;">Convert to:</label>
-    <select id="format" class="tool-select">
-      <option value="png">PNG</option>
+    <label class="tool-label" style="margin-top:1.3rem;">Convert to:</label>
+    <select id="convertTo" class="tool-select">
       <option value="jpg">JPG</option>
+      <option value="png">PNG</option>
       <option value="pdf">PDF</option>
     </select>
 
-    <button class="tool-btn" onclick="convertFile()">Convert</button>
+    <button id="convertBtn" class="tool-btn" style="margin-top:1.6rem;">
+      Convert File
+    </button>
 
-    <div id="resultBox" class="output-box" style="display:none;">
-      <p><strong>Your file is ready:</strong></p>
-      <a id="downloadConverted" class="tool-btn" download="converted">Download File</a>
+    <div id="outputBox" class="output-box" style="display:none; margin-top:1.8rem;">
+      <a id="downloadLink" href="#" download style="font-weight:600; color:#1e3a8a;">
+        Download Converted File
+      </a>
     </div>
 
-    <!-- IN-CONTENT AD -->
+    <!-- In-content ad -->
     <div class="ad-in-content">
       <ins class="adsbygoogle"
            style="display:block; text-align:center;"
@@ -137,59 +119,34 @@ fetch("../../components/header-tools.html")
            data-ad-format="auto"></ins>
     </div>
 
-    <!-- NEW CONTENT FOR ADSENSE -->
+    <!-- Informational Content -->
     <section class="content-section">
       <h2>About This File Converter Tool</h2>
       <p>
-        This online file converter allows you to convert images and documents instantly inside your
-        browser — without uploading your files to any server. Everything runs locally, ensuring full
-        privacy and fast performance. Whether you want to convert JPG to PNG, PNG to JPG, or turn
-        images into PDF, this tool offers a simple and secure experience.
+        This online file converter runs entirely inside your browser — nothing is uploaded.
+        Fast, private, and secure. Convert JPG, PNG, and PDF formats instantly.
       </p>
 
       <h3>Supported Formats</h3>
       <ul>
-        <li><strong>JPG → PNG</strong> (lossless quality)</li>
-        <li><strong>PNG → JPG</strong> (smaller file size)</li>
-        <li><strong>Image → PDF</strong> (easy sharing & printing)</li>
-        <li><strong>PDF → Image</strong> (depending on browser support)</li>
+        <li><strong>JPG → PNG</strong></li>
+        <li><strong>PNG → JPG</strong></li>
+        <li><strong>Image → PDF</strong></li>
+        <li><strong>PDF → Image</strong> (browser dependent)</li>
       </ul>
 
       <h3>Why Convert Files?</h3>
       <ul>
-        <li>Reduce file size for faster sharing</li>
-        <li>Change format for compatibility with apps</li>
-        <li>Prepare images for printing or uploading</li>
-        <li>Create PDFs for documents, resumes, or contracts</li>
+        <li>Reduce file size</li>
+        <li>Improve compatibility</li>
+        <li>Prepare images for uploading</li>
+        <li>Create PDFs for school or work</li>
       </ul>
 
-      <h3>Is This Converter Safe?</h3>
+      <h3>Your Privacy</h3>
       <p>
-        Yes — unlike many online converters, this tool does <strong>not upload files to a server</strong>.  
-        The conversion happens entirely inside your browser using JavaScript.  
-        Your documents never leave your device.
+        Nothing is uploaded or stored. Conversion happens locally using JavaScript.
       </p>
-
-      <h3>Common Use Cases</h3>
-      <ul>
-        <li>Converting photos for social media</li>
-        <li>Making PDFs from images for school or work</li>
-        <li>Compressing images for websites and blogs</li>
-        <li>Preparing product photos for ecommerce</li>
-      </ul>
-
-      <h3>FAQ</h3>
-
-      <h4>Does this tool store my files?</h4>
-      <p>No. Everything runs locally — nothing is uploaded or saved.</p>
-
-      <h4>Is the output quality reduced?</h4>
-      <p>
-        PNG keeps full quality; JPG reduces size slightly. PDF quality depends on the browser.
-      </p>
-
-      <h4>Can I convert multiple files?</h4>
-      <p>Currently one file at a time — batch conversion will be added later.</p>
     </section>
 
   </section>
@@ -202,56 +159,46 @@ fetch("../../components/header-tools.html")
          data-ad-slot="3333333333"
          data-ad-format="vertical"></ins>
   </aside>
-
 </main>
 
 <!-- FOOTER -->
 <div id="footer-placeholder"></div>
 <script>
-fetch("../../components/footer-tools.html")
+fetch("/components/footer-tools.html")
 .then(res => res.text())
-.then(html => document.getElementById("footer-placeholder").innerHTML = html);
+.then(html => (document.getElementById("footer-placeholder").innerHTML = html));
 </script>
 
 <!-- FILE CONVERSION SCRIPT -->
 <script>
-function convertFile() {
-  const file = document.getElementById("fileInput").files[0];
-  const format = document.getElementById("format").value;
+document.getElementById("convertBtn").addEventListener("click", () => {
+  const fileInput = document.getElementById("fileInput");
+  const format = document.getElementById("convertTo").value;
 
-  if (!file) {
-    alert("Please upload a file first.");
+  if (!fileInput.files.length) {
+    alert("Upload a file first.");
     return;
   }
 
+  const file = fileInput.files[0];
   const reader = new FileReader();
 
   reader.onload = function(e) {
-    let blob;
+    const link = document.getElementById("downloadLink");
+    const outputBox = document.getElementById("outputBox");
 
-    if (format === "pdf") {
-      blob = new Blob([e.target.result], { type: "application/pdf" });
-    } else {
-      blob = new Blob([e.target.result], { type: "image/" + format });
-    }
+    link.href = e.target.result;
+    link.download = file.name.replace(/\.[^/.]+$/, "") + "." + format;
 
-    const url = URL.createObjectURL(blob);
-
-    const link = document.getElementById("downloadConverted");
-    link.href = url;
-    link.download = "converted." + format;
-
-    document.getElementById("resultBox").style.display = "block";
+    outputBox.style.display = "block";
   };
 
-  reader.readAsArrayBuffer(file);
-}
+  reader.readAsDataURL(file);
+});
 </script>
 
 <!-- ADSENSE -->
-<script async
-  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-  crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762" crossorigin="anonymous"></script>
 
 </body>
 </html>
