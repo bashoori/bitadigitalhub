@@ -1,27 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" data-page="tools">
+<html lang="en" data-page="roadmap">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Roadmap | Bita Digital Hub</title>
 
-  <link rel="stylesheet" href="../../css/style.css" />
-  <link rel="stylesheet" href="../../css/components.css" />
-  <link rel="stylesheet" href="../../css/tools.css" />
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
 
   <style>
+    body {
+      margin: 0;
+      background: #f8fafc;
+      padding-top: 120px; /* match Tools and Product pages */
+      font-family: "Poppins", sans-serif;
+      color: #0f172a;
+    }
+
     .roadmap-wrapper {
-      font-family: Arial, sans-serif;
-      padding: 2rem;
       max-width: 1100px;
       margin: 0 auto;
+      padding: 2rem 1.5rem;
       line-height: 1.7;
-      color: #333;
     }
 
     h1, h2 {
+      font-weight: 800;
       color: #0f172a;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .intro {
+      max-width: 780px;
+      margin: 0 auto 2rem;
+      text-align: center;
+      color: #334155;
+      line-height: 1.6;
     }
 
     .section-block {
@@ -29,46 +45,43 @@
     }
 
     .quarter {
-      background: #f8fafc;
+      background: #ffffff;
       border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
+      border-radius: 12px;
+      padding: 1.8rem;
+      margin-bottom: 2rem;
     }
 
     .quarter h3 {
       margin-top: 0;
+      font-size: 1.2rem;
+      font-weight: 700;
       color: #0f172a;
     }
 
     ul {
-      padding-left: 18px;
+      padding-left: 1.2rem;
     }
   </style>
 </head>
 
-<body class="tools-page">
+<body>
 
 <!-- HEADER -->
 <div id="header-placeholder"></div>
-
 <script>
-    fetch("../components/header-tools.html")
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById("header-placeholder").innerHTML = html;
-      });
+fetch("/components/header.html")
+  .then(res => res.text())
+  .then(html => (document.getElementById("header-placeholder").innerHTML = html));
 </script>
-
 
 <div class="roadmap-wrapper">
 
   <!-- HERO -->
   <h1>Roadmap</h1>
   <p class="intro">
-    A transparent view of where Bita Digital Hub is going — how the platform grows, improves, and
-    expands over time. This roadmap reflects our mission to build an AI-powered toolkit that helps
-    entrepreneurs and creators launch, optimize, and scale their online businesses.
+    A transparent view of how Bita Digital Hub grows over time — new tools, platform updates,
+    automation features, and AI systems designed to support entrepreneurs and creators.
   </p>
 
   <!-- Q1 -->
@@ -78,9 +91,9 @@
       <ul>
         <li>Launch About, Product, and Roadmap pages</li>
         <li>Upgrade all tools to new unified UI framework</li>
-        <li>Add AI-assisted content rewriting (SEO + text tools)</li>
-        <li>Implement AI scoring for SEO tools and website analyzers</li>
-        <li>Build internal analytics system for tool usage</li>
+        <li>AI-assisted content rewriting (SEO + text tools)</li>
+        <li>AI scoring for SEO and website analysis tools</li>
+        <li>Internal analytics for tool usage</li>
       </ul>
     </div>
   </section>
@@ -90,11 +103,11 @@
     <div class="quarter">
       <h3>Q2 — User Accounts & Saved Workflows</h3>
       <ul>
-        <li>User authentication (email + magic link)</li>
-        <li>Saved tool settings and repeat workflows</li>
-        <li>AI-recommended next steps after each tool</li>
-        <li>Performance dashboard for creators and small businesses</li>
-        <li>Beta release of Pro version (invite-only)</li>
+        <li>Email-based authentication (magic link login)</li>
+        <li>Saved tool settings + workflow continuity</li>
+        <li>AI “Next Step” suggestions for each tool</li>
+        <li>Performance dashboard for creators & small businesses</li>
+        <li>Private beta launch of Pro version</li>
       </ul>
     </div>
   </section>
@@ -104,11 +117,11 @@
     <div class="quarter">
       <h3>Q3 — Automation & Pro Features</h3>
       <ul>
-        <li>Automated content pipelines</li>
-        <li>AI business advisor for content, SEO, funnels, and optimizations</li>
-        <li>Advanced batch-processing tools (file conversions, cleanup, metadata)</li>
+        <li>AI-driven content pipelines</li>
+        <li>AI business advisor (content + SEO + funnels)</li>
+        <li>Batch-processing tools: conversions, cleanup, metadata</li>
         <li>Priority processing for Pro users</li>
-        <li>Cloud storage integrations (Google Drive, Dropbox)</li>
+        <li>Google Drive + Dropbox integrations</li>
       </ul>
     </div>
   </section>
@@ -118,11 +131,11 @@
     <div class="quarter">
       <h3>Q4 — API, Integrations & Ecosystem</h3>
       <ul>
-        <li>Public API for developers, agencies, and automation systems</li>
-        <li>AI plugin marketplace for custom tool extensions</li>
-        <li>Partnerships with agencies and digital creators</li>
-        <li>Enterprise-grade features for small business teams</li>
-        <li>Internationalization (Farsi + English UI)</li>
+        <li>Public API for agencies & automation developers</li>
+        <li>AI plugin marketplace for creators</li>
+        <li>Partnership integrations with online business tools</li>
+        <li>Team/Enterprise features</li>
+        <li>Full bilingual interface (Farsi + English)</li>
       </ul>
     </div>
   </section>
@@ -130,25 +143,22 @@
   <!-- Vision -->
   <section class="section-block">
     <h2>Long-Term Vision</h2>
-    <p>
-      Bita Digital Hub will evolve into a fully AI-guided business assistant. Instead of searching 
-      for tools, the platform analyzes your goals, suggests the right workflows, and automates 
-      repetitive tasks — helping you build a real online business with clarity and speed.
+    <p class="intro">
+      Bita Digital Hub is evolving into a fully AI-guided business system.
+      Instead of searching for tools or guessing what to do next, the platform will:
+      analyze your goals, recommend workflows, automate repetitive tasks,
+      and help you grow with clarity and speed.
     </p>
   </section>
 
 </div>
 
-
 <!-- FOOTER -->
 <div id="footer-placeholder"></div>
 <script>
-fetch("../../components/footer-tools.html")
+fetch("/components/footer.html")
   .then(res => res.text())
-  .then(html => {
-    document.getElementById("footer-placeholder").innerHTML = html;
-  })
-  .catch(err => console.error("Footer load error:", err));
+  .then(html => (document.getElementById("footer-placeholder").innerHTML = html));
 </script>
 
 </body>
