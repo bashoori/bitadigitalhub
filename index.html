@@ -3,52 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Bita Digital Hub – Free Online Tools & AI Utilities</title>
 
-  <meta name="description" content="Free online tools for file conversion, password generation, URL shortener, CSV cleaning, QR generation and more. Fast, clean, no login required." />
+  <meta name="description"
+    content="Free online tools including URL shortener, file converter, password generator, CSV cleaner, QR generator and more. Fast, private, no login required." />
 
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/home.css" />
   <link rel="stylesheet" href="/css/cards.css" />
+
+  <script src="https://unpkg.com/lucide@latest" defer></script>
   <script src="/js/core/script.js" defer></script>
 </head>
 
 <body>
 
 <!-- ============================
-     LOAD HEADER FROM components/header.html
+     HEADER (loaded dynamically)
 ============================ -->
 <div id="header-placeholder"></div>
 <script>
   fetch("/components/header.html")
-    .then(r => r.text())
-    .then(html => document.getElementById("header-placeholder").innerHTML = html);
+    .then(res => res.text())
+    .then(html => (document.getElementById("header-placeholder").innerHTML = html));
 </script>
 
-<!-- ================= HERO ================= -->
+
+
+<!-- ============================
+     HERO SECTION
+============================ -->
 <section class="hero">
   <div class="container">
     <h1>Powerful Free Tools for Your Daily Work</h1>
+
     <p>
       Instant, private, free utilities for converting files, generating passwords,
-      creating QR codes, cleaning CSVs, and more — all in one place.
+      creating QR codes, cleaning CSVs, and more — all in one clean workspace.
     </p>
 
     <a href="/pages/tools/tools.html" class="btn primary">Explore All Tools</a>
 
-    <img src="/assets/images/trans-web.png" alt="Tools illustration" class="hero-image">
+    <img src="/assets/images/trans-web.png"
+         alt="Online tools illustration"
+         class="hero-image" />
   </div>
 </section>
 
 
 
-<!-- ================= FEATURED TOOLS ================= -->
+<!-- ============================
+     POPULAR TOOLS
+============================ -->
 <section class="section">
   <div class="container">
     <h2 class="section-title">Popular Tools</h2>
 
     <div class="card-grid">
-      
+
+      <!-- URL Shortener -->
       <a href="/pages/tools/generators/url-shortener/" class="card">
         <div class="tool-icon"><span>🔗</span></div>
         <div class="content">
@@ -57,35 +71,39 @@
         </div>
       </a>
 
+      <!-- File Converter -->
       <a href="/pages/tools/converters/file-converter/" class="card">
         <div class="tool-icon"><span>📁</span></div>
         <div class="content">
           <h3>File Converter</h3>
-          <p>Convert between images, documents, and formats instantly.</p>
+          <p>Convert images and documents between formats in seconds.</p>
         </div>
       </a>
 
+      <!-- Password Generator -->
       <a href="/pages/tools/generators/password-generator/" class="card">
         <div class="tool-icon"><span>🔐</span></div>
         <div class="content">
           <h3>Password Generator</h3>
-          <p>Secure random passwords for personal & business use.</p>
+          <p>Generate strong, secure random passwords instantly.</p>
         </div>
       </a>
 
+      <!-- CSV Cleaner -->
       <a href="/pages/tools/utilities/csv-cleaner/" class="card">
         <div class="tool-icon"><span>🧹</span></div>
         <div class="content">
           <h3>CSV Cleaner</h3>
-          <p>Remove duplicates, fix encoding, and normalize data fast.</p>
+          <p>Clean your CSV files: remove blanks, trim spaces, normalize data.</p>
         </div>
       </a>
 
+      <!-- QR Code Generator -->
       <a href="/pages/tools/generators/qr-generator/" class="card">
         <div class="tool-icon"><span>📱</span></div>
         <div class="content">
           <h3>QR Generator</h3>
-          <p>Create QR codes for menus, business pages, and more.</p>
+          <p>Create QR codes for menus, profiles, campaigns, and more.</p>
         </div>
       </a>
 
@@ -95,26 +113,31 @@
 
 
 
-<!-- ================= CTA ================= -->
+<!-- ============================
+     CTA SECTION
+============================ -->
 <section class="section">
   <div class="container text-center">
     <h2>Everything you need — in one clean workspace</h2>
     <p>
-      Fast, simple, private. No login. No tracking.
-      Built for creators, marketers, small businesses, students, and developers.
+      Fast, simple, private. No login. No tracking. Built for creators, marketers,
+      small businesses, students, and developers.
     </p>
+
     <a href="/pages/tools/tools.html" class="btn outline">Browse All Tools</a>
   </div>
 </section>
 
 
 
-<!-- ================= LOAD FOOTER ================= -->
+<!-- ============================
+     FOOTER
+============================ -->
 <div id="footer-placeholder"></div>
 <script>
   fetch("/components/footer.html")
-    .then(r => r.text())
-    .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+    .then(res => res.text())
+    .then(html => (document.getElementById("footer-placeholder").innerHTML = html));
 </script>
 
 </body>
