@@ -2,106 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free Online Tools | Bita Digital Hub</title>
 
-  <meta name="description" content="Free online tools for QR generation, file conversion, password generation, CSV cleaning, URL shortener, and more. No login required." />
+  <meta name="description"
+        content="Use free online tools by Bita Digital Hub: URL shortener, QR code generator, password generator, CSV cleaner, file converter, appointment builder, zip/unzip and more." />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/cards.css" />
   <link rel="stylesheet" href="/css/tools.css" />
+  <link rel="stylesheet" href="/css/cards.css" />
+  <script src="https://unpkg.com/lucide@latest" defer></script>
   <script src="/js/core/script.js" defer></script>
 </head>
 
-<body>
+<body class="tools-page">
 
 <!-- HEADER -->
 <div id="header-placeholder"></div>
 <script>
   fetch("/components/header.html")
-    .then(res => res.text())
+    .then(r => r.text())
     .then(html => document.getElementById("header-placeholder").innerHTML = html);
 </script>
 
-<section class="section tools-hero">
+
+
+<!-- ============================
+     PAGE INTRO
+============================ -->
+<section class="section text-center">
   <div class="container">
-    <h1 class="page-title">Free Online Tools</h1>
-    <p class="page-subtitle">
-      Lightweight browser tools to simplify everyday tasks:
-      shorten URLs, create QR codes, generate secure passwords,
-      clean CSV files, convert images and documents, and more.
+
+    <h1 class="tool-title">Free Online Tools</h1>
+    <p class="tool-description">
+      Lightweight browser-based tools to speed up your workflow:
+      clean CSV files, create QR codes, shorten URLs, generate strong passwords,
+      convert images, and more — no login required.
     </p>
+
   </div>
 </section>
 
 
-<!-- =============================
-      TOOLS GRID
-============================= -->
+
+<!-- ============================
+     GENERATORS
+============================ -->
 <section class="section">
   <div class="container">
+    <h2 class="section-title">Generators</h2>
+
     <div class="card-grid">
 
-      <!-- URL Shortener -->
-      <a href="/pages/tools/url/index.html" class="card tool-card">
+      <a class="card" href="/pages/tools/generators/url-shortener/">
         <div class="tool-icon"><span>🔗</span></div>
         <div class="content">
           <h3>URL Shortener</h3>
-          <p>Create clean, short links instantly.</p>
+          <p>Shorten long URLs into clean, shareable links.</p>
         </div>
       </a>
 
-      <!-- QR Code Generator -->
-      <a href="/pages/tools/generators/qr-generator/index.html" class="card tool-card">
+      <a class="card" href="/pages/tools/generators/qr-generator/">
         <div class="tool-icon"><span>📱</span></div>
         <div class="content">
           <h3>QR Code Generator</h3>
-          <p>Create QR codes for business pages and menus.</p>
+          <p>Create QR codes for links, menus, profiles & campaigns.</p>
         </div>
       </a>
 
-      <!-- Password Generator -->
-      <a href="/pages/tools/generators/password-generator/index.html" class="card tool-card">
+      <a class="card" href="/pages/tools/generators/password-generator/">
         <div class="tool-icon"><span>🔐</span></div>
         <div class="content">
           <h3>Password Generator</h3>
-          <p>Generate strong, secure random passwords.</p>
-        </div>
-      </a>
-
-      <!-- CSV Cleaner -->
-      <a href="/pages/tools/utilities/csv-cleaner/index.html" class="card tool-card">
-        <div class="tool-icon"><span>🧹</span></div>
-        <div class="content">
-          <h3>CSV Cleaner</h3>
-          <p>Remove duplicates, fix encoding, clean large CSV files.</p>
-        </div>
-      </a>
-
-      <!-- File Converter -->
-      <a href="/pages/tools/converters/file-converter/index.html" class="card tool-card">
-        <div class="tool-icon"><span>📁</span></div>
-        <div class="content">
-          <h3>File Converter</h3>
-          <p>Convert images, PDF, documents, audio and more.</p>
-        </div>
-      </a>
-
-      <!-- Zip / Unzip -->
-      <a href="/pages/tools/utilities/zip-unzip/index.html" class="card tool-card">
-        <div class="tool-icon"><span>🗂️</span></div>
-        <div class="content">
-          <h3>Zip / Unzip</h3>
-          <p>Compress and extract files online.</p>
-        </div>
-      </a>
-
-      <!-- Appointment Scheduler -->
-      <a href="/pages/tools/appointments/index.html" class="card tool-card">
-        <div class="tool-icon"><span>📅</span></div>
-        <div class="content">
-          <h3>Appointment Maker</h3>
-          <p>Create simple appointments without login.</p>
+          <p>Strong, random passwords for personal or business use.</p>
         </div>
       </a>
 
@@ -109,11 +83,77 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+
+
+<!-- ============================
+     CONVERTERS
+============================ -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Converters</h2>
+
+    <div class="card-grid">
+
+      <a class="card" href="/pages/tools/converters/file-converter/">
+        <div class="tool-icon"><span>📁</span></div>
+        <div class="content">
+          <h3>File Converter</h3>
+          <p>Convert between formats: PNG, JPG, PDF, WebP and more.</p>
+        </div>
+      </a>
+
+      <a class="card" href="/pages/tools/utilities/csv-cleaner/">
+        <div class="tool-icon"><span>🧹</span></div>
+        <div class="content">
+          <h3>CSV Cleaner</h3>
+          <p>Fix encoding, remove empty rows, normalize messy data.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ============================
+     UTILITIES
+============================ -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Utilities</h2>
+
+    <div class="card-grid">
+
+      <a class="card" href="/pages/tools/appointments/">
+        <div class="tool-icon"><span>📅</span></div>
+        <div class="content">
+          <h3>Appointment Builder</h3>
+          <p>Create calendar-ready ICS files and Google Calendar links.</p>
+        </div>
+      </a>
+
+      <a class="card" href="/pages/tools/utilities/zip-unzip/">
+        <div class="tool-icon"><span>🗂️</span></div>
+        <div class="content">
+          <h3>Zip / Unzip</h3>
+          <p>Compress and extract small archives directly in your browser.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ============================
+     FOOTER
+============================ -->
 <div id="footer-placeholder"></div>
 <script>
   fetch("/components/footer.html")
-    .then(res => res.text())
+    .then(r => r.text())
     .then(html => document.getElementById("footer-placeholder").innerHTML = html);
 </script>
 
