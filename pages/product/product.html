@@ -1,238 +1,151 @@
 <!DOCTYPE html>
-<html lang="en" data-page="product">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Product | Bita Digital Hub</title>
-
-  <!-- Global Styles -->
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/components.css" />
-  <link rel="stylesheet" href="/css/responsive.css" />
+  <title>Services & Digital Products | Bita Digital Hub</title>
 
   <meta name="description"
-        content="Explore the Bita Digital Hub AI-first platform — automation tools, workflows, and unified systems for building and growing your online business." />
+        content="Affordable digital services: website building, AI automation, data dashboards, online business setup, and content workflows. Designed for solopreneurs, creators, and small businesses." />
 
-  <style>
-    body {
-      margin: 0;
-      background: #f8fafc;
-      padding-top: 120px; /* Matches Tools + About layout */
-      font-family: "Poppins", sans-serif;
-      color: #0f172a;
-    }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    main.wrapper {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2.5rem 1.5rem;
-      line-height: 1.75;
-    }
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/services.css" />
+  <link rel="stylesheet" href="/css/cards.css" />
 
-    h1, h2, h3 {
-      text-align: center;
-      font-weight: 800;
-      margin-bottom: 1rem;
-    }
-
-    .intro,
-    .section-intro {
-      max-width: 750px;
-      margin: 0 auto 2rem;
-      text-align: center;
-      color: #334155;
-    }
-
-    .section-block {
-      margin-top: 3rem;
-    }
-
-    .card-block {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 2rem;
-      margin: 2rem 0;
-    }
-
-    .center-img {
-      display: flex;
-      justify-content: center;
-      margin: 2.5rem 0;
-    }
-
-    .center-img img {
-      max-width: 550px;
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .feature-list {
-      padding-left: 1.3rem;
-    }
-
-    .cta {
-      text-align: center;
-      margin-top: 3rem;
-    }
-
-    .btn.primary {
-      display: inline-block;
-      padding: 0.9rem 1.6rem;
-      background: #1e3a8a;
-      color: #fff;
-      border-radius: 12px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.2s ease;
-    }
-
-    .btn.primary:hover {
-      background: #162d6b;
-    }
-  </style>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="/js/core/script.js" defer></script>
 </head>
 
-<body>
+<body class="service-page">
 
-<!-- GLOBAL HEADER -->
+<!-- ============================
+     HEADER
+============================ -->
 <div id="header-placeholder"></div>
 <script>
-fetch("/components/header.html")
-  .then(res => res.text())
-  .then(html => (document.getElementById("header-placeholder").innerHTML = html));
+  fetch("/components/header.html")
+    .then(r => r.text())
+    .then(html => (document.getElementById("header-placeholder").innerHTML = html));
 </script>
 
-<!-- MAIN CONTENT -->
-<main class="wrapper">
 
-  <!-- HERO -->
-  <section>
-    <h1>AI-First Tools for Modern Online Businesses</h1>
 
-    <p class="intro">
-      A unified platform designed to help entrepreneurs, freelancers, and creators automate manual work,
-      improve decision-making, and scale their online growth.
+<!-- ============================
+     HERO
+============================ -->
+<section class="service-hero">
+  <div class="container">
+    <img src="/assets/images/trans-web.png" alt="Digital services illustration" class="service-hero-img">
+
+    <h1>Smart Digital Services for Your Online Growth</h1>
+
+    <p class="subtitle">
+      From website templates to AI workflows and automation tools,
+      we help creators and small businesses launch faster, grow easier,
+      and automate more with minimal cost.
     </p>
 
-    <div class="center-img">
-      <img src="/assets/images/product/hero-abstract-ai.png" alt="AI Workflow Illustration" />
-    </div>
-
-    <div class="cta">
-      <a href="/pages/signup/signup.html" class="btn primary">Get Started</a>
-    </div>
-  </section>
-
-  <!-- VALUE PROPOSITION -->
-  <section class="section-block">
-    <h2>A Smarter Way to Build Your Online Business</h2>
-
-    <p class="section-intro">
-      The digital world moves fast — but most tools slow you down.
-      Bita Digital Hub combines AI workflows, automation, and intelligent insights
-      so you can work faster and focus on what matters.
-    </p>
-
-    <div class="card-block">
-      <h3>Automation Built In</h3>
-      <p>
-        Remove repetitive tasks from your workflow. Let AI handle formatting, decision support,
-        content structuring, and more.
-      </p>
-    </div>
-
-    <div class="card-block">
-      <h3>Instant Insights</h3>
-      <p>
-        Turn scattered numbers into clear business signals — without dashboards or complexity.
-      </p>
-    </div>
-
-    <div class="card-block">
-      <h3>Smart Integrated Tools</h3>
-      <p>
-        File converters, SEO helpers, business intelligence utilities — all in one streamlined platform.
-      </p>
-    </div>
-  </section>
-
-  <!-- FEATURE BLOCKS -->
-  <section class="section-block">
-    <h2>Powerful Tools — Unified Experience</h2>
-
-    <div class="card-block">
-      <h3>AI-Enhanced File & Content Tools</h3>
-      <p>
-        Convert, clean, rewrite, or analyze content quickly. Everything runs fast, inside your browser or cloud.
-      </p>
-
-      <div class="center-img">
-        <img src="/assets/images/product/illustration-file-tools.png" alt="File Tools" />
-      </div>
-    </div>
-
-    <div class="card-block">
-      <h3>SEO & Website Optimization</h3>
-      <p>
-        Improve rankings, optimize content, and automate fixes — perfect for freelancers and small businesses.
-      </p>
-
-      <div class="center-img">
-        <img src="/assets/images/product/illustration-seo.png" alt="SEO Tools" />
-      </div>
-    </div>
-
-    <div class="card-block">
-      <h3>Decision Tools for Entrepreneurs</h3>
-      <p>
-        Validate ideas, test assumptions, and plan operations using AI-guided support.
-      </p>
-
-      <div class="center-img">
-        <img src="/assets/images/product/illustration-decisions.png" alt="Decision Tools" />
-      </div>
-    </div>
-  </section>
-
-  <!-- AI WORKFLOW -->
-  <section class="section-block">
-    <h2>How the AI Workflow Works</h2>
-
-    <p class="section-intro">
-      Every tool is connected by a lightweight AI layer that adapts to your goals and workflow.
-    </p>
-
-    <div class="center-img">
-      <img src="/assets/images/product/ai-flow-abstract.png" alt="AI Workflow" />
-    </div>
-
-    <div class="card-block">
-      <ul class="feature-list">
-        <li>AI understands your task and context.</li>
-        <li>Automates formatting, structure, and early decisions.</li>
-        <li>You stay focused on strategy, creativity, and growth.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <div class="cta">
-    <h2>Ready to Build Smarter?</h2>
-    <p class="section-intro">
-      Join entrepreneurs saving hours every week with AI-powered tools.
-    </p>
-    <a href="/pages/signup/signup.html" class="btn primary">Create Your Free Account</a>
+    <a href="/contact/" class="btn-primary">Start Your Project</a>
   </div>
+</section>
 
-</main>
 
-<!-- FOOTER -->
+
+<!-- ============================
+     OVERVIEW
+============================ -->
+<section class="service-overview">
+  <div class="container">
+    <h2>What We Offer</h2>
+    <p>
+      A curated set of services designed to help you launch and scale your digital presence.
+      Each service is optimized for speed, simplicity, and affordability.
+    </p>
+  </div>
+</section>
+
+
+
+<!-- ============================
+     SERVICES GRID
+============================ -->
+<section class="section">
+  <div class="container">
+
+    <div class="services-grid">
+
+      <!-- Website Templates -->
+      <div class="service-card">
+        <img src="/assets/images/service-web.jpg" alt="Website Template">
+        <h3>Website Templates</h3>
+        <p>
+          Ready-made modern websites for cafés, small businesses, solopreneurs,
+          or personal brands — customizable and mobile-optimized.
+        </p>
+      </div>
+
+      <!-- AI Automation -->
+      <div class="service-card">
+        <img src="/assets/images/service-ai.jpg" alt="AI Automation">
+        <h3>AI Automation Workflows</h3>
+        <p>
+          Streamline repetitive tasks using AI and automation with tools like
+          Make.com, n8n, Zapier, and custom scripts.
+        </p>
+      </div>
+
+      <!-- Data & Dashboard -->
+      <div class="service-card">
+        <img src="/assets/images/service-data.jpg" alt="Dashboard Service">
+        <h3>Data Dashboards</h3>
+        <p>
+          Transform raw data into useful dashboards for tracking metrics,
+          sales, social media analytics, and business decisions.
+        </p>
+      </div>
+
+      <!-- Online Business Setup -->
+      <div class="service-card">
+        <img src="/assets/images/service-business.jpg" alt="Online Business Service">
+        <h3>Online Business Setup</h3>
+        <p>
+          Build your digital foundation: domain setup, hosting configuration,
+          email automation, funnels, and monetization strategy.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- ============================
+     CTA
+============================ -->
+<section class="cta">
+  <div class="container">
+    <h2>Ready to Build Something Great?</h2>
+    <p>
+      Whether you're launching a project or improving what you already have,
+      we’ll help you grow with tools and systems designed for your success.
+    </p>
+    <a href="/contact/" class="btn-primary">Contact Us</a>
+  </div>
+</section>
+
+
+
+<!-- ============================
+     FOOTER
+============================ -->
 <div id="footer-placeholder"></div>
 <script>
-fetch("/components/footer.html")
-  .then(res => res.text())
-  .then(html => (document.getElementById("footer-placeholder").innerHTML = html));
+  fetch("/components/footer.html")
+    .then(r => r.text())
+    .then(html => (document.getElementById("footer-placeholder").innerHTML = html));
 </script>
 
 </body>
