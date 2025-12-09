@@ -177,3 +177,82 @@
     max-width: 90%;
   }
 }
+
+
+
+/* ==========================================
+   NEON HERO (Three Glowing Cards)
+========================================== */
+
+.neon-hero {
+  background: linear-gradient(180deg, #0a0f27, #0c1133);
+  padding: 6rem 1.5rem 5rem;
+  text-align: center;
+  color: #fff;
+}
+
+.neon-title {
+  font-size: 2.9rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.neon-subtitle {
+  max-width: 740px;
+  margin: 0 auto 3rem;
+  color: #cbd5e1;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.hero-feature-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2.8rem;
+  flex-wrap: wrap;
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 2.3rem 3rem;
+  width: 280px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: 0.25s ease;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0 0 25px rgba(80, 120, 255, 0.15);
+}
+
+.hero-card-center {
+  background: rgba(100, 80, 255, 0.15);
+  border-color: rgba(140, 120, 255, 0.4);
+  box-shadow: 0 0 35px rgba(120, 90, 255, 0.45);
+}
+
+.hero-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 40px rgba(120, 120, 255, 0.4);
+}
+
+.hero-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-card h3 {
+  font-size: 1.25rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* CTA Buttons */
+.hero-buttons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
