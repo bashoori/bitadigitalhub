@@ -2,359 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>SEO Meta Description + Title Generator | Bita Digital Hub</title>
+  <title>SEO Meta Description & Title Generator | Bita Digital Hub</title>
 
   <meta name="description"
-        content="Generate optimized SEO titles and meta descriptions instantly. Perfect for blogs, landing pages, product pages, and YouTube content. Fast, free, and AI-ready." />
+        content="Generate SEO-ready meta titles and descriptions for blogs, landing pages, or product pages. Improve CTR and boost your Google visibility instantly." />
 
-  <!-- Styles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Main styling -->
   <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/components.css" />
-  <link rel="stylesheet" href="/css/responsive.css" />
-
-  <style>
-    .page-wrapper {
-      padding-top: 140px;
-      padding-bottom: 100px;
-    }
-
-    .tool-hero {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 2.5rem;
-      padding: 0 1.5rem;
-    }
-
-    .tool-hero h1 {
-      font-size: 2.4rem;
-      font-weight: 800;
-      color: #0f172a;
-      margin-bottom: 0.6rem;
-    }
-
-    .tool-hero p {
-      font-size: 1.05rem;
-      color: #475569;
-      line-height: 1.7;
-    }
-
-    .tool-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    .tool-card {
-      background: #ffffff;
-      border-radius: 18px;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 20px 45px rgba(15,23,42,0.08);
-      padding: 2.6rem 2.2rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.2rem;
-    }
-
-    @media (max-width: 900px) {
-      .tool-card {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* Form fields */
-    .field-group {
-      margin-bottom: 1.4rem;
-    }
-
-    label {
-      display: block;
-      font-weight: 600;
-      font-size: 0.95rem;
-      margin-bottom: 0.35rem;
-      color: #0f172a;
-    }
-
-    input,
-    textarea,
-    select {
-      width: 100%;
-      padding: 0.9rem 1rem;
-      border-radius: 12px;
-      border: 1px solid #cbd5e1;
-      background: #f8fafc;
-      font-size: 1rem;
-      transition: 0.25s ease;
-      font-family: inherit;
-    }
-
-    textarea {
-      min-height: 140px;
-      resize: vertical;
-    }
-
-    input:focus,
-    textarea:focus,
-    select:focus {
-      border-color: #2563eb;
-      background: #ffffff;
-      box-shadow: 0 0 0 3px rgba(37,99,235,0.18);
-      outline: none;
-    }
-
-    .hint {
-      font-size: 0.85rem;
-      color: #64748b;
-      margin-top: 0.2rem;
-    }
-
-    /* Generate button */
-    .generate-btn {
-      width: 100%;
-      padding: 1rem;
-      margin-top: 0.4rem;
-      border-radius: 12px;
-      border: none;
-      background: linear-gradient(90deg, #2563eb, #4f46e5);
-      color: #ffffff;
-      font-weight: 600;
-      font-size: 1.05rem;
-      cursor: pointer;
-      transition: 0.25s ease;
-    }
-
-    .generate-btn:hover {
-      background: linear-gradient(90deg, #1d4ed8, #4338ca);
-      transform: translateY(-1px);
-      box-shadow: 0 10px 22px rgba(37,99,235,0.25);
-    }
-
-    /* Output section */
-    .tool-output h2 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #0f172a;
-      margin-bottom: 1rem;
-    }
-
-    .output-block {
-      margin-bottom: 1.6rem;
-    }
-
-    .output-label {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #64748b;
-      margin-bottom: 0.4rem;
-    }
-
-    .output-box {
-      background: #0f172a;
-      color: #e5e7eb;
-      border-radius: 14px;
-      padding: 0.95rem 1rem;
-      font-size: 0.95rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      min-height: 52px;
-    }
-
-    .output-text {
-      flex: 1;
-      word-break: break-word;
-    }
-
-    .copy-btn {
-      background: #10b981;
-      color: #022c22;
-      border: none;
-      padding: 0.45rem 0.9rem;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 0.8rem;
-      cursor: pointer;
-      flex-shrink: 0;
-      transition: 0.2s ease;
-    }
-
-    .copy-btn:hover {
-      background: #34d399;
-    }
-
-    .output-note {
-      font-size: 0.84rem;
-      color: #64748b;
-    }
-  </style>
-
+  <link rel="stylesheet" href="/css/tools.css" />
+  <link rel="stylesheet" href="/css/tools-seo.css" />
 </head>
 
-<body>
+<body class="tools-page">
 
-<!-- HEADER -->
-<div id="header-placeholder"></div>
-<script>
-  fetch("/components/header.html")
-    .then(r => r.text())
-    .then(html => (document.getElementById("header-placeholder").innerHTML = html));
-</script>
+  <!-- HEADER -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("/components/header.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("header-placeholder").innerHTML = html);
+  </script>
 
-<main class="page-wrapper">
+  <!-- MAIN TOOL -->
+  <main>
+    <div class="tool-wrapper">
 
-  <!-- HERO -->
-  <section class="tool-hero">
-    <h1>SEO Meta Description + Title Generator</h1>
-    <p>
-      Generate SEO-optimized titles and meta descriptions in seconds.  
-      Perfect for blogs, landing pages, ecommerce, and YouTube content.
-    </p>
-  </section>
+      <!-- PAGE TITLE -->
+      <h1 class="tool-title">SEO Meta Description & Title Generator</h1>
 
-  <!-- TOOL -->
-  <section class="tool-container">
-    <div class="tool-card">
+      <!-- INTRO TEXT -->
+      <p class="tool-description">
+        Create optimized meta titles and descriptions in seconds.  
+        Enter your topic or keyword and get clean, SEO-friendly outputs for blogs, landing pages, and product pages.  
+        Everything runs directly in your browser.
+      </p>
 
-      <!-- LEFT PANEL: INPUT -->
-      <div class="tool-form">
+      <!-- INPUT FIELD -->
+      <label class="tool-label">Topic or keyword</label>
+      <input id="seo-input" class="tool-input" placeholder="e.g., How to build a website" />
 
-        <div class="field-group">
-          <label for="page-topic">Page topic or summary</label>
-          <textarea id="page-topic" placeholder="Example: A step-by-step guide for starting an online business in 2026..."></textarea>
-          <p class="hint">Describe your page in 1–3 sentences.</p>
-        </div>
+      <!-- GENERATE BUTTON -->
+      <button id="seo-generate" class="tool-btn" style="margin-top:1rem;">
+        Generate Meta Tags
+      </button>
 
-        <div class="field-group">
-          <label for="primary-keyword">Primary keyword</label>
-          <input id="primary-keyword" type="text" placeholder="Example: start online business 2026" />
-          <p class="hint">This keyword will be included in your title and meta description.</p>
-        </div>
+      <!-- OUTPUT RESULTS -->
+      <div id="seo-output" class="output-box" style="margin-top:1.5rem;"></div>
 
-        <div class="field-group">
-          <label for="tone">Tone</label>
-          <select id="tone">
-            <option value="neutral">Neutral / Informative</option>
-            <option value="friendly">Friendly</option>
-            <option value="professional">Professional</option>
-            <option value="persuasive">Persuasive</option>
-          </select>
-        </div>
+      <!-- COPY BUTTON -->
+      <button id="seo-copy" class="tool-btn" style="display:none; margin-top:1.2rem;">
+        Copy All
+      </button>
 
-        <div class="field-group">
-          <label for="length">Meta description length</label>
-          <select id="length">
-            <option value="short">Short (100–120 characters)</option>
-            <option value="standard" selected>Standard (130–155 characters)</option>
-            <option value="long">Long (160–180 characters)</option>
-          </select>
-        </div>
-
-        <button type="button" class="generate-btn" onclick="generateMeta()">
-          Generate SEO Title & Description
-        </button>
-      </div>
-
-      <!-- RIGHT PANEL: OUTPUT -->
-      <div class="tool-output">
-        <h2>Your SEO Snippets</h2>
-
-        <!-- SEO TITLE -->
-        <div class="output-block">
-          <div class="output-label">SEO Title</div>
-
-          <div class="output-box">
-            <div id="seo-title-output" class="output-text">
-              Your generated SEO title will appear here.
-            </div>
-            <button class="copy-btn" onclick="copyText('seo-title-output')">Copy</button>
-          </div>
-
-          <p class="output-note">Aim for 50–60 characters to avoid search-result truncation.</p>
-        </div>
-
-        <!-- META DESCRIPTION -->
-        <div class="output-block">
-          <div class="output-label">Meta Description</div>
-
-          <div class="output-box">
-            <div id="meta-description-output" class="output-text">
-              Your generated meta description will appear here.
-            </div>
-            <button class="copy-btn" onclick="copyText('meta-description-output')">Copy</button>
-          </div>
-
-          <p class="output-note">Make it clear, useful, and aligned with your page content.</p>
-        </div>
-
-      </div>
     </div>
-  </section>
+  </main>
 
-</main>
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("/components/footer.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+  </script>
 
-<!-- FOOTER -->
-<div id="footer-placeholder"></div>
-<script>
-  fetch("/components/footer.html")
-    .then(r => r.text())
-    .then(html => (document.getElementById("footer-placeholder").innerHTML = html));
-</script>
-
-<!-- =================== LOGIC =================== -->
-<script>
-function generateMeta() {
-  const topic = document.getElementById("page-topic").value.trim();
-  const keyword = document.getElementById("primary-keyword").value.trim() || "online business";
-  const tone = document.getElementById("tone").value;
-  const length = document.getElementById("length").value;
-
-  if (!topic) {
-    alert("Please enter a short description of your page.");
-    return;
-  }
-
-  let title = "";
-  const kw = capitalize(keyword);
-
-  // Title templates based on tone
-  const toneTitle = {
-    persuasive: `How to ${kw} (Complete 2026 Guide)`,
-    professional: `${kw} – 2026 Guide & Best Practices`,
-    friendly: `Beginner’s Guide to ${kw}`,
-    neutral: `${kw} | 2026 Guide`
-  };
-
-  title = toneTitle[tone] || toneTitle.neutral;
-
-  // Meta description variations
-  const desc = {
-    short: `Learn ${keyword} with quick, clear steps so you can take action fast.`,
-    standard: `Learn how to ${keyword} with a clear, practical 2026 guide that covers strategy, tools, and examples.`,
-    long: `Discover how to ${keyword} with practical steps, examples, and 2026 tools designed to help you get real growth and results.`
-  };
-
-  const description = desc[length];
-
-  // Inject into outputs
-  document.getElementById("seo-title-output").textContent = title;
-  document.getElementById("meta-description-output").textContent = description;
-}
-
-function copyText(id) {
-  const text = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(text).then(() => {
-    const btn = event.target;
-    btn.textContent = "Copied!";
-    setTimeout(() => (btn.textContent = "Copy"), 1200);
-  });
-}
-
-function capitalize(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
-</script>
+  <!-- JS -->
+  <script src="/js/core/script.js" defer></script>
+  <script src="/js/tools/seo-meta-generator.js" defer></script>
 
 </body>
 </html>

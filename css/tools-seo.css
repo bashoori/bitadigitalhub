@@ -1,0 +1,112 @@
+/* ============================================
+   SEO META GENERATOR — TOOL STYLING
+   Matches the same layout as QR Generator
+============================================ */
+
+/* Wrapper (already exists, but adding small improvements) */
+.tool-wrapper {
+  max-width: 720px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* Title (blue, consistent with Bitadigitalhub branding) */
+.tool-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f4ddb;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* Subtitle / description */
+.tool-description {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Label */
+.tool-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #1e293b;
+}
+
+/* Input box */
+.tool-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.2s;
+  margin-bottom: 1rem;
+}
+
+.tool-input:focus {
+  border-color: #0f4ddb;
+  box-shadow: 0 0 0 2px rgba(15,77,219,0.15);
+}
+
+/* Buttons */
+.tool-btn {
+  display: block;
+  width: 100%;
+  padding: 0.85rem;
+  background: #0f4ddb;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.tool-btn:hover {
+  background: #0c3bb0;
+}
+
+/* Output Box */
+.output-box {
+  margin-top: 1.5rem;
+  padding: 1.3rem;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  white-space: pre-wrap;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  color: #1e293b;
+}
+
+/* Copy button */
+#seo-copy {
+  margin-top: 1rem;
+}
+
+/* Small optional “section titles” inside output */
+.output-section-title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #0f4ddb;
+}
+
+/* Mobile improvements */
+@media (max-width: 600px) {
+  .tool-wrapper {
+    padding: 1.5rem;
+    margin: 2rem 1rem;
+  }
+
+  .tool-title {
+    font-size: 1.7rem;
+  }
+}
