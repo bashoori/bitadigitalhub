@@ -1,0 +1,75 @@
+/* Ensure blog pages never slide under the fixed header */
+.blog-post {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 140px 20px 60px 20px; /* pushes content below header */
+}
+
+/* Title + subtitle alignment */
+.post-hero h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+
+.post-hero .subtitle {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #475569;
+  font-size: 1.12rem;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Featured image */
+.featured-image {
+  width: 100%;
+  border-radius: 16px;
+  margin: 0 auto 40px auto;
+  display: block;
+}
+
+/* Typography improvements */
+article h2 {
+  margin-top: 42px;
+}
+
+article h3 {
+  margin-top: 28px;
+}
+
+article p,
+article li {
+  font-size: 1.03rem;
+  line-height: 1.65;
+  color: #1e293b;
+}
+
+/* CTA Section */
+.cta-section {
+  background: #eef2ff;
+  padding: 32px;
+  border-radius: 14px;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #1e3a8a;
+  color: white;
+  padding: 12px 26px;
+  border-radius: 8px;
+  margin-top: 16px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.cta-link {
+  display: block;
+  margin-top: 12px;
+  color: #1e3a8a;
+  font-weight: 600;
+  text-decoration: none;
+}
