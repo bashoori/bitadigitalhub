@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Account Created | Bita Digital Hub</title>
+
+  <meta name="description"
+        content="Your Bita Digital Hub account has been created successfully. Continue to onboarding to start using AI-powered tools and automations." />
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/system.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+
+  <style>
+    .page-wrapper {
+      padding-top: 140px;
+      padding-bottom: 60px;
+    }
+
+    .thankyou-container {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 3rem;
+      background: #ffffff;
+      border-radius: 18px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 22px 45px rgba(15,23,42,0.08);
+      text-align: center;
+      animation: fadeUp 0.45s ease-out;
+    }
+
+    .thankyou-icon {
+      width: 110px;
+      margin-bottom: 1.8rem;
+    }
+
+    .thankyou-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.8rem;
+    }
+
+    .thankyou-subtitle {
+      font-size: 1.05rem;
+      color: #64748b;
+      margin-bottom: 2.4rem;
+      line-height: 1.65;
+    }
+
+    .cta-btn {
+      background: #1e3a8a;
+      color: #ffffff;
+      border-radius: 12px;
+      padding: 0.95rem 1.6rem;
+      font-size: 1.08rem;
+      font-weight: 600;
+      display: inline-block;
+      text-decoration: none;
+      transition: 0.25s;
+    }
+
+    .cta-btn:hover {
+      background: #2563eb;
+      transform: translateY(-1px);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      .thankyou-container {
+        margin: 0 1rem;
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+<script>
+  fetch("/components/header.html")
+    .then(r => r.text())
+    .then(html => document.getElementById("header-placeholder").innerHTML = html);
+</script>
+
+<!-- MAIN -->
+<main class="page-wrapper">
+
+  <div class="thankyou-container">
+
+    <img
+      src="/assets/images/onboarding/thankyou.png"
+      alt="Success checkmark illustration"
+      class="thankyou-icon"
+    />
+
+    <h1 class="thankyou-title">Your Account Is Ready!</h1>
+
+    <p class="thankyou-subtitle">
+      Welcome to Bita Digital Hub.  
+      Your account has been created successfully — let's set things up so you can start using AI tools and automation workflows right away.
+    </p>
+
+    <a href="/pages/onboarding/onboarding-step1.html" class="cta-btn">
+      Continue to Onboarding →
+    </a>
+
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("/components/footer.html")
+    .then(r => r.text())
+    .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+</script>
+
+</body>
+</html>
