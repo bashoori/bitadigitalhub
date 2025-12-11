@@ -7,14 +7,13 @@
   <title>Contact | Bita Digital Hub</title>
 
   <meta name="description"
-        content="Contact Bita Digital Hub for support, collaboration, business inquiries, or tool assistance. We're here to help." />
+        content="Contact Bita Digital Hub for support, collaboration, business inquiries, or assistance with digital tools." />
 
   <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/components.css" />
   <link rel="stylesheet" href="/css/contact.css" />
   <link rel="stylesheet" href="/css/responsive.css" />
-
 </head>
 
 <body>
@@ -23,35 +22,32 @@
 <div id="header-placeholder"></div>
 <script>
   fetch("/components/header.html")
-    .then(r => r.text())
+    .then(res => res.text())
     .then(html => (document.getElementById("header-placeholder").innerHTML = html));
 </script>
 
-<!-- ======================= HERO ======================= -->
+<!-- HERO -->
 <section class="contact-hero">
   <h1>Contact Us</h1>
   <p>
     Have a question, need support, or want to collaborate?  
-    Send us a message and we’ll get back to you as soon as possible.
+    Send us a message and we’ll respond as soon as possible.
   </p>
 </section>
 
-<!-- ======================= CONTACT FORM ======================= -->
+<!-- CONTACT FORM -->
 <section class="contact-section">
   <div class="contact-container">
 
     <form class="contact-form" action="/pages/contact/contact-success.html" method="POST">
 
-      <!-- Name + Email (Side-by-side desktop) -->
       <div class="form-row">
-        <input type="text" id="name" name="name" placeholder="Your Name" required />
-        <input type="email" id="email" name="email" placeholder="Email Address" required />
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
       </div>
 
-      <!-- Message -->
-      <textarea id="message" name="message" placeholder="Your Message..." required></textarea>
+      <textarea name="message" placeholder="Your Message..." required></textarea>
 
-      <!-- Button -->
       <button type="submit" class="btn-submit">Send Message</button>
 
     </form>
@@ -63,7 +59,7 @@
 <div id="footer-placeholder"></div>
 <script>
   fetch("/components/footer.html")
-    .then(r => r.text())
+    .then(res => res.text())
     .then(html => (document.getElementById("footer-placeholder").innerHTML = html));
 </script>
 
