@@ -36,9 +36,9 @@
 <!-- MAIN -->
 <main class="tool-main">
 
-  <div class="tool-wrapper">
+  <!-- TOOL -->
+  <section class="tool-wrapper">
 
-    <!-- TOOL HEADER -->
     <header class="tool-header">
       <h1 class="tool-title">QR Code Generator</h1>
       <p class="tool-description">
@@ -59,7 +59,7 @@
       />
     </div>
 
-    <!-- SIZE SELECT -->
+    <!-- SIZE -->
     <div class="tool-field">
       <label for="qr-size" class="tool-label">Size</label>
       <select id="qr-size" class="tool-select">
@@ -74,50 +74,53 @@
       Generate QR Code
     </button>
 
-    <!-- STATUS / ERROR -->
+    <!-- STATUS -->
     <div id="qr-status" class="output-box" aria-live="polite"></div>
 
-    <!-- QR OUTPUT -->
+    <!-- OUTPUT -->
     <div id="qr-box" class="qr-output"></div>
 
     <!-- DOWNLOAD -->
     <button
       id="qr-download"
       class="tool-btn"
-      style="display: none;"
+      style="display:none;"
     >
       Download PNG
     </button>
 
-    <!-- CTA -->
-    <section class="cta-section">
-      <h2>Get Weekly Marketing Tools and Insights</h2>
-      <p>
-        Join our newsletter for free tools, tutorials, strategies,
-        and digital marketing insights to grow your online business.
-      </p>
+  </section>
 
-      <div class="cta-actions">
-        <a href="/pages/auth/signup.html" class="cta-button">
-          Join the Newsletter
-        </a>
-        <a href="/pages/tools/tools.html" class="cta-link">
-          Explore Free Tools →
-        </a>
-      </div>
-    </section>
-
+  <!-- ADSENSE (BELOW TOOL, POLICY-SAFE) -->
+  <div class="ad-in-content">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXX"
+         data-ad-slot="YYYYYYYYYY"
+         data-ad-format="auto"
+         data-full-width-responsive="true">
+    </ins>
   </div>
 
   <!-- CTA -->
-    <section class="cta-section">
-      <h2>Get Weekly Marketing Tools and Insights</h2>
-      <p>Join our newsletter for free tools, tutorials, strategies, and digital marketing insights to grow your online business.</p>
-      <a href="/pages/auth/signup.html" class="cta-button">Join the Newsletter</a>
-      <a href="/pages/tools/tools.html" class="cta-link">Explore Free Tools →</a>
-    </section>
+  <section class="cta-section">
+    <h2>Get Weekly Free Tools and Insights</h2>
+    <p>
+      Join our newsletter to receive automation workflows, AI tools,
+      and practical strategies to grow your online business.
+    </p>
 
-    
+    <div class="cta-actions">
+      <a href="/pages/auth/signup.html" class="cta-button">
+        Join the Newsletter
+      </a>
+
+      <a href="/pages/tools/tools.html" class="cta-link">
+        Explore Free Tools →
+      </a>
+    </div>
+  </section>
+
 </main>
 
 <!-- FOOTER -->
@@ -130,9 +133,18 @@
     });
 </script>
 
-<!-- SCRIPTS -->
+<!-- CORE SCRIPTS -->
 <script src="/js/core/script.js" defer></script>
 <script src="/js/tools/qr.js" defer></script>
+
+<!-- ADSENSE LOADER (ONCE PER PAGE) -->
+<script async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX"
+  crossorigin="anonymous">
+</script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 </body>
 </html>
