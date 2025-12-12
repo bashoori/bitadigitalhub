@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Image Converter | Bita Digital Hub</title>
-
   <meta
     name="description"
     content="Convert images between PNG, JPG, and WebP directly in your browser. No uploads, no tracking, full privacy."
@@ -31,9 +30,10 @@
 <!-- MAIN -->
 <main class="tool-main">
 
-  <div class="tool-wrapper">
+  <!-- TOOL -->
+  <section class="tool-wrapper">
 
-    <!-- TOOL HEADER -->
+    <!-- HEADER -->
     <header class="tool-header">
       <h1 class="tool-title">Image Converter</h1>
       <p class="tool-description">
@@ -55,7 +55,7 @@
       />
     </div>
 
-    <!-- FORMAT SELECT -->
+    <!-- FORMAT -->
     <div class="tool-field">
       <label for="file-format" class="tool-label">
         Output format
@@ -84,7 +84,7 @@
       <img
         id="file-preview"
         alt="Converted image preview"
-        style="display: none;"
+        style="display:none;"
       />
     </div>
 
@@ -92,30 +92,43 @@
     <button
       id="file-download"
       class="tool-btn"
-      style="display: none;"
+      style="display:none;"
     >
       Download Converted Image
     </button>
 
-    <!-- CTA -->
-    <section class="cta-section">
-      <h2>Get Weekly Marketing Tools and Insights</h2>
-      <p>
-        Join our newsletter for free tools, tutorials, strategies,
-        and digital marketing insights to grow your online business.
-      </p>
+  </section>
 
-      <div class="cta-actions">
-        <a href="/pages/auth/signup.html" class="cta-button">
-          Join the Newsletter
-        </a>
-        <a href="/pages/tools/tools.html" class="cta-link">
-          Explore Free Tools →
-        </a>
-      </div>
-    </section>
-
+  <!-- ADSENSE (BELOW TOOL — POLICY SAFE) -->
+  <div class="ad-in-content">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXX"
+         data-ad-slot="YYYYYYYYYY"
+         data-ad-format="auto"
+         data-full-width-responsive="true">
+    </ins>
   </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Get Weekly Marketing Tools and Insights</h2>
+    <p>
+      Join our newsletter for free tools, tutorials, strategies,
+      and digital marketing insights to grow your online business.
+    </p>
+
+    <div class="cta-actions">
+      <a href="/pages/auth/signup.html" class="cta-button">
+        Join the Newsletter
+      </a>
+
+      <a href="/pages/tools/tools.html" class="cta-link">
+        Explore Free Tools →
+      </a>
+    </div>
+  </section>
+
 </main>
 
 <!-- FOOTER -->
@@ -128,9 +141,18 @@
     });
 </script>
 
-<!-- SCRIPTS -->
+<!-- CORE SCRIPTS -->
 <script src="/js/core/script.js" defer></script>
 <script src="/js/tools/file-converter.js" defer></script>
+
+<!-- ADSENSE LOADER -->
+<script async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX"
+  crossorigin="anonymous">
+</script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 </body>
 </html>
