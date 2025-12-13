@@ -32,16 +32,17 @@
       .then(r => r.text())
       .then(html => {
         document.getElementById("header-placeholder").innerHTML = html;
+        lucide.createIcons();
       });
   </script>
 
   <!-- =========================
        HERO
   ========================== -->
-  <section class="hero clean-hero">
+  <section class="hero clean-hero section">
     <div class="container hero-container">
 
-      <div class="hero-card">
+      <div class="hero-card hero-surface">
 
         <span class="hero-eyebrow">
           Built for beginners and builders who want clarity
@@ -77,19 +78,25 @@
   <section class="section">
     <div class="container">
 
-      <h2 class="section-title">
-        Clarity tools you can use right now
-      </h2>
+      <div class="section-head">
+        <h2 class="section-title">
+          Clarity tools you can use right now
+        </h2>
 
-      <p class="section-subtitle">
-        Two simple tools to help people understand what you do —
-        on search and on social.
-      </p>
+        <p class="section-subtitle">
+          Two simple tools to help people understand what you do —
+          on search and on social.
+        </p>
+      </div>
 
       <div class="card-grid">
 
         <!-- SEO Tool (Primary) -->
         <a href="/pages/tools/generators/seo-meta-generator/" class="card">
+          <div class="card-icon">
+            <i data-lucide="search"></i>
+          </div>
+
           <div class="content">
             <h3>SEO Title & Description Generator</h3>
             <p>
@@ -103,6 +110,10 @@
 
         <!-- Instagram Tool (Secondary) -->
         <a href="/pages/tools/generators/instagram-bio-generator/" class="card secondary">
+          <div class="card-icon">
+            <i data-lucide="instagram"></i>
+          </div>
+
           <div class="content">
             <h3>Instagram Bio & Description Generator</h3>
             <p>
@@ -123,22 +134,26 @@
        VALUE / CTA
   ========================== -->
   <section class="section cta-center">
-    <div class="container text-center">
+    <div class="container">
 
-      <h2>
-        Your Online Toolkit — Simple, Fast, Free
-      </h2>
+      <div class="cta-surface text-center">
 
-      <p class="value-text">
-        Bita Digital Hub helps creators, students, and small businesses
-        build a clear online presence without friction.
-        No logins. No tracking. Just practical tools and honest guides
-        designed to save time and remove confusion.
-      </p>
+        <h2>
+          Your Online Toolkit — Simple, Fast, Free
+        </h2>
 
-      <a href="/pages/tools/tools.html" class="btn outline">
-        Browse All Tools
-      </a>
+        <p class="value-text">
+          Bita Digital Hub helps creators, students, and small businesses
+          build a clear online presence without friction.
+          No logins. No tracking. Just practical tools and honest guides
+          designed to save time and remove confusion.
+        </p>
+
+        <a href="/pages/tools/tools.html" class="btn outline">
+          Browse All Tools
+        </a>
+
+      </div>
 
     </div>
   </section>
@@ -152,6 +167,7 @@
       .then(r => r.text())
       .then(html => {
         document.getElementById("footer-placeholder").innerHTML = html;
+        lucide.createIcons();
       });
   </script>
 
