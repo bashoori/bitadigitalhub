@@ -1,21 +1,31 @@
 /* ============================================================
-   HOME.CSS — Clean, Modern, Ultra-Responsive Edition
-   For Bitadigitalhub.com — Hero + Core Tools
+   HOME.CSS — Clear, Calm, Intentional
+   Homepage surfaces + tools overview
 ============================================================ */
 
-/* -------------------------------
-   HERO SECTION
--------------------------------- */
+
+/* ============================================================
+   HERO
+============================================================ */
+
 .hero {
   background: var(--bg-soft);
   text-align: center;
-  padding: calc(var(--nav-height) + 3rem) 1.5rem 4rem;
+  padding: calc(var(--nav-height) + 3.5rem) 1.5rem 4.5rem;
 }
 
 @media (max-width: 768px) {
   .hero {
     padding-top: calc(var(--mobile-nav-height) + 2.5rem);
   }
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-mid);
+  margin-bottom: 0.75rem;
 }
 
 .hero-title {
@@ -28,144 +38,149 @@
 
 .hero-sub {
   max-width: 680px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 2.2rem;
   color: var(--text-soft);
   line-height: 1.65;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
 }
 
-.hero-buttons {
+.hero-actions {
   display: flex;
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
-.btn.primary {
-  background: var(--primary);
-  color: #fff;
-  padding: 0.9rem 1.8rem;
-  border-radius: 10px;
-  font-weight: 600;
-  transition: 0.25s ease;
+
+/* ============================================================
+   HERO SURFACE
+============================================================ */
+
+.hero-surface {
+  background: linear-gradient(
+    180deg,
+    rgba(59, 130, 246, 0.08),
+    rgba(99, 102, 241, 0.05)
+  );
+  padding: 3.5rem 2.5rem;
+  border-radius: 28px;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
-.btn.primary:hover {
-  background: var(--primary-light);
-  transform: translateY(-3px);
-}
-
-.btn.outline {
-  border: 2px solid var(--primary);
-  color: var(--primary);
-  padding: 0.9rem 1.8rem;
-  border-radius: 10px;
-  font-weight: 600;
-  transition: 0.25s ease;
-}
-
-.btn.outline:hover {
-  background: var(--primary);
-  color: #fff;
+@media (max-width: 768px) {
+  .hero-surface {
+    padding: 2.5rem 1.5rem;
+  }
 }
 
 
 /* ============================================================
-   SECTION TITLES
+   SECTION STRUCTURE
 ============================================================ */
+
+.section {
+  padding: 4.5rem 0;
+}
+
+.section-head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+}
 
 .section-title {
   font-size: 2rem;
   font-weight: 800;
-  margin-bottom: 0.6rem;
   color: var(--text-main);
-  text-align: center;
+  margin-bottom: 0.6rem;
 }
 
-.section-sub {
-  color: var(--text-soft);
+.section-subtitle {
   font-size: 1rem;
-  max-width: 720px;
-  margin: 0.4rem auto 2rem;
+  color: var(--text-soft);
   line-height: 1.6;
-  text-align: center;
 }
 
 
 /* ============================================================
-   CARD GRID (Popular Tools)
+   TOOL CARDS
 ============================================================ */
 
 .card-grid {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 1.5rem;
+
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
-@media (max-width: 992px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .card-grid {
     grid-template-columns: 1fr;
   }
 }
 
-
-/* ============================================================
-   CARD STYLE
-============================================================ */
-
 .card {
-  display: block;
-  background: #fff;
+  background: #ffffff;
   border-radius: 18px;
-  padding-bottom: 1.2rem;
-  overflow: hidden;
+  padding: 1.6rem;
   text-decoration: none;
-  border: 1px solid #e2e8f0;
+
+  border: 1px solid var(--border-light);
   box-shadow: var(--shadow-sm);
-  transition: transform .22s ease, box-shadow .22s ease;
+
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
 
-.tool-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 14px;
-  background: var(--bg-highlight);
+.card.secondary {
+  opacity: 0.92;
+}
+
+.card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(59, 130, 246, 0.12);
+
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1.2rem 1.4rem 0.6rem;
-  font-size: 2rem;
+
+  margin-bottom: 0.9rem;
 }
 
-.card .content {
-  padding: 0 1.4rem 1.2rem;
+.card-icon svg {
+  width: 22px;
+  height: 22px;
+  color: var(--primary);
 }
 
-.card h3 {
+.card .content h3 {
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--primary);
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.4rem;
 }
 
-.card p {
-  color: var(--text-soft);
+.card .content p {
   font-size: 0.95rem;
+  color: var(--text-soft);
   line-height: 1.55;
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-weight: 600;
+  color: var(--primary);
 }
 
 
@@ -175,7 +190,18 @@
 
 .cta-center {
   text-align: center;
-  padding: 4rem 1.5rem;
+}
+
+.cta-surface {
+  background: linear-gradient(
+    180deg,
+    rgba(99, 102, 241, 0.08),
+    rgba(59, 130, 246, 0.05)
+  );
+  padding: 3.2rem 2rem;
+  border-radius: 26px;
+  max-width: 880px;
+  margin: 0 auto;
 }
 
 .cta-center h2 {
@@ -184,7 +210,7 @@
   margin-bottom: 0.8rem;
 }
 
-.cta-center p {
+.value-text {
   max-width: 700px;
   margin: 0 auto 1.8rem;
   color: var(--text-soft);
@@ -192,78 +218,23 @@
   font-size: 1rem;
 }
 
-
-/* ============================================================
-   RESPONSIVE — MOBILE FIRST
-============================================================ */
-
 @media (max-width: 768px) {
-
-  .hero-title {
-    font-size: 2.2rem;
-  }
-
-  .hero-sub {
-    font-size: 1rem;
-    padding: 0 .5rem;
-    margin-bottom: 1.6rem;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    max-width: 320px;
-    margin: 0 auto;
-  }
-
-  .btn.primary,
-  .btn.outline {
-    width: 100%;
-    text-align: center;
-  }
-
-  .card {
-    padding-bottom: 1rem;
+  .cta-surface {
+    padding: 2.2rem 1.5rem;
   }
 }
 
 
-/* Extra Small Devices */
-@media (max-width: 480px) {
+/* ============================================================
+   MOBILE REFINEMENTS
+============================================================ */
 
+@media (max-width: 480px) {
   .hero-title {
-    font-size: 1.85rem;
+    font-size: 1.9rem;
   }
 
   .hero-sub {
     font-size: 0.95rem;
-    line-height: 1.5;
   }
-
-  .tool-icon {
-    width: 52px;
-    height: 52px;
-    font-size: 1.7rem;
-  }
-
-  .card h3 {
-    font-size: 1.15rem;
-  }
-}
-
-.hostinger-cta {
-  display: inline-block;
-  padding: 1rem 1.8rem;
-  background: linear-gradient(90deg, #4f46e5, #7c3aed);
-  color: #fff;
-  font-size: 1.15rem;
-  font-weight: 600;
-  border-radius: 12px;
-  transition: all 0.25s ease;
-  box-shadow: 0 8px 18px rgba(96, 57, 255, 0.25);
-}
-
-.hostinger-cta:hover {
-  transform: translateY(-3px);
-  background: linear-gradient(90deg, #6366f1, #8b5cf6);
-  box-shadow: 0 12px 24px rgba(96, 57, 255, 0.32);
 }
