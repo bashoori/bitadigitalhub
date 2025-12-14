@@ -1,44 +1,102 @@
-/* ======================================
-   CONTACT PAGE — Signup-style Card
-   Scoped overrides only
-====================================== */
+/* ============================================================
+   CONTACT.CSS — Focused Contact Card
+   Clean container, readable form, no auth hacks
+============================================================ */
 
-/* Page wrapper (reuse auth layout) */
+
+/* ============================================================
+   PAGE WRAPPER
+============================================================ */
+
 .contact-page {
-  padding: 4rem 1rem;
+  padding: 4.5rem 1.5rem;
+  background: var(--bg-soft);
 }
 
-/* Card width adjustment for contact */
+
+/* ============================================================
+   CONTACT CARD
+============================================================ */
+
 .contact-card {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 2.5rem;
+
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+
+  text-align: center;
+}
+
+
+/* ============================================================
+   TITLE & SUBTITLE
+============================================================ */
+
+.contact-card h1,
+.contact-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  color: var(--text-main);
+}
+
+.contact-card .auth-subtitle,
+.contact-subtitle {
   max-width: 520px;
+  margin: 0 auto 2.2rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-soft);
 }
 
-/* Subtitle spacing */
-.contact-card .auth-subtitle {
-  margin-bottom: 2rem;
+
+/* ============================================================
+   FORM ELEMENTS
+============================================================ */
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
 }
 
-/* Textarea customization */
 .auth-form textarea {
   min-height: 160px;
   resize: vertical;
 }
 
-/* Submit button spacing */
-.contact-card .auth-btn {
-  margin-top: 0.5rem;
+.auth-form input,
+.auth-form textarea {
+  font-size: 1rem;
 }
 
-/* Footer text under form */
+
+/* ============================================================
+   SUBMIT BUTTON
+============================================================ */
+
+.contact-card .auth-btn {
+  margin-top: 0.75rem;
+}
+
+
+/* ============================================================
+   FOOTER TEXT (email fallback)
+============================================================ */
+
 .auth-footer-text {
-  margin-top: 1.6rem;
-  text-align: center;
+  margin-top: 2rem;
   font-size: 0.95rem;
-  color: #64748b;
+  color: var(--text-mid);
 }
 
 .auth-footer-text a {
-  color: #1e40af;
+  color: var(--primary);
+  font-weight: 600;
   text-decoration: none;
 }
 
@@ -46,13 +104,29 @@
   text-decoration: underline;
 }
 
-/* Responsive tweaks */
-@media (max-width: 480px) {
+
+/* ============================================================
+   RESPONSIVE — MOBILE
+============================================================ */
+
+@media (max-width: 640px) {
+
   .contact-page {
-    padding: 3rem 1rem;
+    padding: 3.5rem 1.25rem;
   }
 
   .contact-card {
-    padding: 2.25rem 1.75rem;
+    padding: 2.2rem 1.6rem;
+    border-radius: 16px;
+  }
+
+  .contact-card h1,
+  .contact-title {
+    font-size: 1.9rem;
+  }
+
+  .contact-card .auth-subtitle,
+  .contact-subtitle {
+    margin-bottom: 1.8rem;
   }
 }
