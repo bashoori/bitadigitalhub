@@ -1,14 +1,19 @@
-/*
-  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
-  X-Frame-Options: SAMEORIGIN
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
-  X-XSS-Protection: 1; mode=block
+# ======================================
+# Security Headers — Bita Digital Hub
+# Compatible with Google Ads & Analytics
+# ======================================
 
-  Cross-Origin-Resource-Policy: same-origin
-  Cross-Origin-Opener-Policy: same-origin
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+X-Frame-Options: SAMEORIGIN
+X-Content-Type-Options: nosniff
+Referrer-Policy: strict-origin-when-cross-origin
 
-  # Google Ads و Analytics
-  Cross-Origin-Embedder-Policy: unsafe-none
-*/
+# Lock down browser features
+Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+
+# Cross-origin isolation (safe defaults)
+Cross-Origin-Opener-Policy: same-origin
+Cross-Origin-Resource-Policy: same-origin
+
+# Allow third-party embeds (Ads, Analytics)
+Cross-Origin-Embedder-Policy: unsafe-none

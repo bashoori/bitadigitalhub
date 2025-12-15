@@ -1,86 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- 🔹 Main Pages -->
+  <!-- =========================
+       CORE PAGES
+  ========================== -->
   <url>
     <loc>https://bitadigitalhub.com/</loc>
-    <lastmod>2025-11-05</lastmod>
+    <lastmod>2025-12-14</lastmod>
     <priority>1.0</priority>
   </url>
+
   <url>
-    <loc>https://bitadigitalhub.com/about.html</loc>
-    <lastmod>2025-11-05</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://bitadigitalhub.com/privacy.html</loc>
-    <lastmod>2025-11-05</lastmod>
+    <loc>https://bitadigitalhub.com/pages/about/about.html</loc>
+    <lastmod>2025-12-14</lastmod>
     <priority>0.9</priority>
   </url>
 
-  <!-- 🔹 File Tools -->
   <url>
-    <loc>https://bitadigitalhub.com/tools/file-converter.html</loc>
-    <lastmod>2025-11-05</lastmod>
-    <priority>0.8</priority>
+    <loc>https://bitadigitalhub.com/pages/services/services.html</loc>
+    <lastmod>2025-12-14</lastmod>
+    <priority>0.9</priority>
   </url>
+
   <url>
-    <loc>https://bitadigitalhub.com/tools/zip-unzip.html</loc>
-    <lastmod>2025-11-05</lastmod>
+    <loc>https://bitadigitalhub.com/pages/tools/tools.html</loc>
+    <lastmod>2025-12-14</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+
+  <!-- =========================
+       LEGAL PAGES
+  ========================== -->
+  <url>
+    <loc>https://bitadigitalhub.com/legal/privacy-policy.html</loc>
+    <lastmod>2025-12-14</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://bitadigitalhub.com/legal/terms-of-service.html</loc>
+    <lastmod>2025-12-14</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://bitadigitalhub.com/legal/cookie-policy.html</loc>
+    <lastmod>2025-12-14</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+
+  <!-- =========================
+       GENERATOR TOOLS (HIGH VALUE)
+  ========================== -->
+  <url>
+    <loc>https://bitadigitalhub.com/pages/tools/generators/seo-meta-generator/</loc>
+    <lastmod>2025-12-14</lastmod>
     <priority>0.8</priority>
   </url>
 
-  <!-- 🔹 Data Tools -->
   <url>
-    <loc>https://bitadigitalhub.com/tools/csv-cleaner.html</loc>
-    <lastmod>2025-11-05</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bitadigitalhub.com/tools/password-generator.html</loc>
-    <lastmod>2025-11-05</lastmod>
+    <loc>https://bitadigitalhub.com/pages/tools/generators/instagram-bio-generator/</loc>
+    <lastmod>2025-12-14</lastmod>
     <priority>0.8</priority>
   </url>
 
-  <!-- 🔹 Social & AI Tools -->
   <url>
-    <loc>https://bitadigitalhub.com/tools/url-shortener.html</loc>
-    <lastmod>2025-11-05</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bitadigitalhub.com/tools/qr-generator.html</loc>
-    <lastmod>2025-11-05</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bitadigitalhub.com/tools/social-audit.html</loc>
-    <lastmod>2025-11-05</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bitadigitalhub.com/tools/ai-bio-generator.html</loc>
-    <lastmod>2025-11-05</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bitadigitalhub.com/tools/ai-caption-generator.html</loc>
-    <lastmod>2025-11-05</lastmod>
+    <loc>https://bitadigitalhub.com/pages/tools/instagram-caption-generator/</loc>
+    <lastmod>2025-12-14</lastmod>
     <priority>0.8</priority>
   </url>
 
- 
-
-  <!-- 🔹 Optional Additions (future or utilities) -->
   <url>
-    <loc>https://bitadigitalhub.com/tools/contact-form.html</loc>
-    <lastmod>2025-11-05</lastmod>
-    <priority>0.6</priority>
+    <loc>https://bitadigitalhub.com/pages/tools/generators/hashtag-generator/</loc>
+    <lastmod>2025-12-14</lastmod>
+    <priority>0.75</priority>
   </url>
+
   <url>
-    <loc>https://bitadigitalhub.com/tools/data-tools.html</loc>
-    <lastmod>2025-11-05</lastmod>
-    <priority>0.6</priority>
+    <loc>https://bitadigitalhub.com/pages/tools/generators/content-idea-generator/</loc>
+    <lastmod>2025-12-14</lastmod>
+    <priority>0.75</priority>
+  </url>
+
+
+  <!-- =========================
+       UTILITY TOOLS
+  ========================== -->
+  <url>
+    <loc>https://bitadigitalhub.com/pages/tools/generators/url-shortener/</loc>
+    <lastmod>2025-12-14</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://bitadigitalhub.com/pages/tools/generators/qr-generator/</loc>
+    <lastmod>2025-12-14</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://bitadigitalhub.com/pages/tools/generators/password-generator/</loc>
+    <lastmod>2025-12-14</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://bitadigitalhub.com/pages/tools/utilities/csv-cleaner/</loc>
+    <lastmod>2025-12-14</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://bitadigitalhub.com/pages/tools/utilities/zip-unzip/</loc>
+    <lastmod>2025-12-14</lastmod>
+    <priority>0.7</priority>
   </url>
 
 </urlset>

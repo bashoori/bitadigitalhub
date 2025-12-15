@@ -3,22 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy | Bita Digital Hub</title>
 
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/components.css" />
-  <link rel="stylesheet" href="./css/tools.css" />
+  <title>Privacy Policy | Bita Digital Hub</title>
+  <meta
+    name="description"
+    content="Privacy Policy for Bita Digital Hub. Learn how we collect, use, and protect your information."
+  />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/tools.css" />
 
   <style>
     .legal-wrapper {
-      font-family: Arial, sans-serif;
-      padding: 2rem;
       max-width: 900px;
       margin: 0 auto;
+      padding: 2rem;
       line-height: 1.7;
-      color: #333;
+      color: #0f172a;
     }
-    h1, h2 {
+
+    .legal-wrapper h1,
+    .legal-wrapper h2 {
       color: #0f172a;
     }
   </style>
@@ -26,10 +32,12 @@
 
 <body class="tools-page">
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================== -->
 <div id="header-placeholder"></div>
 <script>
-  fetch("./components/header-tools.html")
+  fetch("/components/header.html")
     .then(res => res.text())
     .then(html => {
       document.getElementById("header-placeholder").innerHTML = html;
@@ -37,40 +45,53 @@
     .catch(err => console.error("Header load error:", err));
 </script>
 
-<div class="legal-wrapper">
+
+<!-- =========================
+     LEGAL CONTENT
+========================== -->
+<main class="legal-wrapper">
 
   <h1>Privacy Policy</h1>
   <p>Last updated: February 2025</p>
 
   <p>
-    Bita Digital Hub (“we”, “our”, “us”) operates a collection of free online tools and resources. 
-    Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you use our website.
+    Bita Digital Hub (“we”, “our”, “us”) operates a collection of free online tools
+    and resources. Your privacy is important to us. This Privacy Policy explains
+    how we collect, use, and protect your information when you use our website.
   </p>
 
   <h2>1. Information We Collect</h2>
   <p>We may collect the following types of information:</p>
   <ul>
-    <li><strong>Voluntary Input:</strong> Any text, URLs, or files you enter into tools (e.g., QR Generator, CSV Cleaner). These are processed locally in your browser and not stored.</li>
-    <li><strong>Log Data:</strong> Anonymous analytics data such as device type, browser, country, and pages visited.</li>
-    <li><strong>Cookies & Tracking:</strong> Google Analytics, Google AdSense, and similar platforms may use cookies to provide personalized ads and analytics.</li>
+    <li>
+      <strong>Voluntary Input:</strong>
+      Any text, URLs, or files you enter into tools are processed locally in your browser and not stored.
+    </li>
+    <li>
+      <strong>Log Data:</strong>
+      Anonymous analytics data such as device type, browser, country, and pages visited.
+    </li>
+    <li>
+      <strong>Cookies & Tracking:</strong>
+      Google Analytics, Google AdSense, and similar platforms may use cookies.
+    </li>
   </ul>
 
   <h2>2. How We Use Your Information</h2>
   <ul>
-    <li>To operate and improve our tools</li>
-    <li>To analyze traffic and website performance</li>
-    <li>To serve personalized or non-personalized advertising</li>
-    <li>To prevent abuse and maintain website security</li>
+    <li>Operate and improve our tools</li>
+    <li>Analyze traffic and website performance</li>
+    <li>Serve personalized or non-personalized advertising</li>
+    <li>Prevent abuse and maintain website security</li>
   </ul>
 
   <h2>3. How Your Data Is Protected</h2>
   <p>
-    We do not store files, passwords, or any tool-generated content.  
-    Whenever possible, input data is handled locally in your browser.
+    We do not store files, passwords, or tool-generated content.
+    Whenever possible, data is handled locally in your browser.
   </p>
 
   <h2>4. Third-Party Services</h2>
-  <p>We may use:</p>
   <ul>
     <li>Google Analytics</li>
     <li>Google AdSense</li>
@@ -79,7 +100,7 @@
 
   <h2>5. Cookies</h2>
   <p>
-    We use cookies to improve your experience. You may disable cookies in your browser settings.
+    Cookies are used to improve your experience. You may disable cookies in your browser settings.
   </p>
 
   <h2>6. GDPR & CCPA Rights</h2>
@@ -98,18 +119,22 @@
 
   <h2>8. Updates to This Policy</h2>
   <p>
-    We may update this Privacy Policy occasionally. Continued use of the website means you accept the changes.
+    We may update this Privacy Policy occasionally.
+    Continued use of the website means you accept the changes.
   </p>
 
   <h2>9. Contact Us</h2>
   <p>Email: <strong>info@bitadigitalhub.com</strong></p>
 
-</div>
+</main>
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================== -->
 <div id="footer-placeholder"></div>
 <script>
-  fetch("./components/footer-tools.html")
+  fetch("/components/footer.html")
     .then(res => res.text())
     .then(html => {
       document.getElementById("footer-placeholder").innerHTML = html;
