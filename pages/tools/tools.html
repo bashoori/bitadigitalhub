@@ -5,20 +5,23 @@
   <title>Free Online Tools | Bita Digital Hub</title>
 
   <meta name="description"
-        content="Use free online tools by Bita Digital Hub: URL shortener, QR code generator, password generator, CSV cleaner, file converter, appointment builder, zip/unzip and more." />
+        content="Use free online tools by Bita Digital Hub: SEO generators, Instagram tools, URL shortener, QR code generator, password generator, file converters, CSV cleaner, and more." />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/tools.css" />
-  <link rel="stylesheet" href="/css/cards.css" />
+
+  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest" defer></script>
   <script src="/js/core/script.js" defer></script>
 </head>
 
 <body class="tools-page">
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================== -->
 <div id="header-placeholder"></div>
 <script>
   fetch("/components/header.html")
@@ -26,26 +29,27 @@
     .then(html => document.getElementById("header-placeholder").innerHTML = html);
 </script>
 
-<!-- ============================
+
+<!-- =========================
      PAGE INTRO
-============================ -->
+========================== -->
 <section class="section text-center">
   <div class="container">
 
     <h1 class="tool-title">Free Online Tools</h1>
     <p class="tool-description">
-      Lightweight browser-based tools to speed up your workflow:
-      clean CSV files, create QR codes, shorten URLs, generate strong passwords,
-      convert images, and more, no login required.
+      Lightweight browser-based tools to help you write clearly,
+      generate content, and handle everyday digital tasks.
+      No login required.
     </p>
 
   </div>
 </section>
 
 
-<!-- ============================
+<!-- =========================
      GENERATORS
-============================ -->
+========================== -->
 <section class="section">
   <div class="container">
 
@@ -55,7 +59,7 @@
 
       <!-- SEO Meta Generator -->
       <a class="card primary" href="/pages/tools/generators/seo-meta-generator/">
-        <div class="tool-icon">
+        <div class="tool-icon icon-blue">
           <i data-lucide="search"></i>
         </div>
         <div class="content">
@@ -66,7 +70,7 @@
 
       <!-- Instagram Bio Generator -->
       <a class="card secondary" href="/pages/tools/generators/instagram-bio-generator/">
-        <div class="tool-icon">
+        <div class="tool-icon icon-pink">
           <i data-lucide="instagram"></i>
         </div>
         <div class="content">
@@ -76,8 +80,8 @@
       </a>
 
       <!-- Instagram Caption Generator -->
-      <a class="card" href="/pages/tools/generators/instagram-caption-generator/">
-        <div class="tool-icon">
+      <a class="card" href="/pages/tools/instagram-caption-generator/">
+        <div class="tool-icon icon-purple">
           <i data-lucide="edit-3"></i>
         </div>
         <div class="content">
@@ -88,7 +92,7 @@
 
       <!-- Hashtag Generator -->
       <a class="card" href="/pages/tools/generators/hashtag-generator/">
-        <div class="tool-icon">
+        <div class="tool-icon icon-orange">
           <i data-lucide="hash"></i>
         </div>
         <div class="content">
@@ -99,7 +103,7 @@
 
       <!-- Content Idea Generator -->
       <a class="card" href="/pages/tools/generators/content-idea-generator/">
-        <div class="tool-icon">
+        <div class="tool-icon icon-green">
           <i data-lucide="lightbulb"></i>
         </div>
         <div class="content">
@@ -110,7 +114,7 @@
 
       <!-- URL Shortener -->
       <a class="card" href="/pages/tools/generators/url-shortener/">
-        <div class="tool-icon">
+        <div class="tool-icon icon-blue">
           <i data-lucide="link"></i>
         </div>
         <div class="content">
@@ -121,18 +125,18 @@
 
       <!-- QR Code Generator -->
       <a class="card" href="/pages/tools/generators/qr-generator/">
-        <div class="tool-icon">
+        <div class="tool-icon icon-purple">
           <i data-lucide="qr-code"></i>
         </div>
         <div class="content">
           <h3>QR Code Generator</h3>
-          <p>Create QR codes for links, profiles, and campaigns.</p>
+          <p>Create QR codes for links and profiles.</p>
         </div>
       </a>
 
       <!-- Password Generator -->
       <a class="card" href="/pages/tools/generators/password-generator/">
-        <div class="tool-icon">
+        <div class="tool-icon icon-green">
           <i data-lucide="lock"></i>
         </div>
         <div class="content">
@@ -147,75 +151,92 @@
 </section>
 
 
-<!-- ============================
+<!-- =========================
      CONVERTERS
-============================ -->
+========================== -->
 <section class="section">
   <div class="container">
+
     <h2 class="section-title">Converters</h2>
 
     <div class="card-grid">
 
       <a class="card" href="/pages/tools/converters/file-converter/">
-        <div class="tool-icon"><span>📁</span></div>
+        <div class="tool-icon icon-blue">
+          <i data-lucide="file"></i>
+        </div>
         <div class="content">
           <h3>File Converter</h3>
-          <p>Convert between formats: PNG, JPG, PDF, WebP and more.</p>
+          <p>Convert between common file formats.</p>
         </div>
       </a>
 
     </div>
+
   </div>
 </section>
 
 
-<!-- ============================
+<!-- =========================
      UTILITIES
-============================ -->
+========================== -->
 <section class="section">
   <div class="container">
+
     <h2 class="section-title">Utilities</h2>
 
     <div class="card-grid">
 
       <a class="card" href="/pages/tools/appointments/">
-        <div class="tool-icon"><span>📅</span></div>
+        <div class="tool-icon icon-orange">
+          <i data-lucide="calendar"></i>
+        </div>
         <div class="content">
           <h3>Appointment Builder</h3>
-          <p>Create calendar-ready ICS files and Google Calendar links.</p>
+          <p>Create calendar-ready links and files.</p>
         </div>
       </a>
 
       <a class="card" href="/pages/tools/utilities/zip-unzip/">
-        <div class="tool-icon"><span>🗂️</span></div>
+        <div class="tool-icon icon-purple">
+          <i data-lucide="archive"></i>
+        </div>
         <div class="content">
           <h3>Zip / Unzip</h3>
-          <p>Compress and extract small archives directly in your browser.</p>
+          <p>Compress and extract small archives.</p>
         </div>
       </a>
 
       <a class="card" href="/pages/tools/utilities/csv-cleaner/">
-        <div class="tool-icon"><span>🧹</span></div>
+        <div class="tool-icon icon-green">
+          <i data-lucide="table"></i>
+        </div>
         <div class="content">
           <h3>CSV Cleaner</h3>
-          <p>Fix encoding, remove empty rows, normalize messy data.</p>
+          <p>Clean and normalize messy CSV files.</p>
         </div>
       </a>
 
     </div>
+
   </div>
 </section>
 
 
-
-<!-- ============================
+<!-- =========================
      FOOTER
-============================ -->
+========================== -->
 <div id="footer-placeholder"></div>
 <script>
   fetch("/components/footer.html")
     .then(r => r.text())
     .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    lucide.createIcons();
+  });
 </script>
 
 </body>

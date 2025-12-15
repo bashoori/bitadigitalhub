@@ -3,22 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cookie Policy | Bita Digital Hub</title>
 
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/components.css" />
-  <link rel="stylesheet" href="./css/tools.css" />
+  <title>Cookie Policy | Bita Digital Hub</title>
+  <meta name="description" content="Cookie Policy for Bita Digital Hub. Learn how we use cookies and similar technologies." />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/tools.css" />
 
   <style>
     .legal-wrapper {
-      font-family: Arial, sans-serif;
-      padding: 2rem;
       max-width: 900px;
       margin: 0 auto;
+      padding: 2rem;
       line-height: 1.7;
-      color: #333;
+      color: #0f172a;
     }
-    h1, h2 {
+
+    .legal-wrapper h1,
+    .legal-wrapper h2 {
       color: #0f172a;
     }
   </style>
@@ -26,10 +29,12 @@
 
 <body class="tools-page">
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================== -->
 <div id="header-placeholder"></div>
 <script>
-  fetch("./components/header-tools.html")
+  fetch("/components/header.html")
     .then(res => res.text())
     .then(html => {
       document.getElementById("header-placeholder").innerHTML = html;
@@ -37,7 +42,11 @@
     .catch(err => console.error("Header load error:", err));
 </script>
 
-<div class="legal-wrapper">
+
+<!-- =========================
+     LEGAL CONTENT
+========================== -->
+<main class="legal-wrapper">
 
   <h1>Cookie Policy</h1>
   <p>Last updated: February 2025</p>
@@ -83,18 +92,22 @@
 
   <h2>6. Updates to This Policy</h2>
   <p>
-    We may update this Cookie Policy occasionally. Continued use of the website means you accept the changes.
+    We may update this Cookie Policy occasionally.
+    Continued use of the website means you accept the changes.
   </p>
 
   <h2>7. Contact</h2>
   <p>Email: <strong>info@bitadigitalhub.com</strong></p>
 
-</div>
+</main>
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================== -->
 <div id="footer-placeholder"></div>
 <script>
-  fetch("./components/footer-tools.html")
+  fetch("/components/footer.html")
     .then(res => res.text())
     .then(html => {
       document.getElementById("footer-placeholder").innerHTML = html;
