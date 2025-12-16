@@ -11,10 +11,11 @@
     content="A practical, no-hype guide showing how to turn free digital tools into real services and small income streams. Secure Gumroad checkout. Instant access."
   />
 
-  <!-- Styles -->
+  <!-- Global styles -->
   <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/home.css" />
-  <link rel="stylesheet" href="/css/cards.css" />
+
+  <!-- Page styles -->
+  <link rel="stylesheet" href="/css/make-money.css" />
 
   <!-- Scripts -->
   <script src="https://unpkg.com/lucide@latest" defer></script>
@@ -23,27 +24,38 @@
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================== -->
-  <div id="header-placeholder"></div>
-  <script>
-    fetch("/components/header.html")
-      .then(r => r.text())
-      .then(html => {
-        document.getElementById("header-placeholder").innerHTML = html;
-        lucide.createIcons();
-      });
-  </script>
+<!-- =========================
+     HEADER
+========================== -->
+<div id="header-placeholder"></div>
+<script>
+  fetch("/components/header.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("header-placeholder").innerHTML = html;
+      lucide.createIcons();
+    });
+</script>
 
-  <!-- =========================
-       HERO
-  ========================== -->
-  <section class="hero clean-hero section">
-    <div class="container text-center">
+<!-- =========================
+     HERO
+========================== -->
+<section class="hero">
+  <div class="container hero-grid">
 
-      <h1 class="hero-title">
-        Turn free digital tools into real income
+    <!-- Left: Illustration -->
+    <div class="hero-media">
+      <img
+        src="/assets/images/make-money-hero.svg"
+        alt="Turn tools into income"
+      />
+    </div>
+
+    <!-- Right: Content -->
+    <div class="hero-content">
+      <h1>
+        Turn free digital tools<br />
+        into real income
       </h1>
 
       <p class="hero-sub">
@@ -51,127 +63,107 @@
         use simple tools to offer paid services — without courses, hype, or fake promises.
       </p>
 
-      <div class="hero-actions center">
-        <!-- Gumroad product link -->
+      <p class="hero-note">
+        Built for solo creators, freelancers, and people with no audience.
+      </p>
+
+      <div class="hero-actions">
         <a href="https://gumroad.com/YOUR_PRODUCT" class="btn primary">
-          Get the guide
+          Get the step-by-step guide
         </a>
-
-        <!-- Telegram link -->
         <a href="https://t.me/YOUR_TELEGRAM" class="btn outline">
-          See examples on Telegram
+          See real examples on Telegram
         </a>
       </div>
-
     </div>
-  </section>
 
-  <!-- =========================
-       WHAT YOU’LL LEARN
-  ========================== -->
-  <section class="section">
-    <div class="container">
+  </div>
+</section>
 
-      <div class="section-head text-center">
-        <h2 class="section-title">
-          What you’ll learn inside
-        </h2>
-        <p class="section-subtitle">
-          Practical ideas you can actually use — even with zero audience.
-        </p>
-      </div>
+<!-- =========================
+     WHAT YOU’LL LEARN
+========================== -->
+<section class="section">
+  <div class="container">
 
-      <div class="cta-surface">
-
-        <ul class="value-text" style="max-width: 760px; margin: 0 auto; line-height: 1.9;">
-          <li>How to turn free tools into simple paid services</li>
-          <li>Real service ideas you can start with today</li>
-          <li>How to build trust before asking for money</li>
-          <li>A safe setup: Website → Telegram → Gumroad</li>
-          <li>What to sell, how to price it, and what to avoid</li>
-        </ul>
-
-      </div>
-
+    <div class="section-head">
+      <h2>What you’ll learn inside</h2>
+      <p>Practical ideas you can actually use — even with zero audience.</p>
     </div>
-  </section>
 
-  <!-- =========================
-       TRUST & DELIVERY
-  ========================== -->
-  <section class="section">
-    <div class="container">
-
-      <div class="cta-surface text-center">
-
-        <h2>
-          Secure payment. Instant access.
-        </h2>
-
-        <p class="value-text">
-          The guide is sold and delivered through Gumroad to keep everything simple and safe.
-        </p>
-
-        <ul class="value-text" style="list-style: none; padding: 0; margin-top: 1rem;">
-          <li>✔ Secure checkout via Gumroad</li>
-          <li>✔ Instant download after purchase</li>
-          <li>✔ Refund available if it’s not useful</li>
-        </ul>
-
-      </div>
-
+    <div class="card learn-card">
+      <ul>
+        <li>How to turn free tools into sellable services</li>
+        <li>Real service ideas you can start today</li>
+        <li>How to build trust before asking for money</li>
+        <li>A safe setup: Website → Telegram → Gumroad</li>
+        <li>What to sell, how to price it, and what to avoid</li>
+      </ul>
     </div>
-  </section>
 
-  <!-- =========================
-       FINAL CTA
-  ========================== -->
-  <section class="section">
-    <div class="container">
+  </div>
+</section>
 
-      <div class="cta-surface text-center">
+<!-- =========================
+     TRUST
+========================== -->
+<section class="section soft">
+  <div class="container trust-grid">
 
-        <h2>
-          How would you like to continue?
-        </h2>
-
-        <p class="value-text">
-          You can get the guide now, or join Telegram to see real examples
-          and decide later.
-        </p>
-
-        <div class="hero-actions center">
-          <a href="https://gumroad.com/YOUR_PRODUCT" class="btn primary">
-            Buy on Gumroad
-          </a>
-          <a href="https://t.me/YOUR_TELEGRAM" class="btn outline">
-            Join Telegram
-          </a>
-        </div>
-
-        <div class="trust-lines">
-          <p>✔ Secure payment through Gumroad</p>
-          <p>✔ Instant access after purchase</p>
-          <p>✔ Honest refund if it’s not helpful</p>
-        </div>
-
-      </div>
-
+    <div>
+      <h2>Secure payment. Instant access.</h2>
+      <p class="muted">
+        I use Gumroad so you don’t have to trust me with your payment.
+      </p>
     </div>
-  </section>
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
-  <div id="footer-placeholder"></div>
-  <script>
-    fetch("/components/footer.html")
-      .then(r => r.text())
-      .then(html => {
-        document.getElementById("footer-placeholder").innerHTML = html;
-        lucide.createIcons();
-      });
-  </script>
+    <ul class="trust-list">
+      <li>Secure checkout via Gumroad</li>
+      <li>Instant download after purchase</li>
+      <li>Refund available if it’s not useful</li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- =========================
+     FINAL CTA
+========================== -->
+<section class="section">
+  <div class="container">
+
+    <div class="final-cta">
+      <h2>Choose your next step</h2>
+      <p>
+        Most people start with the guide.<br />
+        Others join Telegram first and decide later.
+      </p>
+
+      <div class="hero-actions">
+        <a href="https://gumroad.com/YOUR_PRODUCT" class="btn primary">
+          Buy on Gumroad
+        </a>
+        <a href="https://t.me/YOUR_TELEGRAM" class="btn outline">
+          Join Telegram
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================
+     FOOTER
+========================== -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("/components/footer.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+      lucide.createIcons();
+    });
+</script>
 
 </body>
 </html>
