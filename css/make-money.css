@@ -1,22 +1,40 @@
 /* =========================
-   Layout
+   HERO LAYOUT
 ========================= */
 .hero {
   padding: 5rem 1.5rem;
   background: linear-gradient(180deg, #f8fafc, #ffffff);
+  display: flex;
+  justify-content: center;
 }
 
 .hero-grid {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2rem;
+
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: 3rem;
   align-items: center;
 }
 
+.hero-media {
+  display: flex;
+  justify-content: center;
+}
+
 .hero-media img {
   width: 100%;
+  max-width: 520px;
+  height: auto;
+}
+
+/* =========================
+   HERO CONTENT
+========================= */
+.hero-content {
   max-width: 520px;
 }
 
@@ -46,10 +64,17 @@
 }
 
 /* =========================
-   Sections
+   SECTIONS
 ========================= */
 .section {
   padding: 4.5rem 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.section > .container {
+  width: 100%;
+  max-width: 1200px;
 }
 
 .section.soft {
@@ -71,10 +96,12 @@
 }
 
 /* =========================
-   Cards
+   CARDS
 ========================= */
 .card {
   max-width: 900px;
+  margin: 0 auto;
+
   background: #ffffff;
   border-radius: 16px;
   padding: 2.5rem 3rem;
@@ -92,11 +119,13 @@
 }
 
 /* =========================
-   Trust
+   TRUST SECTION
 ========================= */
 .trust-grid {
+  width: 100%;
   max-width: 1000px;
   margin: 0 auto;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
@@ -106,6 +135,7 @@
 .trust-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .trust-list li {
@@ -126,7 +156,7 @@
 }
 
 /* =========================
-   Final CTA
+   FINAL CTA
 ========================= */
 .final-cta {
   text-align: center;
@@ -135,12 +165,16 @@
 }
 
 /* =========================
-   Responsive
+   RESPONSIVE
 ========================= */
 @media (max-width: 900px) {
   .hero-grid {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
   }
 
   .hero-actions {
@@ -149,5 +183,6 @@
 
   .trust-grid {
     grid-template-columns: 1fr;
+    text-align: left;
   }
 }
